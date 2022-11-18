@@ -1,6 +1,10 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 docs/
+presentations/
 ^README\.Rmd$
 ^LICENSE\.md$
 ^\.github$
+^\.quarto$
+_quarto.yml
+index.qmd
