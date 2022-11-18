@@ -5,6 +5,6 @@ format: html
 
 ## Index
 
-Check out the [test presenation](https://mrc-ide.github.io/mvw/p1.html) 
+Check out the [test presenation](https://mrc-ide.github.io/mvw/presentations/p1.html) 
 
 Testing new!
