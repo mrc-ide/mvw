@@ -28,73 +28,122 @@
     "text": "Copyright (c) 2022 Peter Winskill\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\nTHE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
   },
   {
-    "objectID": "presentations/p1.html#quarto",
-    "href": "presentations/p1.html#quarto",
-    "title": "P-test",
-    "section": "Quarto",
-    "text": "Quarto\nTesting NEW!\nQuarto enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see https://quarto.org/docs/presentations/."
+    "objectID": "presentations/1_Introduction.html#hello",
+    "href": "presentations/1_Introduction.html#hello",
+    "title": "Habits",
+    "section": "Hello",
+    "text": "Hello\nWelcome!\n\nTest 1"
   },
   {
-    "objectID": "presentations/p1.html#bullets",
-    "href": "presentations/p1.html#bullets",
-    "title": "P-test",
-    "section": "Bullets",
-    "text": "Bullets\nWhen you click the Render button a document will be generated that includes:\n\nContent authored with markdown\nOutput from executable code"
+    "objectID": "presentations/1_Introduction.html#beta-test",
+    "href": "presentations/1_Introduction.html#beta-test",
+    "title": "Habits",
+    "section": "Beta test",
+    "text": "Beta test\nWhen you click the Render button a document will be generated that includes:\n ##"
   },
   {
-    "objectID": "presentations/p1.html#code",
-    "href": "presentations/p1.html#code",
-    "title": "P-test",
-    "section": "Code",
-    "text": "Code\nWhen you click the Render button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n\n[1] 2"
+    "objectID": "presentations/t1.html#getting-up",
+    "href": "presentations/t1.html#getting-up",
+    "title": "Habits",
+    "section": "Getting up",
+    "text": "Getting up\n\nTurn off alarm\nGet out of bed"
   },
   {
-    "objectID": "presentations/p1.html#code-1",
-    "href": "presentations/p1.html#code-1",
-    "title": "P-test",
-    "section": "Code",
-    "text": "Code\nWhen you click the Render button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n\n[1] 2"
+    "objectID": "presentations/t1.html#going-to-sleep",
+    "href": "presentations/t1.html#going-to-sleep",
+    "title": "Habits",
+    "section": "Going to sleep",
+    "text": "Going to sleep\n\nGet in bed\nCount sheep"
   },
   {
-    "objectID": "presentations/p1.html#code-2",
-    "href": "presentations/p1.html#code-2",
-    "title": "P-test",
-    "section": "Code",
-    "text": "Code\nWhen you click the Render button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n\n[1] 2"
+    "objectID": "presentations/1_Introduction.html#welcome",
+    "href": "presentations/1_Introduction.html#welcome",
+    "title": "Malariaverse Workshop Introduction",
+    "section": "Welcome",
+    "text": "Welcome\nWelcome all!\nToday’s aims:\n\nProvide a broad overview of context-specific modelling\nSite files: how to characterise a setting\nIntroduce the malariaverse packages to support malariasimulation modelling\nExercises:\n\nRunning a site\nCalibrating a site"
   },
   {
-    "objectID": "presentations/p1.html#code-3",
-    "href": "presentations/p1.html#code-3",
-    "title": "P-test",
-    "section": "Code",
-    "text": "Code\nWhen you click the Render button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n\n[1] 2"
+    "objectID": "presentations/1_Introduction.html#testing",
+    "href": "presentations/1_Introduction.html#testing",
+    "title": "Malariaverse Workshop Introduction",
+    "section": "Testing",
+    "text": "Testing\n\n\n\nGuinea Pig"
   },
   {
-    "objectID": "presentations/p1.html#code-4",
-    "href": "presentations/p1.html#code-4",
-    "title": "P-test",
-    "section": "Code",
-    "text": "Code\nWhen you click the Render button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n\n[1] 2"
+    "objectID": "presentations/1_Introduction.html#section",
+    "href": "presentations/1_Introduction.html#section",
+    "title": "Malariaverse Workshop Introduction",
+    "section": "",
+    "text": "How do we characterise a setting?"
   },
   {
-    "objectID": "presentations/p1.html#code-5",
-    "href": "presentations/p1.html#code-5",
-    "title": "P-test",
-    "section": "Code",
-    "text": "Code\nWhen you click the Render button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n\n[1] 2"
+    "objectID": "presentations/1_Introduction.html#slide-3",
+    "href": "presentations/1_Introduction.html#slide-3",
+    "title": "Malariaverse Workshop Introduction",
+    "section": "Slide 3",
+    "text": "Slide 3"
   },
   {
-    "objectID": "presentations/p1.html#code2",
-    "href": "presentations/p1.html#code2",
-    "title": "P-test",
-    "section": "Code2",
-    "text": "Code2\nWhen you click the Render button a presentation will be generated that includes both content and the output of emb sfdedded code. You can embed code like this:\n\n\n[1] 4"
+    "objectID": "presentations/1_Introduction.html#thanks",
+    "href": "presentations/1_Introduction.html#thanks",
+    "title": "Malariaverse Workshop Introduction",
+    "section": "Thanks 💖",
+    "text": "Thanks 💖"
   },
   {
-    "objectID": "presentations/p1.html#code4",
-    "href": "presentations/p1.html#code4",
-    "title": "P-test",
-    "section": "Code4",
-    "text": "Code4\nWhen you click the Render button a presentatisdfgson will be generated that includes both content and the output of emb sfdedded code. You can embed code like this:\n\n\n[1] 9"
+    "objectID": "presentations/1_Introduction.html#welcome-all",
+    "href": "presentations/1_Introduction.html#welcome-all",
+    "title": "Malariaverse Workshop Introduction",
+    "section": "Welcome all!",
+    "text": "Welcome all!\nToday’s aims:\n\nProvide a broad overview of context-specific modelling\nSite files: how to characterise a setting\nIntroduce the malariaverse packages to support 📦 malariasimulation modelling\nExercises:\n\nRunning a site\nCalibrating a site\nDealing with bed nets"
+  },
+  {
+    "objectID": "presentations/1_Introduction.html#modelling-philosophy",
+    "href": "presentations/1_Introduction.html#modelling-philosophy",
+    "title": "Malariaverse Workshop Introduction",
+    "section": "Modelling philosophy",
+    "text": "Modelling philosophy\nOne common dichotomisation is between:\n\nGeneric modelling\n\nRun the model for generic settings (e.g. Low/Medium/High PfPr2-10)\nAllows precise exploration of model behaviour and intervention impact in controlled in silico environment\nCan be challenging to translate general results\ne.g. Modelling population-level impact to inform target product profiles for childhood malaria vaccines. Hogan et al BMC Medicine, 2018."
+  },
+  {
+    "objectID": "presentations/1_Introduction.html#modelling-philosophy-1",
+    "href": "presentations/1_Introduction.html#modelling-philosophy-1",
+    "title": "Malariaverse Workshop Introduction",
+    "section": "Modelling philosophy",
+    "text": "Modelling philosophy\nOne common dichotomisation is between:\n\nContext-specific modelling\n\nRun the model for a specific setting/location\nCan be used to informs policy and impact assessment for specific areas\nRequires “the context” to be adequately captured\ne.g. Estimated impact of RTS,S/AS01 malaria vaccine allocation strategies in sub-Saharan Africa: A modelling study Hogan et al PLoS Medicine, 2020."
+  },
+  {
+    "objectID": "presentations/1_Introduction.html#important-features",
+    "href": "presentations/1_Introduction.html#important-features",
+    "title": "Malariaverse Workshop Introduction",
+    "section": "Important features",
+    "text": "Important features\n\nIntrinsic transmission potential (“Baseline”, “Carrying capacity”, “R0”)\nThe mosquito vector\n\nspecies\nbionomics & behaviour\ndistribution & relative abundance\ninsecticide resistance\n\nRainfall seasonality\nHistorical interventions\nEpidemiological data\nHuman population & demography"
+  },
+  {
+    "objectID": "presentations/1_Introduction.html#site-files",
+    "href": "presentations/1_Introduction.html#site-files",
+    "title": "Malariaverse Workshop Introduction",
+    "section": "Site files",
+    "text": "Site files\n\nHistorically, the group has collected the required information to characterise a setting into a “Site file”.\nWe have tried to formalise this approach in malariaverse\nThe 📦 foresite package contains our first-pass attempt at site-files for all countries\nThey contains estimates for all of the important features needed to characterise a site\nThe foresite website contains detailed information about each element of a site file"
+  },
+  {
+    "objectID": "presentations/1_Introduction.html#site-files-1",
+    "href": "presentations/1_Introduction.html#site-files-1",
+    "title": "Malariaverse Workshop Introduction",
+    "section": "Site files",
+    "text": "Site files\n\nlibrary(foresite)\nhead(TGO$prevalence)\n\n  country iso3c name_1 urban_rural year      pfpr pvpr\n1    Togo   TGO Centre       rural 2000 0.6052841    0\n2    Togo   TGO Centre       rural 2001 0.5733003    0\n3    Togo   TGO Centre       rural 2002 0.5585785    0\n4    Togo   TGO Centre       rural 2003 0.5469875    0\n5    Togo   TGO Centre       rural 2004 0.5521835    0\n6    Togo   TGO Centre       rural 2005 0.5470634    0\n\nhead(TGO$interventions[,3:8])\n\n  name_1 urban_rural year    itn_use itn_input_dist        net_type\n1 Centre       rural 2000 0.04239319   3.972372e-02 pyrethroid_only\n2 Centre       rural 2001 0.03059912   1.999607e-03 pyrethroid_only\n3 Centre       rural 2002 0.02194407   1.225237e-05 pyrethroid_only\n4 Centre       rural 2003 0.02110716   3.579113e-03 pyrethroid_only\n5 Centre       rural 2004 0.14395837   1.402791e-01 pyrethroid_only\n6 Centre       rural 2005 0.20412837   9.050257e-02 pyrethroid_only"
+  },
+  {
+    "objectID": "presentations/1_Introduction.html#running-a-site",
+    "href": "presentations/1_Introduction.html#running-a-site",
+    "title": "Malariaverse Workshop Introduction",
+    "section": "Running a site",
+    "text": "Running a site\n\nWe can use another malariaverse 📦 site to translate the site file information into 📦 malariasimulation parameter input.\n\n\n# Isolate a single site from a country\nexample_site <- site::single_site(foresite::TGO, 1)\n# Create parameter inputs\nsite_pars <- site::site_parameters(\n  interventions = example_site$interventions,\n  demography = example_site$demography,\n  vectors = example_site$vectors,\n  seasonality = example_site$seasonality,\n  eir = example_site$eir$eir[1],\n  overrides = list(human_population = 10000)\n)\n# Run!\nmodel_run <- malariasimulation::run_simulation(timesteps = site_pars$timesteps,\n                                               parameters = site_pars)"
+  },
+  {
+    "objectID": "presentations/1_Introduction.html#lets-give-it-a-try",
+    "href": "presentations/1_Introduction.html#lets-give-it-a-try",
+    "title": "Malariaverse Workshop Introduction",
+    "section": "Let’s give it a try!",
+    "text": "Let’s give it a try!\n\nRun mvw::run_tutotial(tutorial_number = 1)"
   }
 ]

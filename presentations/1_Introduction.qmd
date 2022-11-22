@@ -1,0 +1,112 @@
+---
+title: "Malariaverse Workshop \n Introduction"
+author: "Pete Winskill"
+format:
+  revealjs:
+    logo: images/malariaverse.gif
+    css: images/logo.css
+editor: visual
+from: markdown+emoji
+---
+
+## Welcome all!
+
+Today's aims:
+
+-   Provide a broad overview of context-specific modelling
+-   Site files: how to characterise a setting
+-   Introduce the malariaverse packages to support :package: *malariasimulation* modelling
+-   Exercises:
+    -   Running a site
+    -   Calibrating a site
+    -   Dealing with bed nets
+
+## Thanks :sparkling_heart:
+
+![](images/Guinea-Pig.jpg)
+
+## Modelling philosophy {.smaller}
+
+One common dichotomisation is between:
+
+1.  Generic modelling
+    -   Run the model for generic settings (e.g. Low/Medium/High *Pf*Pr~2-10~)
+    -   Allows precise exploration of model behaviour and intervention impact in controlled in silico environment
+    -   Can be challenging to translate general results
+    -   e.g. Modelling population-level impact to inform target product profiles for childhood malaria vaccines. Hogan *et al* BMC Medicine, 2018.
+
+![](images/Guinea-Pig-Generic.jpg){fig-align="center"}
+
+## Modelling philosophy {.smaller}
+
+One common dichotomisation is between:
+
+2.  Context-specific modelling
+    -   Run the model for a specific setting/location
+    -   Can be used to informs policy and impact assessment for specific areas
+    -   Requires "the context" to be adequately captured
+    -   e.g. Estimated impact of RTS,S/AS01 malaria vaccine allocation strategies in sub-Saharan Africa: A modelling study Hogan *et al* PLoS Medicine, 2020.
+
+![](images/Guinea-Pig-Specific.jpg){fig-align="center"}
+
+## 
+
+<br/><br/>
+<br/><br/>
+
+How do we characterise a setting?
+
+## Important features {.smaller}
+
+-   Intrinsic transmission potential ("Baseline", "Carrying capacity", "R0")
+-   The mosquito vector
+    -   species
+    -   bionomics & behaviour
+    -   distribution & relative abundance
+    -   insecticide resistance
+-   Rainfall seasonality
+-   Historical interventions
+-   Epidemiological data
+-   Human population & demography
+
+## Site files {.smaller}
+
+-   Historically, the group has collected the required information to characterise a setting into a "Site file".
+-   We have tried to formalise this approach in malariaverse
+-   The :package: *foresite* package contains our first-pass attempt at site-files for all countries
+-   They contains estimates for all of the important features needed to characterise a site
+-   The [foresite website](https://mrc-ide.github.io/foresite/%20contains) contains detailed information about each element of a site file
+
+## Site files
+
+```{r, echo=TRUE}
+library(foresite)
+head(TGO$prevalence)
+head(TGO$interventions[,3:8])
+```
+
+## Running a site
+
+-   We can use another malariaverse :package: *site* to translate the site file information into :package: *malariasimulation* parameter input.
+
+```{r, echo=TRUE, eval=FALSE}
+# Isolate a single site from a country
+example_site <- site::single_site(foresite::TGO, 1)
+# Create parameter inputs
+site_pars <- site::site_parameters(
+  interventions = example_site$interventions,
+  demography = example_site$demography,
+  vectors = example_site$vectors,
+  seasonality = example_site$seasonality,
+  eir = example_site$eir$eir[1],
+  overrides = list(human_population = 10000)
+)
+# Run!
+model_run <- malariasimulation::run_simulation(timesteps = site_pars$timesteps,
+                                               parameters = site_pars)
+```
+
+## Let's give it a try!
+
+- Run `mvw::run_tutotial(tutorial_number = 1)`
+

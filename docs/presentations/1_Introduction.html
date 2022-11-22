@@ -9,7 +9,8 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.1.189">
 
-  <title>mvwsite - P-test</title>
+  <meta name="author" content="Pete Winskill">
+  <title>mvwsite - Malariaverse Workshop Introduction</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -27,9 +28,73 @@
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
     }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css" id="theme">
-  <link rel="stylesheet" href="logo.css">
+  <link rel="stylesheet" href="images/logo.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -324,96 +389,145 @@
     <div class="slides">
 
 <section id="title-slide" class="center">
-  <h1 class="title">P-test</h1>
+  <h1 class="title">Malariaverse Workshop Introduction</h1>
+  <p class="author">Pete Winskill</p>
 </section>
 
-<section id="quarto" class="slide level2">
-<h2>Quarto</h2>
-<p>Testing NEW!</p>
-<p>Quarto enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see <a href="https://quarto.org/docs/presentations/" class="uri">https://quarto.org/docs/presentations/</a>.</p>
-</section>
-<section id="bullets" class="slide level2">
-<h2>Bullets</h2>
-<p>When you click the <strong>Render</strong> button a document will be generated that includes:</p>
+<section id="welcome-all" class="slide level2">
+<h2>Welcome all!</h2>
+<p>Today’s aims:</p>
 <ul>
-<li>Content authored with markdown</li>
-<li>Output from executable code</li>
+<li>Provide a broad overview of context-specific modelling</li>
+<li>Site files: how to characterise a setting</li>
+<li>Introduce the malariaverse packages to support <span class="emoji" data-emoji="package">📦</span> <em>malariasimulation</em> modelling</li>
+<li>Exercises:
+<ul>
+<li>Running a site</li>
+<li>Calibrating a site</li>
+<li>Dealing with bed nets</li>
+</ul></li>
 </ul>
 </section>
-<section id="code" class="slide level2">
-<h2>Code</h2>
-<p>When you click the <strong>Render</strong> button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:</p>
+<section id="thanks" class="slide level2">
+<h2>Thanks <span class="emoji" data-emoji="sparkling_heart">💖</span></h2>
+
+<img data-src="images/Guinea-Pig.jpg" class="r-stretch"></section>
+<section id="modelling-philosophy" class="slide level2 smaller">
+<h2>Modelling philosophy</h2>
+<p>One common dichotomisation is between:</p>
+<ol type="1">
+<li>Generic modelling
+<ul>
+<li>Run the model for generic settings (e.g.&nbsp;Low/Medium/High <em>Pf</em>Pr<sub>2-10</sub>)</li>
+<li>Allows precise exploration of model behaviour and intervention impact in controlled in silico environment</li>
+<li>Can be challenging to translate general results</li>
+<li>e.g.&nbsp;Modelling population-level impact to inform target product profiles for childhood malaria vaccines. Hogan <em>et al</em> BMC Medicine, 2018.</li>
+</ul></li>
+</ol>
+
+<img data-src="images/Guinea-Pig-Generic.jpg" class="r-stretch quarto-figure-center"></section>
+<section id="modelling-philosophy-1" class="slide level2 smaller">
+<h2>Modelling philosophy</h2>
+<p>One common dichotomisation is between:</p>
+<ol start="2" type="1">
+<li>Context-specific modelling
+<ul>
+<li>Run the model for a specific setting/location</li>
+<li>Can be used to informs policy and impact assessment for specific areas</li>
+<li>Requires “the context” to be adequately captured</li>
+<li>e.g.&nbsp;Estimated impact of RTS,S/AS01 malaria vaccine allocation strategies in sub-Saharan Africa: A modelling study Hogan <em>et al</em> PLoS Medicine, 2020.</li>
+</ul></li>
+</ol>
+
+<img data-src="images/Guinea-Pig-Specific.jpg" class="r-stretch quarto-figure-center"></section>
+<section id="section" class="slide level2">
+<h2></h2>
+<p><br><br> <br><br></p>
+<p>How do we characterise a setting?</p>
+</section>
+<section id="important-features" class="slide level2 smaller">
+<h2>Important features</h2>
+<ul>
+<li>Intrinsic transmission potential (“Baseline”, “Carrying capacity”, “R0”)</li>
+<li>The mosquito vector
+<ul>
+<li>species</li>
+<li>bionomics &amp; behaviour</li>
+<li>distribution &amp; relative abundance</li>
+<li>insecticide resistance</li>
+</ul></li>
+<li>Rainfall seasonality</li>
+<li>Historical interventions</li>
+<li>Epidemiological data</li>
+<li>Human population &amp; demography</li>
+</ul>
+</section>
+<section id="site-files" class="slide level2 smaller">
+<h2>Site files</h2>
+<ul>
+<li>Historically, the group has collected the required information to characterise a setting into a “Site file”.</li>
+<li>We have tried to formalise this approach in malariaverse</li>
+<li>The <span class="emoji" data-emoji="package">📦</span> <em>foresite</em> package contains our first-pass attempt at site-files for all countries</li>
+<li>They contains estimates for all of the important features needed to characterise a site</li>
+<li>The <a href="https://mrc-ide.github.io/foresite/%20contains">foresite website</a> contains detailed information about each element of a site file</li>
+</ul>
+</section>
+<section id="site-files-1" class="slide level2">
+<h2>Site files</h2>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(foresite)</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">head</span>(TGO<span class="sc">$</span>prevalence)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
+<pre><code>  country iso3c name_1 urban_rural year      pfpr pvpr
+1    Togo   TGO Centre       rural 2000 0.6052841    0
+2    Togo   TGO Centre       rural 2001 0.5733003    0
+3    Togo   TGO Centre       rural 2002 0.5585785    0
+4    Togo   TGO Centre       rural 2003 0.5469875    0
+5    Togo   TGO Centre       rural 2004 0.5521835    0
+6    Togo   TGO Centre       rural 2005 0.5470634    0</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">head</span>(TGO<span class="sc">$</span>interventions[,<span class="dv">3</span><span class="sc">:</span><span class="dv">8</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  name_1 urban_rural year    itn_use itn_input_dist        net_type
+1 Centre       rural 2000 0.04239319   3.972372e-02 pyrethroid_only
+2 Centre       rural 2001 0.03059912   1.999607e-03 pyrethroid_only
+3 Centre       rural 2002 0.02194407   1.225237e-05 pyrethroid_only
+4 Centre       rural 2003 0.02110716   3.579113e-03 pyrethroid_only
+5 Centre       rural 2004 0.14395837   1.402791e-01 pyrethroid_only
+6 Centre       rural 2005 0.20412837   9.050257e-02 pyrethroid_only</code></pre>
 </div>
 </div>
 </section>
-<section id="code-1" class="slide level2">
-<h2>Code</h2>
-<p>When you click the <strong>Render</strong> button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:</p>
+<section id="running-a-site" class="slide level2">
+<h2>Running a site</h2>
+<ul>
+<li>We can use another malariaverse <span class="emoji" data-emoji="package">📦</span> <em>site</em> to translate the site file information into <span class="emoji" data-emoji="package">📦</span> <em>malariasimulation</em> parameter input.</li>
+</ul>
 <div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># Isolate a single site from a country</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a>example_site <span class="ot">&lt;-</span> site<span class="sc">::</span><span class="fu">single_site</span>(foresite<span class="sc">::</span>TGO, <span class="dv">1</span>)</span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="co"># Create parameter inputs</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a>site_pars <span class="ot">&lt;-</span> site<span class="sc">::</span><span class="fu">site_parameters</span>(</span>
+<span id="cb5-5"><a href="#cb5-5"></a>  <span class="at">interventions =</span> example_site<span class="sc">$</span>interventions,</span>
+<span id="cb5-6"><a href="#cb5-6"></a>  <span class="at">demography =</span> example_site<span class="sc">$</span>demography,</span>
+<span id="cb5-7"><a href="#cb5-7"></a>  <span class="at">vectors =</span> example_site<span class="sc">$</span>vectors,</span>
+<span id="cb5-8"><a href="#cb5-8"></a>  <span class="at">seasonality =</span> example_site<span class="sc">$</span>seasonality,</span>
+<span id="cb5-9"><a href="#cb5-9"></a>  <span class="at">eir =</span> example_site<span class="sc">$</span>eir<span class="sc">$</span>eir[<span class="dv">1</span>],</span>
+<span id="cb5-10"><a href="#cb5-10"></a>  <span class="at">overrides =</span> <span class="fu">list</span>(<span class="at">human_population =</span> <span class="dv">10000</span>)</span>
+<span id="cb5-11"><a href="#cb5-11"></a>)</span>
+<span id="cb5-12"><a href="#cb5-12"></a><span class="co"># Run!</span></span>
+<span id="cb5-13"><a href="#cb5-13"></a>model_run <span class="ot">&lt;-</span> malariasimulation<span class="sc">::</span><span class="fu">run_simulation</span>(<span class="at">timesteps =</span> site_pars<span class="sc">$</span>timesteps,</span>
+<span id="cb5-14"><a href="#cb5-14"></a>                                               <span class="at">parameters =</span> site_pars)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="code-2" class="slide level2">
-<h2>Code</h2>
-<p>When you click the <strong>Render</strong> button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
-</div>
-</div>
-</section>
-<section id="code-3" class="slide level2">
-<h2>Code</h2>
-<p>When you click the <strong>Render</strong> button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
-</div>
-</div>
-</section>
-<section id="code-4" class="slide level2">
-<h2>Code</h2>
-<p>When you click the <strong>Render</strong> button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
-</div>
-</div>
-</section>
-<section id="code-5" class="slide level2">
-<h2>Code</h2>
-<p>When you click the <strong>Render</strong> button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
-</div>
-</div>
-</section>
-<section id="code2" class="slide level2">
-<h2>Code2</h2>
-<p>When you click the <strong>Render</strong> button a presentation will be generated that includes both content and the output of emb sfdedded code. You can embed code like this:</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 4</code></pre>
-</div>
-</div>
-</section>
-<section id="code4" class="slide level2">
-<h2>Code4</h2>
-<p>When you click the <strong>Render</strong> button a presentatisdfgson will be generated that includes both content and the output of emb sfdedded code. You can embed code like this:</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 9</code></pre>
-</div>
-</div>
+<section id="lets-give-it-a-try" class="slide level2">
+<h2>Let’s give it a try!</h2>
+<ul>
+<li>Run <code>mvw::run_tutotial(tutorial_number = 1)</code></li>
+</ul>
 
 
-<img src="malariaverse_static.png" class="slide-logo r-stretch"><div class="footer footer-default">
+<img src="images/malariaverse.gif" class="slide-logo r-stretch"><div class="footer footer-default">
 
 </div>
 </section>
