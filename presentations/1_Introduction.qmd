@@ -108,5 +108,5 @@ model_run <- malariasimulation::run_simulation(timesteps = site_pars$timesteps,
 
 ## Let's give it a try!
 
-- Run `mvw::run_tutotial(tutorial_number = 1)`
+- Run `mvw::run_tutorial("Introduction")`
 

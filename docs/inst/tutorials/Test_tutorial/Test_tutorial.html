@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>mvwsite - Tutorial</title>
+<title>mvwsite - Introduction</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -162,9 +162,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#topic-1" id="toc-topic-1" class="nav-link active" data-scroll-target="#topic-1">Topic 1</a>
+  <li><a href="#exploring-a-site" id="toc-exploring-a-site" class="nav-link active" data-scroll-target="#exploring-a-site">Exploring a site</a>
   <ul class="collapse">
-  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise">Exercise</a></li>
   <li><a href="#exercise-with-code" id="toc-exercise-with-code" class="nav-link" data-scroll-target="#exercise-with-code">Exercise with Code</a></li>
   </ul></li>
   <li><a href="#topic-2" id="toc-topic-2" class="nav-link" data-scroll-target="#topic-2">Topic 2</a>
@@ -180,7 +179,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Tutorial</h1>
+<h1 class="title">Introduction</h1>
 </div>
 
 
@@ -194,18 +193,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<section id="topic-1" class="level2">
-<h2 class="anchored" data-anchor-id="topic-1">Topic 1</h2>
-<section id="exercise" class="level3">
-<h3 class="anchored" data-anchor-id="exercise">Exercise</h3>
-<p><em>Here’s a simple exercise with an empty code chunk provided for entering the answer.</em></p>
-<p>Write the R code required to add two plus two:</p>
+<section id="exploring-a-site" class="level2">
+<h2 class="anchored" data-anchor-id="exploring-a-site">Exploring a site</h2>
+<p>Let’s start by getting better acquainted with a country site file.</p>
 <div class="cell" data-exercise="true">
-<div class="tutorial-exercise" data-label="two-plus-two" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
+<div class="tutorial-exercise" data-label="explore-a-site" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
 <script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":false,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
 </div>
 </div>
-</section>
 <section id="exercise-with-code" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-with-code">Exercise with Code</h3>
 <p><em>Here’s an exercise with some prepopulated code as well as <code>exercise.lines = 5</code> to provide a bit more initial room to work.</em></p>
@@ -327,17 +322,17 @@ session$onSessionEnded(function() {
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
-`tutorial-exercise-two-plus-two-result` <- learnr:::setup_exercise_handler(reactive(req(input$`tutorial-exercise-two-plus-two-code-editor`)), session)
-output$`tutorial-exercise-two-plus-two-output` <- renderUI({
-  `tutorial-exercise-two-plus-two-result`()
+`tutorial-exercise-explore-a-site-result` <- learnr:::setup_exercise_handler(reactive(req(input$`tutorial-exercise-explore-a-site-code-editor`)), session)
+output$`tutorial-exercise-explore-a-site-output` <- renderUI({
+  `tutorial-exercise-explore-a-site-result`()
 })
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
-learnr:::store_exercise_cache(structure(list(label = "two-plus-two", global_setup = structure(c("library(learnr)", 
+learnr:::store_exercise_cache(structure(list(label = "explore-a-site", global_setup = structure(c("library(learnr)", 
 "knitr::opts_chunk$set(echo = FALSE)"), chunk_opts = list(label = "setup", 
-    include = FALSE)), setup = NULL, chunks = list(list(label = "two-plus-two", 
-    code = "", opts = list(label = "\"two-plus-two\"", exercise = "TRUE"), 
+    include = FALSE)), setup = NULL, chunks = list(list(label = "explore-a-site", 
+    code = "\n", opts = list(label = "\"explore-a-site\"", exercise = "TRUE"), 
     engine = "r")), code_check = NULL, error_check = NULL, check = NULL, 
     solution = NULL, tests = NULL, options = list(eval = FALSE, 
         echo = TRUE, results = "markup", tidy = FALSE, tidy.opts = NULL, 
@@ -355,11 +350,11 @@ learnr:::store_exercise_cache(structure(list(label = "two-plus-two", global_setu
         aniopts = "controls,loop", warning = TRUE, error = FALSE, 
         message = TRUE, render = NULL, ref.label = NULL, child = NULL, 
         engine = "r", split = FALSE, include = TRUE, purl = TRUE, 
-        fenced.echo = FALSE, ft.shadow = FALSE, label = "two-plus-two", 
-        exercise = TRUE, original.params.src = "r two-plus-two, exercise=TRUE", 
-        chunk.echo = FALSE, code = "", out.width.px = 672L, out.height.px = 480L, 
-        params.src = "r two-plus-two, exercise=TRUE", fig.num = 0L, 
-        exercise.df_print = "default", exercise.checker = "NULL"), 
+        fenced.echo = FALSE, ft.shadow = FALSE, label = "explore-a-site", 
+        exercise = TRUE, original.params.src = "r explore-a-site, exercise=TRUE", 
+        chunk.echo = FALSE, code = c("", ""), out.width.px = 672L, 
+        out.height.px = 480L, params.src = "r explore-a-site, exercise=TRUE", 
+        fig.num = 0L, exercise.df_print = "default", exercise.checker = "NULL"), 
     engine = "r", version = "4"), class = c("r", "tutorial_exercise"
 )))
 </script>
@@ -444,16 +439,16 @@ learnr:::store_exercise_cache(structure(list(label = "print-limit", global_setup
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-1", question = structure("Which package contains functions for installing other R packages?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_f155044", 
+"character")), answers = list(structure(list(id = "lnr_ans_73974cd", 
     option = "base", value = "base", label = structure("base", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_973504e", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_1d257f8", 
     option = "tools", value = "tools", label = structure("tools", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_94c643d", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_61c296", 
     option = "utils", value = "utils", label = structure("utils", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_3f3ee94", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_57c06e3", 
     option = "codetools", value = "codetools", label = structure("codetools", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
 "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
@@ -463,23 +458,23 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "quiz-1-answer", question = "quiz-1"), loading = NULL, 
-    random_answer_order = FALSE, allow_retry = FALSE, seed = 1357852416.8677, 
+    random_answer_order = FALSE, allow_retry = FALSE, seed = 306567157.857244, 
     options = list()), class = c("learnr_radio", "tutorial_question"
 )), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_checkbox", label = "quiz-2", question = structure("Which of the R packages listed below are used to create plots?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_431448", 
+"character")), answers = list(structure(list(id = "lnr_ans_41a932b", 
     option = "lattice", value = "lattice", label = structure("lattice", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_33378b6", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_8a39277", 
     option = "tools", value = "tools", label = structure("tools", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_ad01322", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_c583ae", 
     option = "stats", value = "stats", label = structure("stats", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_88b103d", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_254c6ec", 
     option = "grid", value = "grid", label = structure("grid", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
 "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
@@ -489,7 +484,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_checkbox", lab
 "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "quiz-2-answer", question = "quiz-2"), loading = NULL, 
-    random_answer_order = FALSE, allow_retry = FALSE, seed = 876791460.091712, 
+    random_answer_order = FALSE, allow_retry = FALSE, seed = 789457475.13238, 
     options = list()), class = c("learnr_checkbox", "tutorial_question"
 )), session = session)
 </script>

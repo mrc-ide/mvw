@@ -1,0 +1,85 @@
+---
+title: "Introduction"
+output: learnr::tutorial
+runtime: shiny_prerendered
+---
+
+```{r setup, include=FALSE}
+library(learnr)
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Exploring a site file
+
+Let's start by getting better acquainted with a country site file. In the code
+box below we have pre-loaded the site for TOGO.
+
+Explore the elements that make up the site file. Remember you can choose to see
+specific elements of a list with the `$` operator. For example `site$seasonality`.
+Remember, you can find out more information about site file elements on the
+[foresite website](https://mrc-ide.github.io/foresite/).
+
+```{r explore-a-site, exercise=TRUE}
+library(foresite)
+site <- TGO
+
+```
+
+```{r quiz}
+quiz(
+  question("What is the PfPr prevalence in the iso3c = TGO, name_1 = Centre, urban_rural = rural in 2005?",
+    answer("0"),
+    answer("0.2459082"),
+    answer("0.5470634", correct = TRUE),
+    answer("0.8")
+  ),
+  question("What is the dominant vector species in iso3c = TGO, name_1 = Kara",
+    answer("arabiensis"),
+    answer("funestus"),
+    answer("gambiae", correct = TRUE)
+  )
+)
+```
+
+We can use the helper function `site::single_site()` to extract information
+for a single site from the country site file.
+
+To find out which site to index we can look up all of the sites within a country
+with `$sites`. 
+
+By editing the code below, isolate the site iso3c = TGO, name_1 = Savanes urban_rural = rural,
+and plot the estimate bed net usage over time.
+
+```{r single-site, exercise=TRUE}
+library(foresite)
+library(site)
+site <- TGO
+
+```
+
+```{r single-site-hint}
+library(foresite)
+library(site)
+site <- TGO
+site$sites
+savanes_rural <- single_site(site, 9)
+plot(savanes_rural$interventions$itn_use ~ savanes_rural$interventions$year, t = "l")
+```
+
+
+```{r quiz2}
+quiz(
+  question("In what year did itn use in iso3c = TGO, name_1 = Savanes, urban_rural = rural first exceed 50%?",
+    answer("2000"),
+    answer("2011", correct = TRUE),
+    answer("2012"),
+    answer("2015")
+  )
+)
+```
+
+
+
+
+
+

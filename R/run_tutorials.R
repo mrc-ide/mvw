@@ -1,6 +1,6 @@
-#' Run tutorial 1
+#' Run tutorial
 #'
 #' @export
-tutorial1 <- function(){
-  learnr::run_tutorial("Test_tutorial", package = "mvw")
+run_tutorial <- function(name){
+  learnr::run_tutorial(name, package = "mvw")
 }
