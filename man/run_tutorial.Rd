@@ -6,6 +6,9 @@
 \usage{
 run_tutorial(name)
 }
+\arguments{
+\item{name}{Tutorial name}
+}
 \description{
 Run tutorial
 }
