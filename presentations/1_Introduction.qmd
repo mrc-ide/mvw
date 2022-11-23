@@ -15,7 +15,7 @@ Today's aims:
 
 -   Provide a broad overview of context-specific modelling
 -   Site files: how to characterise a setting
--   Introduce the malariaverse packages to support :package: *malariasimulation* modelling
+-   Introduce the malariaverse packages to support :package:\[malariasimulation\] modelling
 -   Exercises:
     -   Running a site
     -   Calibrating a site
@@ -51,8 +51,7 @@ One common dichotomisation is between:
 
 ## 
 
-<br/><br/>
-<br/><br/>
+<br/><br/> <br/><br/>
 
 How do we characterise a setting?
 
@@ -73,21 +72,52 @@ How do we characterise a setting?
 
 -   Historically, the group has collected the required information to characterise a setting into a "Site file".
 -   We have tried to formalise this approach in malariaverse
--   The :package: *foresite* package contains our first-pass attempt at site-files for all countries
+-   The :package:\[foresite\] package contains our first-pass attempt at site-files for all countries
 -   They contains estimates for all of the important features needed to characterise a site
 -   The [foresite website](https://mrc-ide.github.io/foresite/%20contains) contains detailed information about each element of a site file
 
+::: footer
+https://mrc-ide.github.io/foresite
+:::
+
 ## Site files
+
+-   Site files in :package:\[foresite\] are defined at the first administrative unit level and further disaggregated between urban and rural populations
+
+![](images/spatial_scale.png){fig-align="center"}
+
+## Site files
+
+-   We can view all the sites associated with a country site-file in :package:\[foresite\]
 
 ```{r, echo=TRUE}
 library(foresite)
-head(TGO$prevalence)
-head(TGO$interventions[,3:8])
+TGO$sites
+```
+
+## Site files
+
+-   We can also start to examine other characteristics for the sites
+
+```{r, echo=TRUE}
+library(foresite)
+# Malaria Atlas Project prevalence estimates
+TGO$prevalence
+```
+
+## Site files
+
+-   We can also start to examine other characteristics for the sites
+
+```{r, echo=TRUE}
+library(foresite)
+# Historical intervention coverage
+TGO$interventions[,c(2, 3, 4, 5, 6, 9)]
 ```
 
 ## Running a site
 
--   We can use another malariaverse :package: *site* to translate the site file information into :package: *malariasimulation* parameter input.
+-   We can use another malariaverse :package:\[site\] to translate the site file information into :package:\[malariasimulation\] parameter input.
 
 ```{r, echo=TRUE, eval=FALSE}
 # Isolate a single site from a country
@@ -108,5 +138,6 @@ model_run <- malariasimulation::run_simulation(timesteps = site_pars$timesteps,
 
 ## Let's give it a try!
 
-- Run `mvw::run_tutorial("Introduction")`
+-   Run `mvw::run_tutorial("Introduction")`
 
+![](images/Guinea-Pig-Go.jpg){fig-align="center" width="40%" height="40%"}

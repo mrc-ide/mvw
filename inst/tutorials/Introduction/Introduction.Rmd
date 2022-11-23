@@ -11,75 +11,133 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## Exploring a site file
 
-Let's start by getting better acquainted with a country site file. In the code
-box below we have pre-loaded the site for TOGO.
+Let's start by getting better acquainted with a country site file. In the code box below we have pre-loaded the site for TOGO.
 
-Explore the elements that make up the site file. Remember you can choose to see
-specific elements of a list with the `$` operator. For example `site$seasonality`.
-Remember, you can find out more information about site file elements on the
-[foresite website](https://mrc-ide.github.io/foresite/).
+Use the interactive code box below to explore the elements that make up the site file. Remember you can choose to see specific elements of a list with the `$` operator. For example `site$seasonality`. Remember, you can find out more information about site file elements on the [foresite website](https://mrc-ide.github.io/foresite/).
 
 ```{r explore-a-site, exercise=TRUE}
 library(foresite)
-site <- TGO
+togo_site_file <- TGO
 
 ```
 
 ```{r quiz}
 quiz(
   question("What is the PfPr prevalence in the iso3c = TGO, name_1 = Centre, urban_rural = rural in 2005?",
-    answer("0"),
-    answer("0.2459082"),
-    answer("0.5470634", correct = TRUE),
-    answer("0.8")
+           answer("0"),
+           answer("0.2459082"),
+           answer("0.5470634", correct = TRUE),
+           answer("0.8")
   ),
   question("What is the dominant vector species in iso3c = TGO, name_1 = Kara",
-    answer("arabiensis"),
-    answer("funestus"),
-    answer("gambiae", correct = TRUE)
+           answer("arabiensis"),
+           answer("funestus"),
+           answer("gambiae", correct = TRUE)
+  ),
+  question("Did the World Malaria Report estimate a rise or fall in malaria cases in Togo 
+           between 2019 and 2020",
+           answer("Rise", correct = TRUE),
+           answer("Fall")
   )
 )
 ```
 
-We can use the helper function `site::single_site()` to extract information
-for a single site from the country site file.
+## Extracting a single site
 
-To find out which site to index we can look up all of the sites within a country
-with `$sites`. 
+We can use the helper function `site::single_site()` to extract information for a single site from the country site file.
 
-By editing the code below, isolate the site iso3c = TGO, name_1 = Savanes urban_rural = rural,
-and plot the estimate bed net usage over time.
+To find out which site to index we can look up all of the sites within a country with `$sites`.
+
+By editing the code below:
+
+1. Isolate the site iso3c = TGO, name_1 = Savanes urban_rural = rural
+
+2. Plot the estimated bed net usage over time.
 
 ```{r single-site, exercise=TRUE}
 library(foresite)
 library(site)
-site <- TGO
+togo_site_file <- TGO
 
 ```
 
 ```{r single-site-hint}
 library(foresite)
 library(site)
-site <- TGO
-site$sites
-savanes_rural <- single_site(site, 9)
+togo_site_file <- TGO
+togo_site_file$sites
+savanes_rural <- single_site(togo_site_file, 9)
 plot(savanes_rural$interventions$itn_use ~ savanes_rural$interventions$year, t = "l")
 ```
-
 
 ```{r quiz2}
 quiz(
   question("In what year did itn use in iso3c = TGO, name_1 = Savanes, urban_rural = rural first exceed 50%?",
-    answer("2000"),
-    answer("2011", correct = TRUE),
-    answer("2012"),
-    answer("2015")
+           answer("2000"),
+           answer("2011", correct = TRUE),
+           answer("2012"),
+           answer("2015")
   )
 )
 ```
 
+## Running a single site
+
+Now lets try running a site. 
+
+1. Use the `site::single_site()` function to isolate the site for: Run iso3c = TGO, name_1 = Plateaux, urban_rural = rural.
+
+2. Create a :package:[malariasimulation] parameters list using the `site::site_parameters()` function. For the `overrides` argument you might want to set a reasonably small population so that the model runs quickly,
+for example `overrides  = list(human_population = 5000)`.
+
+3. Run the site using `malariasimulation::run_simulation()`
+
+4. Plot the *Pf*Pr~2-10~ estimated by the model
+
+5. Overlay the Malaria Atlas Project estimates of *Pf*Pr~2-10~ onto your plot. 
+
+&#9888; The model run may take a little while to complete (~5 mins). While you wait, why not have a look at the [foresite website](https://mrc-ide.github.io/foresite/).
 
 
+```{r run-site, exercise=TRUE, exercise.timelimit=1200}
+library(foresite)
+library(site)
+library(malariasimulation)
+togo_site_file <- TGO
 
+```
 
+```{r run-site-hint}
+library(foresite)
+library(site)
+library(malariasimulation)
+togo_site_file <- TGO
+# Isolate the site
+site_index <- which(togo_site_file$sites$name_1 == "Plateaux" &
+                      togo_site_file$sites$urban_rural == "rural")
+plateaux_rural <- single_site(togo_site_file, site_index)
+# Create parameter inputs
+site_pars <- site_parameters(
+  interventions = plateaux_rural$interventions,
+  demography = plateaux_rural$demography,
+  vectors = plateaux_rural$vectors,
+  seasonality = plateaux_rural$seasonality,
+  eir = plateaux_rural$eir$eir[1],
+  overrides = list(human_population = 5000)
+)
+# Run!
+model_run <- run_simulation(timesteps = site_pars$timesteps,
+                            parameters = site_pars)
+# Calculate prevalence
+model_run$prevalence <- model_run$n_detect_730_3649 / model_run$n_730_3649
+# Set the time
+model_run$t <- (model_run$timestep / 365) + 2000
+# Plot
+plot(model_run$prevalence ~ model_run$t, t = "l", ylim = c(0, 0.8), xlab = "Year", ylab = "Prevalence")
+# Add MAP prevalence
+points(plateaux_rural$prevalence$year + 0.5, plateaux_rural$prevalence$pfpr, pch = 19, col = "darkred")
+```
 
+* How well do they match?
+
+* Why might there be differences between modelled Pf*Pr~2-10~ and the estimates from the Malaria Atlas Project?

@@ -162,15 +162,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#exploring-a-site" id="toc-exploring-a-site" class="nav-link active" data-scroll-target="#exploring-a-site">Exploring a site</a>
-  <ul class="collapse">
-  <li><a href="#exercise-with-code" id="toc-exercise-with-code" class="nav-link" data-scroll-target="#exercise-with-code">Exercise with Code</a></li>
-  </ul></li>
-  <li><a href="#topic-2" id="toc-topic-2" class="nav-link" data-scroll-target="#topic-2">Topic 2</a>
-  <ul class="collapse">
-  <li><a href="#exercise-with-hint" id="toc-exercise-with-hint" class="nav-link" data-scroll-target="#exercise-with-hint">Exercise with Hint</a></li>
-  <li><a href="#quiz" id="toc-quiz" class="nav-link" data-scroll-target="#quiz">Quiz</a></li>
-  </ul></li>
+  <li><a href="#exploring-a-site-file" id="toc-exploring-a-site-file" class="nav-link active" data-scroll-target="#exploring-a-site-file">Exploring a site file</a></li>
+  <li><a href="#running-a-site" id="toc-running-a-site" class="nav-link" data-scroll-target="#running-a-site">Running a site</a></li>
   </ul>
 </nav>
     </div>
@@ -193,85 +186,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<section id="exploring-a-site" class="level2">
-<h2 class="anchored" data-anchor-id="exploring-a-site">Exploring a site</h2>
-<p>Let’s start by getting better acquainted with a country site file.</p>
+<section id="exploring-a-site-file" class="level2">
+<h2 class="anchored" data-anchor-id="exploring-a-site-file">Exploring a site file</h2>
+<p>Let’s start by getting better acquainted with a country site file. In the code box below we have pre-loaded the site for TOGO.</p>
+<p>Explore the elements that make up the site file. Remember you can choose to see specific elements of a list with the <code>$</code> operator. For example <code>site$seasonality</code>. Remember, you can find out more information about site file elements on the <a href="https://mrc-ide.github.io/foresite/">foresite website</a>.</p>
 <div class="cell" data-exercise="true">
 <div class="tutorial-exercise" data-label="explore-a-site" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(foresite)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>site <span class="ot">&lt;-</span> TGO</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":false,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
 </div>
 </div>
-<section id="exercise-with-code" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-with-code">Exercise with Code</h3>
-<p><em>Here’s an exercise with some prepopulated code as well as <code>exercise.lines = 5</code> to provide a bit more initial room to work.</em></p>
-<p>Now write a function that adds any two numbers and then call it:</p>
-<div class="cell" data-exercise="true" data-exercise.lines="5">
-<div class="tutorial-exercise" data-label="add-function" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="5">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>add <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":false,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
-</div>
-</div>
-</section>
-</section>
-<section id="topic-2" class="level2">
-<h2 class="anchored" data-anchor-id="topic-2">Topic 2</h2>
-<section id="exercise-with-hint" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-with-hint">Exercise with Hint</h3>
-<p><em>Here’s an exercise where the chunk is pre-evaluated via the <code>exercise.eval</code> option (so the user can see the default output we’d like them to customize). We also add a “hint” to the correct solution via the chunk immediate below labeled <code>print-limit-hint</code>.</em></p>
-<p>Modify the following code to limit the number of rows printed to 5:</p>
-<div class="cell" data-exercise="true" data-exercise.eval="true">
-<div class="tutorial-exercise" data-label="print-limit" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>mtcars</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>                     mpg cyl  disp  hp drat    wt  qsec vs am gear carb
-Mazda RX4           21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4
-Mazda RX4 Wag       21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4
-Datsun 710          22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1
-Hornet 4 Drive      21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1
-Hornet Sportabout   18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2
-Valiant             18.1   6 225.0 105 2.76 3.460 20.22  1  0    3    1
-Duster 360          14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4
-Merc 240D           24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2
-Merc 230            22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2
-Merc 280            19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4
-Merc 280C           17.8   6 167.6 123 3.92 3.440 18.90  1  0    4    4
-Merc 450SE          16.4   8 275.8 180 3.07 4.070 17.40  0  0    3    3
-Merc 450SL          17.3   8 275.8 180 3.07 3.730 17.60  0  0    3    3
-Merc 450SLC         15.2   8 275.8 180 3.07 3.780 18.00  0  0    3    3
-Cadillac Fleetwood  10.4   8 472.0 205 2.93 5.250 17.98  0  0    3    4
-Lincoln Continental 10.4   8 460.0 215 3.00 5.424 17.82  0  0    3    4
-Chrysler Imperial   14.7   8 440.0 230 3.23 5.345 17.42  0  0    3    4
-Fiat 128            32.4   4  78.7  66 4.08 2.200 19.47  1  1    4    1
-Honda Civic         30.4   4  75.7  52 4.93 1.615 18.52  1  1    4    2
-Toyota Corolla      33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1
-Toyota Corona       21.5   4 120.1  97 3.70 2.465 20.01  1  0    3    1
-Dodge Challenger    15.5   8 318.0 150 2.76 3.520 16.87  0  0    3    2
-AMC Javelin         15.2   8 304.0 150 3.15 3.435 17.30  0  0    3    2
-Camaro Z28          13.3   8 350.0 245 3.73 3.840 15.41  0  0    3    4
-Pontiac Firebird    19.2   8 400.0 175 3.08 3.845 17.05  0  0    3    2
-Fiat X1-9           27.3   4  79.0  66 4.08 1.935 18.90  1  1    4    1
-Porsche 914-2       26.0   4 120.3  91 4.43 2.140 16.70  0  1    5    2
-Lotus Europa        30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2
-Ford Pantera L      15.8   8 351.0 264 4.22 3.170 14.50  0  1    5    4
-Ferrari Dino        19.7   6 145.0 175 3.62 2.770 15.50  0  1    5    6
-Maserati Bora       15.0   8 301.0 335 3.54 3.570 14.60  0  1    5    8
-Volvo 142E          21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2</code></pre>
-</div>
-<script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":false,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
-</div>
-</div>
-<div class="cell">
-<div class="tutorial-exercise-support" data-label="print-limit-hint" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mtcars)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</section>
-<section id="quiz" class="level3">
-<h3 class="anchored" data-anchor-id="quiz">Quiz</h3>
-<p><em>You can include any number of single or multiple choice questions as a quiz. Use the <code>question</code> function to define a question and the <code>quiz</code> function for grouping multiple questions together.</em></p>
-<p>Some questions to verify that you understand the purposes of various base and recommended R packages:</p>
 <div class="cell">
 <div class="cell-output-display">
 <div class="panel-heading tutorial-quiz-title"><span data-i18n="text.quiz">Quiz</span></div>
@@ -297,6 +222,97 @@ Volvo 142E          21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2</code></
 </div>
 </div>
 </div>
+<p>We can use the helper function <code>site::single_site()</code> to extract information for a single site from the country site file.</p>
+<p>To find out which site to index we can look up all of the sites within a country with <code>$sites</code>.</p>
+<p>By editing the code below, isolate the site iso3c = TGO, name_1 = Savanes urban_rural = rural, and plot the estimate bed net usage over time.</p>
+<div class="cell" data-exercise="true">
+<div class="tutorial-exercise" data-label="single-site" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(foresite)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(site)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>site <span class="ot">&lt;-</span> TGO</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":false,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
+</div>
+</div>
+<div class="cell">
+<div class="tutorial-exercise-support" data-label="single-site-hint" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(foresite)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(site)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>site <span class="ot">&lt;-</span> TGO</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>site<span class="sc">$</span>sites</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>savanes_rural <span class="ot">&lt;-</span> <span class="fu">single_site</span>(site, <span class="dv">9</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(savanes_rural<span class="sc">$</span>interventions<span class="sc">$</span>itn_use <span class="sc">~</span> savanes_rural<span class="sc">$</span>interventions<span class="sc">$</span>year, <span class="at">t =</span> <span class="st">"l"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="panel-heading tutorial-quiz-title"><span data-i18n="text.quiz">Quiz</span></div>
+</div>
+<div class="cell-output-display">
+<div class="panel panel-default tutorial-question-container">
+<div data-label="quiz2-1" class="tutorial-question panel-body">
+<div id="quiz2-1-answer_container" class="shiny-html-output"></div>
+<div id="quiz2-1-message_container" class="shiny-html-output"></div>
+<div id="quiz2-1-action_button_container" class="shiny-html-output"></div>
+<script>if (Tutorial.triggerMathJax) Tutorial.triggerMathJax()</script>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="running-a-site" class="level2">
+<h2 class="anchored" data-anchor-id="running-a-site">Running a site</h2>
+<p>Now lets try running a site.</p>
+<ol type="1">
+<li><p>Use the <code>site::single_site()</code> function to isolate the site for: Run iso3c = TGO, name_1 = Plateaux, urban_rural = rural.</p></li>
+<li><p>Create a :package:[malariasimulation] parameters list using the <code>site::site_parameters()</code> function. For the <code>overrides</code> argument you might want to set a reasonably small population so that the model runs quickly, for example <code>overrides  = list(human_population = 5000)</code>.</p></li>
+<li><p>Run the site using <code>malariasimulation::run_simulation()</code></p></li>
+<li><p>Plot the <em>Pf</em>Pr<sub>2-10</sub> estimated by the model</p></li>
+<li><p>Overlay the Malaria Atlas Project estimates of <em>Pf</em>Pr<sub>2-10</sub> onto your plot.</p></li>
+</ol>
+<div class="cell" data-exercise="true" data-exercise.timelimit="1200">
+<div class="tutorial-exercise" data-label="run-site" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(foresite)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(site)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(malariasimulation)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>site <span class="ot">&lt;-</span> TGO</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":false,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
+</div>
+</div>
+<div class="cell">
+<div class="tutorial-exercise-support" data-label="run-site-hint" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(foresite)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(site)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(malariasimulation)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>site <span class="ot">&lt;-</span> TGO</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Isolate the site</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>site<span class="sc">$</span>sites</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>plateaux_rural <span class="ot">&lt;-</span> <span class="fu">single_site</span>(site, <span class="dv">7</span>)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Create parameter inputs</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>site_pars <span class="ot">&lt;-</span> site<span class="sc">::</span><span class="fu">site_parameters</span>(</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">interventions =</span> plateaux_rural<span class="sc">$</span>interventions,</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">demography =</span> plateaux_rural<span class="sc">$</span>demography,</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">vectors =</span> plateaux_rural<span class="sc">$</span>vectors,</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">seasonality =</span> plateaux_rural<span class="sc">$</span>seasonality,</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">eir =</span> plateaux_rural<span class="sc">$</span>eir<span class="sc">$</span>eir[<span class="dv">1</span>],</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">overrides =</span> <span class="fu">list</span>(<span class="at">human_population =</span> <span class="dv">5000</span>)</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Run!</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>model_run <span class="ot">&lt;-</span> malariasimulation<span class="sc">::</span><span class="fu">run_simulation</span>(<span class="at">timesteps =</span> site_pars<span class="sc">$</span>timesteps,</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>                                               <span class="at">parameters =</span> site_pars)</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate prevalence</span></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>model_run<span class="sc">$</span>prevalence <span class="ot">&lt;-</span> model_run<span class="sc">$</span>n_detect_730_3649 <span class="sc">/</span> model_run<span class="sc">$</span>n_730_3649</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the time</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>model_run<span class="sc">$</span>t <span class="ot">&lt;-</span> (model_run<span class="sc">$</span>timestep <span class="sc">/</span> <span class="dv">365</span>) <span class="sc">+</span> <span class="dv">2000</span></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot</span></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model_run<span class="sc">$</span>prevalence <span class="sc">~</span> model_run<span class="sc">$</span>t, <span class="at">t =</span> <span class="st">"l"</span>, <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.8</span>), <span class="at">xlab =</span> <span class="st">"Year"</span>, <span class="at">ylab =</span> <span class="st">"Prevalence"</span>)</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Add MAP prevalence</span></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(plateaux_rural<span class="sc">$</span>prevalence<span class="sc">$</span>year <span class="sc">+</span> <span class="fl">0.5</span>, plateaux_rural<span class="sc">$</span>prevalence<span class="sc">$</span>pfpr, <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">col =</span> <span class="st">"darkred"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<ul>
+<li><p>How well do they match?</p></li>
+<li><p>Why might there be differences between modelled Pf*Pr<sub>2-10</sub> and the estimates from the Malaria Atlas Project?</p></li>
+</ul>
 <p>
 <script type="application/shiny-prerendered" data-context="server-start">
 library(learnr)
@@ -332,16 +348,17 @@ output$`tutorial-exercise-explore-a-site-output` <- renderUI({
 learnr:::store_exercise_cache(structure(list(label = "explore-a-site", global_setup = structure(c("library(learnr)", 
 "knitr::opts_chunk$set(echo = FALSE)"), chunk_opts = list(label = "setup", 
     include = FALSE)), setup = NULL, chunks = list(list(label = "explore-a-site", 
-    code = "\n", opts = list(label = "\"explore-a-site\"", exercise = "TRUE"), 
-    engine = "r")), code_check = NULL, error_check = NULL, check = NULL, 
-    solution = NULL, tests = NULL, options = list(eval = FALSE, 
-        echo = TRUE, results = "markup", tidy = FALSE, tidy.opts = NULL, 
-        collapse = FALSE, prompt = FALSE, comment = NA, highlight = FALSE, 
-        size = "normalsize", background = "#F7F7F7", strip.white = TRUE, 
-        cache = 0, cache.path = "Test_tutorial_cache/html/", 
-        cache.vars = NULL, cache.lazy = TRUE, dependson = NULL, 
-        autodep = FALSE, cache.rebuild = FALSE, fig.keep = "high", 
-        fig.show = "asis", fig.align = "default", fig.path = "Test_tutorial_files/figure-html/", 
+    code = "library(foresite)\nsite <- TGO\n", opts = list(label = "\"explore-a-site\"", 
+        exercise = "TRUE"), engine = "r")), code_check = NULL, 
+    error_check = NULL, check = NULL, solution = NULL, tests = NULL, 
+    options = list(eval = FALSE, echo = TRUE, results = "markup", 
+        tidy = FALSE, tidy.opts = NULL, collapse = FALSE, prompt = FALSE, 
+        comment = NA, highlight = FALSE, size = "normalsize", 
+        background = "#F7F7F7", strip.white = TRUE, cache = 0, 
+        cache.path = "Introduction_cache/html/", cache.vars = NULL, 
+        cache.lazy = TRUE, dependson = NULL, autodep = FALSE, 
+        cache.rebuild = FALSE, fig.keep = "high", fig.show = "asis", 
+        fig.align = "default", fig.path = "Introduction_files/figure-html/", 
         dev = "png", dev.args = NULL, dpi = 192, fig.ext = "png", 
         fig.width = 7L, fig.height = 5L, fig.env = "figure", 
         fig.cap = NULL, fig.scap = NULL, fig.lp = "fig:", fig.subcap = NULL, 
@@ -352,104 +369,26 @@ learnr:::store_exercise_cache(structure(list(label = "explore-a-site", global_se
         engine = "r", split = FALSE, include = TRUE, purl = TRUE, 
         fenced.echo = FALSE, ft.shadow = FALSE, label = "explore-a-site", 
         exercise = TRUE, original.params.src = "r explore-a-site, exercise=TRUE", 
-        chunk.echo = FALSE, code = c("", ""), out.width.px = 672L, 
-        out.height.px = 480L, params.src = "r explore-a-site, exercise=TRUE", 
-        fig.num = 0L, exercise.df_print = "default", exercise.checker = "NULL"), 
-    engine = "r", version = "4"), class = c("r", "tutorial_exercise"
-)))
-</script>
- 
-<script type="application/shiny-prerendered" data-context="server">
-`tutorial-exercise-add-function-result` <- learnr:::setup_exercise_handler(reactive(req(input$`tutorial-exercise-add-function-code-editor`)), session)
-output$`tutorial-exercise-add-function-output` <- renderUI({
-  `tutorial-exercise-add-function-result`()
-})
-</script>
- 
-<script type="application/shiny-prerendered" data-context="server">
-learnr:::store_exercise_cache(structure(list(label = "add-function", global_setup = structure(c("library(learnr)", 
-"knitr::opts_chunk$set(echo = FALSE)"), chunk_opts = list(label = "setup", 
-    include = FALSE)), setup = NULL, chunks = list(list(label = "add-function", 
-    code = "add <- function() {\n  \n}", opts = list(label = "\"add-function\"", 
-        exercise = "TRUE", exercise.lines = "5"), engine = "r")), 
-    code_check = NULL, error_check = NULL, check = NULL, solution = NULL, 
-    tests = NULL, options = list(eval = FALSE, echo = TRUE, results = "markup", 
-        tidy = FALSE, tidy.opts = NULL, collapse = FALSE, prompt = FALSE, 
-        comment = NA, highlight = FALSE, size = "normalsize", 
-        background = "#F7F7F7", strip.white = TRUE, cache = 0, 
-        cache.path = "Test_tutorial_cache/html/", cache.vars = NULL, 
-        cache.lazy = TRUE, dependson = NULL, autodep = FALSE, 
-        cache.rebuild = FALSE, fig.keep = "high", fig.show = "asis", 
-        fig.align = "default", fig.path = "Test_tutorial_files/figure-html/", 
-        dev = "png", dev.args = NULL, dpi = 192, fig.ext = "png", 
-        fig.width = 7L, fig.height = 5L, fig.env = "figure", 
-        fig.cap = NULL, fig.scap = NULL, fig.lp = "fig:", fig.subcap = NULL, 
-        fig.pos = "", out.width = 672L, out.height = NULL, out.extra = NULL, 
-        fig.retina = 2, external = TRUE, sanitize = FALSE, interval = 1, 
-        aniopts = "controls,loop", warning = TRUE, error = FALSE, 
-        message = TRUE, render = NULL, ref.label = NULL, child = NULL, 
-        engine = "r", split = FALSE, include = TRUE, purl = TRUE, 
-        fenced.echo = FALSE, ft.shadow = FALSE, label = "add-function", 
-        exercise = TRUE, exercise.lines = 5, original.params.src = "r add-function, exercise=TRUE, exercise.lines = 5", 
-        chunk.echo = FALSE, code = c("add <- function() {", "  ", 
-        "}"), out.width.px = 672L, out.height.px = 480L, params.src = "r add-function, exercise=TRUE, exercise.lines = 5", 
+        chunk.echo = FALSE, code = c("library(foresite)", "site <- TGO", 
+        ""), out.width.px = 672L, out.height.px = 480L, params.src = "r explore-a-site, exercise=TRUE", 
         fig.num = 0, exercise.df_print = "default", exercise.checker = "NULL"), 
     engine = "r", version = "4"), class = c("r", "tutorial_exercise"
 )))
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
-`tutorial-exercise-print-limit-result` <- learnr:::setup_exercise_handler(reactive(req(input$`tutorial-exercise-print-limit-code-editor`)), session)
-output$`tutorial-exercise-print-limit-output` <- renderUI({
-  `tutorial-exercise-print-limit-result`()
-})
-</script>
- 
-<script type="application/shiny-prerendered" data-context="server">
-learnr:::store_exercise_cache(structure(list(label = "print-limit", global_setup = structure(c("library(learnr)", 
-"knitr::opts_chunk$set(echo = FALSE)"), chunk_opts = list(label = "setup", 
-    include = FALSE)), setup = NULL, chunks = list(list(label = "print-limit", 
-    code = "mtcars", opts = list(label = "\"print-limit\"", exercise = "TRUE", 
-        exercise.eval = "TRUE"), engine = "r")), code_check = NULL, 
-    error_check = NULL, check = NULL, solution = NULL, tests = NULL, 
-    options = list(eval = TRUE, echo = TRUE, results = "markup", 
-        tidy = FALSE, tidy.opts = NULL, collapse = FALSE, prompt = FALSE, 
-        comment = NA, highlight = FALSE, size = "normalsize", 
-        background = "#F7F7F7", strip.white = TRUE, cache = 0, 
-        cache.path = "Test_tutorial_cache/html/", cache.vars = NULL, 
-        cache.lazy = TRUE, dependson = NULL, autodep = FALSE, 
-        cache.rebuild = FALSE, fig.keep = "high", fig.show = "asis", 
-        fig.align = "default", fig.path = "Test_tutorial_files/figure-html/", 
-        dev = "png", dev.args = NULL, dpi = 192, fig.ext = "png", 
-        fig.width = 7L, fig.height = 5L, fig.env = "figure", 
-        fig.cap = NULL, fig.scap = NULL, fig.lp = "fig:", fig.subcap = NULL, 
-        fig.pos = "", out.width = 672L, out.height = NULL, out.extra = NULL, 
-        fig.retina = 2, external = TRUE, sanitize = FALSE, interval = 1, 
-        aniopts = "controls,loop", warning = TRUE, error = FALSE, 
-        message = TRUE, render = NULL, ref.label = NULL, child = NULL, 
-        engine = "r", split = FALSE, include = TRUE, purl = TRUE, 
-        fenced.echo = FALSE, ft.shadow = FALSE, label = "print-limit", 
-        exercise = TRUE, exercise.eval = TRUE, original.params.src = "r print-limit, exercise=TRUE, exercise.eval=TRUE", 
-        chunk.echo = FALSE, code = "mtcars", out.width.px = 672L, 
-        out.height.px = 480L, params.src = "r print-limit, exercise=TRUE, exercise.eval=TRUE", 
-        fig.alt = NULL, fig.num = 0, exercise.df_print = "default", 
-        exercise.checker = "NULL"), engine = "r", version = "4"), class = c("r", 
-"tutorial_exercise")))
-</script>
- 
-<script type="application/shiny-prerendered" data-context="server">
-learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-1", question = structure("Which package contains functions for installing other R packages?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_73974cd", 
-    option = "base", value = "base", label = structure("base", html = TRUE, class = c("html", 
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-1", question = structure("What is the PfPr prevalence in the iso3c = TGO, name_1 = Centre, urban_rural = rural in 2005?", html = TRUE, class = c("html", 
+"character")), answers = list(structure(list(id = "lnr_ans_862be24", 
+    option = "0", value = "0", label = structure("0", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_1d257f8", 
-    option = "tools", value = "tools", label = structure("tools", html = TRUE, class = c("html", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_69d31e8", 
+    option = "0.2459082", value = "0.2459082", label = structure("0.2459082", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_61c296", 
-    option = "utils", value = "utils", label = structure("utils", html = TRUE, class = c("html", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_f67b7d8", 
+    option = "0.5470634", value = "0.5470634", label = structure("0.5470634", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_57c06e3", 
-    option = "codetools", value = "codetools", label = structure("codetools", html = TRUE, class = c("html", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_f8cfe45", 
+    option = "0.8", value = "0.8", label = structure("0.8", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
 "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
 "character")), try_again = structure("<span data-i18n=\"button.questiontryagain\">Try Again<\u002fspan>", html = TRUE, class = c("html", 
@@ -458,24 +397,21 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "quiz-1-answer", question = "quiz-1"), loading = NULL, 
-    random_answer_order = FALSE, allow_retry = FALSE, seed = 306567157.857244, 
+    random_answer_order = FALSE, allow_retry = FALSE, seed = 1014724984.02748, 
     options = list()), class = c("learnr_radio", "tutorial_question"
 )), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
-learnr:::question_prerendered_chunk(structure(list(type = "learnr_checkbox", label = "quiz-2", question = structure("Which of the R packages listed below are used to create plots?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_41a932b", 
-    option = "lattice", value = "lattice", label = structure("lattice", html = TRUE, class = c("html", 
-    "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_8a39277", 
-    option = "tools", value = "tools", label = structure("tools", html = TRUE, class = c("html", 
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-2", question = structure("What is the dominant vector species in iso3c = TGO, name_1 = Kara", html = TRUE, class = c("html", 
+"character")), answers = list(structure(list(id = "lnr_ans_36a91cb", 
+    option = "arabiensis", value = "arabiensis", label = structure("arabiensis", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_c583ae", 
-    option = "stats", value = "stats", label = structure("stats", html = TRUE, class = c("html", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_a31748f", 
+    option = "funestus", value = "funestus", label = structure("funestus", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_254c6ec", 
-    option = "grid", value = "grid", label = structure("grid", html = TRUE, class = c("html", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_8f1c8c7", 
+    option = "gambiae", value = "gambiae", label = structure("gambiae", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
 "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
 "character")), try_again = structure("<span data-i18n=\"button.questiontryagain\">Try Again<\u002fspan>", html = TRUE, class = c("html", 
@@ -484,9 +420,115 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_checkbox", lab
 "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "quiz-2-answer", question = "quiz-2"), loading = NULL, 
-    random_answer_order = FALSE, allow_retry = FALSE, seed = 789457475.13238, 
-    options = list()), class = c("learnr_checkbox", "tutorial_question"
+    random_answer_order = FALSE, allow_retry = FALSE, seed = 619514495.711516, 
+    options = list()), class = c("learnr_radio", "tutorial_question"
 )), session = session)
+</script>
+ 
+<script type="application/shiny-prerendered" data-context="server">
+`tutorial-exercise-single-site-result` <- learnr:::setup_exercise_handler(reactive(req(input$`tutorial-exercise-single-site-code-editor`)), session)
+output$`tutorial-exercise-single-site-output` <- renderUI({
+  `tutorial-exercise-single-site-result`()
+})
+</script>
+ 
+<script type="application/shiny-prerendered" data-context="server">
+learnr:::store_exercise_cache(structure(list(label = "single-site", global_setup = structure(c("library(learnr)", 
+"knitr::opts_chunk$set(echo = FALSE)"), chunk_opts = list(label = "setup", 
+    include = FALSE)), setup = NULL, chunks = list(list(label = "single-site", 
+    code = "library(foresite)\nlibrary(site)\nsite <- TGO\n", 
+    opts = list(label = "\"single-site\"", exercise = "TRUE"), 
+    engine = "r")), code_check = NULL, error_check = NULL, check = NULL, 
+    solution = NULL, tests = NULL, options = list(eval = FALSE, 
+        echo = TRUE, results = "markup", tidy = FALSE, tidy.opts = NULL, 
+        collapse = FALSE, prompt = FALSE, comment = NA, highlight = FALSE, 
+        size = "normalsize", background = "#F7F7F7", strip.white = TRUE, 
+        cache = 0, cache.path = "Introduction_cache/html/", cache.vars = NULL, 
+        cache.lazy = TRUE, dependson = NULL, autodep = FALSE, 
+        cache.rebuild = FALSE, fig.keep = "high", fig.show = "asis", 
+        fig.align = "default", fig.path = "Introduction_files/figure-html/", 
+        dev = "png", dev.args = NULL, dpi = 192, fig.ext = "png", 
+        fig.width = 7L, fig.height = 5L, fig.env = "figure", 
+        fig.cap = NULL, fig.scap = NULL, fig.lp = "fig:", fig.subcap = NULL, 
+        fig.pos = "", out.width = 672L, out.height = NULL, out.extra = NULL, 
+        fig.retina = 2, external = TRUE, sanitize = FALSE, interval = 1, 
+        aniopts = "controls,loop", warning = TRUE, error = FALSE, 
+        message = TRUE, render = NULL, ref.label = NULL, child = NULL, 
+        engine = "r", split = FALSE, include = TRUE, purl = TRUE, 
+        fenced.echo = FALSE, ft.shadow = FALSE, label = "single-site", 
+        exercise = TRUE, original.params.src = "r single-site, exercise=TRUE", 
+        chunk.echo = FALSE, code = c("library(foresite)", "library(site)", 
+        "site <- TGO", ""), out.width.px = 672L, out.height.px = 480L, 
+        params.src = "r single-site, exercise=TRUE", fig.num = 0, 
+        exercise.df_print = "default", exercise.checker = "NULL"), 
+    engine = "r", version = "4"), class = c("r", "tutorial_exercise"
+)))
+</script>
+ 
+<script type="application/shiny-prerendered" data-context="server">
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz2-1", question = structure("In what year did itn use in iso3c = TGO, name_1 = Savanes, urban_rural = rural first exceed 50%?", html = TRUE, class = c("html", 
+"character")), answers = list(structure(list(id = "lnr_ans_85301e8", 
+    option = "2000", value = "2000", label = structure("2000", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_16df500", 
+    option = "2011", value = "2011", label = structure("2011", html = TRUE, class = c("html", 
+    "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_be98c71", 
+    option = "2012", value = "2012", label = structure("2012", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_2b01b9e", 
+    option = "2015", value = "2015", label = structure("2015", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
+"character")), try_again = structure("<span data-i18n=\"button.questiontryagain\">Try Again<\u002fspan>", html = TRUE, class = c("html", 
+"character"))), messages = list(correct = structure("Correct!", html = TRUE, class = c("html", 
+"character")), try_again = structure("Incorrect", html = TRUE, class = c("html", 
+"character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
+"character")), message = NULL, post_message = NULL), ids = list(
+    answer = "quiz2-1-answer", question = "quiz2-1"), loading = NULL, 
+    random_answer_order = FALSE, allow_retry = FALSE, seed = 348981382.337493, 
+    options = list()), class = c("learnr_radio", "tutorial_question"
+)), session = session)
+</script>
+ 
+<script type="application/shiny-prerendered" data-context="server">
+`tutorial-exercise-run-site-result` <- learnr:::setup_exercise_handler(reactive(req(input$`tutorial-exercise-run-site-code-editor`)), session)
+output$`tutorial-exercise-run-site-output` <- renderUI({
+  `tutorial-exercise-run-site-result`()
+})
+</script>
+ 
+<script type="application/shiny-prerendered" data-context="server">
+learnr:::store_exercise_cache(structure(list(label = "run-site", global_setup = structure(c("library(learnr)", 
+"knitr::opts_chunk$set(echo = FALSE)"), chunk_opts = list(label = "setup", 
+    include = FALSE)), setup = NULL, chunks = list(list(label = "run-site", 
+    code = "library(foresite)\nlibrary(site)\nlibrary(malariasimulation)\nsite <- TGO\n", 
+    opts = list(label = "\"run-site\"", exercise = "TRUE", exercise.timelimit = "1200"), 
+    engine = "r")), code_check = NULL, error_check = NULL, check = NULL, 
+    solution = NULL, tests = NULL, options = list(eval = FALSE, 
+        echo = TRUE, results = "markup", tidy = FALSE, tidy.opts = NULL, 
+        collapse = FALSE, prompt = FALSE, comment = NA, highlight = FALSE, 
+        size = "normalsize", background = "#F7F7F7", strip.white = TRUE, 
+        cache = 0, cache.path = "Introduction_cache/html/", cache.vars = NULL, 
+        cache.lazy = TRUE, dependson = NULL, autodep = FALSE, 
+        cache.rebuild = FALSE, fig.keep = "high", fig.show = "asis", 
+        fig.align = "default", fig.path = "Introduction_files/figure-html/", 
+        dev = "png", dev.args = NULL, dpi = 192, fig.ext = "png", 
+        fig.width = 7L, fig.height = 5L, fig.env = "figure", 
+        fig.cap = NULL, fig.scap = NULL, fig.lp = "fig:", fig.subcap = NULL, 
+        fig.pos = "", out.width = 672L, out.height = NULL, out.extra = NULL, 
+        fig.retina = 2, external = TRUE, sanitize = FALSE, interval = 1, 
+        aniopts = "controls,loop", warning = TRUE, error = FALSE, 
+        message = TRUE, render = NULL, ref.label = NULL, child = NULL, 
+        engine = "r", split = FALSE, include = TRUE, purl = TRUE, 
+        fenced.echo = FALSE, ft.shadow = FALSE, label = "run-site", 
+        exercise = TRUE, exercise.timelimit = 1200, original.params.src = "r run-site, exercise=TRUE, exercise.timelimit=1200", 
+        chunk.echo = FALSE, code = c("library(foresite)", "library(site)", 
+        "library(malariasimulation)", "site <- TGO", ""), out.width.px = 672L, 
+        out.height.px = 480L, params.src = "r run-site, exercise=TRUE, exercise.timelimit=1200", 
+        fig.num = 0, exercise.df_print = "default", exercise.checker = "NULL"), 
+    engine = "r", version = "4"), class = c("r", "tutorial_exercise"
+)))
 </script>
  
 <script type="application/shiny-prerendered" data-context="server-extras">
@@ -529,7 +571,6 @@ ojs_define <- function(..., .session = shiny::getDefaultReactiveDomain()) {
 <!--/html_preserve-->
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
