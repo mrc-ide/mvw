@@ -4,21 +4,42 @@
     "href": "index.html",
     "title": "Index",
     "section": "",
-    "text": "Check out the test presenation\nTesting new!"
+    "text": "Please make sure you have the following installed:\n\nAn up-to-date installation of R\nRStudio\n:package:[malariasimulation] installed. See here for more info. You should be able to successfully run: output <- malariasimulation::run_simulation(100)\nThe malariaverse :package:[foresite], :package:[site], :package:[netz], :package:[cali]\n\nremotes::install_github(\"mrc-ide/foresite\")\nremotes::install_github(\"mrc-ide/site\")\nremotes::install_github(\"mrc-ide/netz\")\nremotes::install_github(\"mrc-ide/cali\")\n\n\n\n\n🗓️ Date\n\n\n⏰ 09:030- 17:00\n\n\n🏨 TBC"
   },
   {
-    "objectID": "inst/tutorials/Test_tutorial/Test_tutorial.html",
-    "href": "inst/tutorials/Test_tutorial/Test_tutorial.html",
+    "objectID": "index.html#schedule",
+    "href": "index.html#schedule",
+    "title": "Index",
+    "section": "Schedule",
+    "text": "Schedule\n\n\n\n\n\n\n\nTime\nActivity\n\n\n\n\n09:30 - 11:00\nSession 1[Introduction to context-specific modelling]\n\n\n11:00 - 11:20\nCoffee break\n\n\n11:20 - 12:50\nCalibrating a site\n\n\n12:50 - 13:30\nLunch break\n\n\n13:30 - 15:00\nBed nets & seasonality\n\n\n15:00 - 15:30\nCoffee break\n\n\n15:30 - 16:30\nOptimisation?\n\n\n16:30 - 17:00\nFeedback/Discussion"
+  },
+  {
+    "objectID": "index.html#presentations-associated-with-this-workshop",
+    "href": "index.html#presentations-associated-with-this-workshop",
+    "title": "Index",
+    "section": "Presentations associated with this workshop:",
+    "text": "Presentations associated with this workshop:\nIntroduction"
+  },
+  {
+    "objectID": "inst/tutorials/Introduction/Introduction.html",
+    "href": "inst/tutorials/Introduction/Introduction.html",
     "title": "Introduction",
     "section": "",
-    "text": "Let’s start by getting better acquainted with a country site file.\n\n\n\n\n\n\n\nHere’s an exercise with some prepopulated code as well as exercise.lines = 5 to provide a bit more initial room to work.\nNow write a function that adds any two numbers and then call it:\n\n\nadd <- function() {\n  \n}"
+    "text": "Let’s start by getting better acquainted with a country site file. In the code box below we have pre-loaded the site for TOGO.\nUse the interactive code box below to explore the elements that make up the site file. Remember you can choose to see specific elements of a list with the $ operator. For example site$seasonality. Remember, you can find out more information about site file elements on the foresite website.\n\n\nlibrary(foresite)\ntogo_site_file <- TGO\n\n\n\n\n\nQuiz"
   },
   {
-    "objectID": "inst/tutorials/Test_tutorial/Test_tutorial.html#topic-2",
-    "href": "inst/tutorials/Test_tutorial/Test_tutorial.html#topic-2",
+    "objectID": "inst/tutorials/Introduction/Introduction.html#extracting-a-single-site",
+    "href": "inst/tutorials/Introduction/Introduction.html#extracting-a-single-site",
     "title": "Introduction",
-    "section": "Topic 2",
-    "text": "Topic 2\n\nExercise with Hint\nHere’s an exercise where the chunk is pre-evaluated via the exercise.eval option (so the user can see the default output we’d like them to customize). We also add a “hint” to the correct solution via the chunk immediate below labeled print-limit-hint.\nModify the following code to limit the number of rows printed to 5:\n\n\nmtcars\n\n                     mpg cyl  disp  hp drat    wt  qsec vs am gear carb\nMazda RX4           21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4\nMazda RX4 Wag       21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4\nDatsun 710          22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1\nHornet 4 Drive      21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1\nHornet Sportabout   18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2\nValiant             18.1   6 225.0 105 2.76 3.460 20.22  1  0    3    1\nDuster 360          14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4\nMerc 240D           24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2\nMerc 230            22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2\nMerc 280            19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4\nMerc 280C           17.8   6 167.6 123 3.92 3.440 18.90  1  0    4    4\nMerc 450SE          16.4   8 275.8 180 3.07 4.070 17.40  0  0    3    3\nMerc 450SL          17.3   8 275.8 180 3.07 3.730 17.60  0  0    3    3\nMerc 450SLC         15.2   8 275.8 180 3.07 3.780 18.00  0  0    3    3\nCadillac Fleetwood  10.4   8 472.0 205 2.93 5.250 17.98  0  0    3    4\nLincoln Continental 10.4   8 460.0 215 3.00 5.424 17.82  0  0    3    4\nChrysler Imperial   14.7   8 440.0 230 3.23 5.345 17.42  0  0    3    4\nFiat 128            32.4   4  78.7  66 4.08 2.200 19.47  1  1    4    1\nHonda Civic         30.4   4  75.7  52 4.93 1.615 18.52  1  1    4    2\nToyota Corolla      33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1\nToyota Corona       21.5   4 120.1  97 3.70 2.465 20.01  1  0    3    1\nDodge Challenger    15.5   8 318.0 150 2.76 3.520 16.87  0  0    3    2\nAMC Javelin         15.2   8 304.0 150 3.15 3.435 17.30  0  0    3    2\nCamaro Z28          13.3   8 350.0 245 3.73 3.840 15.41  0  0    3    4\nPontiac Firebird    19.2   8 400.0 175 3.08 3.845 17.05  0  0    3    2\nFiat X1-9           27.3   4  79.0  66 4.08 1.935 18.90  1  1    4    1\nPorsche 914-2       26.0   4 120.3  91 4.43 2.140 16.70  0  1    5    2\nLotus Europa        30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2\nFord Pantera L      15.8   8 351.0 264 4.22 3.170 14.50  0  1    5    4\nFerrari Dino        19.7   6 145.0 175 3.62 2.770 15.50  0  1    5    6\nMaserati Bora       15.0   8 301.0 335 3.54 3.570 14.60  0  1    5    8\nVolvo 142E          21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2\n\n\n\n\n\n\nhead(mtcars)\n\n\n\n\nQuiz\nYou can include any number of single or multiple choice questions as a quiz. Use the question function to define a question and the quiz function for grouping multiple questions together.\nSome questions to verify that you understand the purposes of various base and recommended R packages:\n\n\nQuiz"
+    "section": "Extracting a single site",
+    "text": "Extracting a single site\nWe can use the helper function site::single_site() to extract information for a single site from the country site file.\nTo find out which site to index we can look up all of the sites within a country with $sites.\nBy editing the code below:\n\nIsolate the site iso3c = TGO, name_1 = Savanes urban_rural = rural\nPlot the estimated bed net usage over time.\n\n\n\nlibrary(foresite)\nlibrary(site)\ntogo_site_file <- TGO\n\n\n\n\n\nlibrary(foresite)\nlibrary(site)\ntogo_site_file <- TGO\ntogo_site_file$sites\nsavanes_rural <- single_site(togo_site_file, 9)\nplot(savanes_rural$interventions$itn_use ~ savanes_rural$interventions$year, t = \"l\")\n\n\n\n\nQuiz"
+  },
+  {
+    "objectID": "inst/tutorials/Introduction/Introduction.html#running-a-single-site",
+    "href": "inst/tutorials/Introduction/Introduction.html#running-a-single-site",
+    "title": "Introduction",
+    "section": "Running a single site",
+    "text": "Running a single site\nNow lets try running a site.\n\nUse the site::single_site() function to isolate the site for: Run iso3c = TGO, name_1 = Plateaux, urban_rural = rural.\nCreate a :package:[malariasimulation] parameters list using the site::site_parameters() function. For the overrides argument you might want to set a reasonably small population so that the model runs quickly, for example overrides  = list(human_population = 5000).\nRun the site using malariasimulation::run_simulation()\nPlot the PfPr2-10 estimated by the model\nOverlay the Malaria Atlas Project estimates of PfPr2-10 onto your plot.\n\n⚠ The model run may take a little while to complete (~5 mins). While you wait, why not have a look at the foresite website.\n\n\nlibrary(foresite)\nlibrary(site)\nlibrary(malariasimulation)\ntogo_site_file <- TGO\n\n\n\n\n\nlibrary(foresite)\nlibrary(site)\nlibrary(malariasimulation)\ntogo_site_file <- TGO\n# Isolate the site\nsite_index <- which(togo_site_file$sites$name_1 == \"Plateaux\" &\n                      togo_site_file$sites$urban_rural == \"rural\")\nplateaux_rural <- single_site(togo_site_file, site_index)\n# Create parameter inputs\nsite_pars <- site_parameters(\n  interventions = plateaux_rural$interventions,\n  demography = plateaux_rural$demography,\n  vectors = plateaux_rural$vectors,\n  seasonality = plateaux_rural$seasonality,\n  eir = plateaux_rural$eir$eir[1],\n  overrides = list(human_population = 5000)\n)\n# Run!\nmodel_run <- run_simulation(timesteps = site_pars$timesteps,\n                            parameters = site_pars)\n# Calculate prevalence\nmodel_run$prevalence <- model_run$n_detect_730_3649 / model_run$n_730_3649\n# Set the time\nmodel_run$t <- (model_run$timestep / 365) + 2000\n# Plot\nplot(model_run$prevalence ~ model_run$t, t = \"l\", ylim = c(0, 0.8), xlab = \"Year\", ylab = \"Prevalence\")\n# Add MAP prevalence\npoints(plateaux_rural$prevalence$year + 0.5, plateaux_rural$prevalence$pfpr, pch = 19, col = \"darkred\")\n\n\n\nHow well do they match?\nWhy might there be differences between modelled Pf*Pr2-10 and the estimates from the Malaria Atlas Project?"
   },
   {
     "objectID": "LICENSE.html",
@@ -28,60 +49,11 @@
     "text": "Copyright (c) 2022 Peter Winskill\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\nTHE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
   },
   {
-    "objectID": "presentations/1_Introduction.html#hello",
-    "href": "presentations/1_Introduction.html#hello",
-    "title": "Habits",
-    "section": "Hello",
-    "text": "Hello\nWelcome!\n\nTest 1"
-  },
-  {
-    "objectID": "presentations/1_Introduction.html#beta-test",
-    "href": "presentations/1_Introduction.html#beta-test",
-    "title": "Habits",
-    "section": "Beta test",
-    "text": "Beta test\nWhen you click the Render button a document will be generated that includes:\n ##"
-  },
-  {
-    "objectID": "presentations/t1.html#getting-up",
-    "href": "presentations/t1.html#getting-up",
-    "title": "Habits",
-    "section": "Getting up",
-    "text": "Getting up\n\nTurn off alarm\nGet out of bed"
-  },
-  {
-    "objectID": "presentations/t1.html#going-to-sleep",
-    "href": "presentations/t1.html#going-to-sleep",
-    "title": "Habits",
-    "section": "Going to sleep",
-    "text": "Going to sleep\n\nGet in bed\nCount sheep"
-  },
-  {
-    "objectID": "presentations/1_Introduction.html#welcome",
-    "href": "presentations/1_Introduction.html#welcome",
+    "objectID": "presentations/1_Introduction.html#welcome-all",
+    "href": "presentations/1_Introduction.html#welcome-all",
     "title": "Malariaverse Workshop Introduction",
-    "section": "Welcome",
-    "text": "Welcome\nWelcome all!\nToday’s aims:\n\nProvide a broad overview of context-specific modelling\nSite files: how to characterise a setting\nIntroduce the malariaverse packages to support malariasimulation modelling\nExercises:\n\nRunning a site\nCalibrating a site"
-  },
-  {
-    "objectID": "presentations/1_Introduction.html#testing",
-    "href": "presentations/1_Introduction.html#testing",
-    "title": "Malariaverse Workshop Introduction",
-    "section": "Testing",
-    "text": "Testing\n\n\n\nGuinea Pig"
-  },
-  {
-    "objectID": "presentations/1_Introduction.html#section",
-    "href": "presentations/1_Introduction.html#section",
-    "title": "Malariaverse Workshop Introduction",
-    "section": "",
-    "text": "How do we characterise a setting?"
-  },
-  {
-    "objectID": "presentations/1_Introduction.html#slide-3",
-    "href": "presentations/1_Introduction.html#slide-3",
-    "title": "Malariaverse Workshop Introduction",
-    "section": "Slide 3",
-    "text": "Slide 3"
+    "section": "Welcome all!",
+    "text": "Welcome all!\nToday’s aims:\n\nProvide a broad overview of context-specific modelling\nSite files: how to characterise a setting\nIntroduce the malariaverse packages to support 📦[malariasimulation] modelling\nExercises:\n\nRunning a site\nCalibrating a site\nDealing with bed nets"
   },
   {
     "objectID": "presentations/1_Introduction.html#thanks",
@@ -89,13 +61,6 @@
     "title": "Malariaverse Workshop Introduction",
     "section": "Thanks 💖",
     "text": "Thanks 💖"
-  },
-  {
-    "objectID": "presentations/1_Introduction.html#welcome-all",
-    "href": "presentations/1_Introduction.html#welcome-all",
-    "title": "Malariaverse Workshop Introduction",
-    "section": "Welcome all!",
-    "text": "Welcome all!\nToday’s aims:\n\nProvide a broad overview of context-specific modelling\nSite files: how to characterise a setting\nIntroduce the malariaverse packages to support 📦[malariasimulation] modelling\nExercises:\n\nRunning a site\nCalibrating a site\nDealing with bed nets"
   },
   {
     "objectID": "presentations/1_Introduction.html#modelling-philosophy",
@@ -110,6 +75,13 @@
     "title": "Malariaverse Workshop Introduction",
     "section": "Modelling philosophy",
     "text": "Modelling philosophy\nOne common dichotomisation is between:\n\nContext-specific modelling\n\nRun the model for a specific setting/location\nCan be used to informs policy and impact assessment for specific areas\nRequires “the context” to be adequately captured\ne.g. Estimated impact of RTS,S/AS01 malaria vaccine allocation strategies in sub-Saharan Africa: A modelling study Hogan et al PLoS Medicine, 2020."
+  },
+  {
+    "objectID": "presentations/1_Introduction.html#section",
+    "href": "presentations/1_Introduction.html#section",
+    "title": "Malariaverse Workshop Introduction",
+    "section": "",
+    "text": "How do we characterise a setting?"
   },
   {
     "objectID": "presentations/1_Introduction.html#important-features",
@@ -133,27 +105,6 @@
     "text": "Site files\n\nSite files in 📦[foresite] are defined at the first administrative unit level and further disaggregated between urban and rural populations"
   },
   {
-    "objectID": "presentations/1_Introduction.html#running-a-site",
-    "href": "presentations/1_Introduction.html#running-a-site",
-    "title": "Malariaverse Workshop Introduction",
-    "section": "Running a site",
-    "text": "Running a site\n\nWe can use another malariaverse 📦[site] to translate the site file information into 📦[malariasimulation] parameter input.\n\n\n# Isolate a single site from a country\nexample_site <- site::single_site(foresite::TGO, 1)\n# Create parameter inputs\nsite_pars <- site::site_parameters(\n  interventions = example_site$interventions,\n  demography = example_site$demography,\n  vectors = example_site$vectors,\n  seasonality = example_site$seasonality,\n  eir = example_site$eir$eir[1],\n  overrides = list(human_population = 10000)\n)\n# Run!\nmodel_run <- malariasimulation::run_simulation(timesteps = site_pars$timesteps,\n                                               parameters = site_pars)"
-  },
-  {
-    "objectID": "presentations/1_Introduction.html#lets-give-it-a-try",
-    "href": "presentations/1_Introduction.html#lets-give-it-a-try",
-    "title": "Malariaverse Workshop Introduction",
-    "section": "Let’s give it a try!",
-    "text": "Let’s give it a try!\n\nRun mvw::run_tutorial(\"Introduction\")"
-  },
-  {
-    "objectID": "inst/tutorials/Introduction/Introduction.html",
-    "href": "inst/tutorials/Introduction/Introduction.html",
-    "title": "Introduction",
-    "section": "",
-    "text": "Let’s start by getting better acquainted with a country site file. In the code box below we have pre-loaded the site for TOGO.\nExplore the elements that make up the site file. Remember you can choose to see specific elements of a list with the $ operator. For example site$seasonality. Remember, you can find out more information about site file elements on the foresite website.\n\n\nlibrary(foresite)\nsite <- TGO\n\n\n\n\n\nQuiz\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWe can use the helper function site::single_site() to extract information for a single site from the country site file.\nTo find out which site to index we can look up all of the sites within a country with $sites.\nBy editing the code below, isolate the site iso3c = TGO, name_1 = Savanes urban_rural = rural, and plot the estimate bed net usage over time.\n\n\nlibrary(foresite)\nlibrary(site)\nsite <- TGO\n\n\n\n\n\nlibrary(foresite)\nlibrary(site)\nsite <- TGO\nsite$sites\nsavanes_rural <- single_site(site, 9)\nplot(savanes_rural$interventions$itn_use ~ savanes_rural$interventions$year, t = \"l\")\n\n\n\n\nQuiz"
-  },
-  {
     "objectID": "presentations/1_Introduction.html#site-files-2",
     "href": "presentations/1_Introduction.html#site-files-2",
     "title": "Malariaverse Workshop Introduction",
@@ -175,10 +126,17 @@
     "text": "Site files\n\nWe can also start to examine other characteristics for the sites\n\n\nlibrary(foresite)\n# Historical intervention coverage\nTGO$interventions[,c(2, 3, 4, 5, 6, 9)]\n\n    iso3c   name_1 urban_rural year     itn_use    tx_cov\n1     TGO   Centre       rural 2000 0.042393190 0.2281398\n2     TGO   Centre       rural 2001 0.030599122 0.2148092\n3     TGO   Centre       rural 2002 0.021944066 0.2937525\n4     TGO   Centre       rural 2003 0.021107161 0.3392919\n5     TGO   Centre       rural 2004 0.143958366 0.3571002\n6     TGO   Centre       rural 2005 0.204128371 0.3803500\n7     TGO   Centre       rural 2006 0.151860772 0.4145958\n8     TGO   Centre       rural 2007 0.107391349 0.4201048\n9     TGO   Centre       rural 2008 0.268538668 0.4165851\n10    TGO   Centre       rural 2009 0.307875383 0.4223177\n11    TGO   Centre       rural 2010 0.255199719 0.4231978\n12    TGO   Centre       rural 2011 0.550173241 0.4067735\n13    TGO   Centre       rural 2012 0.708583807 0.3886981\n14    TGO   Centre       rural 2013 0.586552827 0.3941082\n15    TGO   Centre       rural 2014 0.509111789 0.3965702\n16    TGO   Centre       rural 2015 0.333043216 0.4001815\n17    TGO   Centre       rural 2016 0.232754495 0.4052033\n18    TGO   Centre       rural 2017 0.580003451 0.4150207\n19    TGO   Centre       rural 2018 0.735244790 0.4174946\n20    TGO   Centre       rural 2019 0.653629806 0.4299997\n21    TGO   Centre       rural 2020 0.580003451 0.4299997\n22    TGO   Centre       rural 2021 0.735244790 0.4299997\n23    TGO   Centre       rural 2022 0.653629806 0.4299997\n24    TGO   Centre       urban 2000 0.050271022 0.2278467\n25    TGO   Centre       urban 2001 0.033087945 0.2140736\n26    TGO   Centre       urban 2002 0.021628087 0.2934813\n27    TGO   Centre       urban 2003 0.020120465 0.3392148\n28    TGO   Centre       urban 2004 0.142744971 0.3568340\n29    TGO   Centre       urban 2005 0.204376546 0.3802322\n30    TGO   Centre       urban 2006 0.150428159 0.4149133\n31    TGO   Centre       urban 2007 0.100371814 0.4206556\n32    TGO   Centre       urban 2008 0.247212826 0.4167022\n33    TGO   Centre       urban 2009 0.283688714 0.4225606\n34    TGO   Centre       urban 2010 0.243394104 0.4237229\n35    TGO   Centre       urban 2011 0.565062155 0.4072412\n36    TGO   Centre       urban 2012 0.758035470 0.3900642\n37    TGO   Centre       urban 2013 0.660015730 0.3939430\n38    TGO   Centre       urban 2014 0.550560314 0.3962030\n39    TGO   Centre       urban 2015 0.357266621 0.3999768\n40    TGO   Centre       urban 2016 0.254906266 0.4050083\n41    TGO   Centre       urban 2017 0.612806302 0.4149835\n42    TGO   Centre       urban 2018 0.767005700 0.4176770\n43    TGO   Centre       urban 2019 0.684164037 0.4300674\n44    TGO   Centre       urban 2020 0.612806302 0.4300674\n45    TGO   Centre       urban 2021 0.767005700 0.4300674\n46    TGO   Centre       urban 2022 0.684164037 0.4300674\n47    TGO     Kara       rural 2000 0.048891126 0.2292877\n48    TGO     Kara       rural 2001 0.032873734 0.2165680\n49    TGO     Kara       rural 2002 0.021365861 0.2950579\n50    TGO     Kara       rural 2003 0.019353105 0.3406956\n51    TGO     Kara       rural 2004 0.134253676 0.3586754\n52    TGO     Kara       rural 2005 0.196867560 0.3819094\n53    TGO     Kara       rural 2006 0.164378762 0.4160803\n54    TGO     Kara       rural 2007 0.133793179 0.4218521\n55    TGO     Kara       rural 2008 0.324587947 0.4184337\n56    TGO     Kara       rural 2009 0.373048658 0.4246129\n57    TGO     Kara       rural 2010 0.313506890 0.4250521\n58    TGO     Kara       rural 2011 0.603924818 0.4088431\n59    TGO     Kara       rural 2012 0.741224265 0.3897915\n60    TGO     Kara       rural 2013 0.614813761 0.3962241\n61    TGO     Kara       rural 2014 0.582565265 0.3984946\n62    TGO     Kara       rural 2015 0.489453607 0.4022219\n63    TGO     Kara       rural 2016 0.348621253 0.4073006\n64    TGO     Kara       rural 2017 0.594687499 0.4170504\n65    TGO     Kara       rural 2018 0.659535770 0.4196187\n66    TGO     Kara       rural 2019 0.539157282 0.4321756\n67    TGO     Kara       rural 2020 0.594687499 0.4321756\n68    TGO     Kara       rural 2021 0.659535770 0.4321756\n69    TGO     Kara       rural 2022 0.539157282 0.4321756\n70    TGO     Kara       urban 2000 0.000000000 0.0000000\n71    TGO     Kara       urban 2001 0.000000000 0.0000000\n72    TGO     Kara       urban 2002 0.000000000 0.0000000\n73    TGO     Kara       urban 2003 0.000000000 0.0000000\n74    TGO     Kara       urban 2004 0.000000000 0.0000000\n75    TGO     Kara       urban 2005 0.000000000 0.0000000\n76    TGO     Kara       urban 2006 0.000000000 0.0000000\n77    TGO     Kara       urban 2007 0.131775871 0.4211407\n78    TGO     Kara       urban 2008 0.000000000 0.0000000\n79    TGO     Kara       urban 2009 0.381953567 0.4233347\n80    TGO     Kara       urban 2010 0.317971272 0.4239307\n81    TGO     Kara       urban 2011 0.619046151 0.4076106\n82    TGO     Kara       urban 2012 0.000000000 0.0000000\n83    TGO     Kara       urban 2013 0.664120323 0.3942262\n84    TGO     Kara       urban 2014 0.614008676 0.3964180\n85    TGO     Kara       urban 2015 0.000000000 0.0000000\n86    TGO     Kara       urban 2016 0.258300404 0.4055012\n87    TGO     Kara       urban 2017 0.530992673 0.4155376\n88    TGO     Kara       urban 2018 0.678533968 0.4182943\n89    TGO     Kara       urban 2019 0.590000198 0.4307619\n90    TGO     Kara       urban 2020 0.530992673 0.4307619\n91    TGO     Kara       urban 2021 0.678533968 0.4307619\n92    TGO     Kara       urban 2022 0.590000198 0.4307619\n93    TGO Maritime       rural 2000 0.074212390 0.2314858\n94    TGO Maritime       rural 2001 0.045899551 0.2185223\n95    TGO Maritime       rural 2002 0.023949532 0.2963213\n96    TGO Maritime       rural 2003 0.020728550 0.3424130\n97    TGO Maritime       rural 2004 0.157330479 0.3597826\n98    TGO Maritime       rural 2005 0.235624390 0.3834832\n99    TGO Maritime       rural 2006 0.189475123 0.4176652\n100   TGO Maritime       rural 2007 0.142397194 0.4234145\n101   TGO Maritime       rural 2008 0.337785344 0.4196152\n102   TGO Maritime       rural 2009 0.385835324 0.4247077\n103   TGO Maritime       rural 2010 0.311037560 0.4262919\n104   TGO Maritime       rural 2011 0.515812636 0.4100409\n105   TGO Maritime       rural 2012 0.527818011 0.3949176\n106   TGO Maritime       rural 2013 0.396717881 0.3962011\n107   TGO Maritime       rural 2014 0.426595867 0.3980506\n108   TGO Maritime       rural 2015 0.256306456 0.4017764\n109   TGO Maritime       rural 2016 0.165107780 0.4066521\n110   TGO Maritime       rural 2017 0.565471005 0.4162716\n111   TGO Maritime       rural 2018 0.764828846 0.4186738\n112   TGO Maritime       rural 2019 0.721533233 0.4310728\n113   TGO Maritime       rural 2020 0.565471005 0.4310728\n114   TGO Maritime       rural 2021 0.764828846 0.4310728\n115   TGO Maritime       rural 2022 0.721533233 0.4310728\n116   TGO Maritime       urban 2000 0.070871676 0.2454397\n117   TGO Maritime       urban 2001 0.045073448 0.2351193\n118   TGO Maritime       urban 2002 0.024032515 0.3082170\n119   TGO Maritime       urban 2003 0.020445623 0.3546397\n120   TGO Maritime       urban 2004 0.144949082 0.3729431\n121   TGO Maritime       urban 2005 0.221667259 0.3941780\n122   TGO Maritime       urban 2006 0.189776878 0.4267764\n123   TGO Maritime       urban 2007 0.157402861 0.4330476\n124   TGO Maritime       urban 2008 0.364790332 0.4303830\n125   TGO Maritime       urban 2009 0.427551695 0.4363535\n126   TGO Maritime       urban 2010 0.360953060 0.4371414\n127   TGO Maritime       urban 2011 0.507473101 0.4207928\n128   TGO Maritime       urban 2012 0.420781739 0.4056263\n129   TGO Maritime       urban 2013 0.313952923 0.4060729\n130   TGO Maritime       urban 2014 0.474775770 0.4076157\n131   TGO Maritime       urban 2015 0.341780965 0.4109121\n132   TGO Maritime       urban 2016 0.145145831 0.4152824\n133   TGO Maritime       urban 2017 0.377057914 0.4242915\n134   TGO Maritime       urban 2018 0.570984811 0.4268715\n135   TGO Maritime       urban 2019 0.548288376 0.4390855\n136   TGO Maritime       urban 2020 0.377057914 0.4390855\n137   TGO Maritime       urban 2021 0.570984811 0.4390855\n138   TGO Maritime       urban 2022 0.548288376 0.4390855\n139   TGO Plateaux       rural 2000 0.058541231 0.2324051\n140   TGO Plateaux       rural 2001 0.035927945 0.2200053\n141   TGO Plateaux       rural 2002 0.020401379 0.2970646\n142   TGO Plateaux       rural 2003 0.018712921 0.3427912\n143   TGO Plateaux       rural 2004 0.136916561 0.3606750\n144   TGO Plateaux       rural 2005 0.196410878 0.3838494\n145   TGO Plateaux       rural 2006 0.144759862 0.4177921\n146   TGO Plateaux       rural 2007 0.097604076 0.4235012\n147   TGO Plateaux       rural 2008 0.235189519 0.4205762\n148   TGO Plateaux       rural 2009 0.269671401 0.4257664\n149   TGO Plateaux       rural 2010 0.232584602 0.4273779\n150   TGO Plateaux       rural 2011 0.515571590 0.4109700\n151   TGO Plateaux       rural 2012 0.659417442 0.3954189\n152   TGO Plateaux       rural 2013 0.550595593 0.3976380\n153   TGO Plateaux       rural 2014 0.521065380 0.3997876\n154   TGO Plateaux       rural 2015 0.362752747 0.4034863\n155   TGO Plateaux       rural 2016 0.276708987 0.4082291\n156   TGO Plateaux       rural 2017 0.637973334 0.4177128\n157   TGO Plateaux       rural 2018 0.755065577 0.4200366\n158   TGO Plateaux       rural 2019 0.668217544 0.4324217\n159   TGO Plateaux       rural 2020 0.637973334 0.4324217\n160   TGO Plateaux       rural 2021 0.755065577 0.4324217\n161   TGO Plateaux       rural 2022 0.668217544 0.4324217\n162   TGO Plateaux       urban 2000 0.000000000 0.0000000\n163   TGO Plateaux       urban 2001 0.000000000 0.0000000\n164   TGO Plateaux       urban 2002 0.000000000 0.0000000\n165   TGO Plateaux       urban 2003 0.000000000 0.0000000\n166   TGO Plateaux       urban 2004 0.000000000 0.0000000\n167   TGO Plateaux       urban 2005 0.000000000 0.0000000\n168   TGO Plateaux       urban 2006 0.000000000 0.0000000\n169   TGO Plateaux       urban 2007 0.000000000 0.0000000\n170   TGO Plateaux       urban 2008 0.000000000 0.0000000\n171   TGO Plateaux       urban 2009 0.000000000 0.0000000\n172   TGO Plateaux       urban 2010 0.000000000 0.0000000\n173   TGO Plateaux       urban 2011 0.000000000 0.0000000\n174   TGO Plateaux       urban 2012 0.000000000 0.0000000\n175   TGO Plateaux       urban 2013 0.000000000 0.0000000\n176   TGO Plateaux       urban 2014 0.629558080 0.4016104\n177   TGO Plateaux       urban 2015 0.000000000 0.0000000\n178   TGO Plateaux       urban 2016 0.367856145 0.4055034\n179   TGO Plateaux       urban 2017 0.771974742 0.4155048\n180   TGO Plateaux       urban 2018 0.867899537 0.4182492\n181   TGO Plateaux       urban 2019 0.781230032 0.4307126\n182   TGO Plateaux       urban 2020 0.771974742 0.4307126\n183   TGO Plateaux       urban 2021 0.867899537 0.4307126\n184   TGO Plateaux       urban 2022 0.781230032 0.4307126\n185   TGO  Savanes       rural 2000 0.043963878 0.2320125\n186   TGO  Savanes       rural 2001 0.026273719 0.2205999\n187   TGO  Savanes       rural 2002 0.012040101 0.2975509\n188   TGO  Savanes       rural 2003 0.009737721 0.3439539\n189   TGO  Savanes       rural 2004 0.085446738 0.3622099\n190   TGO  Savanes       rural 2005 0.150260313 0.3853902\n191   TGO  Savanes       rural 2006 0.185956606 0.4190789\n192   TGO  Savanes       rural 2007 0.169601684 0.4250272\n193   TGO  Savanes       rural 2008 0.348788043 0.4215532\n194   TGO  Savanes       rural 2009 0.367596394 0.4280714\n195   TGO  Savanes       rural 2010 0.296577557 0.4279152\n196   TGO  Savanes       rural 2011 0.550335660 0.4121874\n197   TGO  Savanes       rural 2012 0.655148632 0.3914705\n198   TGO  Savanes       rural 2013 0.509270969 0.3994489\n199   TGO  Savanes       rural 2014 0.529359147 0.4017292\n200   TGO  Savanes       rural 2015 0.560795143 0.4052111\n201   TGO  Savanes       rural 2016 0.590055841 0.4100422\n202   TGO  Savanes       rural 2017 0.787616814 0.4196884\n203   TGO  Savanes       rural 2018 0.714946902 0.4221435\n204   TGO  Savanes       rural 2019 0.526722968 0.4344188\n205   TGO  Savanes       rural 2020 0.787616814 0.4344188\n206   TGO  Savanes       rural 2021 0.714946902 0.4344188\n207   TGO  Savanes       rural 2022 0.526722968 0.4344188\n208   TGO  Savanes       urban 2000 0.000000000 0.0000000\n209   TGO  Savanes       urban 2001 0.000000000 0.0000000\n210   TGO  Savanes       urban 2002 0.000000000 0.0000000\n211   TGO  Savanes       urban 2003 0.000000000 0.0000000\n212   TGO  Savanes       urban 2004 0.000000000 0.0000000\n213   TGO  Savanes       urban 2005 0.000000000 0.0000000\n214   TGO  Savanes       urban 2006 0.000000000 0.0000000\n215   TGO  Savanes       urban 2007 0.000000000 0.0000000\n216   TGO  Savanes       urban 2008 0.000000000 0.0000000\n217   TGO  Savanes       urban 2009 0.000000000 0.0000000\n218   TGO  Savanes       urban 2010 0.000000000 0.0000000\n219   TGO  Savanes       urban 2011 0.519890858 0.4074962\n220   TGO  Savanes       urban 2012 0.000000000 0.0000000\n221   TGO  Savanes       urban 2013 0.490939726 0.3942231\n222   TGO  Savanes       urban 2014 0.543534324 0.3963543\n223   TGO  Savanes       urban 2015 0.596531403 0.4003117\n224   TGO  Savanes       urban 2016 0.661634989 0.4054393\n225   TGO  Savanes       urban 2017 0.857723403 0.4154459\n226   TGO  Savanes       urban 2018 0.777160781 0.4181832\n227   TGO  Savanes       urban 2019 0.581653537 0.4306295\n228   TGO  Savanes       urban 2020 0.857723403 0.4306295\n229   TGO  Savanes       urban 2021 0.777160781 0.4306295\n230   TGO  Savanes       urban 2022 0.581653537 0.4306295"
   },
   {
-    "objectID": "inst/tutorials/Introduction/Introduction.html#running-a-site",
-    "href": "inst/tutorials/Introduction/Introduction.html#running-a-site",
-    "title": "Introduction",
+    "objectID": "presentations/1_Introduction.html#running-a-site",
+    "href": "presentations/1_Introduction.html#running-a-site",
+    "title": "Malariaverse Workshop Introduction",
     "section": "Running a site",
-    "text": "Running a site\nNow lets try running a site.\n\nUse the site::single_site() function to isolate the site for: Run iso3c = TGO, name_1 = Plateaux, urban_rural = rural.\nCreate a :package:[malariasimulation] parameters list using the site::site_parameters() function. For the overrides argument you might want to set a reasonably small population so that the model runs quickly, for example overrides  = list(human_population = 5000).\nRun the site using malariasimulation::run_simulation()\nPlot the PfPr2-10 estimated by the model\nOverlay the Malaria Atlas Project estimates of PfPr2-10 onto your plot.\n\n\n\nlibrary(foresite)\nlibrary(site)\nlibrary(malariasimulation)\nsite <- TGO\n\n\n\n\n\nlibrary(foresite)\nlibrary(site)\nlibrary(malariasimulation)\nsite <- TGO\n# Isolate the site\nsite$sites\nplateaux_rural <- single_site(site, 7)\n# Create parameter inputs\nsite_pars <- site::site_parameters(\n  interventions = plateaux_rural$interventions,\n  demography = plateaux_rural$demography,\n  vectors = plateaux_rural$vectors,\n  seasonality = plateaux_rural$seasonality,\n  eir = plateaux_rural$eir$eir[1],\n  overrides = list(human_population = 5000)\n)\n# Run!\nmodel_run <- malariasimulation::run_simulation(timesteps = site_pars$timesteps,\n                                               parameters = site_pars)\n# Calculate prevalence\nmodel_run$prevalence <- model_run$n_detect_730_3649 / model_run$n_730_3649\n# Set the time\nmodel_run$t <- (model_run$timestep / 365) + 2000\n# Plot\nplot(model_run$prevalence ~ model_run$t, t = \"l\", ylim = c(0, 0.8), xlab = \"Year\", ylab = \"Prevalence\")\n# Add MAP prevalence\npoints(plateaux_rural$prevalence$year + 0.5, plateaux_rural$prevalence$pfpr, pch = 19, col = \"darkred\")\n\n\n\nHow well do they match?\nWhy might there be differences between modelled Pf*Pr2-10 and the estimates from the Malaria Atlas Project?"
+    "text": "Running a site\n\nWe can use another malariaverse 📦[site] to translate the site file information into 📦[malariasimulation] parameter input.\n\n\n# Isolate a single site from a country\nexample_site <- site::single_site(foresite::TGO, 1)\n# Create parameter inputs\nsite_pars <- site::site_parameters(\n  interventions = example_site$interventions,\n  demography = example_site$demography,\n  vectors = example_site$vectors,\n  seasonality = example_site$seasonality,\n  eir = example_site$eir$eir[1],\n  overrides = list(human_population = 10000)\n)\n# Run!\nmodel_run <- malariasimulation::run_simulation(timesteps = site_pars$timesteps,\n                                               parameters = site_pars)"
+  },
+  {
+    "objectID": "presentations/1_Introduction.html#lets-give-it-a-try",
+    "href": "presentations/1_Introduction.html#lets-give-it-a-try",
+    "title": "Malariaverse Workshop Introduction",
+    "section": "Let’s give it a try!",
+    "text": "Let’s give it a try!\n\nRun mvw::run_tutorial(\"Introduction\")"
   }
 ]

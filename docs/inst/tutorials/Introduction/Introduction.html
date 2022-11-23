@@ -163,7 +163,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
    
   <ul>
   <li><a href="#exploring-a-site-file" id="toc-exploring-a-site-file" class="nav-link active" data-scroll-target="#exploring-a-site-file">Exploring a site file</a></li>
-  <li><a href="#running-a-site" id="toc-running-a-site" class="nav-link" data-scroll-target="#running-a-site">Running a site</a></li>
+  <li><a href="#extracting-a-single-site" id="toc-extracting-a-single-site" class="nav-link" data-scroll-target="#extracting-a-single-site">Extracting a single site</a></li>
+  <li><a href="#running-a-single-site" id="toc-running-a-single-site" class="nav-link" data-scroll-target="#running-a-single-site">Running a single site</a></li>
   </ul>
 </nav>
     </div>
@@ -189,11 +190,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="exploring-a-site-file" class="level2">
 <h2 class="anchored" data-anchor-id="exploring-a-site-file">Exploring a site file</h2>
 <p>Let’s start by getting better acquainted with a country site file. In the code box below we have pre-loaded the site for TOGO.</p>
-<p>Explore the elements that make up the site file. Remember you can choose to see specific elements of a list with the <code>$</code> operator. For example <code>site$seasonality</code>. Remember, you can find out more information about site file elements on the <a href="https://mrc-ide.github.io/foresite/">foresite website</a>.</p>
+<p>Use the interactive code box below to explore the elements that make up the site file. Remember you can choose to see specific elements of a list with the <code>$</code> operator. For example <code>site$seasonality</code>. Remember, you can find out more information about site file elements on the <a href="https://mrc-ide.github.io/foresite/">foresite website</a>.</p>
 <div class="cell" data-exercise="true">
 <div class="tutorial-exercise" data-label="explore-a-site" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(foresite)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>site <span class="ot">&lt;-</span> TGO</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>togo_site_file <span class="ot">&lt;-</span> TGO</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":false,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
 </div>
 </div>
@@ -221,15 +222,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </div>
+<div class="cell-output-display">
+<div class="panel panel-default tutorial-question-container">
+<div data-label="quiz-3" class="tutorial-question panel-body">
+<div id="quiz-3-answer_container" class="shiny-html-output"></div>
+<div id="quiz-3-message_container" class="shiny-html-output"></div>
+<div id="quiz-3-action_button_container" class="shiny-html-output"></div>
+<script>if (Tutorial.triggerMathJax) Tutorial.triggerMathJax()</script>
 </div>
+</div>
+</div>
+</div>
+</section>
+<section id="extracting-a-single-site" class="level2">
+<h2 class="anchored" data-anchor-id="extracting-a-single-site">Extracting a single site</h2>
 <p>We can use the helper function <code>site::single_site()</code> to extract information for a single site from the country site file.</p>
 <p>To find out which site to index we can look up all of the sites within a country with <code>$sites</code>.</p>
-<p>By editing the code below, isolate the site iso3c = TGO, name_1 = Savanes urban_rural = rural, and plot the estimate bed net usage over time.</p>
+<p>By editing the code below:</p>
+<ol type="1">
+<li><p>Isolate the site iso3c = TGO, name_1 = Savanes urban_rural = rural</p></li>
+<li><p>Plot the estimated bed net usage over time.</p></li>
+</ol>
 <div class="cell" data-exercise="true">
 <div class="tutorial-exercise" data-label="single-site" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(foresite)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(site)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>site <span class="ot">&lt;-</span> TGO</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>togo_site_file <span class="ot">&lt;-</span> TGO</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":false,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
 </div>
 </div>
@@ -237,9 +255,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="tutorial-exercise-support" data-label="single-site-hint" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(foresite)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(site)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>site <span class="ot">&lt;-</span> TGO</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>site<span class="sc">$</span>sites</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>savanes_rural <span class="ot">&lt;-</span> <span class="fu">single_site</span>(site, <span class="dv">9</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>togo_site_file <span class="ot">&lt;-</span> TGO</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>togo_site_file<span class="sc">$</span>sites</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>savanes_rural <span class="ot">&lt;-</span> <span class="fu">single_site</span>(togo_site_file, <span class="dv">9</span>)</span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(savanes_rural<span class="sc">$</span>interventions<span class="sc">$</span>itn_use <span class="sc">~</span> savanes_rural<span class="sc">$</span>interventions<span class="sc">$</span>year, <span class="at">t =</span> <span class="st">"l"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
@@ -259,8 +277,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </section>
-<section id="running-a-site" class="level2">
-<h2 class="anchored" data-anchor-id="running-a-site">Running a site</h2>
+<section id="running-a-single-site" class="level2">
+<h2 class="anchored" data-anchor-id="running-a-single-site">Running a single site</h2>
 <p>Now lets try running a site.</p>
 <ol type="1">
 <li><p>Use the <code>site::single_site()</code> function to isolate the site for: Run iso3c = TGO, name_1 = Plateaux, urban_rural = rural.</p></li>
@@ -269,12 +287,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Plot the <em>Pf</em>Pr<sub>2-10</sub> estimated by the model</p></li>
 <li><p>Overlay the Malaria Atlas Project estimates of <em>Pf</em>Pr<sub>2-10</sub> onto your plot.</p></li>
 </ol>
+<p>⚠ The model run may take a little while to complete (~5 mins). While you wait, why not have a look at the <a href="https://mrc-ide.github.io/foresite/">foresite website</a>.</p>
 <div class="cell" data-exercise="true" data-exercise.timelimit="1200">
 <div class="tutorial-exercise" data-label="run-site" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(foresite)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(site)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(malariasimulation)</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>site <span class="ot">&lt;-</span> TGO</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>togo_site_file <span class="ot">&lt;-</span> TGO</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":false,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
 </div>
 </div>
@@ -283,30 +302,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(foresite)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(site)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(malariasimulation)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>site <span class="ot">&lt;-</span> TGO</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>togo_site_file <span class="ot">&lt;-</span> TGO</span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Isolate the site</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>site<span class="sc">$</span>sites</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>plateaux_rural <span class="ot">&lt;-</span> <span class="fu">single_site</span>(site, <span class="dv">7</span>)</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Create parameter inputs</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>site_pars <span class="ot">&lt;-</span> site<span class="sc">::</span><span class="fu">site_parameters</span>(</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">interventions =</span> plateaux_rural<span class="sc">$</span>interventions,</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">demography =</span> plateaux_rural<span class="sc">$</span>demography,</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">vectors =</span> plateaux_rural<span class="sc">$</span>vectors,</span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">seasonality =</span> plateaux_rural<span class="sc">$</span>seasonality,</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">eir =</span> plateaux_rural<span class="sc">$</span>eir<span class="sc">$</span>eir[<span class="dv">1</span>],</span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">overrides =</span> <span class="fu">list</span>(<span class="at">human_population =</span> <span class="dv">5000</span>)</span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Run!</span></span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>model_run <span class="ot">&lt;-</span> malariasimulation<span class="sc">::</span><span class="fu">run_simulation</span>(<span class="at">timesteps =</span> site_pars<span class="sc">$</span>timesteps,</span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>                                               <span class="at">parameters =</span> site_pars)</span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate prevalence</span></span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>model_run<span class="sc">$</span>prevalence <span class="ot">&lt;-</span> model_run<span class="sc">$</span>n_detect_730_3649 <span class="sc">/</span> model_run<span class="sc">$</span>n_730_3649</span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the time</span></span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>model_run<span class="sc">$</span>t <span class="ot">&lt;-</span> (model_run<span class="sc">$</span>timestep <span class="sc">/</span> <span class="dv">365</span>) <span class="sc">+</span> <span class="dv">2000</span></span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot</span></span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model_run<span class="sc">$</span>prevalence <span class="sc">~</span> model_run<span class="sc">$</span>t, <span class="at">t =</span> <span class="st">"l"</span>, <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.8</span>), <span class="at">xlab =</span> <span class="st">"Year"</span>, <span class="at">ylab =</span> <span class="st">"Prevalence"</span>)</span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Add MAP prevalence</span></span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(plateaux_rural<span class="sc">$</span>prevalence<span class="sc">$</span>year <span class="sc">+</span> <span class="fl">0.5</span>, plateaux_rural<span class="sc">$</span>prevalence<span class="sc">$</span>pfpr, <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">col =</span> <span class="st">"darkred"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>site_index <span class="ot">&lt;-</span> <span class="fu">which</span>(togo_site_file<span class="sc">$</span>sites<span class="sc">$</span>name_1 <span class="sc">==</span> <span class="st">"Plateaux"</span> <span class="sc">&amp;</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>                      togo_site_file<span class="sc">$</span>sites<span class="sc">$</span>urban_rural <span class="sc">==</span> <span class="st">"rural"</span>)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>plateaux_rural <span class="ot">&lt;-</span> <span class="fu">single_site</span>(togo_site_file, site_index)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Create parameter inputs</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>site_pars <span class="ot">&lt;-</span> <span class="fu">site_parameters</span>(</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">interventions =</span> plateaux_rural<span class="sc">$</span>interventions,</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">demography =</span> plateaux_rural<span class="sc">$</span>demography,</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">vectors =</span> plateaux_rural<span class="sc">$</span>vectors,</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">seasonality =</span> plateaux_rural<span class="sc">$</span>seasonality,</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">eir =</span> plateaux_rural<span class="sc">$</span>eir<span class="sc">$</span>eir[<span class="dv">1</span>],</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">overrides =</span> <span class="fu">list</span>(<span class="at">human_population =</span> <span class="dv">5000</span>)</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Run!</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>model_run <span class="ot">&lt;-</span> <span class="fu">run_simulation</span>(<span class="at">timesteps =</span> site_pars<span class="sc">$</span>timesteps,</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>                            <span class="at">parameters =</span> site_pars)</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate prevalence</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>model_run<span class="sc">$</span>prevalence <span class="ot">&lt;-</span> model_run<span class="sc">$</span>n_detect_730_3649 <span class="sc">/</span> model_run<span class="sc">$</span>n_730_3649</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the time</span></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>model_run<span class="sc">$</span>t <span class="ot">&lt;-</span> (model_run<span class="sc">$</span>timestep <span class="sc">/</span> <span class="dv">365</span>) <span class="sc">+</span> <span class="dv">2000</span></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot</span></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model_run<span class="sc">$</span>prevalence <span class="sc">~</span> model_run<span class="sc">$</span>t, <span class="at">t =</span> <span class="st">"l"</span>, <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.8</span>), <span class="at">xlab =</span> <span class="st">"Year"</span>, <span class="at">ylab =</span> <span class="st">"Prevalence"</span>)</span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Add MAP prevalence</span></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(plateaux_rural<span class="sc">$</span>prevalence<span class="sc">$</span>year <span class="sc">+</span> <span class="fl">0.5</span>, plateaux_rural<span class="sc">$</span>prevalence<span class="sc">$</span>pfpr, <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">col =</span> <span class="st">"darkred"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <ul>
@@ -348,10 +368,10 @@ output$`tutorial-exercise-explore-a-site-output` <- renderUI({
 learnr:::store_exercise_cache(structure(list(label = "explore-a-site", global_setup = structure(c("library(learnr)", 
 "knitr::opts_chunk$set(echo = FALSE)"), chunk_opts = list(label = "setup", 
     include = FALSE)), setup = NULL, chunks = list(list(label = "explore-a-site", 
-    code = "library(foresite)\nsite <- TGO\n", opts = list(label = "\"explore-a-site\"", 
-        exercise = "TRUE"), engine = "r")), code_check = NULL, 
-    error_check = NULL, check = NULL, solution = NULL, tests = NULL, 
-    options = list(eval = FALSE, echo = TRUE, results = "markup", 
+    code = "library(foresite)\ntogo_site_file <- TGO\n", opts = list(
+        label = "\"explore-a-site\"", exercise = "TRUE"), engine = "r")), 
+    code_check = NULL, error_check = NULL, check = NULL, solution = NULL, 
+    tests = NULL, options = list(eval = FALSE, echo = TRUE, results = "markup", 
         tidy = FALSE, tidy.opts = NULL, collapse = FALSE, prompt = FALSE, 
         comment = NA, highlight = FALSE, size = "normalsize", 
         background = "#F7F7F7", strip.white = TRUE, cache = 0, 
@@ -369,7 +389,7 @@ learnr:::store_exercise_cache(structure(list(label = "explore-a-site", global_se
         engine = "r", split = FALSE, include = TRUE, purl = TRUE, 
         fenced.echo = FALSE, ft.shadow = FALSE, label = "explore-a-site", 
         exercise = TRUE, original.params.src = "r explore-a-site, exercise=TRUE", 
-        chunk.echo = FALSE, code = c("library(foresite)", "site <- TGO", 
+        chunk.echo = FALSE, code = c("library(foresite)", "togo_site_file <- TGO", 
         ""), out.width.px = 672L, out.height.px = 480L, params.src = "r explore-a-site, exercise=TRUE", 
         fig.num = 0, exercise.df_print = "default", exercise.checker = "NULL"), 
     engine = "r", version = "4"), class = c("r", "tutorial_exercise"
@@ -378,16 +398,16 @@ learnr:::store_exercise_cache(structure(list(label = "explore-a-site", global_se
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-1", question = structure("What is the PfPr prevalence in the iso3c = TGO, name_1 = Centre, urban_rural = rural in 2005?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_862be24", 
+"character")), answers = list(structure(list(id = "lnr_ans_2243881", 
     option = "0", value = "0", label = structure("0", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_69d31e8", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_351db4f", 
     option = "0.2459082", value = "0.2459082", label = structure("0.2459082", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_f67b7d8", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_be9c13c", 
     option = "0.5470634", value = "0.5470634", label = structure("0.5470634", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_f8cfe45", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_db234fe", 
     option = "0.8", value = "0.8", label = structure("0.8", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
 "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
@@ -397,20 +417,20 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "quiz-1-answer", question = "quiz-1"), loading = NULL, 
-    random_answer_order = FALSE, allow_retry = FALSE, seed = 1014724984.02748, 
+    random_answer_order = FALSE, allow_retry = FALSE, seed = 945903379.059529, 
     options = list()), class = c("learnr_radio", "tutorial_question"
 )), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-2", question = structure("What is the dominant vector species in iso3c = TGO, name_1 = Kara", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_36a91cb", 
+"character")), answers = list(structure(list(id = "lnr_ans_8c4bc7e", 
     option = "arabiensis", value = "arabiensis", label = structure("arabiensis", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_a31748f", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_7eda82", 
     option = "funestus", value = "funestus", label = structure("funestus", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_8f1c8c7", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_292f29c", 
     option = "gambiae", value = "gambiae", label = structure("gambiae", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
 "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
@@ -420,7 +440,27 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "quiz-2-answer", question = "quiz-2"), loading = NULL, 
-    random_answer_order = FALSE, allow_retry = FALSE, seed = 619514495.711516, 
+    random_answer_order = FALSE, allow_retry = FALSE, seed = 25908572.9879354, 
+    options = list()), class = c("learnr_radio", "tutorial_question"
+)), session = session)
+</script>
+ 
+<script type="application/shiny-prerendered" data-context="server">
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-3", question = structure("Did the World Malaria Report estimate a rise or fall in malaria cases in Togo\nbetween 2019 and 2020", html = TRUE, class = c("html", 
+"character")), answers = list(structure(list(id = "lnr_ans_189e0ad", 
+    option = "Rise", value = "Rise", label = structure("Rise", html = TRUE, class = c("html", 
+    "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_ec6b4b9", 
+    option = "Fall", value = "Fall", label = structure("Fall", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
+"character")), try_again = structure("<span data-i18n=\"button.questiontryagain\">Try Again<\u002fspan>", html = TRUE, class = c("html", 
+"character"))), messages = list(correct = structure("Correct!", html = TRUE, class = c("html", 
+"character")), try_again = structure("Incorrect", html = TRUE, class = c("html", 
+"character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
+"character")), message = NULL, post_message = NULL), ids = list(
+    answer = "quiz-3-answer", question = "quiz-3"), loading = NULL, 
+    random_answer_order = FALSE, allow_retry = FALSE, seed = 289298773.865285, 
     options = list()), class = c("learnr_radio", "tutorial_question"
 )), session = session)
 </script>
@@ -436,7 +476,7 @@ output$`tutorial-exercise-single-site-output` <- renderUI({
 learnr:::store_exercise_cache(structure(list(label = "single-site", global_setup = structure(c("library(learnr)", 
 "knitr::opts_chunk$set(echo = FALSE)"), chunk_opts = list(label = "setup", 
     include = FALSE)), setup = NULL, chunks = list(list(label = "single-site", 
-    code = "library(foresite)\nlibrary(site)\nsite <- TGO\n", 
+    code = "library(foresite)\nlibrary(site)\ntogo_site_file <- TGO\n", 
     opts = list(label = "\"single-site\"", exercise = "TRUE"), 
     engine = "r")), code_check = NULL, error_check = NULL, check = NULL, 
     solution = NULL, tests = NULL, options = list(eval = FALSE, 
@@ -458,7 +498,7 @@ learnr:::store_exercise_cache(structure(list(label = "single-site", global_setup
         fenced.echo = FALSE, ft.shadow = FALSE, label = "single-site", 
         exercise = TRUE, original.params.src = "r single-site, exercise=TRUE", 
         chunk.echo = FALSE, code = c("library(foresite)", "library(site)", 
-        "site <- TGO", ""), out.width.px = 672L, out.height.px = 480L, 
+        "togo_site_file <- TGO", ""), out.width.px = 672L, out.height.px = 480L, 
         params.src = "r single-site, exercise=TRUE", fig.num = 0, 
         exercise.df_print = "default", exercise.checker = "NULL"), 
     engine = "r", version = "4"), class = c("r", "tutorial_exercise"
@@ -467,16 +507,16 @@ learnr:::store_exercise_cache(structure(list(label = "single-site", global_setup
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz2-1", question = structure("In what year did itn use in iso3c = TGO, name_1 = Savanes, urban_rural = rural first exceed 50%?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_85301e8", 
+"character")), answers = list(structure(list(id = "lnr_ans_258b403", 
     option = "2000", value = "2000", label = structure("2000", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_16df500", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_2aa7648", 
     option = "2011", value = "2011", label = structure("2011", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_be98c71", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_f96ac25", 
     option = "2012", value = "2012", label = structure("2012", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_2b01b9e", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_2e3ff82", 
     option = "2015", value = "2015", label = structure("2015", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
 "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
@@ -486,7 +526,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "quiz2-1-answer", question = "quiz2-1"), loading = NULL, 
-    random_answer_order = FALSE, allow_retry = FALSE, seed = 348981382.337493, 
+    random_answer_order = FALSE, allow_retry = FALSE, seed = 843640730.607149, 
     options = list()), class = c("learnr_radio", "tutorial_question"
 )), session = session)
 </script>
@@ -502,7 +542,7 @@ output$`tutorial-exercise-run-site-output` <- renderUI({
 learnr:::store_exercise_cache(structure(list(label = "run-site", global_setup = structure(c("library(learnr)", 
 "knitr::opts_chunk$set(echo = FALSE)"), chunk_opts = list(label = "setup", 
     include = FALSE)), setup = NULL, chunks = list(list(label = "run-site", 
-    code = "library(foresite)\nlibrary(site)\nlibrary(malariasimulation)\nsite <- TGO\n", 
+    code = "library(foresite)\nlibrary(site)\nlibrary(malariasimulation)\ntogo_site_file <- TGO\n", 
     opts = list(label = "\"run-site\"", exercise = "TRUE", exercise.timelimit = "1200"), 
     engine = "r")), code_check = NULL, error_check = NULL, check = NULL, 
     solution = NULL, tests = NULL, options = list(eval = FALSE, 
@@ -524,8 +564,8 @@ learnr:::store_exercise_cache(structure(list(label = "run-site", global_setup = 
         fenced.echo = FALSE, ft.shadow = FALSE, label = "run-site", 
         exercise = TRUE, exercise.timelimit = 1200, original.params.src = "r run-site, exercise=TRUE, exercise.timelimit=1200", 
         chunk.echo = FALSE, code = c("library(foresite)", "library(site)", 
-        "library(malariasimulation)", "site <- TGO", ""), out.width.px = 672L, 
-        out.height.px = 480L, params.src = "r run-site, exercise=TRUE, exercise.timelimit=1200", 
+        "library(malariasimulation)", "togo_site_file <- TGO", 
+        ""), out.width.px = 672L, out.height.px = 480L, params.src = "r run-site, exercise=TRUE, exercise.timelimit=1200", 
         fig.num = 0, exercise.df_print = "default", exercise.checker = "NULL"), 
     engine = "r", version = "4"), class = c("r", "tutorial_exercise"
 )))

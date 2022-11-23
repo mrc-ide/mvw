@@ -99,7 +99,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#index" id="toc-index" class="nav-link active" data-scroll-target="#index">Index</a></li>
+  <li><a href="#before-the-workshop" id="toc-before-the-workshop" class="nav-link active" data-scroll-target="#before-the-workshop">Before the workshop</a></li>
+  <li><a href="#schedule" id="toc-schedule" class="nav-link" data-scroll-target="#schedule">Schedule</a></li>
+  <li><a href="#presentations-associated-with-this-workshop" id="toc-presentations-associated-with-this-workshop" class="nav-link" data-scroll-target="#presentations-associated-with-this-workshop">Presentations associated with this workshop:</a></li>
   </ul>
 </nav>
     </div>
@@ -122,10 +124,86 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="index" class="level2">
-<h2 class="anchored" data-anchor-id="index">Index</h2>
-<p>Check out the <a href="https://mrc-ide.github.io/mvw/presentations/p1.html">test presenation</a></p>
-<p>Testing new!</p>
+<section id="before-the-workshop" class="level2">
+<h2 class="anchored" data-anchor-id="before-the-workshop">Before the workshop</h2>
+<p>Please make sure you have the following installed:</p>
+<ol type="1">
+<li>An <a href="https://www.r-project.org/">up-to-date installation of R</a></li>
+<li><a href="https://posit.co/download/rstudio-desktop/">RStudio</a></li>
+<li>:package:[malariasimulation] installed. See <a href="https://github.com/mrc-ide/malariasimulation#installation">here</a> for more info. You should be able to successfully run: <code>output &lt;- malariasimulation::run_simulation(100)</code></li>
+<li>The malariaverse :package:[foresite], :package:[site], :package:[netz], :package:[cali]</li>
+</ol>
+<pre><code>remotes::install_github("mrc-ide/foresite")
+remotes::install_github("mrc-ide/site")
+remotes::install_github("mrc-ide/netz")
+remotes::install_github("mrc-ide/cali")
+</code></pre>
+<table class="table">
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">🗓️ Date</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">⏰ 09:030- 17:00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">🏨 TBC</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="schedule" class="level2">
+<h2 class="anchored" data-anchor-id="schedule">Schedule</h2>
+<table class="table">
+<colgroup>
+<col style="width: 21%">
+<col style="width: 78%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Time</th>
+<th style="text-align: left;">Activity</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">09:30 - 11:00</td>
+<td style="text-align: left;">Session 1[Introduction to context-specific modelling]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">11:00 - 11:20</td>
+<td style="text-align: left;"><em>Coffee break</em></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">11:20 - 12:50</td>
+<td style="text-align: left;">Calibrating a site</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">12:50 - 13:30</td>
+<td style="text-align: left;"><em>Lunch break</em></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">13:30 - 15:00</td>
+<td style="text-align: left;">Bed nets &amp; seasonality</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">15:00 - 15:30</td>
+<td style="text-align: left;"><em>Coffee break</em></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">15:30 - 16:30</td>
+<td style="text-align: left;">Optimisation?</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">16:30 - 17:00</td>
+<td style="text-align: left;">Feedback/Discussion</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="presentations-associated-with-this-workshop" class="level2">
+<h2 class="anchored" data-anchor-id="presentations-associated-with-this-workshop">Presentations associated with this workshop:</h2>
+<p><a href="https://mrc-ide.github.io/mvw/presentations/1_introduction.html">Introduction</a></p>
 
 
 </section>
