@@ -3,8 +3,44 @@ title: "Index"
 format: html
 ---
 
-## Index
+## Before the workshop
 
-Check out the [test presenation](https://mrc-ide.github.io/mvw/presentations/p1.html) 
+Please make sure you have the following installed:
 
-Testing new!
+1. An [up-to-date installation of R](https://www.r-project.org/)
+2. [RStudio](https://posit.co/download/rstudio-desktop/)
+3. :package:[malariasimulation] installed. See [here](https://github.com/mrc-ide/malariasimulation#installation) for more info. You should be able to successfully run: `output <- malariasimulation::run_simulation(100)`
+4. The malariaverse :package:[foresite], :package:[site], :package:[netz], :package:[cali]
+
+
+```
+remotes::install_github("mrc-ide/foresite")
+remotes::install_github("mrc-ide/site")
+remotes::install_github("mrc-ide/netz")
+remotes::install_github("mrc-ide/cali")
+
+```
+
+------------------------------------------------------------------------
+🗓️ Date
+⏰ 09:030- 17:00
+🏨 TBC 
+------------------------------------------------------------------------
+
+## Schedule
+
+| Time          | Activity                                              |
+|:--------------|:------------------------------------------------------|
+| 09:30 - 11:00 | Session 1[Introduction to context-specific modelling] |
+| 11:00 - 11:20 | *Coffee break*                                        |
+| 11:20 - 12:50 | Calibrating a site                                    |
+| 12:50 - 13:30 | *Lunch break*                                         |
+| 13:30 - 15:00 | Bed nets & seasonality                                |
+| 15:00 - 15:30 | *Coffee break*                                        |
+| 15:30 - 16:30 | Optimisation?                                         |
+| 16:30 - 17:00 | Feedback/Discussion                                   |
+
+
+## Presentations associated with this workshop:
+
+[Introduction](https://mrc-ide.github.io/mvw/presentations/1_introduction.html)
