@@ -1,0 +1,64 @@
+---
+title: "Malariaverse Workshop \n Calibrtion"
+author: "Pete Winskill"
+format:
+  revealjs:
+    logo: images/malariaverse.gif
+    css: images/logo.css
+editor: visual
+from: markdown+emoji
+---
+
+## Welcome back!
+
+Session aims:
+
+-   Understand why we need to "calibrate" a site
+-   Understand when we need to calibrate/re-calibrate
+-   Introduction to :package:\[cali\] for model calibration
+-   Common chalenges/issues when calibrating
+
+## Why calibrate
+
+-   Given all the information about a site (vectors, season *Pf*Pr~2-10~ etc...). We still need to make our best estimation of the "baseline" level of transmission.
+-   One relatively simple way of doing this is modify the modelled baseline until our model output best matches some observations (e.g. *Pf*Pr~2-10~).
+
+## Calibration process
+
+![](images/Calibration_figure1.png){fig-align="center"}
+
+## Calibration process
+
+![](images/Calibration_figure2.gif){fig-align="center"}
+
+## Calibration process
+
+![](images/Calibration_figure3.png){fig-align="center"}
+
+## When to calibrate
+
+-   Calibration or re-calibration is not always required. In general, you will need to calibrate if:
+
+1.  You have created a new site file
+2.  You have modified any site inputs that occur before or at the same time as the data you are trying to calibrate to
+3.  The data you are calibrating to has changed
+4.  There has been a change to an underlying assumption that would impact the disease dynamics in a model run
+
+## Cali 
+
+-   We can use :package:[cali] for model calibration.
+-   TODO: Cali process 1
+-   TODO: Cali process 1
+
+## Challenges
+
+-   :package:[cali] is (hopefully) convenient, however it doesn't remove the need to run the model multiple time when calibrating. Therefore be prepared for the process to be lengthy, often requiring calibration runs to be performed on the high performance cluster.
+-   Data and model will not always be aligned
+-   Add example of good/bad calibration
+-   Calibration can be challenging when results are dominated by stochasticy (low transmission, population too small, calibrating to a sub-group in the populations)
+
+## Let's give it a try!
+
+-   Run `mvw::run_tutorial("Calibration")`
+
+- TODO:  Add picture

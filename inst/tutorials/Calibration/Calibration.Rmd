@@ -1,0 +1,34 @@
+---
+title: "Calibration"
+output: learnr::tutorial
+runtime: shiny_prerendered
+---
+
+```{r setup, include=FALSE}
+library(learnr)
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## When to calibrate
+
+```{r quiz}
+quiz(
+  question("I've edited the historical bednet coverage, I need to...",
+           answer("re-calibrate", correct = TRUE),
+           answer("run the site as is")
+  ),
+  question("I want to use a site file out of the box from :package:[site], should I...",
+           answer("calibrate"),
+           answer("not calibrate"),
+           answer("Check if I need to update the inputs then decide", correct = TRUE)
+  ),
+  question("There has been an update to the parameterisation of bednets and all of my sites have historical bed net usage. I should",
+           answer("re-calibrate all sites", correct = TRUE),
+           answer("ignore it and hope the problem goes away")
+  ),
+  question("I'm running five different future scenarios for my site, each with different prospective intervention coverage. Do I need to recalibrate the site for each scenario? ",
+           answer("Yes"),
+           answer("No", correct = TRUE)
+  )
+)
+```

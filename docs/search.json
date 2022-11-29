@@ -1,10 +1,10 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
+    "objectID": "index.html#before-the-workshop",
+    "href": "index.html#before-the-workshop",
     "title": "Index",
-    "section": "",
-    "text": "Please make sure you have the following installed:\n\nAn up-to-date installation of R\nRStudio\n:package:[malariasimulation] installed. See here for more info. You should be able to successfully run: output <- malariasimulation::run_simulation(100)\nThe malariaverse :package:[foresite], :package:[site], :package:[netz], :package:[cali]\n\nremotes::install_github(\"mrc-ide/foresite\")\nremotes::install_github(\"mrc-ide/site\")\nremotes::install_github(\"mrc-ide/netz\")\nremotes::install_github(\"mrc-ide/cali\")\n\n\n\n\n🗓️ Date\n\n\n⏰ 09:030- 17:00\n\n\n🏨 TBC"
+    "section": "Before the workshop",
+    "text": "Before the workshop\nPlease make sure you have the following installed:\n\nAn up-to-date installation of R\nRStudio\n:package:[malariasimulation] installed. See here for more info. You should be able to successfully run: output <- malariasimulation::run_simulation(100)\nThe malariaverse :package:[foresite], :package:[site], :package:[netz], :package:[cali]\n\n\nremotes::install_github(\"mrc-ide/foresite\")\nremotes::install_github(\"mrc-ide/site\")\nremotes::install_github(\"mrc-ide/netz\")\nremotes::install_github(\"mrc-ide/cali\")\n\n\n\n🗓️ Date\n\n\n⏰ 09:030- 17:00\n\n\n🏨 TBC"
   },
   {
     "objectID": "index.html#schedule",
@@ -19,6 +19,13 @@
     "title": "Index",
     "section": "Presentations associated with this workshop:",
     "text": "Presentations associated with this workshop:\nIntroduction"
+  },
+  {
+    "objectID": "inst/tutorials/Calibration/Calibration.html",
+    "href": "inst/tutorials/Calibration/Calibration.html",
+    "title": "Calibration",
+    "section": "",
+    "text": "Quiz"
   },
   {
     "objectID": "inst/tutorials/Introduction/Introduction.html",
@@ -138,5 +145,68 @@
     "title": "Malariaverse Workshop Introduction",
     "section": "Let’s give it a try!",
     "text": "Let’s give it a try!\n\nRun mvw::run_tutorial(\"Introduction\")"
+  },
+  {
+    "objectID": "presentations/2_Calibration.html#welcome-back",
+    "href": "presentations/2_Calibration.html#welcome-back",
+    "title": "Malariaverse Workshop Calibrtion",
+    "section": "Welcome back!",
+    "text": "Welcome back!\nSession aims:\n\nUnderstand why we need to “calibrate” a site\nUnderstand when we need to calibrate/re-calibrate\nIntroduction to 📦[cali] for model calibration\nCommon chalenges/issues when calibrating"
+  },
+  {
+    "objectID": "presentations/2_Calibration.html#why-calibrate",
+    "href": "presentations/2_Calibration.html#why-calibrate",
+    "title": "Malariaverse Workshop Calibrtion",
+    "section": "Why calibrate",
+    "text": "Why calibrate\n\nGiven all the information about a site (vectors, season PfPr2-10 etc…). We still need to make our best estimation of the “baseline” level of transmission.\nOne relatively simple way of doing this is modify the modelled baseline until our model output best matches some observations (e.g. PfPr2-10)."
+  },
+  {
+    "objectID": "presentations/2_Calibration.html#calibration-process",
+    "href": "presentations/2_Calibration.html#calibration-process",
+    "title": "Malariaverse Workshop Calibrtion",
+    "section": "Calibration process",
+    "text": "Calibration process"
+  },
+  {
+    "objectID": "presentations/2_Calibration.html#calibration-process-1",
+    "href": "presentations/2_Calibration.html#calibration-process-1",
+    "title": "Malariaverse Workshop Calibrtion",
+    "section": "Calibration process",
+    "text": "Calibration process"
+  },
+  {
+    "objectID": "presentations/2_Calibration.html#calibration-process-2",
+    "href": "presentations/2_Calibration.html#calibration-process-2",
+    "title": "Malariaverse Workshop Calibrtion",
+    "section": "Calibration process",
+    "text": "Calibration process"
+  },
+  {
+    "objectID": "presentations/2_Calibration.html#when-to-calibrate",
+    "href": "presentations/2_Calibration.html#when-to-calibrate",
+    "title": "Malariaverse Workshop Calibrtion",
+    "section": "When to calibrate",
+    "text": "When to calibrate\n\nCalibration or re-calibration is not always required. In general, you will need to calibrate if:\n\n\nYou have created a new site file\nYou have modified any site inputs that occur before or at the same time as the data you are trying to calibrate to\nThe data you are calibrating to has changed\nThere has been a change to an underlying assumption that would impact the disease dynamics in a model run"
+  },
+  {
+    "objectID": "presentations/2_Calibration.html#cali",
+    "href": "presentations/2_Calibration.html#cali",
+    "title": "Malariaverse Workshop Calibrtion",
+    "section": "Cali",
+    "text": "Cali\n\nWe can use 📦cali for model calibration.\nTODO: Cali process 1\nTODO: Cali process 1"
+  },
+  {
+    "objectID": "presentations/2_Calibration.html#challenges",
+    "href": "presentations/2_Calibration.html#challenges",
+    "title": "Malariaverse Workshop Calibrtion",
+    "section": "Challenges",
+    "text": "Challenges\n\n📦cali is (hopefully) convenient, however it doesn’t remove the need to run the model multiple time when calibrating. Therefore be prepared for the process to be lengthy, often requiring calibration runs to be performed on the high performance cluster.\nData and model will not always be aligned\nAdd example of good/bad calibration\nCalibration can be challenging when results are dominated by stochasticy (low transmission, population too small, calibrating to a sub-group in the populations)"
+  },
+  {
+    "objectID": "presentations/2_Calibration.html#lets-give-it-a-try",
+    "href": "presentations/2_Calibration.html#lets-give-it-a-try",
+    "title": "Malariaverse Workshop Calibrtion",
+    "section": "Let’s give it a try!",
+    "text": "Let’s give it a try!\n\nRun mvw::run_tutorial(\"Calibration\")\nTODO: Add picture"
   }
 ]
