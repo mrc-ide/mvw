@@ -32,3 +32,141 @@ quiz(
   )
 )
 ```
+
+## The summary function
+
+When running `calibrate()` we must provide a summary function that
+summarised the raw simulation output in the same format as our target.
+
+In the code box below, compete the summary function, to match the format of our target data.
+
+```{r summary-function, exercise=TRUE}
+# Target: all age clinical incidence (cases per person per year) in years 2, 3 and 4
+target <- c(0.03, 0.02, 0.01)
+# Raw simulation output
+simulation <- data.frame(
+  timestep = 1:(365 * 5),
+  n = 10000,
+  cases = rpois(365 * 5, 200 / 365)
+)
+# Summary function
+summary_function <- function(simulation){
+  
+}
+summary_function(simulation)
+```
+
+```{r summary-function-hint, exercise=TRUE}
+# Target: all age clinical incidence (cases per person per year) in years 2, 3 and 4
+target <- c(0.03, 0.02, 0.01)
+# Raw simulation output
+simulation <- data.frame(
+  timestep = 1:(365 * 5),
+  n = 10000,
+  cases = rpois(365 * 5, 200 / 365)
+)
+# Summary function
+summary_function <- function(simulation){
+  year <- ceiling(simulation$timestep / 365)
+  annual_inc <- tapply(simulation$cases, year, sum) / 10000
+  return(annual_inc[2:4])
+}
+summary_function(simulation)
+```
+
+### Calibrating
+
+In the following code box we can run a simple calibration
+
+```{r calibration, exercise=TRUE, exercise.timelimit=1200}
+library(malariasimulation)
+library(cali)
+
+# Define our target. In this example we have a PfPr estimate for year 3
+target_pfpr <- 0.3
+
+# Define our simulation parameters, we need to add $timesteps for the calibration
+p <- malariasimulation::get_parameters(
+  overrides = list(
+    human_population = 5000,
+    individual_mosquitoes = FALSE
+  )
+)
+p$timesteps <- 3 * 365
+
+# Write our summary function. To match the target we need to
+# output average PfPr in year 3
+get_pfpr_year_3 <- function(simulation_output){
+  year3 <- simulation_output[simulation_output$timestep > 2 * 365,]
+  pfpr <- year3$n_detect_730_3650 / year3$n_730_3650
+  average_pfpr <- mean(pfpr)
+  return(average_pfpr)
+}
+
+# Run a test simulation to check our target function does what it should!
+simulation <- malariasimulation::run_simulation(
+  timesteps = p$timesteps,
+  parameters = p
+)
+get_pfpr_year_3(simulation)
+
+# When we are happy we can run the calibration
+
+set.seed(1234)
+calibration <- cali::calibrate(target = target_pfpr,
+                summary_function = get_pfpr_year_3,
+                parameters = p,
+                tolerance = 0.005,
+                low = 1, high = 10)
+
+calibration
+```
+
+Lets check our results:
+
+1. Use the estimated, calbrated EIR from above to modify our parameter inputs
+2. Plot simulated PfPr over time
+3. Add your target - do they match?
+
+
+```{r calibration-check, exercise=TRUE, exercise.timelimit=1200}
+target_pfpr <- 0.3
+calibrated_p <- malariasimulation::get_parameters(
+  overrides = list(
+    human_population = 5000,
+    individual_mosquitoes = FALSE
+  )
+) |>
+  malariasimulation::set_equilibrium(init_EIR = )
+calibrated_p$timesteps <- 3 * 365
+
+calibrated_simulation <- malariasimulation::run_simulation(
+  timesteps = calibrated_p$timesteps,
+  parameters = calibrated_p
+)
+```
+
+```{r calibration-check-hint, exercise=TRUE, exercise.timelimit=1200}
+target_pfpr <- 0.3
+calibrated_p <- malariasimulation::get_parameters(
+  overrides = list(
+    human_population = 5000,
+    individual_mosquitoes = FALSE
+  )
+) |>
+  malariasimulation::set_equilibrium(init_EIR = 4.216965)
+calibrated_p$timesteps <- 3 * 365
+
+calibrated_simulation <- malariasimulation::run_simulation(
+  timesteps = calibrated_p$timesteps,
+  parameters = calibrated_p
+)
+
+calibrated_prev <- calibrated_simulation$n_detect_730_3650 / calibrated_simulation$n_730_3650
+year <- calibrated_simulation$timestep / 365
+
+plot(NA, xlim = c(0, 3), ylim = c(0, 0.8),
+     xlab = "Year", ylab = "PfPr")
+segments(x0 = 2, y0 = target_pfpr, x1 = 3, y1 = target_pfpr, col = "red", lwd = 4)
+lines(calibrated_prev ~ year)
+```

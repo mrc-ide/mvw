@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.1.189">
 
   <meta name="author" content="Pete Winskill">
-  <title>mvwsite - Malariaverse Workshop Calibrtion</title>
+  <title>mvwsite - Malariaverse Workshop Calibration</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -325,7 +325,7 @@
     <div class="slides">
 
 <section id="title-slide" class="center">
-  <h1 class="title">Malariaverse Workshop Calibrtion</h1>
+  <h1 class="title">Malariaverse Workshop Calibration</h1>
   <p class="author">Pete Winskill</p>
 </section>
 
@@ -336,14 +336,14 @@
 <li>Understand why we need to “calibrate” a site</li>
 <li>Understand when we need to calibrate/re-calibrate</li>
 <li>Introduction to <span class="emoji" data-emoji="package">📦</span>[cali] for model calibration</li>
-<li>Common chalenges/issues when calibrating</li>
+<li>Common challenges/issues when calibrating</li>
 </ul>
 </section>
 <section id="why-calibrate" class="slide level2">
 <h2>Why calibrate</h2>
 <ul>
 <li>Given all the information about a site (vectors, season <em>Pf</em>Pr<sub>2-10</sub> etc…). We still need to make our best estimation of the “baseline” level of transmission.</li>
-<li>One relatively simple way of doing this is modify the modelled baseline until our model output best matches some observations (e.g.&nbsp;<em>Pf</em>Pr<sub>2-10</sub>).</li>
+<li>One relatively simple way of doing this is by modifying the modelled baseline until our model output best matches some observations (e.g.&nbsp;<em>Pf</em>Pr<sub>2-10</sub>).</li>
 </ul>
 </section>
 <section id="calibration-process" class="slide level2">
@@ -373,29 +373,61 @@
 <section id="cali" class="slide level2">
 <h2>Cali</h2>
 <ul>
-<li>We can use <span class="emoji" data-emoji="package">📦</span><a href="#/cali">cali</a> for model calibration.</li>
-<li>TODO: Cali process 1</li>
-<li>TODO: Cali process 1</li>
+<li>We can use <span class="emoji" data-emoji="package">📦</span><a href="#/cali-1">cali</a> for model calibration.</li>
+<li>The <code>calibrate()</code> function takes a <code>target</code>, for example annual <em>Pf</em>Pr<sub>2-10</sub> for the years 2015-2020.</li>
+<li>The user defines a <code>summary_function</code>, a function that takes the raw model output and produces the model estimate corresponding to the <code>target</code>. In this case our summary function will summarise the model-estimated <em>Pf</em>Pr<sub>2-10</sub> for the years 2015-2020</li>
+<li><code>calibrate()</code> will then search a range of EIRs until the outputs of <code>summary_function</code> and within a user-defined tolerance of the <code>target</code></li>
+</ul>
+</section>
+<section id="cali-1" class="slide level2">
+<h2>Cali</h2>
+<ul>
+<li>It is always good practice to run a simulation and test your <code>summary_function</code> before using it in <code>calibrate()</code> - this will help with debugging.</li>
+<li>There a lots of other tuning and model options, so please see <code>?calibrate()</code> for more detailed information.</li>
 </ul>
 </section>
 <section id="challenges" class="slide level2">
 <h2>Challenges</h2>
 <ul>
-<li><span class="emoji" data-emoji="package">📦</span><a href="#/cali">cali</a> is (hopefully) convenient, however it doesn’t remove the need to run the model multiple time when calibrating. Therefore be prepared for the process to be lengthy, often requiring calibration runs to be performed on the high performance cluster.</li>
-<li>Data and model will not always be aligned</li>
-<li>Add example of good/bad calibration</li>
-<li>Calibration can be challenging when results are dominated by stochasticy (low transmission, population too small, calibrating to a sub-group in the populations)</li>
+<li><span class="emoji" data-emoji="package">📦</span><a href="#/cali-1">cali</a> is (hopefully) convenient, however it doesn’t remove the need to run the model multiple time when calibrating. Therefore be prepared for the process to be lengthy, often requiring calibration runs to be performed on the high performance cluster.</li>
+</ul>
+</section>
+<section id="challenges-1" class="slide level2">
+<h2>Challenges</h2>
+<ul>
+<li>Available data and model outputs are not guaranteed to play nicely</li>
+</ul>
+
+<img data-src="images/Guinea-Pig-cat.jpg" class="r-stretch quarto-figure-center"></section>
+<section id="challenges-2" class="slide level2">
+<h2>Challenges</h2>
+<p>Sometimes calibration can look good:</p>
+
+<img data-src="images/Calibration_good.png" class="r-stretch quarto-figure-center"></section>
+<section id="challenges-3" class="slide level2">
+<h2>Challenges</h2>
+<p>…and sometimes not:</p>
+
+<img data-src="images/Calibration_bad.png" class="r-stretch quarto-figure-center"></section>
+<section id="challenges-4" class="slide level2">
+<h2>Challenges</h2>
+<ul>
+<li>Calibration can be d when difficlut when results are dominated by stochasticy (low transmission, population is too small, calibrating to a sub-group in the populations etc.)</li>
 </ul>
 </section>
 <section id="lets-give-it-a-try" class="slide level2">
 <h2>Let’s give it a try!</h2>
 <ul>
-<li><p>Run <code>mvw::run_tutorial("Calibration")</code></p></li>
-<li><p>TODO: Add picture</p></li>
+<li>Run <code>mvw::run_tutorial("Calibration")</code></li>
 </ul>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/Guinea-Pig-bike.jpg"></p>
+</figure>
+</div>
 
-
-<img src="images/malariaverse.gif" class="slide-logo r-stretch"><div class="footer footer-default">
+<p><img src="images/malariaverse.gif" class="slide-logo"></p>
+<div class="footer footer-default">
 
 </div>
 </section>

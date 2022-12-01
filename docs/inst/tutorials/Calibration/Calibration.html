@@ -20,6 +20,69 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -100,6 +163,10 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#when-to-calibrate" id="toc-when-to-calibrate" class="nav-link active" data-scroll-target="#when-to-calibrate">When to calibrate</a></li>
+  <li><a href="#the-summary-function" id="toc-the-summary-function" class="nav-link" data-scroll-target="#the-summary-function">The summary function</a>
+  <ul class="collapse">
+  <li><a href="#calibrating" id="toc-calibrating" class="nav-link" data-scroll-target="#calibrating">Calibrating</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -169,6 +236,150 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
+</section>
+<section id="the-summary-function" class="level2">
+<h2 class="anchored" data-anchor-id="the-summary-function">The summary function</h2>
+<p>When running <code>calibrate()</code> we must provide a summary function that summarised the raw simulation output in the same format as our target.</p>
+<p>In the code box below, compete the summary function, to match the format of our target data.</p>
+<div class="cell" data-exercise="true">
+<div class="tutorial-exercise" data-label="summary-function" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Target: all age clinical incidence (cases per person per year) in years 2, 3 and 4</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>target <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.03</span>, <span class="fl">0.02</span>, <span class="fl">0.01</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Raw simulation output</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>simulation <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">timestep =</span> <span class="dv">1</span><span class="sc">:</span>(<span class="dv">365</span> <span class="sc">*</span> <span class="dv">5</span>),</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">n =</span> <span class="dv">10000</span>,</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">cases =</span> <span class="fu">rpois</span>(<span class="dv">365</span> <span class="sc">*</span> <span class="dv">5</span>, <span class="dv">200</span> <span class="sc">/</span> <span class="dv">365</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Summary function</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>summary_function <span class="ot">&lt;-</span> <span class="cf">function</span>(simulation){</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">summary_function</span>(simulation)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":false,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
+</div>
+</div>
+<div class="cell" data-exercise="true">
+<div class="tutorial-exercise" data-label="summary-function-hint" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Target: all age clinical incidence (cases per person per year) in years 2, 3 and 4</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>target <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.03</span>, <span class="fl">0.02</span>, <span class="fl">0.01</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Raw simulation output</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>simulation <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">timestep =</span> <span class="dv">1</span><span class="sc">:</span>(<span class="dv">365</span> <span class="sc">*</span> <span class="dv">5</span>),</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">n =</span> <span class="dv">10000</span>,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">cases =</span> <span class="fu">rpois</span>(<span class="dv">365</span> <span class="sc">*</span> <span class="dv">5</span>, <span class="dv">200</span> <span class="sc">/</span> <span class="dv">365</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Summary function</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>summary_function <span class="ot">&lt;-</span> <span class="cf">function</span>(simulation){</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  year <span class="ot">&lt;-</span> <span class="fu">ceiling</span>(simulation<span class="sc">$</span>timestep <span class="sc">/</span> <span class="dv">365</span>)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  annual_inc <span class="ot">&lt;-</span> <span class="fu">tapply</span>(simulation<span class="sc">$</span>cases, year, sum) <span class="sc">/</span> <span class="dv">10000</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(annual_inc[<span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>])</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="fu">summary_function</span>(simulation)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":false,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
+</div>
+</div>
+<section id="calibrating" class="level3">
+<h3 class="anchored" data-anchor-id="calibrating">Calibrating</h3>
+<p>In the following code box we can run a simple calibration</p>
+<div class="cell" data-exercise="true" data-exercise.timelimit="1200">
+<div class="tutorial-exercise" data-label="calibration" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(malariasimulation)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(cali)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Define our target. In this example we have a PfPr estimate for year 3</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>target_pfpr <span class="ot">&lt;-</span> <span class="fl">0.3</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Define our simulation parameters, we need to add $timesteps for the calibration</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> malariasimulation<span class="sc">::</span><span class="fu">get_parameters</span>(</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">overrides =</span> <span class="fu">list</span>(</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">human_population =</span> <span class="dv">5000</span>,</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">individual_mosquitoes =</span> <span class="cn">FALSE</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>p<span class="sc">$</span>timesteps <span class="ot">&lt;-</span> <span class="dv">3</span> <span class="sc">*</span> <span class="dv">365</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Write our summary function. To match the target we need to</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="co"># output average PfPr in year 3</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>get_pfpr_year_3 <span class="ot">&lt;-</span> <span class="cf">function</span>(simulation_output){</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>  year3 <span class="ot">&lt;-</span> simulation_output[simulation_output<span class="sc">$</span>timestep <span class="sc">&gt;</span> <span class="dv">2</span> <span class="sc">*</span> <span class="dv">365</span>,]</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>  pfpr <span class="ot">&lt;-</span> year3<span class="sc">$</span>n_detect_730_3650 <span class="sc">/</span> year3<span class="sc">$</span>n_730_3650</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>  average_pfpr <span class="ot">&lt;-</span> <span class="fu">mean</span>(pfpr)</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(average_pfpr)</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Run a test simulation to check our target function does what it should!</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>simulation <span class="ot">&lt;-</span> malariasimulation<span class="sc">::</span><span class="fu">run_simulation</span>(</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>  <span class="at">timesteps =</span> p<span class="sc">$</span>timesteps,</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>  <span class="at">parameters =</span> p</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="fu">get_pfpr_year_3</span>(simulation)</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a><span class="co"># When we are happy we can run the calibration</span></span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>calibration <span class="ot">&lt;-</span> cali<span class="sc">::</span><span class="fu">calibrate</span>(<span class="at">target =</span> target_pfpr,</span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>                <span class="at">summary_function =</span> get_pfpr_year_3,</span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>                <span class="at">parameters =</span> p,</span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>                <span class="at">tolerance =</span> <span class="fl">0.005</span>,</span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>                <span class="at">low =</span> <span class="dv">1</span>, <span class="at">high =</span> <span class="dv">10</span>)</span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>calibration</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":true,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
+</div>
+</div>
+<p>Lets check our results:</p>
+<ol type="1">
+<li>Use the estimated, calbrated EIR from above to modify our parameter inputs</li>
+<li>Plot simulated PfPr over time</li>
+<li>Add your target - do they match?</li>
+</ol>
+<div class="cell" data-exercise="true" data-exercise.timelimit="1200">
+<div class="tutorial-exercise" data-label="calibration-check" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>target_pfpr <span class="ot">&lt;-</span> <span class="fl">0.3</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>calibrated_p <span class="ot">&lt;-</span> malariasimulation<span class="sc">::</span><span class="fu">get_parameters</span>(</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">overrides =</span> <span class="fu">list</span>(</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">human_population =</span> <span class="dv">5000</span>,</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">individual_mosquitoes =</span> <span class="cn">FALSE</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  malariasimulation<span class="sc">::</span><span class="fu">set_equilibrium</span>(<span class="at">init_EIR =</span> )</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>calibrated_p<span class="sc">$</span>timesteps <span class="ot">&lt;-</span> <span class="dv">3</span> <span class="sc">*</span> <span class="dv">365</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>calibrated_simulation <span class="ot">&lt;-</span> malariasimulation<span class="sc">::</span><span class="fu">run_simulation</span>(</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">timesteps =</span> calibrated_p<span class="sc">$</span>timesteps,</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">parameters =</span> calibrated_p</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":false,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
+</div>
+</div>
+<div class="cell" data-exercise="true" data-exercise.timelimit="1200">
+<div class="tutorial-exercise" data-label="calibration-check-hint" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>target_pfpr <span class="ot">&lt;-</span> <span class="fl">0.3</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>calibrated_p <span class="ot">&lt;-</span> malariasimulation<span class="sc">::</span><span class="fu">get_parameters</span>(</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">overrides =</span> <span class="fu">list</span>(</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">human_population =</span> <span class="dv">5000</span>,</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">individual_mosquitoes =</span> <span class="cn">FALSE</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  malariasimulation<span class="sc">::</span><span class="fu">set_equilibrium</span>(<span class="at">init_EIR =</span> <span class="fl">4.216965</span>)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>calibrated_p<span class="sc">$</span>timesteps <span class="ot">&lt;-</span> <span class="dv">3</span> <span class="sc">*</span> <span class="dv">365</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>calibrated_simulation <span class="ot">&lt;-</span> malariasimulation<span class="sc">::</span><span class="fu">run_simulation</span>(</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">timesteps =</span> calibrated_p<span class="sc">$</span>timesteps,</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">parameters =</span> calibrated_p</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>calibrated_prev <span class="ot">&lt;-</span> calibrated_simulation<span class="sc">$</span>n_detect_730_3650 <span class="sc">/</span> calibrated_simulation<span class="sc">$</span>n_730_3650</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>year <span class="ot">&lt;-</span> calibrated_simulation<span class="sc">$</span>timestep <span class="sc">/</span> <span class="dv">365</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="cn">NA</span>, <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">3</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.8</span>),</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Year"</span>, <span class="at">ylab =</span> <span class="st">"PfPr"</span>)</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="fu">segments</span>(<span class="at">x0 =</span> <span class="dv">2</span>, <span class="at">y0 =</span> target_pfpr, <span class="at">x1 =</span> <span class="dv">3</span>, <span class="at">y1 =</span> target_pfpr, <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">lwd =</span> <span class="dv">4</span>)</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(calibrated_prev <span class="sc">~</span> year)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":false,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
+</div>
+</div>
 <p>
 <script type="application/shiny-prerendered" data-context="server-start">
 library(learnr)
@@ -195,10 +406,10 @@ session$onSessionEnded(function() {
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-1", question = structure("I’ve edited the historical bednet coverage, I need to…", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_5ce0ce9", 
+"character")), answers = list(structure(list(id = "lnr_ans_87298e0", 
     option = "re-calibrate", value = "re-calibrate", label = structure("re-calibrate", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_14f0f79", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_3dbf286", 
     option = "run the site as is", value = "run the site as is", 
     label = structure("run the site as is", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
@@ -209,20 +420,20 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "quiz-1-answer", question = "quiz-1"), loading = NULL, 
-    random_answer_order = FALSE, allow_retry = FALSE, seed = 568164156.735428, 
+    random_answer_order = FALSE, allow_retry = FALSE, seed = 1910376154.11041, 
     options = list()), class = c("learnr_radio", "tutorial_question"
 )), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-2", question = structure("I want to use a site file out of the box from :package:[site], should I…", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_da3e276", 
+"character")), answers = list(structure(list(id = "lnr_ans_704c41b", 
     option = "calibrate", value = "calibrate", label = structure("calibrate", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_3a10afd", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_a912bc5", 
     option = "not calibrate", value = "not calibrate", label = structure("not calibrate", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_44cab67", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_9054845", 
     option = "Check if I need to update the inputs then decide", 
     value = "Check if I need to update the inputs then decide", 
     label = structure("Check if I need to update the inputs then decide", html = TRUE, class = c("html", 
@@ -234,18 +445,18 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "quiz-2-answer", question = "quiz-2"), loading = NULL, 
-    random_answer_order = FALSE, allow_retry = FALSE, seed = 1181048072.45003, 
+    random_answer_order = FALSE, allow_retry = FALSE, seed = 1198824471.44175, 
     options = list()), class = c("learnr_radio", "tutorial_question"
 )), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-3", question = structure("There has been an update to the parameterisation of bednets and all of my sites have historical bed net usage. I should", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_3470494", 
+"character")), answers = list(structure(list(id = "lnr_ans_19b11fb", 
     option = "re-calibrate all sites", value = "re-calibrate all sites", 
     label = structure("re-calibrate all sites", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_8a151f", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_f87aca4", 
     option = "ignore it and hope the problem goes away", value = "ignore it and hope the problem goes away", 
     label = structure("ignore it and hope the problem goes away", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
@@ -256,17 +467,17 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "quiz-3-answer", question = "quiz-3"), loading = NULL, 
-    random_answer_order = FALSE, allow_retry = FALSE, seed = 1723873278.69726, 
+    random_answer_order = FALSE, allow_retry = FALSE, seed = 519097728.758276, 
     options = list()), class = c("learnr_radio", "tutorial_question"
 )), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-4", question = structure("I’m running five different future scenarios for my site, each with different prospective intervention coverage. Do I need to recalibrate the site for each scenario?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_4abd93", 
+"character")), answers = list(structure(list(id = "lnr_ans_ad30af", 
     option = "Yes", value = "Yes", label = structure("Yes", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_3eaf673", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_2816de1", 
     option = "No", value = "No", label = structure("No", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
 "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
@@ -276,9 +487,254 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "quiz-4-answer", question = "quiz-4"), loading = NULL, 
-    random_answer_order = FALSE, allow_retry = FALSE, seed = 922019333.570651, 
+    random_answer_order = FALSE, allow_retry = FALSE, seed = 1290632143.399, 
     options = list()), class = c("learnr_radio", "tutorial_question"
 )), session = session)
+</script>
+ 
+<script type="application/shiny-prerendered" data-context="server">
+`tutorial-exercise-summary-function-result` <- learnr:::setup_exercise_handler(reactive(req(input$`tutorial-exercise-summary-function-code-editor`)), session)
+output$`tutorial-exercise-summary-function-output` <- renderUI({
+  `tutorial-exercise-summary-function-result`()
+})
+</script>
+ 
+<script type="application/shiny-prerendered" data-context="server">
+learnr:::store_exercise_cache(structure(list(label = "summary-function", global_setup = structure(c("library(learnr)", 
+"knitr::opts_chunk$set(echo = FALSE)"), chunk_opts = list(label = "setup", 
+    include = FALSE)), setup = NULL, chunks = list(list(label = "summary-function", 
+    code = "# Target: all age clinical incidence (cases per person per year) in years 2, 3 and 4\ntarget <- c(0.03, 0.02, 0.01)\n# Raw simulation output\nsimulation <- data.frame(\n  timestep = 1:(365 * 5),\n  n = 10000,\n  cases = rpois(365 * 5, 200 / 365)\n)\n# Summary function\nsummary_function <- function(simulation){\n  \n}\nsummary_function(simulation)", 
+    opts = list(label = "\"summary-function\"", exercise = "TRUE"), 
+    engine = "r")), code_check = NULL, error_check = NULL, check = NULL, 
+    solution = NULL, tests = NULL, options = list(eval = FALSE, 
+        echo = TRUE, results = "markup", tidy = FALSE, tidy.opts = NULL, 
+        collapse = FALSE, prompt = FALSE, comment = NA, highlight = FALSE, 
+        size = "normalsize", background = "#F7F7F7", strip.white = TRUE, 
+        cache = 0, cache.path = "Calibration_cache/html/", cache.vars = NULL, 
+        cache.lazy = TRUE, dependson = NULL, autodep = FALSE, 
+        cache.rebuild = FALSE, fig.keep = "high", fig.show = "asis", 
+        fig.align = "default", fig.path = "Calibration_files/figure-html/", 
+        dev = "png", dev.args = NULL, dpi = 192, fig.ext = "png", 
+        fig.width = 7L, fig.height = 5L, fig.env = "figure", 
+        fig.cap = NULL, fig.scap = NULL, fig.lp = "fig:", fig.subcap = NULL, 
+        fig.pos = "", out.width = 672L, out.height = NULL, out.extra = NULL, 
+        fig.retina = 2, external = TRUE, sanitize = FALSE, interval = 1, 
+        aniopts = "controls,loop", warning = TRUE, error = FALSE, 
+        message = TRUE, render = NULL, ref.label = NULL, child = NULL, 
+        engine = "r", split = FALSE, include = TRUE, purl = TRUE, 
+        fenced.echo = FALSE, ft.shadow = FALSE, label = "summary-function", 
+        exercise = TRUE, original.params.src = "r summary-function, exercise=TRUE", 
+        chunk.echo = FALSE, code = c("# Target: all age clinical incidence (cases per person per year) in years 2, 3 and 4", 
+        "target <- c(0.03, 0.02, 0.01)", "# Raw simulation output", 
+        "simulation <- data.frame(", "  timestep = 1:(365 * 5),", 
+        "  n = 10000,", "  cases = rpois(365 * 5, 200 / 365)", 
+        ")", "# Summary function", "summary_function <- function(simulation){", 
+        "  ", "}", "summary_function(simulation)"), out.width.px = 672L, 
+        out.height.px = 480L, params.src = "r summary-function, exercise=TRUE", 
+        fig.num = 0, exercise.df_print = "default", exercise.checker = "NULL"), 
+    engine = "r", version = "4"), class = c("r", "tutorial_exercise"
+)))
+</script>
+ 
+<script type="application/shiny-prerendered" data-context="server">
+`tutorial-exercise-summary-function-hint-result` <- learnr:::setup_exercise_handler(reactive(req(input$`tutorial-exercise-summary-function-hint-code-editor`)), session)
+output$`tutorial-exercise-summary-function-hint-output` <- renderUI({
+  `tutorial-exercise-summary-function-hint-result`()
+})
+</script>
+ 
+<script type="application/shiny-prerendered" data-context="server">
+learnr:::store_exercise_cache(structure(list(label = "summary-function-hint", global_setup = structure(c("library(learnr)", 
+"knitr::opts_chunk$set(echo = FALSE)"), chunk_opts = list(label = "setup", 
+    include = FALSE)), setup = NULL, chunks = list(list(label = "summary-function-hint", 
+    code = "# Target: all age clinical incidence (cases per person per year) in years 2, 3 and 4\ntarget <- c(0.03, 0.02, 0.01)\n# Raw simulation output\nsimulation <- data.frame(\n  timestep = 1:(365 * 5),\n  n = 10000,\n  cases = rpois(365 * 5, 200 / 365)\n)\n# Summary function\nsummary_function <- function(simulation){\n  year <- ceiling(simulation$timestep / 365)\n  annual_inc <- tapply(simulation$cases, year, sum) / 10000\n  return(annual_inc[2:4])\n}\nsummary_function(simulation)", 
+    opts = list(label = "\"summary-function-hint\"", exercise = "TRUE"), 
+    engine = "r")), code_check = NULL, error_check = NULL, check = NULL, 
+    solution = NULL, tests = NULL, options = list(eval = FALSE, 
+        echo = TRUE, results = "markup", tidy = FALSE, tidy.opts = NULL, 
+        collapse = FALSE, prompt = FALSE, comment = NA, highlight = FALSE, 
+        size = "normalsize", background = "#F7F7F7", strip.white = TRUE, 
+        cache = 0, cache.path = "Calibration_cache/html/", cache.vars = NULL, 
+        cache.lazy = TRUE, dependson = NULL, autodep = FALSE, 
+        cache.rebuild = FALSE, fig.keep = "high", fig.show = "asis", 
+        fig.align = "default", fig.path = "Calibration_files/figure-html/", 
+        dev = "png", dev.args = NULL, dpi = 192, fig.ext = "png", 
+        fig.width = 7L, fig.height = 5L, fig.env = "figure", 
+        fig.cap = NULL, fig.scap = NULL, fig.lp = "fig:", fig.subcap = NULL, 
+        fig.pos = "", out.width = 672L, out.height = NULL, out.extra = NULL, 
+        fig.retina = 2, external = TRUE, sanitize = FALSE, interval = 1, 
+        aniopts = "controls,loop", warning = TRUE, error = FALSE, 
+        message = TRUE, render = NULL, ref.label = NULL, child = NULL, 
+        engine = "r", split = FALSE, include = TRUE, purl = TRUE, 
+        fenced.echo = FALSE, ft.shadow = FALSE, label = "summary-function-hint", 
+        exercise = TRUE, original.params.src = "r summary-function-hint, exercise=TRUE", 
+        chunk.echo = FALSE, code = c("# Target: all age clinical incidence (cases per person per year) in years 2, 3 and 4", 
+        "target <- c(0.03, 0.02, 0.01)", "# Raw simulation output", 
+        "simulation <- data.frame(", "  timestep = 1:(365 * 5),", 
+        "  n = 10000,", "  cases = rpois(365 * 5, 200 / 365)", 
+        ")", "# Summary function", "summary_function <- function(simulation){", 
+        "  year <- ceiling(simulation$timestep / 365)", "  annual_inc <- tapply(simulation$cases, year, sum) / 10000", 
+        "  return(annual_inc[2:4])", "}", "summary_function(simulation)"
+        ), out.width.px = 672L, out.height.px = 480L, params.src = "r summary-function-hint, exercise=TRUE", 
+        fig.num = 0, exercise.df_print = "default", exercise.checker = "NULL"), 
+    engine = "r", version = "4"), class = c("r", "tutorial_exercise"
+)))
+</script>
+ 
+<script type="application/shiny-prerendered" data-context="server">
+`tutorial-exercise-calibration-result` <- learnr:::setup_exercise_handler(reactive(req(input$`tutorial-exercise-calibration-code-editor`)), session)
+output$`tutorial-exercise-calibration-output` <- renderUI({
+  `tutorial-exercise-calibration-result`()
+})
+</script>
+ 
+<script type="application/shiny-prerendered" data-context="server">
+learnr:::store_exercise_cache(structure(list(label = "calibration", global_setup = structure(c("library(learnr)", 
+"knitr::opts_chunk$set(echo = FALSE)"), chunk_opts = list(label = "setup", 
+    include = FALSE)), setup = NULL, chunks = list(list(label = "calibration", 
+    code = "library(malariasimulation)\nlibrary(cali)\n\n# Define our target. In this example we have a PfPr estimate for year 3\ntarget_pfpr <- 0.3\n\n# Define our simulation parameters, we need to add $timesteps for the calibration\np <- malariasimulation::get_parameters(\n  overrides = list(\n    human_population = 5000,\n    individual_mosquitoes = FALSE\n  )\n)\np$timesteps <- 3 * 365\n\n# Write our summary function. To match the target we need to\n# output average PfPr in year 3\nget_pfpr_year_3 <- function(simulation_output){\n  year3 <- simulation_output[simulation_output$timestep > 2 * 365,]\n  pfpr <- year3$n_detect_730_3650 / year3$n_730_3650\n  average_pfpr <- mean(pfpr)\n  return(average_pfpr)\n}\n\n# Run a test simulation to check our target function does what it should!\nsimulation <- malariasimulation::run_simulation(\n  timesteps = p$timesteps,\n  parameters = p\n)\nget_pfpr_year_3(simulation)\n\n# When we are happy we can run the calibration\n\nset.seed(1234)\ncalibration <- cali::calibrate(target = target_pfpr,\n                summary_function = get_pfpr_year_3,\n                parameters = p,\n                tolerance = 0.005,\n                low = 1, high = 10)\n\ncalibration", 
+    opts = list(label = "\"calibration\"", exercise = "TRUE", 
+        exercise.timelimit = "1200"), engine = "r")), code_check = NULL, 
+    error_check = NULL, check = structure(c("target_pfpr <- 0.3", 
+    "calibrated_p <- malariasimulation::get_parameters(", "  overrides = list(", 
+    "    human_population = 5000,", "    individual_mosquitoes = FALSE", 
+    "  )", ") |>", "  malariasimulation::set_equilibrium(init_EIR = )", 
+    "calibrated_p$timesteps <- 3 * 365", "", "calibrated_simulation <- malariasimulation::run_simulation(", 
+    "  timesteps = calibrated_p$timesteps,", "  parameters = calibrated_p", 
+    ")"), chunk_opts = list(label = "calibration-check", exercise = TRUE, 
+        exercise.timelimit = 1200)), solution = NULL, tests = NULL, 
+    options = list(eval = FALSE, echo = TRUE, results = "markup", 
+        tidy = FALSE, tidy.opts = NULL, collapse = FALSE, prompt = FALSE, 
+        comment = NA, highlight = FALSE, size = "normalsize", 
+        background = "#F7F7F7", strip.white = TRUE, cache = 0, 
+        cache.path = "Calibration_cache/html/", cache.vars = NULL, 
+        cache.lazy = TRUE, dependson = NULL, autodep = FALSE, 
+        cache.rebuild = FALSE, fig.keep = "high", fig.show = "asis", 
+        fig.align = "default", fig.path = "Calibration_files/figure-html/", 
+        dev = "png", dev.args = NULL, dpi = 192, fig.ext = "png", 
+        fig.width = 7L, fig.height = 5L, fig.env = "figure", 
+        fig.cap = NULL, fig.scap = NULL, fig.lp = "fig:", fig.subcap = NULL, 
+        fig.pos = "", out.width = 672L, out.height = NULL, out.extra = NULL, 
+        fig.retina = 2, external = TRUE, sanitize = FALSE, interval = 1, 
+        aniopts = "controls,loop", warning = TRUE, error = FALSE, 
+        message = TRUE, render = NULL, ref.label = NULL, child = NULL, 
+        engine = "r", split = FALSE, include = TRUE, purl = TRUE, 
+        fenced.echo = FALSE, ft.shadow = FALSE, label = "calibration", 
+        exercise = TRUE, exercise.timelimit = 1200, original.params.src = "r calibration, exercise=TRUE, exercise.timelimit=1200", 
+        chunk.echo = FALSE, code = c("library(malariasimulation)", 
+        "library(cali)", "", "# Define our target. In this example we have a PfPr estimate for year 3", 
+        "target_pfpr <- 0.3", "", "# Define our simulation parameters, we need to add $timesteps for the calibration", 
+        "p <- malariasimulation::get_parameters(", "  overrides = list(", 
+        "    human_population = 5000,", "    individual_mosquitoes = FALSE", 
+        "  )", ")", "p$timesteps <- 3 * 365", "", "# Write our summary function. To match the target we need to", 
+        "# output average PfPr in year 3", "get_pfpr_year_3 <- function(simulation_output){", 
+        "  year3 <- simulation_output[simulation_output$timestep > 2 * 365,]", 
+        "  pfpr <- year3$n_detect_730_3650 / year3$n_730_3650", 
+        "  average_pfpr <- mean(pfpr)", "  return(average_pfpr)", 
+        "}", "", "# Run a test simulation to check our target function does what it should!", 
+        "simulation <- malariasimulation::run_simulation(", "  timesteps = p$timesteps,", 
+        "  parameters = p", ")", "get_pfpr_year_3(simulation)", 
+        "", "# When we are happy we can run the calibration", 
+        "", "set.seed(1234)", "calibration <- cali::calibrate(target = target_pfpr,", 
+        "                summary_function = get_pfpr_year_3,", 
+        "                parameters = p,", "                tolerance = 0.005,", 
+        "                low = 1, high = 10)", "", "calibration"
+        ), out.width.px = 672L, out.height.px = 480L, params.src = "r calibration, exercise=TRUE, exercise.timelimit=1200", 
+        fig.num = 0, exercise.df_print = "default", exercise.checker = "NULL"), 
+    engine = "r", version = "4"), class = c("r", "tutorial_exercise"
+)))
+</script>
+ 
+<script type="application/shiny-prerendered" data-context="server">
+`tutorial-exercise-calibration-check-result` <- learnr:::setup_exercise_handler(reactive(req(input$`tutorial-exercise-calibration-check-code-editor`)), session)
+output$`tutorial-exercise-calibration-check-output` <- renderUI({
+  `tutorial-exercise-calibration-check-result`()
+})
+</script>
+ 
+<script type="application/shiny-prerendered" data-context="server">
+learnr:::store_exercise_cache(structure(list(label = "calibration-check", global_setup = structure(c("library(learnr)", 
+"knitr::opts_chunk$set(echo = FALSE)"), chunk_opts = list(label = "setup", 
+    include = FALSE)), setup = NULL, chunks = list(list(label = "calibration-check", 
+    code = "target_pfpr <- 0.3\ncalibrated_p <- malariasimulation::get_parameters(\n  overrides = list(\n    human_population = 5000,\n    individual_mosquitoes = FALSE\n  )\n) |>\n  malariasimulation::set_equilibrium(init_EIR = )\ncalibrated_p$timesteps <- 3 * 365\n\ncalibrated_simulation <- malariasimulation::run_simulation(\n  timesteps = calibrated_p$timesteps,\n  parameters = calibrated_p\n)", 
+    opts = list(label = "\"calibration-check\"", exercise = "TRUE", 
+        exercise.timelimit = "1200"), engine = "r")), code_check = NULL, 
+    error_check = NULL, check = NULL, solution = NULL, tests = NULL, 
+    options = list(eval = FALSE, echo = TRUE, results = "markup", 
+        tidy = FALSE, tidy.opts = NULL, collapse = FALSE, prompt = FALSE, 
+        comment = NA, highlight = FALSE, size = "normalsize", 
+        background = "#F7F7F7", strip.white = TRUE, cache = 0, 
+        cache.path = "Calibration_cache/html/", cache.vars = NULL, 
+        cache.lazy = TRUE, dependson = NULL, autodep = FALSE, 
+        cache.rebuild = FALSE, fig.keep = "high", fig.show = "asis", 
+        fig.align = "default", fig.path = "Calibration_files/figure-html/", 
+        dev = "png", dev.args = NULL, dpi = 192, fig.ext = "png", 
+        fig.width = 7L, fig.height = 5L, fig.env = "figure", 
+        fig.cap = NULL, fig.scap = NULL, fig.lp = "fig:", fig.subcap = NULL, 
+        fig.pos = "", out.width = 672L, out.height = NULL, out.extra = NULL, 
+        fig.retina = 2, external = TRUE, sanitize = FALSE, interval = 1, 
+        aniopts = "controls,loop", warning = TRUE, error = FALSE, 
+        message = TRUE, render = NULL, ref.label = NULL, child = NULL, 
+        engine = "r", split = FALSE, include = TRUE, purl = TRUE, 
+        fenced.echo = FALSE, ft.shadow = FALSE, label = "calibration-check", 
+        exercise = TRUE, exercise.timelimit = 1200, original.params.src = "r calibration-check, exercise=TRUE, exercise.timelimit=1200", 
+        chunk.echo = FALSE, code = c("target_pfpr <- 0.3", "calibrated_p <- malariasimulation::get_parameters(", 
+        "  overrides = list(", "    human_population = 5000,", 
+        "    individual_mosquitoes = FALSE", "  )", ") |>", "  malariasimulation::set_equilibrium(init_EIR = )", 
+        "calibrated_p$timesteps <- 3 * 365", "", "calibrated_simulation <- malariasimulation::run_simulation(", 
+        "  timesteps = calibrated_p$timesteps,", "  parameters = calibrated_p", 
+        ")"), out.width.px = 672L, out.height.px = 480L, params.src = "r calibration-check, exercise=TRUE, exercise.timelimit=1200", 
+        fig.num = 0, exercise.df_print = "default", exercise.checker = "NULL"), 
+    engine = "r", version = "4"), class = c("r", "tutorial_exercise"
+)))
+</script>
+ 
+<script type="application/shiny-prerendered" data-context="server">
+`tutorial-exercise-calibration-check-hint-result` <- learnr:::setup_exercise_handler(reactive(req(input$`tutorial-exercise-calibration-check-hint-code-editor`)), session)
+output$`tutorial-exercise-calibration-check-hint-output` <- renderUI({
+  `tutorial-exercise-calibration-check-hint-result`()
+})
+</script>
+ 
+<script type="application/shiny-prerendered" data-context="server">
+learnr:::store_exercise_cache(structure(list(label = "calibration-check-hint", global_setup = structure(c("library(learnr)", 
+"knitr::opts_chunk$set(echo = FALSE)"), chunk_opts = list(label = "setup", 
+    include = FALSE)), setup = NULL, chunks = list(list(label = "calibration-check-hint", 
+    code = "target_pfpr <- 0.3\ncalibrated_p <- malariasimulation::get_parameters(\n  overrides = list(\n    human_population = 5000,\n    individual_mosquitoes = FALSE\n  )\n) |>\n  malariasimulation::set_equilibrium(init_EIR = 4.216965)\ncalibrated_p$timesteps <- 3 * 365\n\ncalibrated_simulation <- malariasimulation::run_simulation(\n  timesteps = calibrated_p$timesteps,\n  parameters = calibrated_p\n)\n\ncalibrated_prev <- calibrated_simulation$n_detect_730_3650 / calibrated_simulation$n_730_3650\nyear <- calibrated_simulation$timestep / 365\n\nplot(NA, xlim = c(0, 3), ylim = c(0, 0.8),\n     xlab = \"Year\", ylab = \"PfPr\")\nsegments(x0 = 2, y0 = target_pfpr, x1 = 3, y1 = target_pfpr, col = \"red\", lwd = 4)\nlines(calibrated_prev ~ year)", 
+    opts = list(label = "\"calibration-check-hint\"", exercise = "TRUE", 
+        exercise.timelimit = "1200"), engine = "r")), code_check = NULL, 
+    error_check = NULL, check = NULL, solution = NULL, tests = NULL, 
+    options = list(eval = FALSE, echo = TRUE, results = "markup", 
+        tidy = FALSE, tidy.opts = NULL, collapse = FALSE, prompt = FALSE, 
+        comment = NA, highlight = FALSE, size = "normalsize", 
+        background = "#F7F7F7", strip.white = TRUE, cache = 0, 
+        cache.path = "Calibration_cache/html/", cache.vars = NULL, 
+        cache.lazy = TRUE, dependson = NULL, autodep = FALSE, 
+        cache.rebuild = FALSE, fig.keep = "high", fig.show = "asis", 
+        fig.align = "default", fig.path = "Calibration_files/figure-html/", 
+        dev = "png", dev.args = NULL, dpi = 192, fig.ext = "png", 
+        fig.width = 7L, fig.height = 5L, fig.env = "figure", 
+        fig.cap = NULL, fig.scap = NULL, fig.lp = "fig:", fig.subcap = NULL, 
+        fig.pos = "", out.width = 672L, out.height = NULL, out.extra = NULL, 
+        fig.retina = 2, external = TRUE, sanitize = FALSE, interval = 1, 
+        aniopts = "controls,loop", warning = TRUE, error = FALSE, 
+        message = TRUE, render = NULL, ref.label = NULL, child = NULL, 
+        engine = "r", split = FALSE, include = TRUE, purl = TRUE, 
+        fenced.echo = FALSE, ft.shadow = FALSE, label = "calibration-check-hint", 
+        exercise = TRUE, exercise.timelimit = 1200, original.params.src = "r calibration-check-hint, exercise=TRUE, exercise.timelimit=1200", 
+        chunk.echo = FALSE, code = c("target_pfpr <- 0.3", "calibrated_p <- malariasimulation::get_parameters(", 
+        "  overrides = list(", "    human_population = 5000,", 
+        "    individual_mosquitoes = FALSE", "  )", ") |>", "  malariasimulation::set_equilibrium(init_EIR = 4.216965)", 
+        "calibrated_p$timesteps <- 3 * 365", "", "calibrated_simulation <- malariasimulation::run_simulation(", 
+        "  timesteps = calibrated_p$timesteps,", "  parameters = calibrated_p", 
+        ")", "", "calibrated_prev <- calibrated_simulation$n_detect_730_3650 / calibrated_simulation$n_730_3650", 
+        "year <- calibrated_simulation$timestep / 365", "", "plot(NA, xlim = c(0, 3), ylim = c(0, 0.8),", 
+        "     xlab = \"Year\", ylab = \"PfPr\")", "segments(x0 = 2, y0 = target_pfpr, x1 = 3, y1 = target_pfpr, col = \"red\", lwd = 4)", 
+        "lines(calibrated_prev ~ year)"), out.width.px = 672L, 
+        out.height.px = 480L, params.src = "r calibration-check-hint, exercise=TRUE, exercise.timelimit=1200", 
+        fig.num = 0, exercise.df_print = "default", exercise.checker = "NULL"), 
+    engine = "r", version = "4"), class = c("r", "tutorial_exercise"
+)))
 </script>
  
 <script type="application/shiny-prerendered" data-context="server-extras">
@@ -310,7 +766,7 @@ ojs_define <- function(..., .session = shiny::getDefaultReactiveDomain()) {
 </p>
 <!--html_preserve-->
 <script type="application/shiny-prerendered" data-context="dependencies">
-{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["jquery"]},{"type":"character","attributes":{},"value":["3.6.0"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["lib/3.6.0"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["jquery-3.6.0.min.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["jquerylib"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.1.4"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["font-awesome"]},{"type":"character","attributes":{},"value":["5.1.0"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["rmd/h/fontawesome"]}]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["css/all.css","css/v4-shims.css"]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["rmarkdown"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["2.17"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["bootbox"]},{"type":"character","attributes":{},"value":["5.5.2"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["lib/bootbox"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["bootbox.min.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["learnr"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.11.2"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["idb-keyvalue"]},{"type":"character","attributes":{},"value":["3.2.0"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["lib/idb-keyval"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["idb-keyval-iife-compat.min.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["learnr"]},{"type":"logical","attributes":{},"value":[false]},{"type":"character","attributes":{},"value":["0.11.2"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["tutorial"]},{"type":"character","attributes":{},"value":["0.11.2"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["lib/tutorial"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["tutorial.js"]},{"type":"character","attributes":{},"value":["tutorial.css"]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["learnr"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.11.2"]}]}]}
+{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["jquery"]},{"type":"character","attributes":{},"value":["3.6.0"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["lib/3.6.0"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["jquery-3.6.0.min.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["jquerylib"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.1.4"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["font-awesome"]},{"type":"character","attributes":{},"value":["5.1.0"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["rmd/h/fontawesome"]}]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["css/all.css","css/v4-shims.css"]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["rmarkdown"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["2.17"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["bootbox"]},{"type":"character","attributes":{},"value":["5.5.2"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["lib/bootbox"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["bootbox.min.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["learnr"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.11.2"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["idb-keyvalue"]},{"type":"character","attributes":{},"value":["3.2.0"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["lib/idb-keyval"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["idb-keyval-iife-compat.min.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["learnr"]},{"type":"logical","attributes":{},"value":[false]},{"type":"character","attributes":{},"value":["0.11.2"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["tutorial"]},{"type":"character","attributes":{},"value":["0.11.2"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["lib/tutorial"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["tutorial.js"]},{"type":"character","attributes":{},"value":["tutorial.css"]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["learnr"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.11.2"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["ace"]},{"type":"character","attributes":{},"value":["1.10.1"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["lib/ace"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["ace.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["learnr"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.11.2"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["clipboardjs"]},{"type":"character","attributes":{},"value":["2.0.10"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["lib/clipboardjs"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["clipboard.min.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["learnr"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.11.2"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["ace"]},{"type":"character","attributes":{},"value":["1.10.1"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["lib/ace"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["ace.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["learnr"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.11.2"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["clipboardjs"]},{"type":"character","attributes":{},"value":["2.0.10"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["lib/clipboardjs"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["clipboard.min.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["learnr"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.11.2"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["ace"]},{"type":"character","attributes":{},"value":["1.10.1"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["lib/ace"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["ace.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["learnr"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.11.2"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["clipboardjs"]},{"type":"character","attributes":{},"value":["2.0.10"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["lib/clipboardjs"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["clipboard.min.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["learnr"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.11.2"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["ace"]},{"type":"character","attributes":{},"value":["1.10.1"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["lib/ace"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["ace.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["learnr"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.11.2"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["clipboardjs"]},{"type":"character","attributes":{},"value":["2.0.10"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["lib/clipboardjs"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["clipboard.min.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["learnr"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.11.2"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["ace"]},{"type":"character","attributes":{},"value":["1.10.1"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["lib/ace"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["ace.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["learnr"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.11.2"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["clipboardjs"]},{"type":"character","attributes":{},"value":["2.0.10"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["lib/clipboardjs"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["clipboard.min.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["learnr"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.11.2"]}]}]}
 </script>
 <!--/html_preserve-->
 <!--html_preserve-->
@@ -321,6 +777,7 @@ ojs_define <- function(..., .session = shiny::getDefaultReactiveDomain()) {
 <!--/html_preserve-->
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

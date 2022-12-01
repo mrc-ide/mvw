@@ -42,4 +42,5 @@ Please make sure you have the following installed:
 
 ## Presentations associated with this workshop:
 
-[Introduction](https://mrc-ide.github.io/mvw/presentations/1_introduction.html)
+[Introduction](https://mrc-ide.github.io/mvw/presentations/1_Introduction.html)
+[Calibration](https://mrc-ide.github.io/mvw/presentations/2_Calibration.html)

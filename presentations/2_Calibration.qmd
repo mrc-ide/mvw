@@ -1,5 +1,5 @@
 ---
-title: "Malariaverse Workshop \n Calibrtion"
+title: "Malariaverse Workshop \n Calibration"
 author: "Pete Winskill"
 format:
   revealjs:
@@ -16,12 +16,12 @@ Session aims:
 -   Understand why we need to "calibrate" a site
 -   Understand when we need to calibrate/re-calibrate
 -   Introduction to :package:\[cali\] for model calibration
--   Common chalenges/issues when calibrating
+-   Common challenges/issues when calibrating
 
 ## Why calibrate
 
 -   Given all the information about a site (vectors, season *Pf*Pr~2-10~ etc...). We still need to make our best estimation of the "baseline" level of transmission.
--   One relatively simple way of doing this is modify the modelled baseline until our model output best matches some observations (e.g. *Pf*Pr~2-10~).
+-   One relatively simple way of doing this is by modifying the modelled baseline until our model output best matches some observations (e.g. *Pf*Pr~2-10~).
 
 ## Calibration process
 
@@ -44,21 +44,46 @@ Session aims:
 3.  The data you are calibrating to has changed
 4.  There has been a change to an underlying assumption that would impact the disease dynamics in a model run
 
-## Cali 
+## Cali
 
--   We can use :package:[cali] for model calibration.
--   TODO: Cali process 1
--   TODO: Cali process 1
+-   We can use :package:[cali](#cali-1) for model calibration.
+-   The `calibrate()` function takes a `target`, for example annual *Pf*Pr~2-10~ for the years 2015-2020.
+-   The user defines a `summary_function`, a function that takes the raw model output and produces the model estimate corresponding to the `target`. In this case our summary function will summarise the model-estimated *Pf*Pr~2-10~ for the years 2015-2020
+-   `calibrate()` will then search a range of EIRs until the outputs of `summary_function` and within a user-defined tolerance of the `target`
+
+## Cali {#cali-1}
+
+-   It is always good practice to run a simulation and test your `summary_function` before using it in `calibrate()` - this will help with debugging.
+-   There a lots of other tuning and model options, so please see `?calibrate()` for more detailed information.
 
 ## Challenges
 
--   :package:[cali] is (hopefully) convenient, however it doesn't remove the need to run the model multiple time when calibrating. Therefore be prepared for the process to be lengthy, often requiring calibration runs to be performed on the high performance cluster.
--   Data and model will not always be aligned
--   Add example of good/bad calibration
--   Calibration can be challenging when results are dominated by stochasticy (low transmission, population too small, calibrating to a sub-group in the populations)
+-   :package:[cali](#cali-1) is (hopefully) convenient, however it doesn't remove the need to run the model multiple time when calibrating. Therefore be prepared for the process to be lengthy, often requiring calibration runs to be performed on the high performance cluster.
+
+## Challenges
+
+-   Available data and model outputs are not guaranteed to play nicely
+
+![](images/Guinea-Pig-cat.jpg){fig-align="center"}
+
+## Challenges
+
+Sometimes calibration can look good:
+
+![](images/Calibration_good.png){fig-align="center"}
+
+## Challenges
+
+...and sometimes not:
+
+![](images/Calibration_bad.png){fig-align="center"}
+
+## Challenges
+
+-   Calibration can be d when difficlut when results are dominated by stochasticy (low transmission, population is too small, calibrating to a sub-group in the populations etc.)
 
 ## Let's give it a try!
 
 -   Run `mvw::run_tutorial("Calibration")`
 
-- TODO:  Add picture
+![](images/Guinea-Pig-bike.jpg){fig-align="center"}
