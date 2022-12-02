@@ -8,3 +8,4 @@ presentations/
 ^\.quarto$
 _quarto.yml
 index.qmd
+ignore/
