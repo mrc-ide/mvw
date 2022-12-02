@@ -24,14 +24,14 @@ Please make sure you have the following installed:
 |                  |
 |:-----------------|
 | 🗓️ Date          |
-| ⏰ 09:030- 17:00 |
+| ⏰ 09:0317:00 |        
 | 🏨 TBC           |
 
 ## Schedule
 
 | Time          | Activity                                                |
 |:--------------|:--------------------------------------------------------|
-| 09:30 - 11:00 | Session 1\[Introduction to context-specific modelling\] |
+| 09:30 - 11:00 | Introduction to context-specific modelling              |
 | 11:00 - 11:20 | *Coffee break*                                          |
 | 11:20 - 12:50 | Calibrating a site                                      |
 | 12:50 - 13:30 | *Lunch break*                                           |
@@ -42,6 +42,6 @@ Please make sure you have the following installed:
 
 ## Presentations associated with this workshop:
 
--   [Introduction](https://mrc-ide.github.io/mvw/presentations/1_Introduction.html) 
+-   [Introduction](https://mrc-ide.github.io/mvw/presentations/1_Introduction.html)
 
 -   [Calibration](https://mrc-ide.github.io/mvw/presentations/2_Calibration.html)
