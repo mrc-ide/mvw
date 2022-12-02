@@ -11,8 +11,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## When to calibrate
 
-Let's start with a quiz to explore possible situations where 
-you might face the decision of whether to calibrate or not
+Let's start with a quiz to explore possible situations where you might face the decision of whether to calibrate or not
 
 ```{r quiz}
 quiz(
@@ -40,7 +39,7 @@ quiz(
 
 When running `calibrate()` we must provide a summary function that summarised the raw simulation output in the same format as our target.
 
-1. In the code box below, compete the summary function, to match the format of our target data.
+1.  In the code box below, compete the summary function, to match the format of our target data.
 
 ```{r summary-function, exercise=TRUE}
 # Target: all age clinical incidence (cases per person per year) in years 2, 3 and 4
@@ -67,20 +66,15 @@ summary_function <- function(simulation){
 }
 ```
 
-## Calibrate good times, come on!
+## Calibrate good times, come on `r emo::ji("popper")`
 
 In the following code box we can run a simple calibration.
 
-1. Work through the code in the box to make sure you understand
-what each section is doing.
+1.  Work through the code in the box to make sure you understand what each section is doing.
 
-2. When you're happy hit run to perform the calibration. Remember,
-calibration takes multiple model-runs so won't be instant (this
- example is artificially set up to run reasonably quickly).
- 
-After the calibration finishes you'll see a print out summarising
-the attempted EIR and comparisons between the summarised model
-output and target.
+2.  When you're happy hit run to perform the calibration. Remember, calibration takes multiple model-runs so won't be instant (this example is artificially set up to run reasonably quickly).
+
+After the calibration finishes you'll see a print out summarising the attempted EIR and comparisons between the summarised model output and target.
 
 ```{r calibration, exercise=TRUE, exercise.timelimit=1200}
 library(malariasimulation)
@@ -130,7 +124,9 @@ Lets check our results:
 
 1.  Use the estimated, calibrated EIR from above to modify our parameter inputs
 2.  Plot simulated PfPr over time
-3.  Add your target - do they match?
+3.  Add your target. 
+
+`r emo::ji("question")` Do they match?
 
 ```{r calibration-check, exercise=TRUE, exercise.timelimit=1200}
 target_pfpr <- 0.3
@@ -170,12 +166,9 @@ segments(x0 = 2, y0 = target_pfpr, x1 = 3, y1 = target_pfpr, col = "red", lwd = 
 lines(calibrated_prev ~ year)
 ```
 
-Extra credits:
+Extra credits `r emo::ji("sparkles")`:
 
--   Modify the calibration code to calibrate to 3 years of
-target data.
--   Read about the `weights` argument in `?calibrate()`, have
-a go a weighting your target data so more recent years are more
-influential.
--   What happens if you change the `tolerance` argument in 
-`?calibrate()`
+-   Modify the calibration code to calibrate to 3 years of target data.
+-   Read about the `weights` argument in `?calibrate()`, have a go a weighting your target data so more recent years are more influential.
+
+`r emo::ji("question")`  What happens if you change the `tolerance` argument in `?calibrate()`

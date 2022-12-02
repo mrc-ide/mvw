@@ -92,7 +92,7 @@ Now lets try running a site.
 
 1.  Use the `site::single_site()` function to isolate the site for: Run iso3c = TGO, name_1 = Plateaux, urban_rural = rural.
 
-2.  Create a :package:\[malariasimulation\] parameters list using the `site::site_parameters()` function. For the `overrides` argument you might want to set a reasonably small population so that the model runs quickly, for example `overrides  = list(human_population = 5000)`.
+2.  Create a `r emo::ji("package")` [malariasimulation] parameters list using the `site::site_parameters()` function. For the `overrides` argument you might want to set a reasonably small population so that the model runs quickly, for example `overrides  = list(human_population = 5000)`.
 
 3.  Run the site using `malariasimulation::run_simulation()`
 
@@ -100,7 +100,7 @@ Now lets try running a site.
 
 5.  Overlay the Malaria Atlas Project estimates of *Pf*Pr~2-10~ onto your plot.
 
-⚠ The model run may take a little while to complete (\~5 mins). While you wait, why not have a look at the [foresite website](https://mrc-ide.github.io/foresite/) ⚠
+`r emo::ji("warning")` The model run may take a little while to complete (\~5 mins). While you wait, why not have a look at the [foresite website](https://mrc-ide.github.io/foresite/) `r emo::ji("warning")`
 
 ```{r run-site, exercise=TRUE, exercise.timelimit=1200}
 library(foresite)
@@ -141,15 +141,12 @@ plot(model_run$prevalence ~ model_run$t, t = "l", ylim = c(0, 0.8), xlab = "Year
 points(plateaux_rural$prevalence$year + 0.5, plateaux_rural$prevalence$pfpr, pch = 19, col = "darkred")
 ```
 
--   How well do they match?
+`r emo::ji("question")`   How well do they match?
 
--   Why might there be differences between modelled Pf\*Pr~2-10~ and the estimates from the Malaria Atlas Project?
+`r emo::ji("question")`   Why might there be differences between modelled Pf\*Pr~2-10~ and the estimates from the Malaria Atlas Project?
 
-Any bugs/issues? Feel free to add issues to the relevant issue tracker github page.
-
-Extra credits:
+Extra credits `r emo::ji("sparkles")`: 
 
 -   Try changing the EIR argument in `site_parameters()`
 -   Modify `plateaux_rural$interventions$irs_cov` and re-run, can you see the impact?
--   Try running multiple different sites and estimating aggregated
-Pf\*Pr~2-10~ across all of them.
+-   Try running multiple different sites and estimating aggregated Pf\*Pr~2-10~ across all of them.

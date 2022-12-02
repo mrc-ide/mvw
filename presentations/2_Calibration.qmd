@@ -44,7 +44,7 @@ Session aims:
 3.  The data you are calibrating to has changed
 4.  There has been a change to an underlying assumption that would impact the disease dynamics in a model run
 
-## Cali
+## Cali {.smaller}
 
 -   We can use :package:[cali](#cali-1) for model calibration.
 -   The `calibrate()` function takes a `target`, for example annual *Pf*Pr~2-10~ for the years 2015-2020.
@@ -80,10 +80,15 @@ Sometimes calibration can look good:
 
 ## Challenges
 
--   Calibration can be d when difficlut when results are dominated by stochasticy (low transmission, population is too small, calibrating to a sub-group in the populations etc.)
+-   Calibration can be difficult when results are dominated by stochasticy
+  -   low transmission
+  -   small populations
+  -   calibrating to a sub-group in the population
+  -   etc.
 
 ## Let's give it a try!
 
 -   Run `mvw::run_tutorial("Calibration")`
 
-![](images/Guinea-Pig-bike.jpg){fig-align="center"}
+
+![](images/Guinea-Pig-bike.jpg){fig-align="center" width=40% height=40%}

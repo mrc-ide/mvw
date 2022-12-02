@@ -1,6 +1,7 @@
 ---
 title: "Index"
 format: html
+from: markdown+emoji
 ---
 
 ![](presentations/images/Guinea-Pig.jpg)
@@ -14,31 +15,32 @@ Please make sure you have the following installed:
 3.  :package:\[malariasimulation\] installed. See [here](https://github.com/mrc-ide/malariasimulation#installation) for more info. You should be able to successfully run: `output <- malariasimulation::run_simulation(100)`
 4.  The malariaverse :package:\[foresite\], :package:\[site\], :package:\[netz\], :package:\[cali\]
 
+```{=html}
 <!-- -->
-
+```
     remotes::install_github("mrc-ide/foresite")
     remotes::install_github("mrc-ide/site")
     remotes::install_github("mrc-ide/netz")
     remotes::install_github("mrc-ide/cali")
 
-|                  |
-|:-----------------|
-| 🗓️ Date          |
-| ⏰ 09:0317:00 |        
-| 🏨 TBC           |
+|                        |
+|:-----------------------|
+| :spiral_calendar: Date |
+| :alarm: 0930-1700      |
+| :hotel: TBD            |
 
 ## Schedule
 
-| Time          | Activity                                                |
-|:--------------|:--------------------------------------------------------|
-| 09:30 - 11:00 | Introduction to context-specific modelling              |
-| 11:00 - 11:20 | *Coffee break*                                          |
-| 11:20 - 12:50 | Calibrating a site                                      |
-| 12:50 - 13:30 | *Lunch break*                                           |
-| 13:30 - 15:00 | Bed nets & seasonality                                  |
-| 15:00 - 15:30 | *Coffee break*                                          |
-| 15:30 - 16:30 | Optimisation?                                           |
-| 16:30 - 17:00 | Feedback/Discussion                                     |
+| Time          | Activity                                   |
+|:--------------|:-------------------------------------------|
+| 09:30 - 11:00 | Introduction to context-specific modelling |
+| 11:00 - 11:20 | *Coffee break*                             |
+| 11:20 - 12:50 | Calibrating a site                         |
+| 12:50 - 13:30 | *Lunch break*                              |
+| 13:30 - 15:00 | Bed nets & seasonality                     |
+| 15:00 - 15:30 | *Coffee break*                             |
+| 15:30 - 16:30 | Optimisation?                              |
+| 16:30 - 17:00 | Feedback/Discussion                        |
 
 ## Presentations associated with this workshop:
 
