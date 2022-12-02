@@ -146,3 +146,10 @@ points(plateaux_rural$prevalence$year + 0.5, plateaux_rural$prevalence$pfpr, pch
 -   Why might there be differences between modelled Pf\*Pr~2-10~ and the estimates from the Malaria Atlas Project?
 
 Any bugs/issues? Feel free to add issues to the relevant issue tracker github page.
+
+Extra credits:
+
+-   Try changing the EIR argument in `site_parameters()`
+-   Modify `plateaux_rural$interventions$irs_cov` and re-run, can you see the impact?
+-   Try running multiple different sites and estimating aggregated
+Pf\*Pr~2-10~ across all of them.
