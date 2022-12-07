@@ -4,7 +4,7 @@
     "href": "index.html#before-the-workshop",
     "title": "Index",
     "section": "Before the workshop",
-    "text": "Before the workshop\nPlease make sure you have the following installed:\n\nAn up-to-date installation of R\nRStudio\n📦[malariasimulation] installed. See here for more info. You should be able to successfully run: output <- malariasimulation::run_simulation(100)\nThe malariaverse 📦[foresite], 📦[site], 📦[netz], 📦[cali]\n\n\n# For the foresite package you will need network access to the \"malaria drive\". Contact Pete if you don't have it.\ndrat::addRepo(\"malariaverse\", \"file:\\\\\\\\projects.dide.ic.ac.uk/malaria/malariaverse/drat\")\ninstall.packages(\"foresite\", type = \"source\")\n\n# Other malariaverse packages are publically available from githiub:\nremotes::install_github(\"mrc-ide/site\")\nremotes::install_github(\"mrc-ide/netz\")\nremotes::install_github(\"mrc-ide/cali\")\n\n\n\n🗓️ Date\n\n\n:clock: 0930-1700\n\n\n🏨 Meeting rooms 1&2, 20 Eastbourne Terrace"
+    "text": "Before the workshop\nPlease make sure you have the following installed:\n\nAn up-to-date installation of R\nRStudio\n📦[malariasimulation] installed. See here for more info. You should be able to successfully run: output <- malariasimulation::run_simulation(100)\nThe malariaverse 📦[foresite], 📦[site], 📦[netz], 📦[cali]\n\n\nremotes::install_github(\"mrc-ide/foresite\")\nremotes::install_github(\"mrc-ide/site\")\nremotes::install_github(\"mrc-ide/netz\")\nremotes::install_github(\"mrc-ide/cali\")\n\n\n\n🗓️ Date\n\n\n:alarm: 0930-1700\n\n\n🏨 TBD"
   },
   {
     "objectID": "index.html#schedule",
@@ -18,7 +18,7 @@
     "href": "index.html#presentations-associated-with-this-workshop",
     "title": "Index",
     "section": "Presentations associated with this workshop:",
-    "text": "Presentations associated with this workshop:\n\nIntroduction\nCalibration\nBed nets"
+    "text": "Presentations associated with this workshop:\n\nIntroduction\nCalibration"
   },
   {
     "objectID": "inst/tutorials/Calibration/Calibration.html",
