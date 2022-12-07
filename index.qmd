@@ -15,18 +15,22 @@ Please make sure you have the following installed:
 3.  :package:\[malariasimulation\] installed. See [here](https://github.com/mrc-ide/malariasimulation#installation) for more info. You should be able to successfully run: `output <- malariasimulation::run_simulation(100)`
 4.  The malariaverse :package:\[foresite\], :package:\[site\], :package:\[netz\], :package:\[cali\]
 
-<!-- -->
+```{r, eval=FALSE, echo=TRUE}
 
-    remotes::install_github("mrc-ide/foresite")
-    remotes::install_github("mrc-ide/site")
-    remotes::install_github("mrc-ide/netz")
-    remotes::install_github("mrc-ide/cali")
+# Private packages require network access to the "malaria drive". Contact Pete if you don't have it.
+drat::addRepo("malariaverse", "file:\\\\projects.dide.ic.ac.uk/malaria/malariaverse/drat")
+install.packages("foresite", type = "source")
 
-|                        |
-|:-----------------------|
-| :spiral_calendar: Date |
-| :alarm: 0930-1700      |
-| :hotel: TBD            |
+# Public packages can be installed directly from github:
+remotes::install_github("mrc-ide/site")
+remotes::install_github("mrc-ide/netz")
+remotes::install_github("mrc-ide/cali")
+```
+
+
+:spiral_calendar: Thursday 2nd February 2023
+:clock: 0930-1700
+:hotel: Meeting room 1&2, 20 Eastbourne Terrace, Paddington
 
 ## Schedule
 
@@ -46,3 +50,5 @@ Please make sure you have the following installed:
 -   [Introduction](https://mrc-ide.github.io/mvw/presentations/1_Introduction.html)
 
 -   [Calibration](https://mrc-ide.github.io/mvw/presentations/2_Calibration.html)
+
+-   [Bed nets](https://mrc-ide.github.io/mvw/presentations/3_Bed_nets.html)
