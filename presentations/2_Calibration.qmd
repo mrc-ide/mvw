@@ -81,14 +81,13 @@ Sometimes calibration can look good:
 ## Challenges
 
 -   Calibration can be difficult when results are dominated by stochasticy
-  -   low transmission
-  -   small populations
-  -   calibrating to a sub-group in the population
-  -   etc.
+-   low transmission
+-   small populations
+-   calibrating to a sub-group in the population
+-   etc.
 
 ## Let's give it a try!
 
 -   Run `mvw::run_tutorial("Calibration")`
 
-
-![](images/Guinea-Pig-bike.jpg){fig-align="center" width=40% height=40%}
+![](images/Guinea-Pig-bike.jpg){fig-align="center" width="40%" height="40%"}

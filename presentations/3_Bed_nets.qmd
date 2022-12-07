@@ -1,0 +1,224 @@
+---
+title: "Malariaverse Workshop \n Bed nets"
+author: "Pete Winskill"
+format:
+  revealjs:
+    logo: images/malariaverse.gif
+    css: images/logo.css
+editor: visual
+from: markdown+emoji
+---
+
+## Session 3 :muscle:!
+
+Session aims:
+
+-   Understand why bed nets can be challenging to model
+-   Overview of bed net metrics and model inputs
+-   Using :package: \[netz\] to traverse the bed net landscape
+
+
+## Why can bed nets be tricky?
+
+-   Bed nets have a "memory": the effective coverage of bed nets today depends on the cumulative impacts of net distributions and net loss over many prior years.
+
+## Why can bed nets be tricky?
+
+-   There are lots of bed net metrics:
+-   delivery to country
+-   distribution within country
+-   crop (total number of nets within a country)
+-   Access and usage
+-   Modelled distribution
+
+## Why can bed nets be tricky?
+
+-   ... and lots of other bed net variables to consider:
+-   Net type
+-   Net retention (or rate of loss)
+-   Distribution method/schedule (mass, routine etc.)
+-   Interaction with insecticide resistance
+
+## Implementing bed nets
+
+-   In :package: \[malariasimulation\] distributions in the model lead directly to effective coverage or usage.
+-   We can use the :package: \[netz\] `population_usage()` function to view the bed net usage in the model resulting from a given set of bed net distributions:
+
+```{r, eval=FALSE, echo=TRUE}
+netz::population_usage(
+  timesteps = 365 * 30,
+  distribution = rep(0.3, 10),
+  distribution_timesteps = 365 * seq(1, 30, 3),
+  half_life = 365 * 5
+)
+```
+
+## Implementing bed nets
+
+-   Resulting population usage:
+
+![](images/pop_usage1.png){fig-align="center"}
+
+
+## Implementing bed nets
+
+-   More frequent distribution will lead to net usage to build to higher levels:
+
+![](images/pop_usage2.png){fig-align="center"}
+
+
+## Implementing bed nets
+
+-   As will larger distributions:
+
+![](images/pop_usage3.png){fig-align="center"}
+
+
+## Implementing bed nets
+
+-   We can also model irregular distributions:
+
+![](images/pop_usage4.png){fig-align="center"}
+
+
+## Fitting bed nets
+
+-   In many cases we might have a set of observed population level usage estimates that we want to match to. We can use a non-linear optimiser to fit the distribution to these target usages:
+
+```{r, eval=FALSE, echo=TRUE}
+# Target usage associated time points
+target <- c(0.45, 0.33, 0.7)
+target_tt <- c(2, 5, 9) * 365
+# Time points at which distribution will occur
+distribution_tt <- c(1, 4, 8) * 365
+
+# Fit
+fit <- netz::fit_usage(
+  target_usage = target,
+  target_usage_timesteps = target_tt,
+  distribution_timesteps = distribution_tt
+)
+```
+
+## Fitting bed nets
+
+![](images/pop_usage5.png){fig-align="center"}
+
+## Bed nets in site files {.smaller}
+
+-   We can look at the bed net inputs in the `$intervention` section of a site file.
+-   You can see that as well as usage, we have the model input, net type, level of insecticide resistance and associated net efficacy parameters.
+
+```{r, echo=TRUE}
+head(
+  foresite::TGO$interventions[, c("iso3c", "name_1", "urban_rural", "year",
+                                "itn_use", "itn_input_dist", "net_type",
+                                "pyrethroid_resistance",
+                                "dn0", "rn0", "rnm", "gamman")]
+  )
+
+```
+
+## Bed nets in site files
+
+-   All of these bed net elements get translated into :package: [malariasimulation] parameters when using the :package: [site] `site_parameters()` function.
+
+-   We also include future resistance extrapolations in the `$resistance` part of the site file.
+
+:pray: No time today to explore all of the amazing work on insecticide resistance and net efficacy, but huge thanks to Tom, Ellie and others for all the hard work!
+
+![](images/Guinea-Pig-flower.jpg){fig-align="center"}
+
+## A model of bed nets
+
+-   Amelia Bertozzi-Villa *et al* have published a model linking net deliveries, with access and usages for countries in SSA.
+-   We can use this model to translate between different bed net metrics
+-   This is often required when dealing with available bed net metrics or for costing a bed net programme
+
+:pray: Big thank you to Nora for lots of hard work on :package: \[netz\]!
+
+## Net loss functions
+
+-   Net retention can be modelled with different function forms.
+
+-   In the model by Bertozzi-Villa *et al*, they use an s-shaped function form.
+
+-   In :package: \[malariasimulation\] net retention is exponentially distributed.
+
+-   These are modelled by:
+
+-   `netz::net_loss_map()` and `netz::net_loss_exp()`
+
+-   These functions can be passed when the argument `net_loss_function` is required.
+
+-   We may to try and harmonise the bed net models at some point.
+
+## Usage and Access {.smaller}
+
+-   Usage: the proportion of people who have slept under a bed net the previous night. This is effective coverage.
+
+-   Access: the proportion of the population that could sleep under a net.
+
+-   :package: \[netz\] has functions to convert between usage and access:
+
+-   `netz::usage_to_access(usage = 0.5, use_rate = 0.8)`
+
+-   `netz::access_to_usage(access = 0.5, use_rate = 0.8)`
+
+-   You can view empirical use rates with:
+
+-   `netz::get_usage_rate_data()`
+
+## Access and crop {.smaller}
+
+-   Access: the proportion of the population that could sleep under a net.
+
+-   Crop: the total number of nets in the population. Crop increases with net distributions and decreases as nets are worn out and thrown away over time.
+
+-   :package: \[netz\] has functions to convert between access and crop:
+
+-   `netz::access_to_crop(access = 0.5)`
+
+-   `netz::crop_to_access(crop = 0.5)`
+
+## Access and crop {.smaller}
+
+-   Bertozzi-Villa *et al* show that access and crop are not linearly related (at the country level).
+-   This can have big implication when costing a bet net campaign.
+
+![](images/Bertozzi_villa_access_crop.png){fig-align="center"}
+
+
+## Crop and distributions {.smaller}
+
+-   Crop: the total number of nets in the population. Crop increases with net distributions and decreases as nets are worn out and thrown away over time.
+
+-   Distribution: Nets distributed. These may be via mass-distributions or continuous distribution routes.
+
+-   :package: \[netz\] has functions to convert between crop and distribution:
+
+-   `netz::crop_to_distribution(crop =  0.5, distribution_frequency = 3 * 365, half_life = 2 * 365)`
+
+-   `netz::distribution_to_crop(crop =  0.5, distribution_frequency = 3 * 365, half_life = 2 * 365)`
+
+-   Net retention half-lives are estimated in the model by Bertozzi-Villa *et al* and can be accessed with:
+
+-   `netz::get_halflife_data()`
+
+## Crop and distributions {.smaller}
+
+-   As crop is the cumulative impact of past distributions, different combinations of past distributions may lead to similar crop estimates. We can dynamically translate between no-equilibrium crop and distributions with:
+
+-   `netz::crop_to_distribution_dynamic(crop = c(0.1, 0.2, 0.5, 0.1), netz::net_loss_map)`
+
+-   `netz::distribution_to_crop_dynamic(distribution = c(0.1, 0.2, 0.5, 0.1), netz::net_loss_map)`
+
+## :dizzy_face: Conversion overload! :dizzy_face:
+
+![](images/net_schematic.png){fig-align="center"}
+
+## Let's give it a try!
+
+-   Run `mvw::run_tutorial("Bednet")`
+
+![](images/Guinea-Pig-cover.jpg){fig-align="center"}

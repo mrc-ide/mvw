@@ -15,9 +15,8 @@ Please make sure you have the following installed:
 3.  :package:\[malariasimulation\] installed. See [here](https://github.com/mrc-ide/malariasimulation#installation) for more info. You should be able to successfully run: `output <- malariasimulation::run_simulation(100)`
 4.  The malariaverse :package:\[foresite\], :package:\[site\], :package:\[netz\], :package:\[cali\]
 
-```{=html}
 <!-- -->
-```
+
     remotes::install_github("mrc-ide/foresite")
     remotes::install_github("mrc-ide/site")
     remotes::install_github("mrc-ide/netz")

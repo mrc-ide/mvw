@@ -4,7 +4,7 @@
     "href": "index.html#before-the-workshop",
     "title": "Index",
     "section": "Before the workshop",
-    "text": "Before the workshop\nPlease make sure you have the following installed:\n\nAn up-to-date installation of R\nRStudio\n📦[malariasimulation] installed. See here for more info. You should be able to successfully run: output <- malariasimulation::run_simulation(100)\nThe malariaverse 📦[foresite], 📦[site], 📦[netz], 📦[cali]\n\n\nremotes::install_github(\"mrc-ide/foresite\")\nremotes::install_github(\"mrc-ide/site\")\nremotes::install_github(\"mrc-ide/netz\")\nremotes::install_github(\"mrc-ide/cali\")\n\n\n\n🗓️ Date\n\n\n:alarm: 0930-1700\n\n\n🏨 TBD"
+    "text": "Before the workshop\nPlease make sure you have the following installed:\n\nAn up-to-date installation of R\nRStudio\n📦[malariasimulation] installed. See here for more info. You should be able to successfully run: output <- malariasimulation::run_simulation(100)\nThe malariaverse 📦[foresite], 📦[site], 📦[netz], 📦[cali]\n\n\n# For the foresite package you will need network access to the \"malaria drive\". Contact Pete if you don't have it.\ndrat::addRepo(\"malariaverse\", \"file:\\\\\\\\projects.dide.ic.ac.uk/malaria/malariaverse/drat\")\ninstall.packages(\"foresite\", type = \"source\")\n\n# Other malariaverse packages are publically available from githiub:\nremotes::install_github(\"mrc-ide/site\")\nremotes::install_github(\"mrc-ide/netz\")\nremotes::install_github(\"mrc-ide/cali\")\n\n\n\n🗓️ Date\n\n\n:clock: 0930-1700\n\n\n🏨 Meeting rooms 1&2, 20 Eastbourne Terrace"
   },
   {
     "objectID": "index.html#schedule",
@@ -18,7 +18,7 @@
     "href": "index.html#presentations-associated-with-this-workshop",
     "title": "Index",
     "section": "Presentations associated with this workshop:",
-    "text": "Presentations associated with this workshop:\n\nIntroduction\nCalibration"
+    "text": "Presentations associated with this workshop:\n\nIntroduction\nCalibration\nBed nets"
   },
   {
     "objectID": "inst/tutorials/Calibration/Calibration.html",
@@ -257,5 +257,159 @@
     "title": "Malariaverse Workshop Calibration",
     "section": "Let’s give it a try!",
     "text": "Let’s give it a try!\n\nRun mvw::run_tutorial(\"Calibration\")"
+  },
+  {
+    "objectID": "presentations/3_Bed_nets.html#session-3",
+    "href": "presentations/3_Bed_nets.html#session-3",
+    "title": "Malariaverse Workshop Bed nets",
+    "section": "Session 3 💪!",
+    "text": "Session 3 💪!\nSession aims:\n\nUnderstand why bed nets can be challenging to model\nOverview of bed net metrics and model inputs\nUsing 📦 [netz] to traverse the bed net landscape"
+  },
+  {
+    "objectID": "presentations/3_Bed_nets.html#why-can-bed-nets-be-tricky",
+    "href": "presentations/3_Bed_nets.html#why-can-bed-nets-be-tricky",
+    "title": "Malariaverse Workshop Bed nets",
+    "section": "Why can bed nets be tricky?",
+    "text": "Why can bed nets be tricky?\n\nBed nets have a “memory”: the effective coverage of bed nets today depends on the cumulative impacts of net distributions and net loss over many prior years."
+  },
+  {
+    "objectID": "presentations/3_Bed_nets.html#why-can-bed-nets-be-tricky-1",
+    "href": "presentations/3_Bed_nets.html#why-can-bed-nets-be-tricky-1",
+    "title": "Malariaverse Workshop Bed nets",
+    "section": "Why can bed nets be tricky?",
+    "text": "Why can bed nets be tricky?\n\nThere are lots of bed net metrics:\ndelivery to country\ndistribution within country\ncrop (total number of nets within a country)\nAccess and usage\nModelled distribution"
+  },
+  {
+    "objectID": "presentations/3_Bed_nets.html#why-can-bed-nets-be-tricky-2",
+    "href": "presentations/3_Bed_nets.html#why-can-bed-nets-be-tricky-2",
+    "title": "Malariaverse Workshop Bed nets",
+    "section": "Why can bed nets be tricky?",
+    "text": "Why can bed nets be tricky?\n\n… and lots of other bed net variables to consider:\nNet type\nNet retention (or rate of loss)\nDistribution method/schedule (mass, routine etc.)\nInteraction with insecticide resistance"
+  },
+  {
+    "objectID": "presentations/3_Bed_nets.html#implementing-bed-nets",
+    "href": "presentations/3_Bed_nets.html#implementing-bed-nets",
+    "title": "Malariaverse Workshop Bed nets",
+    "section": "Implementing bed nets",
+    "text": "Implementing bed nets\n\nIn 📦 [malariasimulation] distributions in the model lead directly to effective coverage or usage.\nWe can use the 📦 [netz] population_usage() function to view the bed net usage in the model resulting from a given set of bed net distributions:\n\n\nnetz::population_usage(\n  timesteps = 365 * 30,\n  distribution = rep(0.3, 10),\n  distribution_timesteps = 365 * seq(1, 30, 3),\n  half_life = 365 * 5\n)"
+  },
+  {
+    "objectID": "presentations/3_Bed_nets.html#implementing-bed-nets-1",
+    "href": "presentations/3_Bed_nets.html#implementing-bed-nets-1",
+    "title": "Malariaverse Workshop Bed nets",
+    "section": "Implementing bed nets",
+    "text": "Implementing bed nets\n\nResulting population usage:"
+  },
+  {
+    "objectID": "presentations/3_Bed_nets.html#implementing-bed-nets-2",
+    "href": "presentations/3_Bed_nets.html#implementing-bed-nets-2",
+    "title": "Malariaverse Workshop Bed nets",
+    "section": "Implementing bed nets",
+    "text": "Implementing bed nets\n\nMore frequent distribution will lead to net usage to build to higher levels:"
+  },
+  {
+    "objectID": "presentations/3_Bed_nets.html#implementing-bed-nets-3",
+    "href": "presentations/3_Bed_nets.html#implementing-bed-nets-3",
+    "title": "Malariaverse Workshop Bed nets",
+    "section": "Implementing bed nets",
+    "text": "Implementing bed nets\n\nAs will larger distributions:"
+  },
+  {
+    "objectID": "presentations/3_Bed_nets.html#implementing-bed-nets-4",
+    "href": "presentations/3_Bed_nets.html#implementing-bed-nets-4",
+    "title": "Malariaverse Workshop Bed nets",
+    "section": "Implementing bed nets",
+    "text": "Implementing bed nets\n\nWe can also model irregular distributions:"
+  },
+  {
+    "objectID": "presentations/3_Bed_nets.html#fitting-bed-nets",
+    "href": "presentations/3_Bed_nets.html#fitting-bed-nets",
+    "title": "Malariaverse Workshop Bed nets",
+    "section": "Fitting bed nets",
+    "text": "Fitting bed nets\n\nIn many cases we might have a set of observed population level usage estimates that we want to match to. We can use a non-linear optimiser to fit the distribution to these target usages:\n\n\n# Target usage associated time points\ntarget <- c(0.45, 0.33, 0.7)\ntarget_tt <- c(2, 5, 9) * 365\n# Time points at which distribution will occur\ndistribution_tt <- c(1, 4, 8) * 365\n\n# Fit\nfit <- netz::fit_usage(\n  target_usage = target,\n  target_usage_timesteps = target_tt,\n  distribution_timesteps = distribution_tt\n)"
+  },
+  {
+    "objectID": "presentations/3_Bed_nets.html#fitting-bed-nets-1",
+    "href": "presentations/3_Bed_nets.html#fitting-bed-nets-1",
+    "title": "Malariaverse Workshop Bed nets",
+    "section": "Fitting bed nets",
+    "text": "Fitting bed nets"
+  },
+  {
+    "objectID": "presentations/3_Bed_nets.html#bed-nets-in-site-files",
+    "href": "presentations/3_Bed_nets.html#bed-nets-in-site-files",
+    "title": "Malariaverse Workshop Bed nets",
+    "section": "Bed nets in site files",
+    "text": "Bed nets in site files\n\nWe can look at the bed net inputs in the $intervention section of a site file.\nYou can see that as well as usage, we have the model input, net type, level of insecticide resistance and associated net efficacy parameters.\n\n\nhead(\n  foresite::TGO$interventions[, c(\"iso3c\", \"name_1\", \"urban_rural\", \"year\",\n                                \"itn_use\", \"itn_input_dist\", \"net_type\",\n                                \"pyrethroid_resistance\",\n                                \"dn0\", \"rn0\", \"rnm\", \"gamman\")]\n  )\n\n  iso3c name_1 urban_rural year    itn_use itn_input_dist        net_type\n1   TGO Centre       rural 2000 0.04239319   3.972372e-02 pyrethroid_only\n2   TGO Centre       rural 2001 0.03059912   1.999607e-03 pyrethroid_only\n3   TGO Centre       rural 2002 0.02194407   1.225237e-05 pyrethroid_only\n4   TGO Centre       rural 2003 0.02110716   3.579113e-03 pyrethroid_only\n5   TGO Centre       rural 2004 0.14395837   1.402791e-01 pyrethroid_only\n6   TGO Centre       rural 2005 0.20412837   9.050257e-02 pyrethroid_only\n  pyrethroid_resistance       dn0       rn0  rnm   gamman\n1                  0.46 0.2933696 0.6736694 0.24 2.346871\n2                  0.48 0.2899376 0.6761727 0.24 2.331779\n3                  0.50 0.2869886 0.6783065 0.24 2.317303\n4                  0.53 0.2826286 0.6814312 0.24 2.294338\n5                  0.55 0.2792447 0.6838313 0.24 2.278917\n6                  0.57 0.2763609 0.6858590 0.24 2.262831"
+  },
+  {
+    "objectID": "presentations/3_Bed_nets.html#bed-nets-in-site-files-1",
+    "href": "presentations/3_Bed_nets.html#bed-nets-in-site-files-1",
+    "title": "Malariaverse Workshop Bed nets",
+    "section": "Bed nets in site files",
+    "text": "Bed nets in site files\n\nAll of these bed net elements get translated into 📦 [malariasimulation] parameters when using the 📦 [site] site_parameters() function.\nWe also include future resistance extrapolations in the $resistance part of the site file.\n\n🙏 No time today to explore all of the amazing work on insecticide resistance and net efficacy, but huge thanks to Tom, Ellie and others for all the hard work!"
+  },
+  {
+    "objectID": "presentations/3_Bed_nets.html#a-model-of-bed-nets",
+    "href": "presentations/3_Bed_nets.html#a-model-of-bed-nets",
+    "title": "Malariaverse Workshop Bed nets",
+    "section": "A model of bed nets",
+    "text": "A model of bed nets\n\nAmelia Bertozzi-Villa et al have published a model linking net deliveries, with access and usages for countries in SSA.\nWe can use this model to translate between different bed net metrics\nThis is often required when dealing with available bed net metrics or for costing a bed net programme\n\n🙏 Big thank you to Nora for lots of hard work on 📦 [netz]!"
+  },
+  {
+    "objectID": "presentations/3_Bed_nets.html#net-loss-functions",
+    "href": "presentations/3_Bed_nets.html#net-loss-functions",
+    "title": "Malariaverse Workshop Bed nets",
+    "section": "Net loss functions",
+    "text": "Net loss functions\n\nNet retention can be modelled with different function forms.\nIn the model by Bertozzi-Villa et al, they use an s-shaped function form.\nIn 📦 [malariasimulation] net retention is exponentially distributed.\nThese are modelled by:\nnetz::net_loss_map() and netz::net_loss_exp()\nThese functions can be passed when the argument net_loss_function is required.\nWe may to try and harmonise the bed net models at some point."
+  },
+  {
+    "objectID": "presentations/3_Bed_nets.html#usage-and-access",
+    "href": "presentations/3_Bed_nets.html#usage-and-access",
+    "title": "Malariaverse Workshop Bed nets",
+    "section": "Usage and Access",
+    "text": "Usage and Access\n\nUsage: the proportion of people who have slept under a bed net the previous night. This is effective coverage.\nAccess: the proportion of the population that could sleep under a net.\n📦 [netz] has functions to convert between usage and access:\nnetz::usage_to_access(usage = 0.5, use_rate = 0.8)\nnetz::access_to_usage(access = 0.5, use_rate = 0.8)\nYou can view empirical use rates with:\nnetz::get_usage_rate_data()"
+  },
+  {
+    "objectID": "presentations/3_Bed_nets.html#access-and-crop",
+    "href": "presentations/3_Bed_nets.html#access-and-crop",
+    "title": "Malariaverse Workshop Bed nets",
+    "section": "Access and crop",
+    "text": "Access and crop\n\nAccess: the proportion of the population that could sleep under a net.\nCrop: the total number of nets in the population. Crop increases with net distributions and decreases as nets are worn out and thrown away over time.\n📦 [netz] has functions to convert between access and crop:\nnetz::access_to_crop(access = 0.5)\nnetz::crop_to_access(crop = 0.5)"
+  },
+  {
+    "objectID": "presentations/3_Bed_nets.html#access-and-crop-1",
+    "href": "presentations/3_Bed_nets.html#access-and-crop-1",
+    "title": "Malariaverse Workshop Bed nets",
+    "section": "Access and crop",
+    "text": "Access and crop\n\nBertozzi-Villa et al show that access and crop are not linearly related (at the country level).\nThis can have big implication when costing a bet net campaign."
+  },
+  {
+    "objectID": "presentations/3_Bed_nets.html#crop-and-distributions",
+    "href": "presentations/3_Bed_nets.html#crop-and-distributions",
+    "title": "Malariaverse Workshop Bed nets",
+    "section": "Crop and distributions",
+    "text": "Crop and distributions\n\nCrop: the total number of nets in the population. Crop increases with net distributions and decreases as nets are worn out and thrown away over time.\nDistribution: Nets distributed. These may be via mass-distributions or continuous distribution routes.\n📦 [netz] has functions to convert between crop and distribution:\nnetz::crop_to_distribution(crop =  0.5, distribution_frequency = 3 * 365, half_life = 2 * 365)\nnetz::distribution_to_crop(crop =  0.5, distribution_frequency = 3 * 365, half_life = 2 * 365)\nNet retention half-lives are estimated in the model by Bertozzi-Villa et al and can be accessed with:\nnetz::get_halflife_data()"
+  },
+  {
+    "objectID": "presentations/3_Bed_nets.html#crop-and-distributions-1",
+    "href": "presentations/3_Bed_nets.html#crop-and-distributions-1",
+    "title": "Malariaverse Workshop Bed nets",
+    "section": "Crop and distributions",
+    "text": "Crop and distributions\n\nAs crop is the cumulative impact of past distributions, different combinations of past distributions may lead to similar crop estimates. We can dynamically translate between no-equilibrium crop and distributions with:\nnetz::crop_to_distribution_dynamic(crop = c(0.1, 0.2, 0.5, 0.1), netz::net_loss_map)\nnetz::distribution_to_crop_dynamic(distribution = c(0.1, 0.2, 0.5, 0.1), netz::net_loss_map)"
+  },
+  {
+    "objectID": "presentations/3_Bed_nets.html#conversion-overload",
+    "href": "presentations/3_Bed_nets.html#conversion-overload",
+    "title": "Malariaverse Workshop Bed nets",
+    "section": "😵 Conversion overload! 😵",
+    "text": "😵 Conversion overload! 😵"
+  },
+  {
+    "objectID": "presentations/3_Bed_nets.html#lets-give-it-a-try",
+    "href": "presentations/3_Bed_nets.html#lets-give-it-a-try",
+    "title": "Malariaverse Workshop Bed nets",
+    "section": "Let’s give it a try!",
+    "text": "Let’s give it a try!\n\nRun mvw::run_tutorial(\"Bednet\")"
   }
 ]
