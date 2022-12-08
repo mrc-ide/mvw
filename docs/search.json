@@ -1,24 +1,38 @@
 [
   {
+    "objectID": "index.html#workshop-details",
+    "href": "index.html#workshop-details",
+    "title": "mvwsite",
+    "section": "Workshop details",
+    "text": "Workshop details\n🗓️ Thursday 2nd February 2023\n⏰ 0930-1700\n🏨 Meeting room 1&2, 20 Eastbourne Terrace, Paddington\n💻 Please bring your laptop!"
+  },
+  {
     "objectID": "index.html#before-the-workshop",
     "href": "index.html#before-the-workshop",
-    "title": "Index",
+    "title": "mvwsite",
     "section": "Before the workshop",
-    "text": "Before the workshop\nPlease make sure you have the following installed:\n\nAn up-to-date installation of R\nRStudio\n📦[malariasimulation] installed. See here for more info. You should be able to successfully run: output <- malariasimulation::run_simulation(100)\nThe malariaverse 📦[foresite], 📦[site], 📦[netz], 📦[cali]\n\n\n# Private packages require network access to the \"malaria drive\". Contact Pete if you don't have it.\ndrat::addRepo(\"malariaverse\", \"file:\\\\\\\\projects.dide.ic.ac.uk/malaria/malariaverse/drat\")\ninstall.packages(\"foresite\", type = \"source\")\n\n# Public packages can be installed directly from github:\nremotes::install_github(\"mrc-ide/site\")\nremotes::install_github(\"mrc-ide/netz\")\nremotes::install_github(\"mrc-ide/cali\")\n\n🗓️ Thursday 2nd February 2023 :clock: 0930-1700 🏨 Meeting room 1&2, 20 Eastbourne Terrace, Paddington"
+    "text": "Before the workshop\nPlease make sure you have the following installed:\n\nAn up-to-date installation of R\nAn up-to-date version of RStudio\nThe workshop 📦 [mvw]\nThe malariaverse 📦 [malariasimulation, foresite, site, netz, cali]\n\n\n# For malariasimulation\noptions(repos = c(\n    mrcide = \"https://mrc-ide.r-universe.dev\",\n    CRAN = \"https://cloud.r-project.org\"))\ninstall.packages(\"malariasimulation\")\n# Make sure you can run\noutput <- malariasimulation::run_simulation(100)\n\n# Private packages require network access to the \"malaria drive\". Contact Pete if you don't have it.\ndrat::addRepo(\"malariaverse\", \"file:\\\\\\\\projects.dide.ic.ac.uk/malaria/malariaverse/drat\")\ninstall.packages(\"foresite\", type = \"source\")\n\n# Public packages can be installed directly from github:\nremotes::install_github(\"mrc-ide/site\")\nremotes::install_github(\"mrc-ide/netz\")\nremotes::install_github(\"mrc-ide/cali\")\nremotes::install_github(\"mrc-ide/mvw\")"
   },
   {
     "objectID": "index.html#schedule",
     "href": "index.html#schedule",
-    "title": "Index",
+    "title": "mvwsite",
     "section": "Schedule",
-    "text": "Schedule\n\n\n\nTime\nActivity\n\n\n\n\n09:30 - 11:00\nIntroduction to context-specific modelling\n\n\n11:00 - 11:20\nCoffee break\n\n\n11:20 - 12:50\nCalibrating a site\n\n\n12:50 - 13:30\nLunch break\n\n\n13:30 - 15:00\nBed nets & seasonality\n\n\n15:00 - 15:30\nCoffee break\n\n\n15:30 - 16:30\nOptimisation?\n\n\n16:30 - 17:00\nFeedback/Discussion"
+    "text": "Schedule\n\n\n\nTime\nActivity\n\n\n\n\n09:30 - 11:00\nIntroduction to context-specific modelling\n\n\n11:00 - 11:20\nCoffee break\n\n\n11:20 - 12:50\nCalibrating a site\n\n\n12:50 - 13:30\nLunch break (Lunch provided)\n\n\n13:30 - 15:00\nBed nets\n\n\n15:00 - 15:30\nCoffee break\n\n\n15:30 - 16:30\nOptimisation?\n\n\n16:30 - 17:00\nFeedback/Discussion"
   },
   {
     "objectID": "index.html#presentations-associated-with-this-workshop",
     "href": "index.html#presentations-associated-with-this-workshop",
-    "title": "Index",
-    "section": "Presentations associated with this workshop:",
-    "text": "Presentations associated with this workshop:\n\nIntroduction\nCalibration\nBed nets"
+    "title": "mvwsite",
+    "section": "Presentations associated with this workshop",
+    "text": "Presentations associated with this workshop\n\nIntroduction\nCalibration\nBed nets"
+  },
+  {
+    "objectID": "index.html#practicals-associated-with-this-workshop",
+    "href": "index.html#practicals-associated-with-this-workshop",
+    "title": "mvwsite",
+    "section": "Practicals associated with this workshop",
+    "text": "Practicals associated with this workshop\nWorkshop practicals are included as part of the 📦 [mvw]. They can be accessed using the run_tutorial() function.\n\nmvw::run_tutorial(\"Introduction\")\nmvw::run_tutorial(\"Calibration\")\nmvw::run_tutorial(\"Bed nets\")"
   },
   {
     "objectID": "inst/tutorials/Calibration/Calibration.html",

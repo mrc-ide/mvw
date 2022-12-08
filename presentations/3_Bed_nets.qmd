@@ -17,7 +17,6 @@ Session aims:
 -   Overview of bed net metrics and model inputs
 -   Using :package: \[netz\] to traverse the bed net landscape
 
-
 ## Why can bed nets be tricky?
 
 -   Bed nets have a "memory": the effective coverage of bed nets today depends on the cumulative impacts of net distributions and net loss over many prior years.
@@ -59,13 +58,11 @@ netz::population_usage(
 
 ![](images/pop_usage1.png){fig-align="center"}
 
-
 ## Implementing bed nets
 
 -   More frequent distribution will lead to net usage to build to higher levels:
 
 ![](images/pop_usage2.png){fig-align="center"}
-
 
 ## Implementing bed nets
 
@@ -73,13 +70,11 @@ netz::population_usage(
 
 ![](images/pop_usage3.png){fig-align="center"}
 
-
 ## Implementing bed nets
 
 -   We can also model irregular distributions:
 
 ![](images/pop_usage4.png){fig-align="center"}
-
 
 ## Fitting bed nets
 
@@ -121,7 +116,7 @@ head(
 
 ## Bed nets in site files
 
--   All of these bed net elements get translated into :package: [malariasimulation] parameters when using the :package: [site] `site_parameters()` function.
+-   All of these bed net elements get translated into :package: \[malariasimulation\] parameters when using the :package: \[site\] `site_parameters()` function.
 
 -   We also include future resistance extrapolations in the `$resistance` part of the site file.
 
@@ -137,7 +132,7 @@ head(
 
 :pray: Big thank you to Nora for lots of hard work on :package: \[netz\]!
 
-## Net loss functions
+## Net loss functions {.smaller}
 
 -   Net retention can be modelled with different function forms.
 
@@ -187,7 +182,6 @@ head(
 -   This can have big implication when costing a bet net campaign.
 
 ![](images/Bertozzi_villa_access_crop.png){fig-align="center"}
-
 
 ## Crop and distributions {.smaller}
 

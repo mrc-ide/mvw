@@ -1,21 +1,37 @@
 ---
-title: "Index"
 format: html
 from: markdown+emoji
 ---
 
-![](presentations/images/Guinea-Pig.jpg)
+![](presentations/images/malariaverse.gif){fig-align="center" width="40%" height="40%"}
+
+## Workshop details
+
+:spiral_calendar: Thursday 2nd February 2023
+
+:alarm_clock: 0930-1700
+
+:hotel: Meeting room 1&2, 20 Eastbourne Terrace, Paddington
+
+:computer: Please bring your laptop!
 
 ## Before the workshop
 
 Please make sure you have the following installed:
 
 1.  An [up-to-date installation of R](https://www.r-project.org/)
-2.  [RStudio](https://posit.co/download/rstudio-desktop/)
-3.  :package:\[malariasimulation\] installed. See [here](https://github.com/mrc-ide/malariasimulation#installation) for more info. You should be able to successfully run: `output <- malariasimulation::run_simulation(100)`
-4.  The malariaverse :package:\[foresite\], :package:\[site\], :package:\[netz\], :package:\[cali\]
+2.  An [up-to-date version of RStudio](https://posit.co/download/rstudio-desktop/)
+3.  The workshop :package: [mvw]
+4.  The malariaverse :package: \[malariasimulation, foresite, site, netz, cali\]
 
 ```{r, eval=FALSE, echo=TRUE}
+# For malariasimulation
+options(repos = c(
+    mrcide = "https://mrc-ide.r-universe.dev",
+    CRAN = "https://cloud.r-project.org"))
+install.packages("malariasimulation")
+# Make sure you can run
+output <- malariasimulation::run_simulation(100)
 
 # Private packages require network access to the "malaria drive". Contact Pete if you don't have it.
 drat::addRepo("malariaverse", "file:\\\\projects.dide.ic.ac.uk/malaria/malariaverse/drat")
@@ -25,12 +41,10 @@ install.packages("foresite", type = "source")
 remotes::install_github("mrc-ide/site")
 remotes::install_github("mrc-ide/netz")
 remotes::install_github("mrc-ide/cali")
+remotes::install_github("mrc-ide/mvw")
 ```
 
 
-:spiral_calendar: Thursday 2nd February 2023
-:clock: 0930-1700
-:hotel: Meeting room 1&2, 20 Eastbourne Terrace, Paddington
 
 ## Schedule
 
@@ -39,16 +53,26 @@ remotes::install_github("mrc-ide/cali")
 | 09:30 - 11:00 | Introduction to context-specific modelling |
 | 11:00 - 11:20 | *Coffee break*                             |
 | 11:20 - 12:50 | Calibrating a site                         |
-| 12:50 - 13:30 | *Lunch break*                              |
-| 13:30 - 15:00 | Bed nets & seasonality                     |
+| 12:50 - 13:30 | *Lunch break* (Lunch provided)             |
+| 13:30 - 15:00 | Bed nets                                   |
 | 15:00 - 15:30 | *Coffee break*                             |
 | 15:30 - 16:30 | Optimisation?                              |
 | 16:30 - 17:00 | Feedback/Discussion                        |
 
-## Presentations associated with this workshop:
+## Presentations associated with this workshop
 
 -   [Introduction](https://mrc-ide.github.io/mvw/presentations/1_Introduction.html)
 
 -   [Calibration](https://mrc-ide.github.io/mvw/presentations/2_Calibration.html)
 
 -   [Bed nets](https://mrc-ide.github.io/mvw/presentations/3_Bed_nets.html)
+
+## Practicals associated with this workshop
+
+Workshop practicals are included as part of the :package: [mvw]. They can be
+accessed using the `run_tutorial()` function.
+
+-   `mvw::run_tutorial("Introduction")`
+-   `mvw::run_tutorial("Calibration")`
+-   `mvw::run_tutorial("Bed nets")`
+

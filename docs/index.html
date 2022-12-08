@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>mvwsite - Index</title>
+<title>mvwsite</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -162,52 +162,59 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#before-the-workshop" id="toc-before-the-workshop" class="nav-link active" data-scroll-target="#before-the-workshop">Before the workshop</a></li>
+  <li><a href="#workshop-details" id="toc-workshop-details" class="nav-link active" data-scroll-target="#workshop-details">Workshop details</a></li>
+  <li><a href="#before-the-workshop" id="toc-before-the-workshop" class="nav-link" data-scroll-target="#before-the-workshop">Before the workshop</a></li>
   <li><a href="#schedule" id="toc-schedule" class="nav-link" data-scroll-target="#schedule">Schedule</a></li>
-  <li><a href="#presentations-associated-with-this-workshop" id="toc-presentations-associated-with-this-workshop" class="nav-link" data-scroll-target="#presentations-associated-with-this-workshop">Presentations associated with this workshop:</a></li>
+  <li><a href="#presentations-associated-with-this-workshop" id="toc-presentations-associated-with-this-workshop" class="nav-link" data-scroll-target="#presentations-associated-with-this-workshop">Presentations associated with this workshop</a></li>
+  <li><a href="#practicals-associated-with-this-workshop" id="toc-practicals-associated-with-this-workshop" class="nav-link" data-scroll-target="#practicals-associated-with-this-workshop">Practicals associated with this workshop</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Index</h1>
+
+
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="presentations/images/malariaverse.gif" style="width:40.0%;height:40.0%" class="figure-img"></p>
+</figure>
 </div>
-
-
-
-<div class="quarto-title-meta">
-
-    
-    
-  </div>
-  
-
-</header>
-
-<p><img src="presentations/images/Guinea-Pig.jpg" class="img-fluid"></p>
+<section id="workshop-details" class="level2">
+<h2 class="anchored" data-anchor-id="workshop-details">Workshop details</h2>
+<p><span class="emoji" data-emoji="spiral_calendar">🗓️</span> Thursday 2nd February 2023</p>
+<p><span class="emoji" data-emoji="alarm_clock">⏰</span> 0930-1700</p>
+<p><span class="emoji" data-emoji="hotel">🏨</span> Meeting room 1&amp;2, 20 Eastbourne Terrace, Paddington</p>
+<p><span class="emoji" data-emoji="computer">💻</span> Please bring your laptop!</p>
+</section>
 <section id="before-the-workshop" class="level2">
 <h2 class="anchored" data-anchor-id="before-the-workshop">Before the workshop</h2>
 <p>Please make sure you have the following installed:</p>
 <ol type="1">
 <li>An <a href="https://www.r-project.org/">up-to-date installation of R</a></li>
-<li><a href="https://posit.co/download/rstudio-desktop/">RStudio</a></li>
-<li><span class="emoji" data-emoji="package">📦</span>[malariasimulation] installed. See <a href="https://github.com/mrc-ide/malariasimulation#installation">here</a> for more info. You should be able to successfully run: <code>output &lt;- malariasimulation::run_simulation(100)</code></li>
-<li>The malariaverse <span class="emoji" data-emoji="package">📦</span>[foresite], <span class="emoji" data-emoji="package">📦</span>[site], <span class="emoji" data-emoji="package">📦</span>[netz], <span class="emoji" data-emoji="package">📦</span>[cali]</li>
+<li>An <a href="https://posit.co/download/rstudio-desktop/">up-to-date version of RStudio</a></li>
+<li>The workshop <span class="emoji" data-emoji="package">📦</span> [mvw]</li>
+<li>The malariaverse <span class="emoji" data-emoji="package">📦</span> [malariasimulation, foresite, site, netz, cali]</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Private packages require network access to the "malaria drive". Contact Pete if you don't have it.</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>drat<span class="sc">::</span><span class="fu">addRepo</span>(<span class="st">"malariaverse"</span>, <span class="st">"file:</span><span class="sc">\\\\</span><span class="st">projects.dide.ic.ac.uk/malaria/malariaverse/drat"</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"foresite"</span>, <span class="at">type =</span> <span class="st">"source"</span>)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Public packages can be installed directly from github:</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"mrc-ide/site"</span>)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"mrc-ide/netz"</span>)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"mrc-ide/cali"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># For malariasimulation</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repos =</span> <span class="fu">c</span>(</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">mrcide =</span> <span class="st">"https://mrc-ide.r-universe.dev"</span>,</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">CRAN =</span> <span class="st">"https://cloud.r-project.org"</span>))</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"malariasimulation"</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Make sure you can run</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>output <span class="ot">&lt;-</span> malariasimulation<span class="sc">::</span><span class="fu">run_simulation</span>(<span class="dv">100</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Private packages require network access to the "malaria drive". Contact Pete if you don't have it.</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>drat<span class="sc">::</span><span class="fu">addRepo</span>(<span class="st">"malariaverse"</span>, <span class="st">"file:</span><span class="sc">\\\\</span><span class="st">projects.dide.ic.ac.uk/malaria/malariaverse/drat"</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"foresite"</span>, <span class="at">type =</span> <span class="st">"source"</span>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Public packages can be installed directly from github:</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"mrc-ide/site"</span>)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"mrc-ide/netz"</span>)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"mrc-ide/cali"</span>)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"mrc-ide/mvw"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><span class="emoji" data-emoji="spiral_calendar">🗓️</span> Thursday 2nd February 2023 :clock: 0930-1700 <span class="emoji" data-emoji="hotel">🏨</span> Meeting room 1&amp;2, 20 Eastbourne Terrace, Paddington</p>
 </section>
 <section id="schedule" class="level2">
 <h2 class="anchored" data-anchor-id="schedule">Schedule</h2>
@@ -233,11 +240,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr>
 <tr class="even">
 <td style="text-align: left;">12:50 - 13:30</td>
-<td style="text-align: left;"><em>Lunch break</em></td>
+<td style="text-align: left;"><em>Lunch break</em> (Lunch provided)</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">13:30 - 15:00</td>
-<td style="text-align: left;">Bed nets &amp; seasonality</td>
+<td style="text-align: left;">Bed nets</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">15:00 - 15:30</td>
@@ -255,11 +262,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </table>
 </section>
 <section id="presentations-associated-with-this-workshop" class="level2">
-<h2 class="anchored" data-anchor-id="presentations-associated-with-this-workshop">Presentations associated with this workshop:</h2>
+<h2 class="anchored" data-anchor-id="presentations-associated-with-this-workshop">Presentations associated with this workshop</h2>
 <ul>
 <li><p><a href="https://mrc-ide.github.io/mvw/presentations/1_Introduction.html">Introduction</a></p></li>
 <li><p><a href="https://mrc-ide.github.io/mvw/presentations/2_Calibration.html">Calibration</a></p></li>
 <li><p><a href="https://mrc-ide.github.io/mvw/presentations/3_Bed_nets.html">Bed nets</a></p></li>
+</ul>
+</section>
+<section id="practicals-associated-with-this-workshop" class="level2">
+<h2 class="anchored" data-anchor-id="practicals-associated-with-this-workshop">Practicals associated with this workshop</h2>
+<p>Workshop practicals are included as part of the <span class="emoji" data-emoji="package">📦</span> [mvw]. They can be accessed using the <code>run_tutorial()</code> function.</p>
+<ul>
+<li><code>mvw::run_tutorial("Introduction")</code></li>
+<li><code>mvw::run_tutorial("Calibration")</code></li>
+<li><code>mvw::run_tutorial("Bed nets")</code></li>
 </ul>
 
 
