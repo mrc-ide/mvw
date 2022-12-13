@@ -1,0 +1,19 @@
+---
+title: "Test"
+output: learnr::tutorial
+runtime: shiny_prerendered
+---
+
+```{r setup, include=FALSE}
+library(learnr)
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r quiz}
+(
+  question("Can you see this question?",
+           answer("Yes", correct = TRUE, message = "Great you're all set!"),
+           answer("No", message = "How did you answer the question?! (Contact Pete)")
+  )
+)
+```

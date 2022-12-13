@@ -21,7 +21,7 @@ Please make sure you have the following installed:
 
 1.  An [up-to-date installation of R](https://www.r-project.org/)
 2.  An [up-to-date version of RStudio](https://posit.co/download/rstudio-desktop/)
-3.  The workshop :package: [mvw]
+3.  The workshop :package: \[mvw\]
 4.  The malariaverse :package: \[malariasimulation, foresite, site, netz, cali\]
 
 ```{r, eval=FALSE, echo=TRUE}
@@ -33,7 +33,8 @@ install.packages("malariasimulation")
 # Make sure you can run
 output <- malariasimulation::run_simulation(100)
 
-# Private packages require network access to the "malaria drive". Contact Pete if you don't have it.
+# Private packages require network access to the "malaria drive". 
+# Contact Pete if you don't have access.
 drat::addRepo("malariaverse", "file:\\\\projects.dide.ic.ac.uk/malaria/malariaverse/drat")
 install.packages("foresite", type = "source")
 
@@ -43,8 +44,6 @@ remotes::install_github("mrc-ide/netz")
 remotes::install_github("mrc-ide/cali")
 remotes::install_github("mrc-ide/mvw")
 ```
-
-
 
 ## Schedule
 
@@ -69,10 +68,8 @@ remotes::install_github("mrc-ide/mvw")
 
 ## Practicals associated with this workshop
 
-Workshop practicals are included as part of the :package: [mvw]. They can be
-accessed using the `run_tutorial()` function.
+Workshop practicals are included as part of the :package: \[mvw\]. They can be accessed using the `run_tutorial()` function.
 
 -   `mvw::run_tutorial("Introduction")`
 -   `mvw::run_tutorial("Calibration")`
 -   `mvw::run_tutorial("Bed nets")`
-
