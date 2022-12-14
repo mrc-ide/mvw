@@ -1,0 +1,91 @@
+---
+title: "Bednet"
+output: learnr::tutorial
+runtime: shiny_prerendered
+---
+
+```{r setup, include=FALSE}
+library(learnr)
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Bed nets in malaria simulation
+
+For each aspect of net distibution, state if the average population usage will increase or decreas:
+
+## Fitting malariasimulation inputs
+
+Consider the following scenario:
+
+-   Time period: 10 years
+-   Bed net usage estimates of 12%, 18%, 45%, 50% and 40%, collected on 1st June in years 1, 3, 5, 7, and 9
+-   Known mass net distributions on 1st January in years 1, 2, 4, 7 and 8.
+-   Net retention half life of five years
+
+Using these estimates and the `netz::fit_usage()` function, in the code box below estimate the model input distribution to achieve the observed bednet usage over time.
+
+```{r estimate-dist, exercise=TRUE}
+library(netz)
+
+```
+
+```{r estimate-dist-hint}
+library(netz)
+year <- 365
+timesteps <- 10 * year
+net_hl <- 5 * year
+
+# Target usage associated time points
+target <- c(0.12, 0.18, 0.45, 0.50, 0.40)
+target_tt <- round((c(1, 3, 5, 7, 9) - 0.5) * 365)
+# Time points at which distribution will occur
+distribution_tt <- 1 + (c(1, 2, 4, 7, 8) - 1) * 365
+
+# Fit
+fit <- netz::fit_usage(
+  target_usage = target,
+  target_usage_timesteps = target_tt,
+  distribution_timesteps = distribution_tt + 1
+)
+
+round(fit$par, 2)
+```
+
+With your estimated inputs and the `netz::population_usage()` function, plot the estimated usage over time alongside the usage observations. 
+
+```{r plot-dist, exercise=TRUE}
+library(netz)
+
+```
+
+```{r plot-dist-hint}
+library(netz)
+
+fitted_intput <- c(0.13, 0.15, 0.53, 0.33, 0.16)
+
+year <- 365
+timesteps <- 10 * year
+net_hl <- 5 * year
+
+# Target usage associated time points
+target <- c(0.12, 0.18, 0.45, 0.50, 0.40)
+target_tt <- round((c(1, 3, 5, 7, 9) - 0.5) * 365)
+# Time points at which distribution will occur
+distribution_tt <- 1 + (c(1, 2, 4, 7, 8) - 1) * 365
+
+pu <- population_usage(
+  timesteps = timesteps,
+  distribution = fitted_intput,
+  distribution_timesteps = distribution_tt,
+  half_life = net_hl)
+
+plot(1:timesteps, pu, t = "l", ylim = c(0, 0.8), ylab = "Population usgae", xlab = "Time")
+points(target ~ target_tt, col = "dodgerblue", pch = 19)
+```
+
+:question: Are they a good match?
+
+Extra credits `r emo::ji("sparkles")`:
+
+-   Examine the `distribution_upper` argument of `netz::fit_usage()`. How does the fit look if you limit the maximum a single distribution can be to 40% of the population?
+-   We may be uncertain about the ne distribution dates. Do other sets of distribution dates also allow a good fit to the observed bed net usage estimates?
