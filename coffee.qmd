@@ -1,0 +1,22 @@
+---
+format: html
+from: markdown+emoji
+---
+
+# :coffee: Coffee break activity :coffee:
+
+On your table you should find post-it notes, pens and green stickers. During the coffee/lunch breaks and throughout the day please:
+
+1.  On post-it notes, write down ideas for how to improve the malariaverse:
+
+  -   New features
+  -   Additional packages
+  -   Improvements to current packages.
+
+2.  Stick you ideas where you think they lie on the Effort vs Impact plane on the board
+
+3.  Up-vote the ideas of others with a green sticker
+
+![](presentations/images/impact_effort.png){fig-align="center"}
+
+There will be time at the end of the day to review and discuss suggestions

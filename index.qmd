@@ -43,7 +43,7 @@ remotes::install_github("mrc-ide/cali")
 remotes::install_github("mrc-ide/mvw")
 ```
 
-Following installtion you should be able to successfully run:
+Following installation you should be able to successfully run:
 
 ```{r, eval=FALSE, echo=TRUE}
 output <- malariasimulation::run_simulation(100)
@@ -70,19 +70,3 @@ If you can't, please contact Pete *before* the workshop.
 | 15:00 - 15:30 | *Coffee break*                             |
 | 15:30 - 16:30 | Optimisation?                              |
 | 16:30 - 17:00 | Feedback/Discussion                        |
-
-## Presentations associated with this workshop
-
--   [Introduction](https://mrc-ide.github.io/mvw/presentations/1_Introduction.html)
-
--   [Calibration](https://mrc-ide.github.io/mvw/presentations/2_Calibration.html)
-
--   [Bed nets](https://mrc-ide.github.io/mvw/presentations/3_Bed_nets.html)
-
-## Practicals associated with this workshop
-
-Workshop practicals are included as part of the :package: \[mvw\]. They can be accessed using the `run_tutorial()` function.
-
--   `mvw::run_tutorial("Introduction")`
--   `mvw::run_tutorial("Calibration")`
--   `mvw::run_tutorial("Bednet")`

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>mvwsite</title>
+<title>Malariaverse Workshop</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -133,8 +133,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./presentations/images/malariaverse.gif" alt="" class="navbar-logo">
+    </a>
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">mvwsite</span>
+    <span class="navbar-title">Malariaverse Workshop</span>
     </a>
   </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -145,8 +148,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li class="nav-item">
     <a class="nav-link active" href="./index.html" aria-current="page">Home</a>
   </li>  
-  <li class="dropdown-header">
- about.qmd</li>
+  <li class="nav-item">
+    <a class="nav-link" href="./materials.html">Workshop materials</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./coffee.html">Coffee break activity</a>
+  </li>  
 </ul>
               <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
@@ -165,8 +172,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#workshop-details" id="toc-workshop-details" class="nav-link active" data-scroll-target="#workshop-details">Workshop details</a></li>
   <li><a href="#before-the-workshop" id="toc-before-the-workshop" class="nav-link" data-scroll-target="#before-the-workshop">Before the workshop</a></li>
   <li><a href="#schedule" id="toc-schedule" class="nav-link" data-scroll-target="#schedule">Schedule</a></li>
-  <li><a href="#presentations-associated-with-this-workshop" id="toc-presentations-associated-with-this-workshop" class="nav-link" data-scroll-target="#presentations-associated-with-this-workshop">Presentations associated with this workshop</a></li>
-  <li><a href="#practicals-associated-with-this-workshop" id="toc-practicals-associated-with-this-workshop" class="nav-link" data-scroll-target="#practicals-associated-with-this-workshop">Practicals associated with this workshop</a></li>
   </ul>
 </nav>
     </div>
@@ -214,7 +219,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"mrc-ide/cali"</span>)</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"mrc-ide/mvw"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Following installtion you should be able to successfully run:</p>
+<p>Following installation you should be able to successfully run:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>output <span class="ot">&lt;-</span> malariasimulation<span class="sc">::</span><span class="fu">run_simulation</span>(<span class="dv">100</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>output</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -269,23 +274,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr>
 </tbody>
 </table>
-</section>
-<section id="presentations-associated-with-this-workshop" class="level2">
-<h2 class="anchored" data-anchor-id="presentations-associated-with-this-workshop">Presentations associated with this workshop</h2>
-<ul>
-<li><p><a href="https://mrc-ide.github.io/mvw/presentations/1_Introduction.html">Introduction</a></p></li>
-<li><p><a href="https://mrc-ide.github.io/mvw/presentations/2_Calibration.html">Calibration</a></p></li>
-<li><p><a href="https://mrc-ide.github.io/mvw/presentations/3_Bed_nets.html">Bed nets</a></p></li>
-</ul>
-</section>
-<section id="practicals-associated-with-this-workshop" class="level2">
-<h2 class="anchored" data-anchor-id="practicals-associated-with-this-workshop">Practicals associated with this workshop</h2>
-<p>Workshop practicals are included as part of the <span class="emoji" data-emoji="package">📦</span> [mvw]. They can be accessed using the <code>run_tutorial()</code> function.</p>
-<ul>
-<li><code>mvw::run_tutorial("Introduction")</code></li>
-<li><code>mvw::run_tutorial("Calibration")</code></li>
-<li><code>mvw::run_tutorial("Bednet")</code></li>
-</ul>
 
 
 </section>

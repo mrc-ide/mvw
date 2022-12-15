@@ -3,12 +3,16 @@ project:
   output-dir: docs
 
 website:
-  title: "mvwsite"
+  title: "Malariaverse Workshop"
   navbar:
+    logo: "presentations/images/malariaverse.gif"
     left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
+      - text: "Home"
+        file: index.qmd
+      - text: "Workshop materials"
+        file: materials.qmd
+      - text: "Coffee break activity"
+        file: coffee.qmd
 
 format:
   html:
