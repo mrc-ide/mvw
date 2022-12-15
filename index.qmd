@@ -30,8 +30,6 @@ options(repos = c(
     mrcide = "https://mrc-ide.r-universe.dev",
     CRAN = "https://cloud.r-project.org"))
 install.packages("malariasimulation")
-# Make sure you can run
-output <- malariasimulation::run_simulation(100)
 
 # Private packages require network access to the "malaria drive". 
 # Contact Pete if you don't have access.
@@ -44,6 +42,21 @@ remotes::install_github("mrc-ide/netz")
 remotes::install_github("mrc-ide/cali")
 remotes::install_github("mrc-ide/mvw")
 ```
+
+Following installtion you should be able to successfully run:
+
+```{r, eval=FALSE, echo=TRUE}
+output <- malariasimulation::run_simulation(100)
+output
+```
+
+and
+
+```{r, eval=FALSE, echo=TRUE}
+mvw::run_tutorial("Test")
+```
+
+If you can't, please contact Pete *before* the workshop.
 
 ## Schedule
 
