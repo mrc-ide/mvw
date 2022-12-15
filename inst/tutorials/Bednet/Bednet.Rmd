@@ -11,18 +11,40 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## Bed nets in malaria simulation
 
-For each aspect of net distibution, state if the average population usage will increase or decreas:
+For each aspect of net distribution, state if the average population usage will increase or decrease:
+
+```{r malarisimulation-dist}
+quiz(
+  question("More frequent distributions",
+           answer("Increase", correct = TRUE),
+           answer("Decrease")
+  ),
+  question("Larger distributions",
+           answer("Increase", correct = TRUE),
+           answer("Decrease")
+  ),
+  question("Shorter retention halflife",
+           answer("Increase"),
+           answer("Decrease", correct = TRUE)
+  ),
+  question("3-yearly mass distribuiotns versus annual continuous distribution",
+           answer("Increase"),
+           answer("Decrease"),
+           answer("It depends!", correct = TRUE)
+  )
+)
+```
 
 ## Fitting malariasimulation inputs
 
 Consider the following scenario:
 
--   Time period: 10 years
--   Bed net usage estimates of 12%, 18%, 45%, 50% and 40%, collected on 1st June in years 1, 3, 5, 7, and 9
--   Known mass net distributions on 1st January in years 1, 2, 4, 7 and 8.
--   Net retention half life of five years
+-   Time period: 10 years (time units are days so year 1: t = 1:365)
+-   Bed net usage estimates of 12%, 18%, 45%, 50% and 40%, collected at the mid point of the year (1st June) in years 1, 3, 5, 7, and 9
+-   Known mass net distributions at the start of the year (1st January) in years 1, 2, 4, 7 and 8.
+-   Net retention half life of 5 years
 
-Using these estimates and the `netz::fit_usage()` function, in the code box below estimate the model input distribution to achieve the observed bednet usage over time.
+Using these estimates and the `netz::fit_usage()` function, in the code box below estimate the model input distribution to achieve the observed bed net usage over time.
 
 ```{r estimate-dist, exercise=TRUE}
 library(netz)
@@ -37,9 +59,9 @@ net_hl <- 5 * year
 
 # Target usage associated time points
 target <- c(0.12, 0.18, 0.45, 0.50, 0.40)
-target_tt <- round((c(1, 3, 5, 7, 9) - 0.5) * 365)
+target_tt <- floor((c(1, 3, 5, 7, 9) - 0.5) * year)
 # Time points at which distribution will occur
-distribution_tt <- 1 + (c(1, 2, 4, 7, 8) - 1) * 365
+distribution_tt <- 1 + c(0, 1, 3, 6, 7) * year
 
 # Fit
 fit <- netz::fit_usage(
@@ -51,7 +73,7 @@ fit <- netz::fit_usage(
 round(fit$par, 2)
 ```
 
-With your estimated inputs and the `netz::population_usage()` function, plot the estimated usage over time alongside the usage observations. 
+With your estimated inputs and the `netz::population_usage()` function, plot the estimated usage over time alongside the usage observations.
 
 ```{r plot-dist, exercise=TRUE}
 library(netz)
@@ -69,9 +91,9 @@ net_hl <- 5 * year
 
 # Target usage associated time points
 target <- c(0.12, 0.18, 0.45, 0.50, 0.40)
-target_tt <- round((c(1, 3, 5, 7, 9) - 0.5) * 365)
+target_tt <- floor((c(1, 3, 5, 7, 9) - 0.5) * year)
 # Time points at which distribution will occur
-distribution_tt <- 1 + (c(1, 2, 4, 7, 8) - 1) * 365
+distribution_tt <- 1 + c(0, 1, 3, 6, 7) * year
 
 pu <- population_usage(
   timesteps = timesteps,
@@ -79,13 +101,127 @@ pu <- population_usage(
   distribution_timesteps = distribution_tt,
   half_life = net_hl)
 
-plot(1:timesteps, pu, t = "l", ylim = c(0, 0.8), ylab = "Population usgae", xlab = "Time")
+plot(1:timesteps, pu, t = "l", ylim = c(0, 0.8), ylab = "Population usage", xlab = "Time")
 points(target ~ target_tt, col = "dodgerblue", pch = 19)
 ```
 
-:question: Are they a good match?
+`r emo::ji("question")` Are they a good match?
 
 Extra credits `r emo::ji("sparkles")`:
 
 -   Examine the `distribution_upper` argument of `netz::fit_usage()`. How does the fit look if you limit the maximum a single distribution can be to 40% of the population?
--   We may be uncertain about the ne distribution dates. Do other sets of distribution dates also allow a good fit to the observed bed net usage estimates?
+-   We may be uncertain about the net distribution dates. Do other sets of distribution dates also allow a good fit to the observed bed net usage estimates?
+
+## Working with country net data
+
+When working with country net data there are various bed net metrics that you might encounter. 
+
+Match the following definitions and metrics:
+
+```{r metric-def}
+quiz(
+  question("The total number of nets in the population",
+           answer("Distribution"),
+           answer("Crop", correct = TRUE),
+           answer("Access"),
+           answer("Usage")
+  ),
+  question("The proportion of people who have slept under a bed net the previous night",
+           answer("Distribution"),
+           answer("Crop"),
+           answer("Access"),
+           answer("Usage", correct = TRUE)
+  ),
+  question("The number of nets distributed",
+           answer("Distribution", correct  = TRUE),
+           answer("Crop"),
+           answer("Access"),
+           answer("Usage")
+  ),
+  question("The proportion of the population that could sleep under a net",
+           answer("Distribution"),
+           answer("Crop"),
+           answer("Access", correct = TRUE),
+           answer("Usage")
+  )
+)
+```
+
+Using the `netz::usage_rate()`, `netz::access_to_usage()` and `netz::usage_to_access()` functions, use the code box below to generate answers to the following questions
+
+```{r access-usage, exercise=TRUE}
+library(netz)
+
+```
+
+```{r access-usage-quiz}
+quiz(
+  question("What is the usage rate in Nigeria?",
+           answer("0.9376562"),
+           answer("0.8901211"),
+           answer("0.8795992", correct = TRUE),
+           answer("0.6942281")
+  ),
+  question("What is the usage in Burkina Faso if access is 62%",
+           answer("0.5537472", correct = TRUE),
+           answer("0.6494372"),
+           answer("0.4328341"),
+           answer("0.5100225")
+  ),
+  question("Which country uses accessible nets most efficiently?",
+           answer("Zambia"),
+           answer("Tanzania"),
+           answer("Scotland", message = "Time for coffee I think!"),
+           answer("Benin", correct = TRUE)
+  )
+)
+```
+
+Can you work out the annual cost for the following scenario:
+
+-   Annual distributions
+-   Cost per net delivered of $5
+-   Population size of 10,000
+-   Net loss half life of 2.5 years, net loss retention function: `net_loss_map()`
+-   Usage of 70% and usage rate of 0.8
+
+The [netz flow diagram](https://mrc-ide.github.io/netz/) might help
+
+```{r net-cost, exercise=TRUE}
+library(netz)
+
+```
+
+```{r net-cost-hint}
+library(netz)
+population <- 10000
+cost_per_net_delivered <- 5
+year <- 365
+distribution_freq <- 1 * year
+retention_half_life <- 2.5 * year
+net_loss_function <- net_loss_map
+usage <- 0.7
+usage_rate <- 0.8
+
+# Now use the netz conversion functions to translate
+# usage -> access -> crop -> distribution
+```
+
+```{r net-cost-solution}
+library(netz)
+population <- 10000
+cost_per_net_delivered <- 5
+year <- 365
+distribution_freq <- 1 * year
+retention_half_life <- 2.5 * year
+net_loss_function <- net_loss_map
+usage <- 0.7
+usage_rate <- 0.8
+
+access <- netz::usage_to_access(usage, usage_rate)
+crop <- netz::access_to_crop(access)
+nets_distributed_per_capita <- netz::crop_to_distribution(crop, distribution_freq, retention_half_life, net_loss_function)
+nets_distributed <- nets_distributed_per_capita * population
+cost <- nets_distributed * cost_per_net_delivered
+cost
+```

@@ -72,4 +72,4 @@ Workshop practicals are included as part of the :package: \[mvw\]. They can be a
 
 -   `mvw::run_tutorial("Introduction")`
 -   `mvw::run_tutorial("Calibration")`
--   `mvw::run_tutorial("Bed nets")`
+-   `mvw::run_tutorial("Bednet")`

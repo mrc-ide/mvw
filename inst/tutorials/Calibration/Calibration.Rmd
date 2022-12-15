@@ -124,7 +124,7 @@ Lets check our results:
 
 1.  Use the estimated, calibrated EIR from above to modify our parameter inputs
 2.  Plot simulated PfPr over time
-3.  Add your target. 
+3.  Add your target.
 
 `r emo::ji("question")` Do they match?
 
@@ -171,4 +171,4 @@ Extra credits `r emo::ji("sparkles")`:
 -   Modify the calibration code to calibrate to 3 years of target data.
 -   Read about the `weights` argument in `?calibrate()`, have a go a weighting your target data so more recent years are more influential.
 
-`r emo::ji("question")`  What happens if you change the `tolerance` argument in `?calibrate()`
+`r emo::ji("question")` What happens if you change the `tolerance` argument in `?calibrate()`
