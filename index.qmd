@@ -68,5 +68,5 @@ If you can't, please contact Pete *before* the workshop.
 | 12:50 - 13:30 | *Lunch break* (Lunch provided)             |
 | 13:30 - 15:00 | Bed nets                                   |
 | 15:00 - 15:30 | *Coffee break*                             |
-| 15:30 - 16:30 | Optimisation?                              |
-| 16:30 - 17:00 | Feedback/Discussion                        |
+| 15:30 - 16:15 | Lighting round: om, umbrella, treasure     |
+| 16:15 - 17:00 | Feedback/Discussion                        |

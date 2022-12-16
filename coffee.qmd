@@ -9,11 +9,13 @@ On your table you should find post-it notes, pens and green stickers. During the
 
 1.  On post-it notes, write down ideas for how to improve the malariaverse:
 
-  -   New features
-  -   Additional packages
-  -   Improvements to current packages.
+-   New features
+-   Additional packages
+-   Improvements to current packages
+-   Ways to maximise academic impact
+-   Ways to maximise access/use
 
-2.  Stick you ideas where you think they lie on the Effort vs Impact plane on the board
+2.  Stick your ideas where you think they lie on the Effort vs Impact plane on the board
 
 3.  Up-vote the ideas of others with a green sticker
 

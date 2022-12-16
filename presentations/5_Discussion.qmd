@@ -1,0 +1,31 @@
+---
+title: "Malariaverse Workshop \n Discussion"
+author: "Pete Winskill"
+format:
+  revealjs:
+    logo: images/malariaverse.gif
+    css: images/logo.css
+editor: visual
+from: markdown+emoji
+---
+
+## New features
+
+  * Overview of Effort vs Impact exercise
+  
+## Future development 
+
+  * How do we find the balance between the model being fast or being easy to edit and user-friendly?
+  
+![](images/scales.png){fig-align="center"}
+## Feedback on the workshop
+
+  * To little? To Much?
+  * Missing information/topics
+  * Format (presentations and tutorials)
+  
+![](images/thumbs.png){fig-align="center"}
+  
+## ...and now!
+
+![](images/Guinea-Pig-beer.jpg){fig-align="center"}

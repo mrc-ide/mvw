@@ -4,7 +4,7 @@
     "href": "coffee.html",
     "title": "Malariaverse Workshop",
     "section": "",
-    "text": "On your table you should find post-it notes, pens and green stickers. During the coffee/lunch breaks and throughout the day please:\n\nOn post-it notes, write down ideas for how to improve the malariaverse:\n\n\nNew features\nAdditional packages\nImprovements to current packages.\n\n\nStick you ideas where you think they lie on the Effort vs Impact plane on the board\nUp-vote the ideas of others with a green sticker\n\n\n\n\n\n\nThere will be time at the end of the day to review and discuss suggestions"
+    "text": "On your table you should find post-it notes, pens and green stickers. During the coffee/lunch breaks and throughout the day please:\n\nOn post-it notes, write down ideas for how to improve the malariaverse:\n\n\nNew features\nAdditional packages\nImprovements to current packages\nWays to maximise academic impact\nWays to maximise access/use\n\n\nStick your ideas where you think they lie on the Effort vs Impact plane on the board\nUp-vote the ideas of others with a green sticker\n\n\n\n\n\n\nThere will be time at the end of the day to review and discuss suggestions"
   },
   {
     "objectID": "index.html#workshop-details",
@@ -25,7 +25,7 @@
     "href": "index.html#schedule",
     "title": "Malariaverse Workshop",
     "section": "Schedule",
-    "text": "Schedule\n\n\n\nTime\nActivity\n\n\n\n\n09:30 - 11:00\nIntroduction to context-specific modelling\n\n\n11:00 - 11:20\nCoffee break\n\n\n11:20 - 12:50\nCalibrating a site\n\n\n12:50 - 13:30\nLunch break (Lunch provided)\n\n\n13:30 - 15:00\nBed nets\n\n\n15:00 - 15:30\nCoffee break\n\n\n15:30 - 16:30\nOptimisation?\n\n\n16:30 - 17:00\nFeedback/Discussion"
+    "text": "Schedule\n\n\n\nTime\nActivity\n\n\n\n\n09:30 - 11:00\nIntroduction to context-specific modelling\n\n\n11:00 - 11:20\nCoffee break\n\n\n11:20 - 12:50\nCalibrating a site\n\n\n12:50 - 13:30\nLunch break (Lunch provided)\n\n\n13:30 - 15:00\nBed nets\n\n\n15:00 - 15:30\nCoffee break\n\n\n15:30 - 16:15\nLighting round: om, umbrella, treasure\n\n\n16:15 - 17:00\nFeedback/Discussion"
   },
   {
     "objectID": "inst/tutorials/Bednet/Bednet.html",
@@ -102,7 +102,7 @@
     "href": "materials.html",
     "title": "Malariaverse Workshop",
     "section": "",
-    "text": "Introduction\nCalibration\nBed nets\n\n\n\n\nWorkshop practicals are included as part of the 📦 [mvw]. They can be accessed using the run_tutorial() function.\n\nmvw::run_tutorial(\"Introduction\")\nmvw::run_tutorial(\"Calibration\")\nmvw::run_tutorial(\"Bednet\")"
+    "text": "Introduction\nCalibration\nBed nets\nDiscussion/Feedback\n\n\n\n\nWorkshop practicals are included as part of the 📦 [mvw]. They can be accessed using the run_tutorial() function.\n\nmvw::run_tutorial(\"Introduction\")\nmvw::run_tutorial(\"Calibration\")\nmvw::run_tutorial(\"Bednet\")"
   },
   {
     "objectID": "presentations/1_Introduction.html#welcome-all",
@@ -446,5 +446,26 @@
     "title": "Malariaverse Workshop Bed nets",
     "section": "Let’s give it a try!",
     "text": "Let’s give it a try!\n\nRun mvw::run_tutorial(\"Bednet\")"
+  },
+  {
+    "objectID": "presentations/5_Discussion.html#new-features",
+    "href": "presentations/5_Discussion.html#new-features",
+    "title": "Malariaverse Workshop Discussion",
+    "section": "New features",
+    "text": "New features\n\nOverview of Effort vs Impact exercise"
+  },
+  {
+    "objectID": "presentations/5_Discussion.html#future-development",
+    "href": "presentations/5_Discussion.html#future-development",
+    "title": "Malariaverse Workshop Discussion",
+    "section": "Future development",
+    "text": "Future development\n\nHow do we find the balance between the model being fast or being easy to edit and user-friendly?\n\n ## Feedback on the workshop\n\nTo little? To Much?\nMissing information/topics\nFormat (presentations and tutorials)"
+  },
+  {
+    "objectID": "presentations/5_Discussion.html#and-now",
+    "href": "presentations/5_Discussion.html#and-now",
+    "title": "Malariaverse Workshop Discussion",
+    "section": "…and now!",
+    "text": "…and now!"
   }
 ]

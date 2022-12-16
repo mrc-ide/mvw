@@ -5,7 +5,6 @@ from: markdown+emoji
 
 # :pencil: Workshop materials :pencil:
 
-
 ## Presentations associated with this workshop
 
 -   [Introduction](https://mrc-ide.github.io/mvw/presentations/1_Introduction.html)
@@ -13,6 +12,8 @@ from: markdown+emoji
 -   [Calibration](https://mrc-ide.github.io/mvw/presentations/2_Calibration.html)
 
 -   [Bed nets](https://mrc-ide.github.io/mvw/presentations/3_Bed_nets.html)
+
+-   [Discussion/Feedback](https://mrc-ide.github.io/mvw/presentations/5_Discussion.html)
 
 ## Practicals associated with this workshop
 
