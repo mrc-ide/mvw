@@ -18,6 +18,7 @@ from: markdown+emoji
   * How do we find the balance between the model being fast or being easy to edit and user-friendly?
   
 ![](images/scales.png){fig-align="center"}
+
 ## Feedback on the workshop
 
   * To little? To Much?
