@@ -7,7 +7,7 @@
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.1.189">
+  <meta name="generator" content="quarto-1.2.269">
 
   <meta name="author" content="Pete Winskill">
   <title>Malariaverse Workshop - Malariaverse Workshop Lightning round</title>
@@ -324,11 +324,18 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="center">
+<section id="title-slide" class="quarto-title-block center">
   <h1 class="title">Malariaverse Workshop Lightning round</h1>
-  <p class="author">Pete Winskill</p>
-</section>
 
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Pete Winskill 
+</div>
+</div>
+</div>
+
+</section>
 <section id="session-aims" class="slide level2">
 <h2>Session aims:</h2>
 <ul>
@@ -348,14 +355,14 @@
 <ul>
 <li><span class="emoji" data-emoji="package">📦</span> [malariasimulation] captures the seasonality in transmission using fourier series parameters fitted to rainfall data.</li>
 <li><span class="emoji" data-emoji="package">📦</span> [umbrella] includes some simple functionality to fit these parameters.</li>
-<li><span class="emoji" data-emoji="package">📦</span> [umbrella] also has some helper functions to download CHIRPS rainfall data.</li>
+<li><span class="emoji" data-emoji="package">📦</span> [umbrella] also has some helper functions to download CHIRPS rainfall “data”.</li>
 <li><code>site_file$seasonality</code> has fitted seasonal parameters for the default sites.</li>
 </ul>
 </section>
 <section id="umbrella-workflow" class="slide level2">
 <h2>Umbrella workflow</h2>
 <ol type="1">
-<li>Define your spatial data. This will be spatial polygon(s). I like to use the <span class="emoji" data-emoji="package">📦</span> [sf] for spatial data. (I have downloaded and processed <code>sf</code> files asscoiated with all sites.)</li>
+<li>Define your spatial data. This will be spatial polygon(s). I like to use the <span class="emoji" data-emoji="package">📦</span> [sf] for spatial data. (I have downloaded and processed <code>sf</code> files associated with all sites.)</li>
 <li>Access satellite rainfall “data” rasters for the region/period/resolution you require</li>
 <li>Extract rainfall data associated with your spatial units</li>
 <li>Use <code>umbrella::fit_fourier()</code> to fit parameters that can be used in a site file, or directly in <span class="emoji" data-emoji="package">📦</span> [malariasimulation].</li>
@@ -389,7 +396,8 @@
 <ul>
 <li><span class="emoji" data-emoji="package">📦</span> <a href="#/treasure">treasure</a>, is a simple repository for unit costing information that has been used to cost out large global/country scenarios</li>
 <li>Mostly serves as a single, version controlled reference for unit costs collected from the literature, WHO and Global Fund.</li>
-<li>No time- or country-specific costing information. IF anyone is interested in improving the database, please let me know!</li>
+<li>No time- or country-specific costing information.</li>
+<li>If anyone is interested in improving the database, please let me know!</li>
 </ul>
 </section>
 <section id="section-2" class="slide level2">
@@ -408,7 +416,7 @@
 <h2>om inputs</h2>
 <ul>
 <li><span class="emoji" data-emoji="package">📦</span> <a href="#/om">om</a> requires specific inputs to work:</li>
-<li>An impact matrix giving details of the outcome measure we are optimising, for example cases averted. Each row of the matrix is a sub-unit (e.g.&nbsp;district) and each column a unqiue intervention package.</li>
+<li>An impact matrix giving details of the outcome measure we are optimising, for example cases averted. Each row of the matrix is a sub-unit (e.g.&nbsp;district) and each column a unique intervention package.</li>
 <li>A cost matrix giving details of the associated cost of each option in the impact matrix</li>
 <li>A budget</li>
 </ul>
@@ -417,7 +425,7 @@
 <h2>om and complex budgets</h2>
 <ul>
 <li>The budget specification in <span class="emoji" data-emoji="package">📦</span> <a href="#/om">om</a> can be simple: e.g.&nbsp;$100</li>
-<li>It can also be more complex. For example we might want to optimise the intervention packages across 5 countries, where each country has a domestic budget (to be spent interally) as well as a shared regional budget.</li>
+<li>It can also be more complex. For example we might want to optimise the intervention packages across 5 countries, where each country has a domestic budget (to be spent internally) as well as a shared regional budget.</li>
 </ul>
 </section>
 <section id="om-info" class="slide level2">
@@ -680,7 +688,24 @@
         button.classList.add('code-copy-button-checked');
         var currentTitle = button.getAttribute("title");
         button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
         setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
           button.setAttribute("title", currentTitle);
           button.classList.remove('code-copy-button-checked');
         }, 1000);
@@ -718,24 +743,42 @@
           return note.innerHTML;
         });
       }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
       var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
       for (var i=0; i<bibliorefs.length; i++) {
         const ref = bibliorefs[i];
-        const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-        tippyHover(ref, function() {
-          var popup = window.document.createElement('div');
-          cites.forEach(function(cite) {
-            var citeDiv = window.document.createElement('div');
-            citeDiv.classList.add('hanging-indent');
-            citeDiv.classList.add('csl-entry');
-            var biblioDiv = window.document.getElementById('ref-' + cite);
-            if (biblioDiv) {
-              citeDiv.innerHTML = biblioDiv.innerHTML;
-            }
-            popup.appendChild(citeDiv);
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
           });
-          return popup.innerHTML;
-        });
+        }
       }
     });
     </script>

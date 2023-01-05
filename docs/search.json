@@ -4,7 +4,7 @@
     "href": "coffee.html",
     "title": "Malariaverse Workshop",
     "section": "",
-    "text": "On your table you should find post-it notes, pens and green stickers. During the coffee/lunch breaks and throughout the day please:\n\nOn post-it notes, write down ideas for how to improve the malariaverse:\n\n\nNew features\nAdditional packages\nImprovements to current packages\nWays to maximise academic impact\nWays to maximise access/use\n\n\nStick your ideas where you think they lie on the Effort vs Impact plane on the board\nUp-vote the ideas of others with a green sticker\n\n\n\n\n\n\nThere will be time at the end of the day to review and discuss suggestions"
+    "text": "☕ Coffee break activity ☕\nOn your table you should find post-it notes, pens and green stickers. During the coffee/lunch breaks and throughout the day please:\n\nOn post-it notes, write down ideas for how to improve the malariaverse:\n\n\nNew features\nAdditional packages\nImprovements to current packages\nWays to maximise academic impact\nWays to maximise access/use\n\n\nStick your ideas where you think they lie on the Effort vs Impact plane on the board\nUp-vote the ideas of others with a dot sticker\n\n\n\n\n\n\nThere will be time at the end of the day to review and discuss suggestions"
   },
   {
     "objectID": "index.html#workshop-details",
@@ -95,14 +95,14 @@
     "href": "LICENSE.html",
     "title": "Malariaverse Workshop",
     "section": "",
-    "text": "Copyright (c) 2022 Imperial College London\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\nTHE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
+    "text": "MIT License\nCopyright (c) 2022 Imperial College London\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\nTHE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
   },
   {
     "objectID": "materials.html",
     "href": "materials.html",
     "title": "Malariaverse Workshop",
     "section": "",
-    "text": "Introduction\nCalibration\nBed nets\nDiscussion/Feedback\n\n\n\n\nWorkshop practicals are included as part of the 📦 [mvw]. They can be accessed using the run_tutorial() function.\n\nmvw::run_tutorial(\"Introduction\")\nmvw::run_tutorial(\"Calibration\")\nmvw::run_tutorial(\"Bednet\")"
+    "text": "Introduction\nCalibration\nBed nets\nUmbrella, treasure and om\nDiscussion/Feedback\n\n\n\n\nWorkshop practicals are included as part of the 📦 [mvw]. They can be accessed using the run_tutorial() function.\n\nmvw::run_tutorial(\"Introduction\")\nmvw::run_tutorial(\"Calibration\")\nmvw::run_tutorial(\"Bednet\")"
   },
   {
     "objectID": "presentations/1_Introduction.html#welcome-all",
@@ -459,14 +459,14 @@
     "href": "presentations/4_Lightning_round.html#umbrella",
     "title": "Malariaverse Workshop Lightning round",
     "section": "Umbrella",
-    "text": "Umbrella\n\n📦 [malariasimulation] captures the seasonality in transmission using fourier series parameters fitted to rainfall data.\n📦 [umbrella] includes some simple functionality to fit these parameters.\n📦 [umbrella] also has some helper functions to download CHIRPS rainfall data.\nsite_file$seasonality has fitted seasonal parameters for the default sites."
+    "text": "Umbrella\n\n📦 [malariasimulation] captures the seasonality in transmission using fourier series parameters fitted to rainfall data.\n📦 [umbrella] includes some simple functionality to fit these parameters.\n📦 [umbrella] also has some helper functions to download CHIRPS rainfall “data”.\nsite_file$seasonality has fitted seasonal parameters for the default sites."
   },
   {
     "objectID": "presentations/4_Lightning_round.html#umbrella-workflow",
     "href": "presentations/4_Lightning_round.html#umbrella-workflow",
     "title": "Malariaverse Workshop Lightning round",
     "section": "Umbrella workflow",
-    "text": "Umbrella workflow\n\nDefine your spatial data. This will be spatial polygon(s). I like to use the 📦 [sf] for spatial data. (I have downloaded and processed sf files asscoiated with all sites.)\nAccess satellite rainfall “data” rasters for the region/period/resolution you require\nExtract rainfall data associated with your spatial units\nUse umbrella::fit_fourier() to fit parameters that can be used in a site file, or directly in 📦 [malariasimulation]."
+    "text": "Umbrella workflow\n\nDefine your spatial data. This will be spatial polygon(s). I like to use the 📦 [sf] for spatial data. (I have downloaded and processed sf files associated with all sites.)\nAccess satellite rainfall “data” rasters for the region/period/resolution you require\nExtract rainfall data associated with your spatial units\nUse umbrella::fit_fourier() to fit parameters that can be used in a site file, or directly in 📦 [malariasimulation]."
   },
   {
     "objectID": "presentations/4_Lightning_round.html#umbrella-caveats",
@@ -487,7 +487,7 @@
     "href": "presentations/4_Lightning_round.html#treasure",
     "title": "Malariaverse Workshop Lightning round",
     "section": "treasure",
-    "text": "treasure\n\n📦 treasure, is a simple repository for unit costing information that has been used to cost out large global/country scenarios\nMostly serves as a single, version controlled reference for unit costs collected from the literature, WHO and Global Fund.\nNo time- or country-specific costing information. IF anyone is interested in improving the database, please let me know!"
+    "text": "treasure\n\n📦 treasure, is a simple repository for unit costing information that has been used to cost out large global/country scenarios\nMostly serves as a single, version controlled reference for unit costs collected from the literature, WHO and Global Fund.\nNo time- or country-specific costing information.\nIf anyone is interested in improving the database, please let me know!"
   },
   {
     "objectID": "presentations/4_Lightning_round.html#om",
@@ -501,14 +501,14 @@
     "href": "presentations/4_Lightning_round.html#om-inputs",
     "title": "Malariaverse Workshop Lightning round",
     "section": "om inputs",
-    "text": "om inputs\n\n📦 om requires specific inputs to work:\nAn impact matrix giving details of the outcome measure we are optimising, for example cases averted. Each row of the matrix is a sub-unit (e.g. district) and each column a unqiue intervention package.\nA cost matrix giving details of the associated cost of each option in the impact matrix\nA budget"
+    "text": "om inputs\n\n📦 om requires specific inputs to work:\nAn impact matrix giving details of the outcome measure we are optimising, for example cases averted. Each row of the matrix is a sub-unit (e.g. district) and each column a unique intervention package.\nA cost matrix giving details of the associated cost of each option in the impact matrix\nA budget"
   },
   {
     "objectID": "presentations/4_Lightning_round.html#om-and-complex-budgets",
     "href": "presentations/4_Lightning_round.html#om-and-complex-budgets",
     "title": "Malariaverse Workshop Lightning round",
     "section": "om and complex budgets",
-    "text": "om and complex budgets\n\nThe budget specification in 📦 om can be simple: e.g. $100\nIt can also be more complex. For example we might want to optimise the intervention packages across 5 countries, where each country has a domestic budget (to be spent interally) as well as a shared regional budget."
+    "text": "om and complex budgets\n\nThe budget specification in 📦 om can be simple: e.g. $100\nIt can also be more complex. For example we might want to optimise the intervention packages across 5 countries, where each country has a domestic budget (to be spent internally) as well as a shared regional budget."
   },
   {
     "objectID": "presentations/4_Lightning_round.html#om-info",

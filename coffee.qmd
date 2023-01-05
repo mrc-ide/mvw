@@ -17,7 +17,7 @@ On your table you should find post-it notes, pens and green stickers. During the
 
 2.  Stick your ideas where you think they lie on the Effort vs Impact plane on the board
 
-3.  Up-vote the ideas of others with a green sticker
+3.  Up-vote the ideas of others with a dot sticker
 
 ![](presentations/images/impact_effort.png){fig-align="center"}
 
