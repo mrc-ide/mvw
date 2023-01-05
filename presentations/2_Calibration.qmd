@@ -80,11 +80,11 @@ Sometimes calibration can look good:
 
 ## Challenges
 
--   Calibration can be difficult when results are dominated by stochasticy
--   low transmission
--   small populations
--   calibrating to a sub-group in the population
--   etc.
+-   Calibration can be difficult when results are dominated by stochasticity
+  -   low transmission
+  -   small populations
+  -   calibrating to a sub-group in the population
+  -   etc.
 
 ## Let's give it a try!
 

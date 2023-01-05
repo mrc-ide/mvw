@@ -405,6 +405,7 @@ Pete Winskill
 <p>Session aims:</p>
 <ul>
 <li>Understand why bed nets can be challenging to model</li>
+<li>Implementing bed nets in <span class="emoji" data-emoji="package">📦</span> [malariasimulation]</li>
 <li>Overview of bed net metrics and model inputs</li>
 <li>Using <span class="emoji" data-emoji="package">📦</span> [netz] to traverse the bed net landscape</li>
 </ul>
@@ -412,7 +413,7 @@ Pete Winskill
 <section id="why-can-bed-nets-be-tricky" class="slide level2">
 <h2>Why can bed nets be tricky?</h2>
 <ul>
-<li>Bed nets have a “memory”: the effective coverage of bed nets today depends on the cumulative impacts of net distributions and net loss over many prior years.</li>
+<li>The effective coverage of bed nets today depends on the cumulative impacts of net distributions and net loss over many prior years.</li>
 </ul>
 </section>
 <section id="why-can-bed-nets-be-tricky-1" class="slide level2">
@@ -435,6 +436,11 @@ Pete Winskill
 <li>Distribution method/schedule (mass, routine etc.)</li>
 <li>Interaction with insecticide resistance</li>
 </ul>
+</section>
+<section>
+<section id="bed-nets-in-malariasimulation" class="title-slide slide level1 center">
+<h1>Bed nets in <span class="emoji" data-emoji="package">📦</span> [malariasimulation]</h1>
+
 </section>
 <section id="implementing-bed-nets" class="slide level2">
 <h2>Implementing bed nets</h2>
@@ -506,7 +512,7 @@ Pete Winskill
 <section id="bed-nets-in-site-files" class="slide level2 smaller">
 <h2>Bed nets in site files</h2>
 <ul>
-<li>We can look at the bed net inputs in the <code>$intervention</code> section of a site file.</li>
+<li>We can look at the bed net inputs in the <code>$interventions</code> section of a site file.</li>
 <li>You can see that as well as usage, we have the model input, net type, level of insecticide resistance and associated net efficacy parameters.</li>
 </ul>
 <div class="cell">
@@ -542,7 +548,12 @@ Pete Winskill
 </ul>
 <p><span class="emoji" data-emoji="pray">🙏</span> No time today to explore all of the amazing work on insecticide resistance and net efficacy, but huge thanks to Tom, Ellie and others for all the hard work!</p>
 
-<img data-src="images/Guinea-Pig-flower.jpg" class="r-stretch quarto-figure-center"></section>
+<img data-src="images/Guinea-Pig-flower.jpg" class="r-stretch quarto-figure-center"></section></section>
+<section>
+<section id="bed-net-metrics" class="title-slide slide level1 center">
+<h1>Bed net metrics</h1>
+
+</section>
 <section id="a-model-of-bed-nets" class="slide level2">
 <h2>A model of bed nets</h2>
 <ul>
@@ -633,7 +644,7 @@ Pete Winskill
 <div class="footer footer-default">
 
 </div>
-</section>
+</section></section>
     </div>
   </div>
 

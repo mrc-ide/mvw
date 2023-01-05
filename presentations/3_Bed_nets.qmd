@@ -14,29 +14,32 @@ from: markdown+emoji
 Session aims:
 
 -   Understand why bed nets can be challenging to model
+-   Implementing bed nets in :package: \[malariasimulation\]
 -   Overview of bed net metrics and model inputs
 -   Using :package: \[netz\] to traverse the bed net landscape
 
 ## Why can bed nets be tricky?
 
--   Bed nets have a "memory": the effective coverage of bed nets today depends on the cumulative impacts of net distributions and net loss over many prior years.
+-  The effective coverage of bed nets today depends on the cumulative impacts of net distributions and net loss over many prior years.
 
 ## Why can bed nets be tricky?
 
 -   There are lots of bed net metrics:
--   delivery to country
--   distribution within country
--   crop (total number of nets within a country)
--   Access and usage
--   Modelled distribution
+  -   delivery to country
+  -   distribution within country
+  -   crop (total number of nets within a country)
+  -   Access and usage
+  -   Modelled distribution
 
 ## Why can bed nets be tricky?
 
 -   ... and lots of other bed net variables to consider:
--   Net type
--   Net retention (or rate of loss)
--   Distribution method/schedule (mass, routine etc.)
--   Interaction with insecticide resistance
+  -   Net type
+  -   Net retention (or rate of loss)
+  -   Distribution method/schedule (mass, routine etc.)
+  -   Interaction with insecticide resistance
+  
+# Bed nets in :package: \[malariasimulation\]
 
 ## Implementing bed nets
 
@@ -101,7 +104,7 @@ fit <- netz::fit_usage(
 
 ## Bed nets in site files {.smaller}
 
--   We can look at the bed net inputs in the `$intervention` section of a site file.
+-   We can look at the bed net inputs in the `$interventions` section of a site file.
 -   You can see that as well as usage, we have the model input, net type, level of insecticide resistance and associated net efficacy parameters.
 
 ```{r, echo=TRUE}
@@ -123,6 +126,8 @@ head(
 :pray: No time today to explore all of the amazing work on insecticide resistance and net efficacy, but huge thanks to Tom, Ellie and others for all the hard work!
 
 ![](images/Guinea-Pig-flower.jpg){fig-align="center"}
+
+# Bed net metrics
 
 ## A model of bed nets
 

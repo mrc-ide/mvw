@@ -11,22 +11,27 @@ from: markdown+emoji
 
 ## New features
 
-  * Overview of Effort vs Impact exercise
-  
-## Future development 
+-   Overview of Effort vs Impact exercise
 
-  * How do we find the balance between the model being fast or being easy to edit and user-friendly?
-  
+## Future development
+
+-   How do we find the balance between the model being fast or being easy to edit and user-friendly?
+
 ![](images/scales.png){fig-align="center"}
 
 ## Feedback on the workshop
 
-  * To little? To Much?
-  * Missing information/topics
-  * Format (presentations and tutorials)
-  
+-   Too little? Too Much?
+-   Missing information/topics
+-   Format (presentations and tutorials)
+-   ...Go steady with the guinea pig pictures Pete!
+
 ![](images/thumbs.png){fig-align="center"}
-  
+
+## Thanks :sparkling_heart:
+
+![](images/Guinea-Pig.jpg)
+
 ## ...and now!
 
 ![](images/Guinea-Pig-beer.jpg){fig-align="center"}

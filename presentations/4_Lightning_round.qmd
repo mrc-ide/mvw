@@ -47,7 +47,7 @@ from: markdown+emoji
 
 ## Umbrella info
 
--   Check out the (umbrella website)\[https://mrc-ide.github.io/umbrella/\] for more information and a simple introduction vignette.
+-   Check out the [umbrella website](https://mrc-ide.github.io/umbrella/) for more information and a simple introduction vignette.
 
 ## 
 
@@ -84,4 +84,4 @@ from: markdown+emoji
 
 ## om info
 
--   Check out the (om website)\[https://mrc-ide.github.io/om/index.html\] for more information, a simple introduction vignette and a guide for implementing complex budgets.
+-   Check out the [om website](https://mrc-ide.github.io/om/index.html) for more information, a simple introduction vignette and a guide for implementing complex budgets.
