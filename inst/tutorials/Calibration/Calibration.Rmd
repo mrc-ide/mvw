@@ -19,7 +19,7 @@ quiz(
            answer("re-calibrate", correct = TRUE),
            answer("run the site as is")
   ),
-  question("I want to use a site file out of the box from the site package, should I...",
+  question("I want to use a site file out of the box from the foresite package, should I...",
            answer("calibrate"),
            answer("not calibrate"),
            answer("check if I need to update the inputs then decide", correct = TRUE)
@@ -37,7 +37,7 @@ quiz(
 
 ## The summary function
 
-When running `calibrate()` we must provide a summary function that summarised the raw simulation output in the same format as our target.
+When running `calibrate()` we must provide a summary function that summarised the raw simulation output in the same format as our target. For example, if our target data is a vector of annual *Pf*Pr~2-10~ estimates of length 5, then our summary function must take the raw simulation output and return a vector of annual *Pf*Pr~2-10~ estimates of length 5.
 
 1.  In the code box below, compete the summary function, to match the format of our target data.
 
@@ -120,7 +120,7 @@ calibration <- cali::calibrate(target = target_pfpr,
 message("Calibrated EIR estimate: ", calibration)
 ```
 
-Lets check our results:
+Lets check our results, in the code box below:
 
 1.  Use the estimated, calibrated EIR from above to modify our parameter inputs
 2.  Plot simulated PfPr over time
@@ -128,7 +128,7 @@ Lets check our results:
 
 `r emo::ji("question")` Do they match?
 
-```{r calibration-check, exercise=TRUE, exercise.timelimit=1200}
+```{r calibration-use, exercise=TRUE, exercise.timelimit=1200}
 target_pfpr <- 0.3
 
 # Set the initial parameters
@@ -140,7 +140,7 @@ calibrated_p <- malariasimulation::get_parameters(
 )
 calibrated_p$timesteps <- 3 * 365
 
-# Set the initial EIR (Add your calibrated estimate here)
+# Set the initial EIR (!!! Add your calibrated estimate here !!!)
 calibrated_p <- calibrated_p |>
   malariasimulation::set_equilibrium(init_EIR = )
 
@@ -151,7 +151,7 @@ calibrated_simulation <- malariasimulation::run_simulation(
 )
 ```
 
-```{r calibration-check-hint, exercise.timelimit=1200}
+```{r calibration-use-hint, exercise.timelimit=1200}
 # Set the initial EIR (Add your calibrated estimate here)
 calibrated_p <- calibrated_p |>
   malariasimulation::set_equilibrium(init_EIR = 4.216965)
@@ -170,5 +170,4 @@ Extra credits `r emo::ji("sparkles")`:
 
 -   Modify the calibration code to calibrate to 3 years of target data.
 -   Read about the `weights` argument in `?calibrate()`, have a go a weighting your target data so more recent years are more influential.
-
-`r emo::ji("question")` What happens if you change the `tolerance` argument in `?calibrate()`
+-   What happens if you change the `tolerance` argument in `?calibrate()`
