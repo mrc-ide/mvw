@@ -249,7 +249,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="the-summary-function" class="level2">
 <h2 class="anchored" data-anchor-id="the-summary-function">The summary function</h2>
-<p>When running <code>calibrate()</code> we must provide a summary function that summarised the raw simulation output in the same format as our target.</p>
+<p>When running <code>calibrate()</code> we must provide a summary function that summarised the raw simulation output in the same format as our target. For example, if our target data is a vector of annual <em>Pf</em>Pr<sub>2-10</sub> estimates of length 5, then our summary function must take the raw simulation output and return a vector of annual <em>Pf</em>Pr<sub>2-10</sub> estimates of length 5.</p>
 <ol type="1">
 <li>In the code box below, compete the summary function, to match the format of our target data.</li>
 </ol>
@@ -333,10 +333,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>                <span class="at">low =</span> <span class="dv">1</span>, <span class="at">high =</span> <span class="dv">10</span>)</span>
 <span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a><span class="fu">message</span>(<span class="st">"Calibrated EIR estimate: "</span>, calibration)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":true,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
+<script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":false,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
 </div>
 </div>
-<p>Lets check our results:</p>
+<p>Lets check our results, in the code box below:</p>
 <ol type="1">
 <li>Use the estimated, calibrated EIR from above to modify our parameter inputs</li>
 <li>Plot simulated PfPr over time</li>
@@ -344,7 +344,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ol>
 <p>❓ Do they match?</p>
 <div class="cell" data-exercise="true" data-exercise.timelimit="1200">
-<div class="tutorial-exercise" data-label="calibration-check" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
+<div class="tutorial-exercise" data-label="calibration-use" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>target_pfpr <span class="ot">&lt;-</span> <span class="fl">0.3</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the initial parameters</span></span>
@@ -356,7 +356,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>calibrated_p<span class="sc">$</span>timesteps <span class="ot">&lt;-</span> <span class="dv">3</span> <span class="sc">*</span> <span class="dv">365</span></span>
 <span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the initial EIR (Add your calibrated estimate here)</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the initial EIR (!!! Add your calibrated estimate here !!!)</span></span>
 <span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>calibrated_p <span class="ot">&lt;-</span> calibrated_p <span class="sc">|&gt;</span></span>
 <span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>  malariasimulation<span class="sc">::</span><span class="fu">set_equilibrium</span>(<span class="at">init_EIR =</span> )</span>
 <span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
@@ -369,7 +369,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 <div class="cell" data-exercise.timelimit="1200">
-<div class="tutorial-exercise-support" data-label="calibration-check-hint" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
+<div class="tutorial-exercise-support" data-label="calibration-use-hint" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the initial EIR (Add your calibrated estimate here)</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>calibrated_p <span class="ot">&lt;-</span> calibrated_p <span class="sc">|&gt;</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  malariasimulation<span class="sc">::</span><span class="fu">set_equilibrium</span>(<span class="at">init_EIR =</span> <span class="fl">4.216965</span>)</span>
@@ -388,8 +388,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>Modify the calibration code to calibrate to 3 years of target data.</li>
 <li>Read about the <code>weights</code> argument in <code>?calibrate()</code>, have a go a weighting your target data so more recent years are more influential.</li>
+<li>What happens if you change the <code>tolerance</code> argument in <code>?calibrate()</code></li>
 </ul>
-<p>❓ What happens if you change the <code>tolerance</code> argument in <code>?calibrate()</code></p>
 <p>
 <script type="application/shiny-prerendered" data-context="server-start">
 library(learnr)
@@ -416,10 +416,10 @@ session$onSessionEnded(function() {
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-1", question = structure("I’ve edited the historical bednet coverage, I need to…", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_ff85076", 
+"character")), answers = list(structure(list(id = "lnr_ans_550674b", 
     option = "re-calibrate", value = "re-calibrate", label = structure("re-calibrate", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_66e2163", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_9c65c51", 
     option = "run the site as is", value = "run the site as is", 
     label = structure("run the site as is", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
@@ -430,20 +430,20 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "quiz-1-answer", question = "quiz-1"), loading = NULL, 
-    random_answer_order = FALSE, allow_retry = FALSE, seed = 1839716592.14332, 
+    random_answer_order = FALSE, allow_retry = FALSE, seed = 877354390.59145, 
     options = list()), class = c("learnr_radio", "tutorial_question"
 )), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
-learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-2", question = structure("I want to use a site file out of the box from the site package, should I…", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_e3f3545", 
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-2", question = structure("I want to use a site file out of the box from the foresite package, should I…", html = TRUE, class = c("html", 
+"character")), answers = list(structure(list(id = "lnr_ans_428e646", 
     option = "calibrate", value = "calibrate", label = structure("calibrate", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_81c0e16", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_e5d6058", 
     option = "not calibrate", value = "not calibrate", label = structure("not calibrate", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_c1fa9b", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_b74c37", 
     option = "check if I need to update the inputs then decide", 
     value = "check if I need to update the inputs then decide", 
     label = structure("check if I need to update the inputs then decide", html = TRUE, class = c("html", 
@@ -455,18 +455,18 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "quiz-2-answer", question = "quiz-2"), loading = NULL, 
-    random_answer_order = FALSE, allow_retry = FALSE, seed = 922503720.570426, 
+    random_answer_order = FALSE, allow_retry = FALSE, seed = 1795010927.66413, 
     options = list()), class = c("learnr_radio", "tutorial_question"
 )), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-3", question = structure("There has been an update to the parameterisation of bednets and all of my sites have historical bed net usage. I should", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_d1ce8c", 
+"character")), answers = list(structure(list(id = "lnr_ans_1c2316c", 
     option = "re-calibrate all sites", value = "re-calibrate all sites", 
     label = structure("re-calibrate all sites", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_19ea159", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_fa46612", 
     option = "ignore it and hope the problem goes away", value = "ignore it and hope the problem goes away", 
     label = structure("ignore it and hope the problem goes away", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
@@ -477,17 +477,17 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "quiz-3-answer", question = "quiz-3"), loading = NULL, 
-    random_answer_order = FALSE, allow_retry = FALSE, seed = 1432752120.33282, 
+    random_answer_order = FALSE, allow_retry = FALSE, seed = 1154975577.46217, 
     options = list()), class = c("learnr_radio", "tutorial_question"
 )), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-4", question = structure("I’m running five different future scenarios for my site, each with different prospective intervention coverage. Do I need to recalibrate the site for each scenario?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_3c9da9c", 
+"character")), answers = list(structure(list(id = "lnr_ans_b0b99e0", 
     option = "yes", value = "yes", label = structure("yes", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_d0654be", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_ec313d0", 
     option = "no", value = "no", label = structure("no", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
 "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
@@ -497,7 +497,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "quiz-4-answer", question = "quiz-4"), loading = NULL, 
-    random_answer_order = FALSE, allow_retry = FALSE, seed = 893702129.083838, 
+    random_answer_order = FALSE, allow_retry = FALSE, seed = 1386080147.35456, 
     options = list()), class = c("learnr_radio", "tutorial_question"
 )), session = session)
 </script>
@@ -560,15 +560,7 @@ learnr:::store_exercise_cache(structure(list(label = "calibration", global_setup
     code = "library(malariasimulation)\nlibrary(cali)\n\n# Define our target. In this example we have a PfPr estimate for year 3\ntarget_pfpr <- 0.3\n\n# Define our simulation parameters, we need to add $timesteps for the calibration\np <- malariasimulation::get_parameters(\n  overrides = list(\n    human_population = 5000,\n    individual_mosquitoes = FALSE\n  )\n)\np$timesteps <- 3 * 365\n\n# Write our summary function. To match the target we need to\n# output average PfPr in year 3\nget_pfpr_year_3 <- function(simulation_output){\n  year3 <- simulation_output[simulation_output$timestep > 2 * 365,]\n  pfpr <- year3$n_detect_730_3650 / year3$n_730_3650\n  average_pfpr <- mean(pfpr)\n  return(average_pfpr)\n}\n\n# Run a test simulation to check our target function does what it should!\nsimulation <- malariasimulation::run_simulation(\n  timesteps = p$timesteps,\n  parameters = p\n)\n# Does this look right? Does it match the type of target data?\nget_pfpr_year_3(simulation)\n\n# When we are happy we can run the calibration\nset.seed(1234)\ncalibration <- cali::calibrate(target = target_pfpr,\n                summary_function = get_pfpr_year_3,\n                parameters = p,\n                tolerance = 0.005,\n                low = 1, high = 10)\n\nmessage(\"Calibrated EIR estimate: \", calibration)", 
     opts = list(label = "\"calibration\"", exercise = "TRUE", 
         exercise.timelimit = "1200"), engine = "r")), code_check = NULL, 
-    error_check = NULL, check = structure(c("target_pfpr <- 0.3", 
-    "", "# Set the initial parameters", "calibrated_p <- malariasimulation::get_parameters(", 
-    "  overrides = list(", "    human_population = 5000,", "    individual_mosquitoes = FALSE", 
-    "  )", ")", "calibrated_p$timesteps <- 3 * 365", "", "# Set the initial EIR (Add your calibrated estimate here)", 
-    "calibrated_p <- calibrated_p |>", "  malariasimulation::set_equilibrium(init_EIR = )", 
-    "", "set.seed(1234)", "calibrated_simulation <- malariasimulation::run_simulation(", 
-    "  timesteps = calibrated_p$timesteps,", "  parameters = calibrated_p", 
-    ")"), chunk_opts = list(label = "calibration-check", exercise = TRUE, 
-        exercise.timelimit = 1200)), solution = NULL, tests = NULL, 
+    error_check = NULL, check = NULL, solution = NULL, tests = NULL, 
     options = list(eval = FALSE, echo = TRUE, results = "markup", 
         tidy = FALSE, tidy.opts = NULL, collapse = FALSE, prompt = FALSE, 
         comment = NA, highlight = FALSE, size = "normalsize", 
@@ -612,18 +604,18 @@ learnr:::store_exercise_cache(structure(list(label = "calibration", global_setup
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
-`tutorial-exercise-calibration-check-result` <- learnr:::setup_exercise_handler(reactive(req(input$`tutorial-exercise-calibration-check-code-editor`)), session)
-output$`tutorial-exercise-calibration-check-output` <- renderUI({
-  `tutorial-exercise-calibration-check-result`()
+`tutorial-exercise-calibration-use-result` <- learnr:::setup_exercise_handler(reactive(req(input$`tutorial-exercise-calibration-use-code-editor`)), session)
+output$`tutorial-exercise-calibration-use-output` <- renderUI({
+  `tutorial-exercise-calibration-use-result`()
 })
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
-learnr:::store_exercise_cache(structure(list(label = "calibration-check", global_setup = structure(c("library(learnr)", 
+learnr:::store_exercise_cache(structure(list(label = "calibration-use", global_setup = structure(c("library(learnr)", 
 "knitr::opts_chunk$set(echo = FALSE)"), chunk_opts = list(label = "setup", 
-    include = FALSE)), setup = NULL, chunks = list(list(label = "calibration-check", 
-    code = "target_pfpr <- 0.3\n\n# Set the initial parameters\ncalibrated_p <- malariasimulation::get_parameters(\n  overrides = list(\n    human_population = 5000,\n    individual_mosquitoes = FALSE\n  )\n)\ncalibrated_p$timesteps <- 3 * 365\n\n# Set the initial EIR (Add your calibrated estimate here)\ncalibrated_p <- calibrated_p |>\n  malariasimulation::set_equilibrium(init_EIR = )\n\nset.seed(1234)\ncalibrated_simulation <- malariasimulation::run_simulation(\n  timesteps = calibrated_p$timesteps,\n  parameters = calibrated_p\n)", 
-    opts = list(label = "\"calibration-check\"", exercise = "TRUE", 
+    include = FALSE)), setup = NULL, chunks = list(list(label = "calibration-use", 
+    code = "target_pfpr <- 0.3\n\n# Set the initial parameters\ncalibrated_p <- malariasimulation::get_parameters(\n  overrides = list(\n    human_population = 5000,\n    individual_mosquitoes = FALSE\n  )\n)\ncalibrated_p$timesteps <- 3 * 365\n\n# Set the initial EIR (!!! Add your calibrated estimate here !!!)\ncalibrated_p <- calibrated_p |>\n  malariasimulation::set_equilibrium(init_EIR = )\n\nset.seed(1234)\ncalibrated_simulation <- malariasimulation::run_simulation(\n  timesteps = calibrated_p$timesteps,\n  parameters = calibrated_p\n)", 
+    opts = list(label = "\"calibration-use\"", exercise = "TRUE", 
         exercise.timelimit = "1200"), engine = "r")), code_check = NULL, 
     error_check = NULL, check = NULL, solution = NULL, tests = NULL, 
     options = list(eval = FALSE, echo = TRUE, results = "markup", 
@@ -642,17 +634,17 @@ learnr:::store_exercise_cache(structure(list(label = "calibration-check", global
         aniopts = "controls,loop", warning = TRUE, error = FALSE, 
         message = TRUE, render = NULL, ref.label = NULL, child = NULL, 
         engine = "r", split = FALSE, include = TRUE, purl = TRUE, 
-        fenced.echo = FALSE, ft.shadow = FALSE, label = "calibration-check", 
-        exercise = TRUE, exercise.timelimit = 1200, original.params.src = "r calibration-check, exercise=TRUE, exercise.timelimit=1200", 
+        fenced.echo = FALSE, ft.shadow = FALSE, label = "calibration-use", 
+        exercise = TRUE, exercise.timelimit = 1200, original.params.src = "r calibration-use, exercise=TRUE, exercise.timelimit=1200", 
         chunk.echo = FALSE, code = c("target_pfpr <- 0.3", "", 
         "# Set the initial parameters", "calibrated_p <- malariasimulation::get_parameters(", 
         "  overrides = list(", "    human_population = 5000,", 
         "    individual_mosquitoes = FALSE", "  )", ")", "calibrated_p$timesteps <- 3 * 365", 
-        "", "# Set the initial EIR (Add your calibrated estimate here)", 
+        "", "# Set the initial EIR (!!! Add your calibrated estimate here !!!)", 
         "calibrated_p <- calibrated_p |>", "  malariasimulation::set_equilibrium(init_EIR = )", 
         "", "set.seed(1234)", "calibrated_simulation <- malariasimulation::run_simulation(", 
         "  timesteps = calibrated_p$timesteps,", "  parameters = calibrated_p", 
-        ")"), out.width.px = 672L, out.height.px = 480L, params.src = "r calibration-check, exercise=TRUE, exercise.timelimit=1200", 
+        ")"), out.width.px = 672L, out.height.px = 480L, params.src = "r calibration-use, exercise=TRUE, exercise.timelimit=1200", 
         fig.num = 0, exercise.df_print = "default", exercise.checker = "NULL"), 
     engine = "r", version = "4"), class = c("r", "tutorial_exercise"
 )))
@@ -687,13 +679,13 @@ ojs_define <- function(..., .session = shiny::getDefaultReactiveDomain()) {
 </p>
 <!--html_preserve-->
 <script type="application/shiny-prerendered" data-context="dependencies">
-{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["jquery"]},{"type":"character","attributes":{},"value":["3.6.0"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["lib/3.6.0"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["jquery-3.6.0.min.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["jquerylib"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.1.4"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["font-awesome"]},{"type":"character","attributes":{},"value":["5.1.0"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["rmd/h/fontawesome"]}]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["css/all.css","css/v4-shims.css"]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["rmarkdown"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["2.17"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["bootbox"]},{"type":"character","attributes":{},"value":["5.5.2"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["lib/bootbox"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["bootbox.min.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["learnr"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.11.2"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["idb-keyvalue"]},{"type":"character","attributes":{},"value":["3.2.0"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["lib/idb-keyval"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["idb-keyval-iife-compat.min.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["learnr"]},{"type":"logical","attributes":{},"value":[false]},{"type":"character","attributes":{},"value":["0.11.2"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["tutorial"]},{"type":"character","attributes":{},"value":["0.11.2"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["lib/tutorial"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["tutorial.js"]},{"type":"character","attributes":{},"value":["tutorial.css"]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["learnr"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.11.2"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["ace"]},{"type":"character","attributes":{},"value":["1.10.1"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["lib/ace"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["ace.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["learnr"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.11.2"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["clipboardjs"]},{"type":"character","attributes":{},"value":["2.0.10"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["lib/clipboardjs"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["clipboard.min.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["learnr"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.11.2"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["ace"]},{"type":"character","attributes":{},"value":["1.10.1"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["lib/ace"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["ace.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["learnr"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.11.2"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["clipboardjs"]},{"type":"character","attributes":{},"value":["2.0.10"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["lib/clipboardjs"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["clipboard.min.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["learnr"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.11.2"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["ace"]},{"type":"character","attributes":{},"value":["1.10.1"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["lib/ace"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["ace.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["learnr"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.11.2"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["clipboardjs"]},{"type":"character","attributes":{},"value":["2.0.10"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["lib/clipboardjs"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["clipboard.min.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["learnr"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.11.2"]}]}]}
+{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["jquery"]},{"type":"character","attributes":{},"value":["3.6.0"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["lib/3.6.0"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["jquery-3.6.0.min.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["jquerylib"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.1.4"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["font-awesome"]},{"type":"character","attributes":{},"value":["5.1.0"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["rmd/h/fontawesome"]}]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["css/all.css","css/v4-shims.css"]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["rmarkdown"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["2.19"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["bootbox"]},{"type":"character","attributes":{},"value":["5.5.2"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["lib/bootbox"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["bootbox.min.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["learnr"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.11.2"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["idb-keyvalue"]},{"type":"character","attributes":{},"value":["3.2.0"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["lib/idb-keyval"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["idb-keyval-iife-compat.min.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["learnr"]},{"type":"logical","attributes":{},"value":[false]},{"type":"character","attributes":{},"value":["0.11.2"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["tutorial"]},{"type":"character","attributes":{},"value":["0.11.2"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["lib/tutorial"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["tutorial.js"]},{"type":"character","attributes":{},"value":["tutorial.css"]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["learnr"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.11.2"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["ace"]},{"type":"character","attributes":{},"value":["1.10.1"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["lib/ace"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["ace.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["learnr"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.11.2"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["clipboardjs"]},{"type":"character","attributes":{},"value":["2.0.10"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["lib/clipboardjs"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["clipboard.min.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["learnr"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.11.2"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["ace"]},{"type":"character","attributes":{},"value":["1.10.1"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["lib/ace"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["ace.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["learnr"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.11.2"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["clipboardjs"]},{"type":"character","attributes":{},"value":["2.0.10"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["lib/clipboardjs"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["clipboard.min.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["learnr"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.11.2"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["ace"]},{"type":"character","attributes":{},"value":["1.10.1"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["lib/ace"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["ace.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["learnr"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.11.2"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["clipboardjs"]},{"type":"character","attributes":{},"value":["2.0.10"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["lib/clipboardjs"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["clipboard.min.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["learnr"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.11.2"]}]}]}
 </script>
 <!--/html_preserve-->
 <!--html_preserve-->
 
 <script type="application/shiny-prerendered" data-context="execution_dependencies">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages","version"]},"class":{"type":"character","attributes":{},"value":["data.frame"]},"row.names":{"type":"integer","attributes":{},"value":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53]}},"value":[{"type":"character","attributes":{},"value":["assertthat","backports","base","checkmate","cli","commonmark","compiler","crayon","curl","datasets","digest","ellipsis","emo","evaluate","fastmap","generics","glue","graphics","grDevices","htmltools","htmlwidgets","httpuv","jquerylib","jsonlite","knitr","later","learnr","lifecycle","lubridate","magrittr","markdown","methods","mime","promises","purrr","R6","Rcpp","rlang","rmarkdown","rprojroot","rstudioapi","shiny","stats","stringi","stringr","timechange","tools","utils","vctrs","withr","xfun","xtable","yaml"]},{"type":"character","attributes":{},"value":["0.2.1","1.4.1","4.1.2","2.1.0","3.4.1","1.8.1","4.1.2","1.5.2","4.3.3","4.1.2","0.6.31","0.3.2","0.0.0.9000","0.19","1.1.0","0.1.3","1.6.2","4.1.2","4.1.2","0.5.3","1.5.4","1.6.6","0.1.4","1.8.4","1.40","1.3.0","0.11.2","1.0.3","1.9.0","2.0.3","1.4","4.1.2","0.12","1.2.0.1","0.3.5","2.5.1","1.0.9","1.0.6","2.17","2.0.3","0.14","1.7.3","4.1.2","1.7.8","1.5.0","0.1.1","4.1.2","4.1.2","0.5.1","2.5.0","0.34","1.8-4","2.3.6"]}]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages","version"]},"class":{"type":"character","attributes":{},"value":["data.frame"]},"row.names":{"type":"integer","attributes":{},"value":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53]}},"value":[{"type":"character","attributes":{},"value":["assertthat","backports","base","checkmate","cli","commonmark","compiler","crayon","curl","datasets","digest","ellipsis","emo","evaluate","fastmap","generics","glue","graphics","grDevices","htmltools","htmlwidgets","httpuv","jquerylib","jsonlite","knitr","later","learnr","lifecycle","lubridate","magrittr","markdown","methods","mime","promises","purrr","R6","Rcpp","rlang","rmarkdown","rprojroot","rstudioapi","shiny","stats","stringi","stringr","timechange","tools","utils","vctrs","withr","xfun","xtable","yaml"]},{"type":"character","attributes":{},"value":["0.2.1","1.4.1","4.1.2","2.1.0","3.5.0","1.8.1","4.1.2","1.5.2","4.3.3","4.1.2","0.6.31","0.3.2","0.0.0.9000","0.19","1.1.0","0.1.3","1.6.2","4.1.2","4.1.2","0.5.4","1.6.0","1.6.7","0.1.4","1.8.4","1.41","1.3.0","0.11.2","1.0.3","1.9.0","2.0.3","1.4","4.1.2","0.12","1.2.0.1","0.3.5","2.5.1","1.0.9","1.0.6","2.19","2.0.3","0.14","1.7.4","4.1.2","1.7.8","1.5.0","0.1.1","4.1.2","4.1.2","0.5.1","2.5.0","0.36","1.8-4","2.3.6"]}]}]}
 </script>
 <!--/html_preserve-->
 
@@ -835,6 +827,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">This workshop was created with ❤️, <a href="https://rstudio.github.io/learnr/">Learnr</a> and <a href="https://quarto.org/">Quarto</a> by Pete Winskill.</div>   
+  </div>
+</footer>
 
 
 

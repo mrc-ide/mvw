@@ -13,6 +13,8 @@ website:
         file: materials.qmd
       - text: "Coffee break activity"
         file: coffee.qmd
+  page-footer:
+    left: "This workshop was created with ❤️, [Learnr](https://rstudio.github.io/learnr/) and [Quarto](https://quarto.org/) by Pete Winskill."
 
 format:
   html:
