@@ -117,14 +117,14 @@ TGO$interventions[,c(2, 3, 4, 5, 6, 9)]
 
 ## Using site files {.smaller}
 
-- The site files in :package:\[foresite\] are a general attempt to collate information for all malaria-endemic settings
-- They are, at best, a coarse representation of the true picture
-- Please always consider your use-case carefully, it is likely you may 
-  - Have direct or be working with people with direct knowledge of a setting
-  - Have more location specific data
-  - Have more up to date data
-  - Want to model at a different spatial scale
-- The Malariaverse aims to provide you with the tools to be able to make necessary improvements to site files
+-   The site files in :package:\[foresite\] are a general attempt to collate information for all malaria-endemic settings
+-   They are, at best, a coarse representation of the true picture
+-   Please always consider your use-case carefully, it is likely you may
+    -   Have direct or be working with people with direct knowledge of a setting
+    -   Have more location specific data
+    -   Have more up to date data
+    -   Want to model at a different spatial scale
+-   The Malariaverse aims to provide you with the tools to be able to make necessary improvements to site files
 
 ## Running a site
 

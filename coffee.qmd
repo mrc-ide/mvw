@@ -5,7 +5,7 @@ from: markdown+emoji
 
 # :coffee: Coffee break activity :coffee:
 
-On your table you should find post-it notes, pens and green stickers. During the coffee/lunch breaks and throughout the day please:
+On your table you should find post-it notes, pens and dot stickers. During the coffee/lunch breaks and throughout the day please:
 
 1.  On post-it notes, write down ideas for how to improve the malariaverse:
 
