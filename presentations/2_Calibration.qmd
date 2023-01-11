@@ -5,6 +5,7 @@ format:
   revealjs:
     logo: images/malariaverse.gif
     css: images/logo.css
+    slide-number: true
 editor: visual
 from: markdown+emoji
 ---
@@ -81,10 +82,10 @@ Sometimes calibration can look good:
 ## Challenges
 
 -   Calibration can be difficult when results are dominated by stochasticity
-  -   low transmission
-  -   small populations
-  -   calibrating to a sub-group in the population
-  -   etc.
+-   low transmission
+-   small populations
+-   calibrating to a sub-group in the population
+-   etc.
 
 ## Let's give it a try!
 

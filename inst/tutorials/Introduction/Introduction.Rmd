@@ -15,7 +15,7 @@ Let's start by getting better acquainted with a country site file. In the code b
 
 Use the interactive code box below to explore the elements that make up the site file.
 
-1.  Choose to explore specific elements of a list with the `$` operator. For example `togo_site_file$seasonality` or `togo_site_file$prevalence` . YOu can see all the elements with `names(togo_site_file)`. It may be helpful to plot some elements to see what is going on.
+1.  Choose to explore specific elements of a list with the `$` operator. For example `togo_site_file$seasonality` or `togo_site_file$prevalence` . You can see all the elements with `names(togo_site_file)`. It may be helpful to plot some elements to see what is going on.
 2.  Dig into the `togo_site_file` details to answer the questions below. Remember, you can find out more information about site file elements on the [foresite website](https://mrc-ide.github.io/foresite/).
 
 ```{r explore-a-site, exercise=TRUE}
@@ -92,7 +92,7 @@ Now lets try running a site.
 
 1.  Use the `site::single_site()` function to isolate the site for: Run iso3c = TGO, name_1 = Plateaux, urban_rural = rural.
 
-2.  Create a `r emo::ji("package")` \[malariasimulation\] parameter list using the `site::site_parameters()` function. For today, in the `overrides` argument you might want to set a reasonably small population so that the model runs quickly, for example `overrides  = list(human_population = 5000)`.
+2.  Create a `r emo::ji("package")` malariasimulation parameter list using the `site::site_parameters()` function. For today, in the `overrides` argument you might want to set a reasonably small population so that the model runs quickly, for example `overrides  = list(human_population = 5000)`.
 
 3.  Run the site using `malariasimulation::run_simulation()`
 

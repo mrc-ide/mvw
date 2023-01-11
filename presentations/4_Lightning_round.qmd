@@ -5,6 +5,7 @@ format:
   revealjs:
     logo: images/malariaverse.gif
     css: images/logo.css
+    slide-number: true
 editor: visual
 from: markdown+emoji
 ---
@@ -57,7 +58,7 @@ from: markdown+emoji
 
 -   :package: [treasure], is a simple repository for unit costing information that has been used to cost out large global/country scenarios
 -   Mostly serves as a single, version controlled reference for unit costs collected from the literature, WHO and Global Fund.
--   No time- or country-specific costing information. 
+-   No time- or country-specific costing information.
 -   If anyone is interested in improving the database, please let me know!
 
 ## 

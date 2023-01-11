@@ -5,6 +5,7 @@ format:
   revealjs:
     logo: images/malariaverse.gif
     css: images/logo.css
+    slide-number: true
 editor: visual
 from: markdown+emoji
 ---

@@ -5,6 +5,7 @@ format:
   revealjs:
     logo: images/malariaverse.gif
     css: images/logo.css
+    slide-number: true
 editor: visual
 from: markdown+emoji
 ---
@@ -60,13 +61,20 @@ How do we characterise a setting?
 -   Intrinsic transmission potential ("Baseline", "Carrying capacity", "R0")
 -   The mosquito vector
     -   species
-    -   bionomics (how the vector relates to its environment) & behaviour
+    -   bionomics (how the :mosquito: relates to its environment) & behaviour
     -   distribution & relative abundance
     -   insecticide resistance
 -   Rainfall seasonality
 -   Historical interventions
--   Epidemiological data
+-   Epidemiological data (e.g. *Pf*Pr~2-10~, malaria cases)
 -   Human population & demography
+
+## Important features
+
+- For many of these elements there are data available, for example:
+  - [World Malaria Report](Country profiles, intervention, burden and economic data) 
+  - [Malaria Atlas project](https://malariaatlas.org/) (burden and intervention coverage estimates)
+  - [Vector Atlas](http://www.vectoratlas.icipe.org/) (spatial vector data, under development and building on work by Sinka *et al*)
 
 ## Site files {.smaller}
 
@@ -149,6 +157,7 @@ model_run <- malariasimulation::run_simulation(timesteps = site_pars$timesteps,
 
 ## Let's give it a try!
 
+-   :package: [mvw] has interactive tutorials. You can run code within the tutorial window (or in R/Rstudio if desired).
 -   Run `mvw::run_tutorial("Introduction")`
 
 ![](images/Guinea-Pig-Go.jpg){fig-align="center" width="40%" height="40%"}
