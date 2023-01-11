@@ -39,7 +39,7 @@ quiz(
 
 When running `calibrate()` we must provide a summary function that summarised the raw simulation output in the same format as our target. For example, if our target data is a vector of annual *Pf*Pr~2-10~ estimates of length 5, then our summary function must take the raw simulation output and return a vector of annual *Pf*Pr~2-10~ estimates of length 5.
 
-1.  In the code box below, compete the summary function, to match the format of our target data.
+1.  In the code box below, complete the summary function, to match the format of our target data. The output of the function should be three values for the all age clinical incidence (cases per person per year) in simulation years 2, 3 and 4.
 
 ```{r summary-function, exercise=TRUE}
 # Target: all age clinical incidence (cases per person per year) in years 2, 3 and 4

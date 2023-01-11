@@ -36,6 +36,15 @@ Session aims:
 
 ![](images/Calibration_figure3.png){fig-align="center"}
 
+## Calibration note {.smaller}
+
+- Warmup
+  -   :package: malariasimulation runs do not automatically run a warmup period which is necessary for the model to fully equilibrate. In general it is always advisable to add a warmup period to your simulation runs. Some outputs are more sensitive than others and exploration of a suitable warmup period to use should be performed prior to calibration.
+  -   Subsequent model runs after calibration should use the same warmup period as the calibration.
+- Data
+  - It will be your decision on what data (and how much of it) to calibrate to
+  - It is important to understand how and when data were collected, for example data collected at peak malaria season may look very different to that collected in the low season. 
+
 ## When to calibrate
 
 -   Calibration or re-calibration is not always required. In general, you will need to calibrate if:
@@ -44,6 +53,10 @@ Session aims:
 2.  You have modified any site inputs that occur before or at the same time as the data you are trying to calibrate to
 3.  The data you are calibrating to has changed
 4.  There has been a change to an underlying assumption that would impact the disease dynamics in a model run
+
+## Foresite calibrations
+
+-   Site files in :package: [foresite] have been calibrated `$eir`
 
 ## Cali {.smaller}
 
@@ -81,11 +94,11 @@ Sometimes calibration can look good:
 
 ## Challenges
 
--   Calibration can be difficult when results are dominated by stochasticity
--   low transmission
--   small populations
--   calibrating to a sub-group in the population
--   etc.
+-   Calibration can be difficult when results are dominated by stochasticity:
+  -   low transmission
+  -   small populations
+  -   calibrating to a sub-group in the population
+  -   etc.
 
 ## Let's give it a try!
 
