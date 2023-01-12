@@ -15,7 +15,7 @@ from: markdown+emoji
 
 -   [Lighting round: Umbrella, treasure & om](https://mrc-ide.github.io/mvw/presentations/4_Lightning_round.html)
 
--   [Discussion/Feedback](https://mrc-ide.github.io/mvw/presentations/5_Discussion.html)
+-   [Feedback & Discussion](https://mrc-ide.github.io/mvw/presentations/5_Discussion.html)
 
 ## Practicals associated with this workshop
 

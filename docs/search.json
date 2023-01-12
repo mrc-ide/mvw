@@ -597,36 +597,43 @@
   {
     "objectID": "presentations/5_Discussion.html#new-features",
     "href": "presentations/5_Discussion.html#new-features",
-    "title": "Malariaverse Workshop Discussion",
+    "title": "Malariaverse Workshop Feedback & Discussion",
     "section": "New features",
     "text": "New features\n\nOverview of Effort vs Impact exercise"
   },
   {
     "objectID": "presentations/5_Discussion.html#future-development",
     "href": "presentations/5_Discussion.html#future-development",
-    "title": "Malariaverse Workshop Discussion",
+    "title": "Malariaverse Workshop Feedback & Discussion",
     "section": "Future development",
     "text": "Future development\n\nHow do we find the balance between the model being fast or being easy to edit and user-friendly?"
   },
   {
     "objectID": "presentations/5_Discussion.html#feedback-on-the-workshop",
     "href": "presentations/5_Discussion.html#feedback-on-the-workshop",
-    "title": "Malariaverse Workshop Discussion",
+    "title": "Malariaverse Workshop Feedback & Discussion",
     "section": "Feedback on the workshop",
     "text": "Feedback on the workshop\n\nToo little? Too Much?\nMissing information/topics\nFormat (presentations and tutorials)\n…Go steady with the guinea pig pictures Pete!"
   },
   {
     "objectID": "presentations/5_Discussion.html#thanks",
     "href": "presentations/5_Discussion.html#thanks",
-    "title": "Malariaverse Workshop Discussion",
+    "title": "Malariaverse Workshop Feedback & Discussion",
     "section": "Thanks 💖",
     "text": "Thanks 💖"
   },
   {
     "objectID": "presentations/5_Discussion.html#and-now",
     "href": "presentations/5_Discussion.html#and-now",
-    "title": "Malariaverse Workshop Discussion",
+    "title": "Malariaverse Workshop Feedback & Discussion",
     "section": "…and now!",
     "text": "…and now!"
+  },
+  {
+    "objectID": "presentations/5_Discussion.html#preparing-for-a-world-post-malariaverse-workshop",
+    "href": "presentations/5_Discussion.html#preparing-for-a-world-post-malariaverse-workshop",
+    "title": "Malariaverse Workshop Feedback & Discussion",
+    "section": "Preparing for a world post malariaverse workshop 🤩",
+    "text": "Preparing for a world post malariaverse workshop 🤩\n\nEncourage people to try out malariaverse packages!\nPlease do check out the ? help and vignettes.\nIssues:\n\nAsk each other.\nPost in the malariaverse teams channel (in the DIDE malaria modelling group team).\nSubmit an issue on the relevant package github page.\nSuggest features or fix bugs with a PR request."
   }
 ]
