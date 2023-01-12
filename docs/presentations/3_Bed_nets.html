@@ -405,9 +405,9 @@ Pete Winskill
 <p>Session aims:</p>
 <ul>
 <li>Understand why bed nets can be challenging to model</li>
-<li>Implementing bed nets in <span class="emoji" data-emoji="package">📦</span> [malariasimulation]</li>
 <li>Overview of bed net metrics and model inputs</li>
 <li>Using <span class="emoji" data-emoji="package">📦</span> [netz] to traverse the bed net landscape</li>
+<li>Implementing bed nets in <span class="emoji" data-emoji="package">📦</span> [malariasimulation]</li>
 </ul>
 </section>
 <section id="why-can-bed-nets-be-tricky" class="slide level2">
@@ -419,24 +419,167 @@ Pete Winskill
 <section id="why-can-bed-nets-be-tricky-1" class="slide level2">
 <h2>Why can bed nets be tricky?</h2>
 <ul>
-<li>There are lots of bed net metrics:</li>
-<li>delivery to country</li>
-<li>distribution within country</li>
-<li>crop (total number of nets within a country)</li>
+<li>There are lots of bed net metrics:
+<ul>
+<li>Delivery to country</li>
+<li>Distribution within country</li>
+<li>Crop (total number of nets within a country)</li>
 <li>Access and usage</li>
-<li>Modelled distribution</li>
+</ul></li>
 </ul>
 </section>
 <section id="why-can-bed-nets-be-tricky-2" class="slide level2">
 <h2>Why can bed nets be tricky?</h2>
 <ul>
-<li>… and lots of other bed net variables to consider:</li>
+<li>… and lots of other bed net variables to consider:
+<ul>
 <li>Net type</li>
 <li>Net retention (or rate of loss)</li>
 <li>Distribution method/schedule (mass, routine etc.)</li>
 <li>Interaction with insecticide resistance</li>
+</ul></li>
+<li>And finally, how we implement bed nets in <span class="emoji" data-emoji="package">📦</span> [malariasimulation]</li>
 </ul>
 </section>
+<section id="an-empirical-model-of-bed-nets" class="slide level2">
+<h2>An empirical model of bed nets</h2>
+<ul>
+<li>Amelia Bertozzi-Villa <em>et al</em> have published a model linking bed net metrics for countries in SSA<sup>1</sup>.</li>
+<li>We can use this model to translate between the different bed net metrics</li>
+<li>The model includes country-level fits</li>
+</ul>
+
+<aside><div>
+<ol type="1">
+<li>Bertozzi-Villa et al., ‘Maps and Metrics of Insecticide-Treated Net Access, Use, and Nets-per-Capita in Africa from 2000-2020’. Nat Comms (2021).</li>
+</ol>
+</div></aside></section>
+<section id="an-empirical-model-of-bed-nets-1" class="slide level2 smaller">
+<h2>An empirical model of bed nets</h2>
+<ul>
+<li>The model triangulates net deliveries to a country with information on distributions and survey data on access and usage.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/Bertozzi_villa_figure_1.png" style="width:35.0%;height:35.0%"></p>
+</figure>
+</div>
+
+<aside><div>
+<ol type="1">
+<li>Bertozzi-Villa et al., ‘Maps and Metrics of Insecticide-Treated Net Access, Use, and Nets-per-Capita in Africa from 2000-2020’. Nat Comms (2021).</li>
+</ol>
+</div></aside></section>
+<section id="an-empirical-model-of-bed-nets-2" class="slide level2 smaller">
+<h2>An empirical model of bed nets</h2>
+<ul>
+<li>The model also estimates country-specific net retention times</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/Bertozzi_villa_retention.png" style="width:50.0%;height:50.0%"></p>
+</figure>
+</div>
+
+<aside><div>
+<ol type="1">
+<li>Bertozzi-Villa et al., ‘Maps and Metrics of Insecticide-Treated Net Access, Use, and Nets-per-Capita in Africa from 2000-2020’. Nat Comms (2021).</li>
+</ol>
+</div></aside></section>
+<section id="an-empirical-model-of-bed-nets-3" class="slide level2 smaller">
+<h2>An empirical model of bed nets</h2>
+<ul>
+<li>Bertozzi-Villa <em>et al</em> show that access and crop are not linearly related (at the country level).</li>
+<li>This can have big implication when costing a bet net campaign.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/Bertozzi_villa_access_crop.png" style="width:30.0%;height:30.0%"></p>
+</figure>
+</div>
+
+<aside><div>
+<ol type="1">
+<li>Bertozzi-Villa et al., ‘Maps and Metrics of Insecticide-Treated Net Access, Use, and Nets-per-Capita in Africa from 2000-2020’. Nat Comms (2021).</li>
+</ol>
+</div></aside></section>
+<section id="netz" class="slide level2">
+<h2><span class="emoji" data-emoji="package">📦</span> [netz]</h2>
+<ul>
+<li>The <span class="emoji" data-emoji="package">📦</span> [netz] has translated some of the work by Bertozzi-Villa <em>et al</em>.</li>
+<li>It can facilitate translation between different bed net metrics.</li>
+<li>It can be used to access country-specific data.</li>
+<li>It also has functionality for specifying bed nets in <span class="emoji" data-emoji="package">📦</span> [malariasimulation]</li>
+</ul>
+<p><span class="emoji" data-emoji="pray">🙏</span> Big thank you to Nora for lots of hard work on <span class="emoji" data-emoji="package">📦</span> [netz]!</p>
+</section>
+<section id="netz-1" class="slide level2">
+<h2><span class="emoji" data-emoji="package">📦</span> [netz]</h2>
+
+<img data-src="images/net_schematic.png" class="r-stretch quarto-figure-center"></section>
+<section>
+<section id="translating-between-bed-net-metrics-with-netz" class="title-slide slide level1 center">
+<h1>Translating between bed net metrics with <span class="emoji" data-emoji="package">📦</span> [netz]</h1>
+
+</section>
+<section id="usage-and-access" class="slide level2 smaller">
+<h2>Usage and Access</h2>
+<ul>
+<li><p>Usage: the proportion of people who have slept under a bed net the previous night. This is effective coverage.</p></li>
+<li><p>Access: the proportion of the population that could sleep under a net.</p></li>
+<li><p><span class="emoji" data-emoji="package">📦</span> [netz] has functions to convert between usage and access:</p></li>
+<li><p><code>netz::usage_to_access(usage = 0.5, use_rate = 0.8)</code></p></li>
+<li><p><code>netz::access_to_usage(access = 0.5, use_rate = 0.8)</code></p></li>
+<li><p>You can view empirical use rates with:</p></li>
+<li><p><code>netz::get_usage_rate_data()</code></p></li>
+</ul>
+</section>
+<section id="access-and-crop" class="slide level2 smaller">
+<h2>Access and crop</h2>
+<ul>
+<li><p>Access: the proportion of the population that could sleep under a net.</p></li>
+<li><p>Crop: the total number of nets in the population. Crop increases with net distributions and decreases as nets are worn out and thrown away over time.</p></li>
+<li><p><span class="emoji" data-emoji="package">📦</span> [netz] has functions to convert between access and crop:</p></li>
+<li><p><code>netz::access_to_crop(access = 0.5)</code></p></li>
+<li><p><code>netz::crop_to_access(crop = 0.5)</code></p></li>
+</ul>
+</section>
+<section id="crop-and-distributions" class="slide level2 smaller">
+<h2>Crop and distributions</h2>
+<ul>
+<li><p>Crop: the total number of nets in the population. Crop increases with net distributions and decreases as nets are worn out and thrown away over time.</p></li>
+<li><p>Distribution: Nets distributed. These may be via mass-distributions or continuous distribution routes.</p></li>
+<li><p><span class="emoji" data-emoji="package">📦</span> [netz] has functions to convert between crop and distribution:</p></li>
+<li><p><code>netz::crop_to_distribution(crop =  0.5, distribution_frequency = 3 * 365, half_life = 2 * 365)</code></p></li>
+<li><p><code>netz::distribution_to_crop(crop =  0.5, distribution_frequency = 3 * 365, half_life = 2 * 365)</code></p></li>
+<li><p>Net retention half-lives are estimated in the model by Bertozzi-Villa <em>et al</em> and can be accessed with:</p></li>
+<li><p><code>netz::get_halflife_data()</code></p></li>
+</ul>
+</section>
+<section id="crop-and-distributions-1" class="slide level2 smaller">
+<h2>Crop and distributions</h2>
+<ul>
+<li><p>As crop is the cumulative impact of past distributions, different combinations of past distributions may lead to similar crop estimates. We can dynamically translate between no-equilibrium crop and distributions with:</p></li>
+<li><p><code>netz::crop_to_distribution_dynamic(crop = c(0.1, 0.2, 0.5, 0.1), netz::net_loss_map)</code></p></li>
+<li><p><code>netz::distribution_to_crop_dynamic(distribution = c(0.1, 0.2, 0.5, 0.1), netz::net_loss_map)</code></p></li>
+</ul>
+</section>
+<section id="net-loss-functions" class="slide level2 smaller">
+<h2>Net loss functions</h2>
+<ul>
+<li><p>Net retention can be modelled with different function forms.</p></li>
+<li><p>In the model by Bertozzi-Villa <em>et al</em>, they use an s-shaped function form.</p></li>
+<li><p>In <span class="emoji" data-emoji="package">📦</span> [malariasimulation] net retention is exponentially distributed.</p></li>
+<li><p>These are modelled by:</p></li>
+<li><p><code>netz::net_loss_map()</code> and <code>netz::net_loss_exp()</code></p></li>
+<li><p>These functions can be passed when the argument <code>net_loss_function</code> is required.</p></li>
+<li><p>We may to try and harmonise the bed net models at some point.</p></li>
+</ul>
+</section>
+<section id="conversion-overload" class="slide level2">
+<h2><span class="emoji" data-emoji="dizzy_face">😵</span> Conversion overload! <span class="emoji" data-emoji="dizzy_face">😵</span></h2>
+
+<img data-src="images/net_schematic.png" class="r-stretch quarto-figure-center"></section></section>
 <section>
 <section id="bed-nets-in-malariasimulation" class="title-slide slide level1 center">
 <h1>Bed nets in <span class="emoji" data-emoji="package">📦</span> [malariasimulation]</h1>
@@ -446,7 +589,7 @@ Pete Winskill
 <h2>Implementing bed nets</h2>
 <ul>
 <li>In <span class="emoji" data-emoji="package">📦</span> [malariasimulation] distributions in the model lead directly to effective coverage or usage.</li>
-<li>We can use the <span class="emoji" data-emoji="package">📦</span> [netz] <code>population_usage()</code> function to view the bed net usage in the model resulting from a given set of bed net distributions:</li>
+<li>We can use the <span class="emoji" data-emoji="package">📦</span> [netz] <code>population_usage()</code> function to view the bed net usage in the model resulting from a given set of bed net distributions (model inputs):</li>
 </ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>netz<span class="sc">::</span><span class="fu">population_usage</span>(</span>
@@ -548,87 +691,7 @@ Pete Winskill
 </ul>
 <p><span class="emoji" data-emoji="pray">🙏</span> No time today to explore all of the amazing work on insecticide resistance and net efficacy, but huge thanks to Tom, Ellie and others for all the hard work!</p>
 
-<img data-src="images/Guinea-Pig-flower.jpg" class="r-stretch quarto-figure-center"></section></section>
-<section>
-<section id="bed-net-metrics" class="title-slide slide level1 center">
-<h1>Bed net metrics</h1>
-
-</section>
-<section id="a-model-of-bed-nets" class="slide level2">
-<h2>A model of bed nets</h2>
-<ul>
-<li>Amelia Bertozzi-Villa <em>et al</em> have published a model linking net deliveries, with access and usages for countries in SSA.</li>
-<li>We can use this model to translate between different bed net metrics</li>
-<li>This is often required when dealing with available bed net metrics or for costing a bed net programme</li>
-</ul>
-<p><span class="emoji" data-emoji="pray">🙏</span> Big thank you to Nora for lots of hard work on <span class="emoji" data-emoji="package">📦</span> [netz]!</p>
-</section>
-<section id="net-loss-functions" class="slide level2 smaller">
-<h2>Net loss functions</h2>
-<ul>
-<li><p>Net retention can be modelled with different function forms.</p></li>
-<li><p>In the model by Bertozzi-Villa <em>et al</em>, they use an s-shaped function form.</p></li>
-<li><p>In <span class="emoji" data-emoji="package">📦</span> [malariasimulation] net retention is exponentially distributed.</p></li>
-<li><p>These are modelled by:</p></li>
-<li><p><code>netz::net_loss_map()</code> and <code>netz::net_loss_exp()</code></p></li>
-<li><p>These functions can be passed when the argument <code>net_loss_function</code> is required.</p></li>
-<li><p>We may to try and harmonise the bed net models at some point.</p></li>
-</ul>
-</section>
-<section id="usage-and-access" class="slide level2 smaller">
-<h2>Usage and Access</h2>
-<ul>
-<li><p>Usage: the proportion of people who have slept under a bed net the previous night. This is effective coverage.</p></li>
-<li><p>Access: the proportion of the population that could sleep under a net.</p></li>
-<li><p><span class="emoji" data-emoji="package">📦</span> [netz] has functions to convert between usage and access:</p></li>
-<li><p><code>netz::usage_to_access(usage = 0.5, use_rate = 0.8)</code></p></li>
-<li><p><code>netz::access_to_usage(access = 0.5, use_rate = 0.8)</code></p></li>
-<li><p>You can view empirical use rates with:</p></li>
-<li><p><code>netz::get_usage_rate_data()</code></p></li>
-</ul>
-</section>
-<section id="access-and-crop" class="slide level2 smaller">
-<h2>Access and crop</h2>
-<ul>
-<li><p>Access: the proportion of the population that could sleep under a net.</p></li>
-<li><p>Crop: the total number of nets in the population. Crop increases with net distributions and decreases as nets are worn out and thrown away over time.</p></li>
-<li><p><span class="emoji" data-emoji="package">📦</span> [netz] has functions to convert between access and crop:</p></li>
-<li><p><code>netz::access_to_crop(access = 0.5)</code></p></li>
-<li><p><code>netz::crop_to_access(crop = 0.5)</code></p></li>
-</ul>
-</section>
-<section id="access-and-crop-1" class="slide level2 smaller">
-<h2>Access and crop</h2>
-<ul>
-<li>Bertozzi-Villa <em>et al</em> show that access and crop are not linearly related (at the country level).</li>
-<li>This can have big implication when costing a bet net campaign.</li>
-</ul>
-
-<img data-src="images/Bertozzi_villa_access_crop.png" class="r-stretch quarto-figure-center"></section>
-<section id="crop-and-distributions" class="slide level2 smaller">
-<h2>Crop and distributions</h2>
-<ul>
-<li><p>Crop: the total number of nets in the population. Crop increases with net distributions and decreases as nets are worn out and thrown away over time.</p></li>
-<li><p>Distribution: Nets distributed. These may be via mass-distributions or continuous distribution routes.</p></li>
-<li><p><span class="emoji" data-emoji="package">📦</span> [netz] has functions to convert between crop and distribution:</p></li>
-<li><p><code>netz::crop_to_distribution(crop =  0.5, distribution_frequency = 3 * 365, half_life = 2 * 365)</code></p></li>
-<li><p><code>netz::distribution_to_crop(crop =  0.5, distribution_frequency = 3 * 365, half_life = 2 * 365)</code></p></li>
-<li><p>Net retention half-lives are estimated in the model by Bertozzi-Villa <em>et al</em> and can be accessed with:</p></li>
-<li><p><code>netz::get_halflife_data()</code></p></li>
-</ul>
-</section>
-<section id="crop-and-distributions-1" class="slide level2 smaller">
-<h2>Crop and distributions</h2>
-<ul>
-<li><p>As crop is the cumulative impact of past distributions, different combinations of past distributions may lead to similar crop estimates. We can dynamically translate between no-equilibrium crop and distributions with:</p></li>
-<li><p><code>netz::crop_to_distribution_dynamic(crop = c(0.1, 0.2, 0.5, 0.1), netz::net_loss_map)</code></p></li>
-<li><p><code>netz::distribution_to_crop_dynamic(distribution = c(0.1, 0.2, 0.5, 0.1), netz::net_loss_map)</code></p></li>
-</ul>
-</section>
-<section id="conversion-overload" class="slide level2">
-<h2><span class="emoji" data-emoji="dizzy_face">😵</span> Conversion overload! <span class="emoji" data-emoji="dizzy_face">😵</span></h2>
-
-<img data-src="images/net_schematic.png" class="r-stretch quarto-figure-center"></section>
+<img data-src="images/Guinea-Pig-flower.jpg" class="r-stretch quarto-figure-center"></section>
 <section id="lets-give-it-a-try" class="slide level2">
 <h2>Let’s give it a try!</h2>
 <ul>
@@ -697,7 +760,7 @@ Pete Winskill
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: false,
+        slideNumber: 'c/t',
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',

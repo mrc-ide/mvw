@@ -305,7 +305,7 @@
     "href": "presentations/3_Bed_nets.html#session-3",
     "title": "Malariaverse Workshop Bed nets",
     "section": "Session 3 💪!",
-    "text": "Session 3 💪!\nSession aims:\n\nUnderstand why bed nets can be challenging to model\nImplementing bed nets in 📦 [malariasimulation]\nOverview of bed net metrics and model inputs\nUsing 📦 [netz] to traverse the bed net landscape"
+    "text": "Session 3 💪!\nSession aims:\n\nUnderstand why bed nets can be challenging to model\nOverview of bed net metrics and model inputs\nUsing 📦 [netz] to traverse the bed net landscape\nImplementing bed nets in 📦 [malariasimulation]"
   },
   {
     "objectID": "presentations/3_Bed_nets.html#why-can-bed-nets-be-tricky",
@@ -319,21 +319,21 @@
     "href": "presentations/3_Bed_nets.html#why-can-bed-nets-be-tricky-1",
     "title": "Malariaverse Workshop Bed nets",
     "section": "Why can bed nets be tricky?",
-    "text": "Why can bed nets be tricky?\n\nThere are lots of bed net metrics:\ndelivery to country\ndistribution within country\ncrop (total number of nets within a country)\nAccess and usage\nModelled distribution"
+    "text": "Why can bed nets be tricky?\n\nThere are lots of bed net metrics:\n\nDelivery to country\nDistribution within country\nCrop (total number of nets within a country)\nAccess and usage"
   },
   {
     "objectID": "presentations/3_Bed_nets.html#why-can-bed-nets-be-tricky-2",
     "href": "presentations/3_Bed_nets.html#why-can-bed-nets-be-tricky-2",
     "title": "Malariaverse Workshop Bed nets",
     "section": "Why can bed nets be tricky?",
-    "text": "Why can bed nets be tricky?\n\n… and lots of other bed net variables to consider:\nNet type\nNet retention (or rate of loss)\nDistribution method/schedule (mass, routine etc.)\nInteraction with insecticide resistance"
+    "text": "Why can bed nets be tricky?\n\n… and lots of other bed net variables to consider:\n\nNet type\nNet retention (or rate of loss)\nDistribution method/schedule (mass, routine etc.)\nInteraction with insecticide resistance\n\nAnd finally, how we implement bed nets in 📦 [malariasimulation]"
   },
   {
     "objectID": "presentations/3_Bed_nets.html#implementing-bed-nets",
     "href": "presentations/3_Bed_nets.html#implementing-bed-nets",
     "title": "Malariaverse Workshop Bed nets",
     "section": "Implementing bed nets",
-    "text": "Implementing bed nets\n\nIn 📦 [malariasimulation] distributions in the model lead directly to effective coverage or usage.\nWe can use the 📦 [netz] population_usage() function to view the bed net usage in the model resulting from a given set of bed net distributions:\n\n\nnetz::population_usage(\n  timesteps = 365 * 30,\n  distribution = rep(0.3, 10),\n  distribution_timesteps = 365 * seq(1, 30, 3),\n  half_life = 365 * 5\n)"
+    "text": "Implementing bed nets\n\nIn 📦 [malariasimulation] distributions in the model lead directly to effective coverage or usage.\nWe can use the 📦 [netz] population_usage() function to view the bed net usage in the model resulting from a given set of bed net distributions (model inputs):\n\n\nnetz::population_usage(\n  timesteps = 365 * 30,\n  distribution = rep(0.3, 10),\n  distribution_timesteps = 365 * seq(1, 30, 3),\n  half_life = 365 * 5\n)"
   },
   {
     "objectID": "presentations/3_Bed_nets.html#implementing-bed-nets-1",
@@ -558,5 +558,54 @@
     "title": "Malariaverse Workshop Discussion",
     "section": "…and now!",
     "text": "…and now!"
+  },
+  {
+    "objectID": "presentations/3_Bed_nets.html#an-empirical-model-of-bed-nets",
+    "href": "presentations/3_Bed_nets.html#an-empirical-model-of-bed-nets",
+    "title": "Malariaverse Workshop Bed nets",
+    "section": "An empirical model of bed nets",
+    "text": "An empirical model of bed nets\n\nAmelia Bertozzi-Villa et al have published a model linking bed net metrics for countries in SSA1.\nWe can use this model to translate between the different bed net metrics\nThe model includes country-level fits\n\n\n\n\nBertozzi-Villa et al., ‘Maps and Metrics of Insecticide-Treated Net Access, Use, and Nets-per-Capita in Africa from 2000-2020’. Nat Comms (2021)."
+  },
+  {
+    "objectID": "presentations/3_Bed_nets.html#netz",
+    "href": "presentations/3_Bed_nets.html#netz",
+    "title": "Malariaverse Workshop Bed nets",
+    "section": "📦 [netz]",
+    "text": "📦 [netz]\n\nThe 📦 [netz] has translated some of the work by Bertozzi-Villa et al.\nIt can facilitate translation between different bed net metrics.\nIt can be used to access country-specific data.\nIt also has functionality for specifying bed nets in 📦 [malariasimulation]\n\n🙏 Big thank you to Nora for lots of hard work on 📦 [netz]!"
+  },
+  {
+    "objectID": "presentations/3_Bed_nets.html#netz-1",
+    "href": "presentations/3_Bed_nets.html#netz-1",
+    "title": "Malariaverse Workshop Bed nets",
+    "section": "📦 [netz]",
+    "text": "📦 [netz]"
+  },
+  {
+    "objectID": "presentations/3_Bed_nets.html#test-indent",
+    "href": "presentations/3_Bed_nets.html#test-indent",
+    "title": "Malariaverse Workshop Bed nets",
+    "section": "Test indent",
+    "text": "Test indent\n\nunordered list\n\nsub-item 1\nsub-item 2\n\nsub-sub-item 1"
+  },
+  {
+    "objectID": "presentations/3_Bed_nets.html#an-empirical-model-of-bed-nets-1",
+    "href": "presentations/3_Bed_nets.html#an-empirical-model-of-bed-nets-1",
+    "title": "Malariaverse Workshop Bed nets",
+    "section": "An empirical model of bed nets",
+    "text": "An empirical model of bed nets\n\nThe model triangulates net deliveries to a country with information on distributions and survey data on access and usage.\n\n\n\n\n\n\n\n\n\nBertozzi-Villa et al., ‘Maps and Metrics of Insecticide-Treated Net Access, Use, and Nets-per-Capita in Africa from 2000-2020’. Nat Comms (2021)."
+  },
+  {
+    "objectID": "presentations/3_Bed_nets.html#an-empirical-model-of-bed-nets-2",
+    "href": "presentations/3_Bed_nets.html#an-empirical-model-of-bed-nets-2",
+    "title": "Malariaverse Workshop Bed nets",
+    "section": "An empirical model of bed nets",
+    "text": "An empirical model of bed nets\n\nThe model also estimates country-specific net retention times\n\n\n\n\n\n\n\n\n\nBertozzi-Villa et al., ‘Maps and Metrics of Insecticide-Treated Net Access, Use, and Nets-per-Capita in Africa from 2000-2020’. Nat Comms (2021)."
+  },
+  {
+    "objectID": "presentations/3_Bed_nets.html#an-empirical-model-of-bed-nets-3",
+    "href": "presentations/3_Bed_nets.html#an-empirical-model-of-bed-nets-3",
+    "title": "Malariaverse Workshop Bed nets",
+    "section": "An empirical model of bed nets",
+    "text": "An empirical model of bed nets\n\nBertozzi-Villa et al show that access and crop are not linearly related (at the country level).\nThis can have big implication when costing a bet net campaign.\n\n\n\n\n\n\n\n\n\nBertozzi-Villa et al., ‘Maps and Metrics of Insecticide-Treated Net Access, Use, and Nets-per-Capita in Africa from 2000-2020’. Nat Comms (2021)."
   }
 ]
