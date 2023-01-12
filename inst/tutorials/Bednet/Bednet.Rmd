@@ -27,7 +27,7 @@ quiz(
            answer("Increase"),
            answer("Decrease", correct = TRUE)
   ),
-  question("3-yearly mass distribuiotns versus annual continuous distribution",
+  question("3-yearly mass distributions versus annual continuous distribution",
            answer("Increase"),
            answer("Decrease"),
            answer("It depends!", correct = TRUE)
@@ -84,7 +84,7 @@ library(netz)
 library(netz)
 
 # Our estimates of the distributions
-fitted_intput <- c(0.13, 0.15, 0.53, 0.33, 0.16)
+fitted_input <- c(0.13, 0.15, 0.53, 0.33, 0.16)
 
 year <- 365
 timesteps <- 10 * year
@@ -98,7 +98,7 @@ distribution_tt <- 1 + c(0, 1, 3, 6, 7) * year
 # Estimate population usage over time
 pu <- population_usage(
   timesteps = timesteps,
-  distribution = fitted_intput,
+  distribution = fitted_input,
   distribution_timesteps = distribution_tt,
   half_life = net_hl)
 # Plot the results against the target

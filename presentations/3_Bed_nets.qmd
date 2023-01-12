@@ -52,20 +52,34 @@ Session aims:
 
 ## An empirical model of bed nets {.smaller}
 
+:::: {.columns}
+
+::: {.column width="40%"}
 *   The model triangulates net deliveries to a country with information on distributions and survey data on access and usage.
+:::
 
-![](images/Bertozzi_villa_figure_1.png){fig-align="center" width="35%" height="35%"}
+::: {.column width="60%"}
+![](images/Bertozzi_villa_figure_1.png){fig-align="center" width="80%" height="80%"}
+:::
+
+::::
 
 ::: aside
 1. Bertozzi-Villa et al., ‘Maps and Metrics of Insecticide-Treated Net Access, Use, and Nets-per-Capita in Africa from 2000-2020’. Nat Comms (2021).
 :::
 
 ## An empirical model of bed nets {.smaller}
+:::: {.columns}
 
+::: {.column width="40%"}
 *   The model also estimates country-specific net retention times
+:::
 
-![](images/Bertozzi_villa_retention.png){fig-align="center" width="50%" height="50%"}
+::: {.column width="60%"}
+![](images/Bertozzi_villa_retention.png){fig-align="center" width="100%" height="100%"}
+:::
 
+::::
 
 ::: aside
 1. Bertozzi-Villa et al., ‘Maps and Metrics of Insecticide-Treated Net Access, Use, and Nets-per-Capita in Africa from 2000-2020’. Nat Comms (2021).
@@ -73,10 +87,18 @@ Session aims:
 
 ## An empirical model of bed nets {.smaller}
 
+:::: {.columns}
+
+::: {.column width="40%"}
 *   Bertozzi-Villa *et al* show that access and crop are not linearly related (at the country level).
 *   This can have big implication when costing a bet net campaign.
+:::
 
-![](images/Bertozzi_villa_access_crop.png){fig-align="center" width="30%" height="30%"}
+::: {.column width="60%"}
+![](images/Bertozzi_villa_access_crop.png){fig-align="center" width="90%" height="90%"}
+:::
+
+::::
 
 ::: aside
 1. Bertozzi-Villa et al., ‘Maps and Metrics of Insecticide-Treated Net Access, Use, and Nets-per-Capita in Africa from 2000-2020’. Nat Comms (2021).
@@ -91,11 +113,15 @@ Session aims:
 
 :pray: Big thank you to Nora for lots of hard work on :package: \[netz\]!
 
-## :package: [netz]
-
-![](images/net_schematic.png){fig-align="center"}
-
 # Translating between bed net metrics with :package: \[netz\]
+
+## Schematic overview
+
+::: {layout="[[-1], [1], [-1]]"}
+
+![](images/net_schematic_map.png){fig-align="center"}
+
+:::
 
 ## Usage and Access {.smaller}
 
@@ -109,7 +135,7 @@ Session aims:
 
 *   `netz::access_to_usage(access = 0.5, use_rate = 0.8)`
 
-*   You can view empirical use rates with:
+*   You can view empirical estimates of country use rates with:
 
 *   `netz::get_usage_rate_data()`
 
@@ -165,11 +191,11 @@ Session aims:
 
 *   We may to try and harmonise the bed net models at some point.
 
-## :dizzy_face: Conversion overload! :dizzy_face:
-
-![](images/net_schematic.png){fig-align="center"}
-
 # Bed nets in :package: \[malariasimulation\]
+
+## Schematic overview
+
+![](images/net_schematic_malariasimulation.png){fig-align="center"}
 
 ## Implementing bed nets
 
@@ -231,6 +257,10 @@ fit <- netz::fit_usage(
 ## Fitting bed nets
 
 ![](images/pop_usage5.png){fig-align="center"}
+
+## :dizzy_face: Conversion overload! :dizzy_face:
+
+![](images/net_schematic.png){fig-align="center"}
 
 ## Bed nets in site files {.smaller}
 

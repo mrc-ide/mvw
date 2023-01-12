@@ -456,13 +456,18 @@ Pete Winskill
 </div></aside></section>
 <section id="an-empirical-model-of-bed-nets-1" class="slide level2 smaller">
 <h2>An empirical model of bed nets</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
 <ul>
 <li>The model triangulates net deliveries to a country with information on distributions and survey data on access and usage.</li>
 </ul>
+</div><div class="column" style="width:60%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/Bertozzi_villa_figure_1.png" style="width:35.0%;height:35.0%"></p>
+<p><img data-src="images/Bertozzi_villa_figure_1.png" style="width:80.0%;height:80.0%"></p>
 </figure>
+</div>
+</div>
 </div>
 
 <aside><div>
@@ -472,13 +477,18 @@ Pete Winskill
 </div></aside></section>
 <section id="an-empirical-model-of-bed-nets-2" class="slide level2 smaller">
 <h2>An empirical model of bed nets</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
 <ul>
 <li>The model also estimates country-specific net retention times</li>
 </ul>
+</div><div class="column" style="width:60%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/Bertozzi_villa_retention.png" style="width:50.0%;height:50.0%"></p>
+<p><img data-src="images/Bertozzi_villa_retention.png" style="width:100.0%;height:100.0%"></p>
 </figure>
+</div>
+</div>
 </div>
 
 <aside><div>
@@ -488,14 +498,19 @@ Pete Winskill
 </div></aside></section>
 <section id="an-empirical-model-of-bed-nets-3" class="slide level2 smaller">
 <h2>An empirical model of bed nets</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
 <ul>
 <li>Bertozzi-Villa <em>et al</em> show that access and crop are not linearly related (at the country level).</li>
 <li>This can have big implication when costing a bet net campaign.</li>
 </ul>
+</div><div class="column" style="width:60%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/Bertozzi_villa_access_crop.png" style="width:30.0%;height:30.0%"></p>
+<p><img data-src="images/Bertozzi_villa_access_crop.png" style="width:90.0%;height:90.0%"></p>
 </figure>
+</div>
+</div>
 </div>
 
 <aside><div>
@@ -513,14 +528,29 @@ Pete Winskill
 </ul>
 <p><span class="emoji" data-emoji="pray">🙏</span> Big thank you to Nora for lots of hard work on <span class="emoji" data-emoji="package">📦</span> [netz]!</p>
 </section>
-<section id="netz-1" class="slide level2">
-<h2><span class="emoji" data-emoji="package">📦</span> [netz]</h2>
-
-<img data-src="images/net_schematic.png" class="r-stretch quarto-figure-center"></section>
 <section>
 <section id="translating-between-bed-net-metrics-with-netz" class="title-slide slide level1 center">
 <h1>Translating between bed net metrics with <span class="emoji" data-emoji="package">📦</span> [netz]</h1>
 
+</section>
+<section id="schematic-overview" class="slide level2">
+<h2>Schematic overview</h2>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-figure-spacer quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<p>&nbsp;</p>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/net_schematic_map.png"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="usage-and-access" class="slide level2 smaller">
 <h2>Usage and Access</h2>
@@ -530,7 +560,7 @@ Pete Winskill
 <li><p><span class="emoji" data-emoji="package">📦</span> [netz] has functions to convert between usage and access:</p></li>
 <li><p><code>netz::usage_to_access(usage = 0.5, use_rate = 0.8)</code></p></li>
 <li><p><code>netz::access_to_usage(access = 0.5, use_rate = 0.8)</code></p></li>
-<li><p>You can view empirical use rates with:</p></li>
+<li><p>You can view empirical estimates of country use rates with:</p></li>
 <li><p><code>netz::get_usage_rate_data()</code></p></li>
 </ul>
 </section>
@@ -575,16 +605,16 @@ Pete Winskill
 <li><p>These functions can be passed when the argument <code>net_loss_function</code> is required.</p></li>
 <li><p>We may to try and harmonise the bed net models at some point.</p></li>
 </ul>
-</section>
-<section id="conversion-overload" class="slide level2">
-<h2><span class="emoji" data-emoji="dizzy_face">😵</span> Conversion overload! <span class="emoji" data-emoji="dizzy_face">😵</span></h2>
-
-<img data-src="images/net_schematic.png" class="r-stretch quarto-figure-center"></section></section>
+</section></section>
 <section>
 <section id="bed-nets-in-malariasimulation" class="title-slide slide level1 center">
 <h1>Bed nets in <span class="emoji" data-emoji="package">📦</span> [malariasimulation]</h1>
 
 </section>
+<section id="schematic-overview-1" class="slide level2">
+<h2>Schematic overview</h2>
+
+<img data-src="images/net_schematic_malariasimulation.png" class="r-stretch quarto-figure-center"></section>
 <section id="implementing-bed-nets" class="slide level2">
 <h2>Implementing bed nets</h2>
 <ul>
@@ -652,6 +682,10 @@ Pete Winskill
 <h2>Fitting bed nets</h2>
 
 <img data-src="images/pop_usage5.png" class="r-stretch quarto-figure-center"></section>
+<section id="conversion-overload" class="slide level2">
+<h2><span class="emoji" data-emoji="dizzy_face">😵</span> Conversion overload! <span class="emoji" data-emoji="dizzy_face">😵</span></h2>
+
+<img data-src="images/net_schematic.png" class="r-stretch quarto-figure-center"></section>
 <section id="bed-nets-in-site-files" class="slide level2 smaller">
 <h2>Bed nets in site files</h2>
 <ul>

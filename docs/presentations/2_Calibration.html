@@ -365,6 +365,21 @@ Pete Winskill
 <h2>Calibration process</h2>
 
 <img data-src="images/Calibration_figure3.png" class="r-stretch quarto-figure-center"></section>
+<section id="calibration-note" class="slide level2 smaller">
+<h2>Calibration note</h2>
+<ul>
+<li>Warmup
+<ul>
+<li><span class="emoji" data-emoji="package">📦</span> malariasimulation runs do not automatically run a warmup period which is necessary for the model to fully equilibrate. In general it is always advisable to add a warmup period to your simulation runs. Some outputs are more sensitive than others and exploration of a suitable warmup period to use should be performed prior to calibration.</li>
+<li>Subsequent model runs after calibration should use the same warmup period as the calibration.</li>
+</ul></li>
+<li>Data
+<ul>
+<li>It will be your decision on what data (and how much of it) to calibrate to</li>
+<li>It is important to understand how and when data were collected, for example data collected at peak malaria season may look very different to that collected in the low season.</li>
+</ul></li>
+</ul>
+</section>
 <section id="when-to-calibrate" class="slide level2">
 <h2>When to calibrate</h2>
 <ul>
@@ -376,6 +391,12 @@ Pete Winskill
 <li>The data you are calibrating to has changed</li>
 <li>There has been a change to an underlying assumption that would impact the disease dynamics in a model run</li>
 </ol>
+</section>
+<section id="foresite-calibrations" class="slide level2">
+<h2>Foresite calibrations</h2>
+<ul>
+<li>Site files in <span class="emoji" data-emoji="package">📦</span> [foresite] have been calibrated <code>$eir</code></li>
+</ul>
 </section>
 <section id="cali" class="slide level2 smaller">
 <h2>Cali</h2>
@@ -419,7 +440,7 @@ Pete Winskill
 <section id="challenges-4" class="slide level2">
 <h2>Challenges</h2>
 <ul>
-<li>Calibration can be difficult when results are dominated by stochasticity</li>
+<li>Calibration can be difficult when results are dominated by stochasticity:</li>
 <li>low transmission</li>
 <li>small populations</li>
 <li>calibrating to a sub-group in the population</li>
@@ -494,7 +515,7 @@ Pete Winskill
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: false,
+        slideNumber: 'c/t',
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',

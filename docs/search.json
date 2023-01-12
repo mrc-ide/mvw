@@ -4,7 +4,14 @@
     "href": "coffee.html",
     "title": "Malariaverse Workshop",
     "section": "",
-    "text": "☕ Coffee break activity ☕\nOn your table you should find post-it notes, pens and green stickers. During the coffee/lunch breaks and throughout the day please:\n\nOn post-it notes, write down ideas for how to improve the malariaverse:\n\n\nNew features\nAdditional packages\nImprovements to current packages\nWays to maximise academic impact\nWays to maximise access/use\n\n\nStick your ideas where you think they lie on the Effort vs Impact plane on the board\nUp-vote the ideas of others with a dot sticker\n\n\n\n\n\n\nThere will be time at the end of the day to review and discuss suggestions"
+    "text": "☕ Coffee break activity ☕\nOn your table you should find post-it notes, pens and dot stickers. During the coffee/lunch breaks and throughout the day please:\n\nOn post-it notes, write down ideas for how to improve the malariaverse:\n\n\nNew features\nAdditional packages\nImprovements to current packages\nWays to maximise academic impact\nWays to maximise access/use\n\n\nStick your ideas where you think they lie on the Effort vs Impact plane on the board\nUp-vote the ideas of others with a dot sticker\n\n\n\n\n\n\nThere will be time at the end of the day to review and discuss suggestions"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Malariaverse Workshop",
+    "section": "",
+    "text": "An interactive workshop to provide an overview of how to use 📦 [malariasimulation] and the malariaverse to run context-specific simulations for a country or region."
   },
   {
     "objectID": "index.html#workshop-details",
@@ -18,7 +25,7 @@
     "href": "index.html#before-the-workshop",
     "title": "Malariaverse Workshop",
     "section": "Before the workshop",
-    "text": "Before the workshop\nPlease make sure you have the following installed:\n\nAn up-to-date installation of R\nAn up-to-date version of RStudio\nThe workshop 📦 [mvw]\nThe malariaverse 📦 [malariasimulation, foresite, site, netz, cali]\n\n\n# For malariasimulation\noptions(repos = c(\n    mrcide = \"https://mrc-ide.r-universe.dev\",\n    CRAN = \"https://cloud.r-project.org\"))\ninstall.packages(\"malariasimulation\")\n\n# Private packages require network access to the \"malaria drive\". \n# Contact Pete if you don't have access.\ndrat::addRepo(\"malariaverse\", \"file:\\\\\\\\projects.dide.ic.ac.uk/malaria/malariaverse/drat\")\ninstall.packages(\"foresite\", type = \"source\")\n\n# Public packages can be installed directly from github:\nremotes::install_github(\"mrc-ide/site\")\nremotes::install_github(\"mrc-ide/netz\")\nremotes::install_github(\"mrc-ide/cali\")\nremotes::install_github(\"mrc-ide/mvw\")\n\nFollowing installation you should be able to successfully run:\n\noutput <- malariasimulation::run_simulation(100)\noutput\n\nand\n\nmvw::run_tutorial(\"Test\")\n\nIf you can’t, please contact Pete before the workshop."
+    "text": "Before the workshop\nPlease make sure you have the following installed:\n\nAn up-to-date (Version >=4.2.0) installation of R. Please note, for those updating to R version 4.2 and above who have not updated recently you may also require an updated version of Rtools.\nAn up-to-date (Version >= 2022.12.0) installation of RStudio. See help->check for updates.\nThe workshop 📦 [mvw]\nThe malariaverse 📦 [malariasimulation, foresite, site, netz, cali]\n\n\n# For malariasimulation\noptions(repos = c(\n    mrcide = \"https://mrc-ide.r-universe.dev\",\n    CRAN = \"https://cloud.r-project.org\"))\ninstall.packages(\"malariasimulation\") # v1.4.3\n\n# Public packages can be installed directly from github:\nremotes::install_github(\"mrc-ide/site\") # v0.2.2\nremotes::install_github(\"mrc-ide/netz\") # v0.2.0\nremotes::install_github(\"mrc-ide/cali\") # v0.2.0\nremotes::install_github(\"mrc-ide/mvw\")  # v0.1.1\nremotes::install_github(\"hadley/emo\")   # v0.0.0.9 (yes, emojis are essential).\n# Optional additional malariaverse packages:\nremotes::install_github(\"mrc-ide/umbrella\") # v0.3.0\nremotes::install_github(\"mrc-ide/treasure\") # v0.1.1\nremotes::install_github(\"mrc-ide/om\")       # v0.1.0\n\n# Private packages require network access to the \"malaria drive\": \\\\fi--didef3.dide.ic.ac.uk/malaria. \n# Contact Pete if you don't have access.\ndrat::addRepo(\"malariaverse\", \"file:\\\\\\\\projects.dide.ic.ac.uk/malaria/malariaverse/drat\")\ninstall.packages(\"foresite\", type = \"source\") # v0.1.0\n\nFollowing installation you should be able to successfully run:\n\noutput <- malariasimulation::run_simulation(100)\noutput\n\nand\n\nmvw::run_tutorial(\"Test\")\n\nIf you can’t, please contact Pete before the workshop, by 30/01/2023 latest."
   },
   {
     "objectID": "index.html#schedule",
@@ -39,7 +46,7 @@
     "href": "inst/tutorials/Bednet/Bednet.html#fitting-malariasimulation-inputs",
     "title": "Bednet",
     "section": "Fitting malariasimulation inputs",
-    "text": "Fitting malariasimulation inputs\nConsider the following scenario:\n\nTime period: 10 years (time units are days so, for year one: t = 1:365)\nBed net usage estimates of 12%, 18%, 45%, 50% and 40%, collected at the mid point of the year (1st June) in years 1, 3, 5, 7, and 9\nKnown mass net distributions at the start of the year (1st January) in years 1, 2, 4, 7 and 8.\nNet retention half life of 5 years\n\nUsing these estimates and the netz::fit_usage() function, in the code box below estimate the model input distribution to achieve the observed bed net usage over time.\n\n\nlibrary(netz)\n\n\n\n\n\nlibrary(netz)\nyear <- 365\ntimesteps <- 10 * year\nnet_hl <- 5 * year\n\n# Target usage associated time points\ntarget <- c(0.12, 0.18, 0.45, 0.50, 0.40)\ntarget_tt <- floor((c(1, 3, 5, 7, 9) - 0.5) * year)\n# Time points at which distribution will occur\ndistribution_tt <- 1 + c(0, 1, 3, 6, 7) * year\n\n# Fit\nfit <- netz::fit_usage(\n  target_usage = target,\n  target_usage_timesteps = target_tt,\n  distribution_timesteps = distribution_tt + 1\n)\n\nround(fit$par, 2)\n\n\nWith your estimated inputs and the netz::population_usage() function, plot the estimated usage over time alongside the usage observations.\n\n\nlibrary(netz)\n\n\n\n\n\nlibrary(netz)\n\n# Our estimates of the distributions\nfitted_intput <- c(0.13, 0.15, 0.53, 0.33, 0.16)\n\nyear <- 365\ntimesteps <- 10 * year\nnet_hl <- 5 * year\n\n# Target usage associated time points\ntarget <- c(0.12, 0.18, 0.45, 0.50, 0.40)\ntarget_tt <- floor((c(1, 3, 5, 7, 9) - 0.5) * year)\n# Time points at which distribution will occur\ndistribution_tt <- 1 + c(0, 1, 3, 6, 7) * year\n# Estimate population usage over time\npu <- population_usage(\n  timesteps = timesteps,\n  distribution = fitted_intput,\n  distribution_timesteps = distribution_tt,\n  half_life = net_hl)\n# Plot the results against the target\nplot(1:timesteps, pu, t = \"l\", ylim = c(0, 0.8), ylab = \"Population usage\", xlab = \"Time\")\npoints(target ~ target_tt, col = \"dodgerblue\", pch = 19)\n\n\n❓ Are they a good match?\nExtra credits ✨:\n\nExamine the distribution_upper argument of netz::fit_usage(). How does the fit look if you limit the maximum a single distribution can be to 40% of the population?\nWe may be uncertain about the net distribution dates. Do other sets of distribution dates also allow a good fit to the observed bed net usage estimates?"
+    "text": "Fitting malariasimulation inputs\nConsider the following scenario:\n\nTime period: 10 years (time units are days so, for year one: t = 1:365)\nBed net usage estimates of 12%, 18%, 45%, 50% and 40%, collected at the mid point of the year (1st June) in years 1, 3, 5, 7, and 9\nKnown mass net distributions at the start of the year (1st January) in years 1, 2, 4, 7 and 8.\nNet retention half life of 5 years\n\nUsing these estimates and the netz::fit_usage() function, in the code box below estimate the model input distribution to achieve the observed bed net usage over time.\n\n\nlibrary(netz)\n\n\n\n\n\nlibrary(netz)\nyear <- 365\ntimesteps <- 10 * year\nnet_hl <- 5 * year\n\n# Target usage associated time points\ntarget <- c(0.12, 0.18, 0.45, 0.50, 0.40)\ntarget_tt <- floor((c(1, 3, 5, 7, 9) - 0.5) * year)\n# Time points at which distribution will occur\ndistribution_tt <- 1 + c(0, 1, 3, 6, 7) * year\n\n# Fit\nfit <- netz::fit_usage(\n  target_usage = target,\n  target_usage_timesteps = target_tt,\n  distribution_timesteps = distribution_tt + 1\n)\n\nround(fit$par, 2)\n\n\nWith your estimated inputs and the netz::population_usage() function, plot the estimated usage over time alongside the usage observations.\n\n\nlibrary(netz)\n\n\n\n\n\nlibrary(netz)\n\n# Our estimates of the distributions\nfitted_input <- c(0.13, 0.15, 0.53, 0.33, 0.16)\n\nyear <- 365\ntimesteps <- 10 * year\nnet_hl <- 5 * year\n\n# Target usage associated time points\ntarget <- c(0.12, 0.18, 0.45, 0.50, 0.40)\ntarget_tt <- floor((c(1, 3, 5, 7, 9) - 0.5) * year)\n# Time points at which distribution will occur\ndistribution_tt <- 1 + c(0, 1, 3, 6, 7) * year\n# Estimate population usage over time\npu <- population_usage(\n  timesteps = timesteps,\n  distribution = fitted_input,\n  distribution_timesteps = distribution_tt,\n  half_life = net_hl)\n# Plot the results against the target\nplot(1:timesteps, pu, t = \"l\", ylim = c(0, 0.8), ylab = \"Population usage\", xlab = \"Time\")\npoints(target ~ target_tt, col = \"dodgerblue\", pch = 19)\n\n\n❓ Are they a good match?\nExtra credits ✨:\n\nExamine the distribution_upper argument of netz::fit_usage(). How does the fit look if you limit the maximum a single distribution can be to 40% of the population?\nWe may be uncertain about the net distribution dates. Do other sets of distribution dates also allow a good fit to the observed bed net usage estimates?"
   },
   {
     "objectID": "inst/tutorials/Bednet/Bednet.html#working-with-country-net-data",
@@ -60,7 +67,7 @@
     "href": "inst/tutorials/Calibration/Calibration.html#the-summary-function",
     "title": "Calibration",
     "section": "The summary function",
-    "text": "The summary function\nWhen running calibrate() we must provide a summary function that summarised the raw simulation output in the same format as our target. For example, if our target data is a vector of annual PfPr2-10 estimates of length 5, then our summary function must take the raw simulation output and return a vector of annual PfPr2-10 estimates of length 5.\n\nIn the code box below, compete the summary function, to match the format of our target data.\n\n\n\n# Target: all age clinical incidence (cases per person per year) in years 2, 3 and 4\ntarget <- c(0.03, 0.02, 0.01)\n# Raw simulation output\nsimulation <- data.frame(\n  timestep = 1:(365 * 5),\n  n = 10000,\n  cases = rpois(365 * 5, 200 / 365)\n)\n# Summary function\nsummary_function <- function(simulation){\n  \n}\nsummary_function(simulation)\n\n\n\n\n\n# Summary function - estimate annual incidence in years 2-4\nsummary_function <- function(simulation){\n  year <- ceiling(simulation$timestep / 365)\n  annual_inc <- tapply(simulation$cases, year, sum) / 10000\n  return(annual_inc[2:4])\n}"
+    "text": "The summary function\nWhen running calibrate() we must provide a summary function that summarised the raw simulation output in the same format as our target. For example, if our target data is a vector of annual PfPr2-10 estimates of length 5, then our summary function must take the raw simulation output and return a vector of annual PfPr2-10 estimates of length 5.\n\nIn the code box below, complete the summary function, to match the format of our target data. The output of the function should be three values for the all age clinical incidence (cases per person per year) in simulation years 2, 3 and 4.\n\n\n\n# Target: all age clinical incidence (cases per person per year) in years 2, 3 and 4\ntarget <- c(0.03, 0.02, 0.01)\n# Raw simulation output\nsimulation <- data.frame(\n  timestep = 1:(365 * 5),\n  n = 10000,\n  cases = rpois(365 * 5, 200 / 365)\n)\n# Summary function\nsummary_function <- function(simulation){\n  \n}\nsummary_function(simulation)\n\n\n\n\n\n# Summary function - estimate annual incidence in years 2-4\nsummary_function <- function(simulation){\n  year <- ceiling(simulation$timestep / 365)\n  annual_inc <- tapply(simulation$cases, year, sum) / 10000\n  return(annual_inc[2:4])\n}"
   },
   {
     "objectID": "inst/tutorials/Calibration/Calibration.html#calibrate-good-times-come-on",
@@ -74,7 +81,7 @@
     "href": "inst/tutorials/Introduction/Introduction.html",
     "title": "Introduction",
     "section": "",
-    "text": "Let’s start by getting better acquainted with a country site file. In the code box below we have pre-loaded the site for Togo (iso3c = TGO).\nUse the interactive code box below to explore the elements that make up the site file.\n\nChoose to explore specific elements of a list with the $ operator. For example togo_site_file$seasonality or togo_site_file$prevalence . YOu can see all the elements with names(togo_site_file). It may be helpful to plot some elements to see what is going on.\nDig into the togo_site_file details to answer the questions below. Remember, you can find out more information about site file elements on the foresite website.\n\n\n\nlibrary(foresite)\ntogo_site_file <- TGO\n\n\n\n\n\nQuiz"
+    "text": "Let’s start by getting better acquainted with a country site file. In the code box below we have pre-loaded the site for Togo (iso3c = TGO).\nUse the interactive code box below to explore the elements that make up the site file.\n\nChoose to explore specific elements of a list with the $ operator. For example togo_site_file$seasonality or togo_site_file$prevalence . You can see all the elements with names(togo_site_file). It may be helpful to plot some elements to see what is going on.\nDig into the togo_site_file details to answer the questions below. Remember, you can find out more information about site file elements on the foresite website.\n\n\n\nlibrary(foresite)\ntogo_site_file <- TGO\n\n\n\n\n\nQuiz"
   },
   {
     "objectID": "inst/tutorials/Introduction/Introduction.html#extracting-a-single-site",
@@ -88,7 +95,7 @@
     "href": "inst/tutorials/Introduction/Introduction.html#running-a-single-site",
     "title": "Introduction",
     "section": "Running a single site",
-    "text": "Running a single site\nNow lets try running a site.\n\nUse the site::single_site() function to isolate the site for: Run iso3c = TGO, name_1 = Plateaux, urban_rural = rural.\nCreate a 📦 [malariasimulation] parameter list using the site::site_parameters() function. For today, in the overrides argument you might want to set a reasonably small population so that the model runs quickly, for example overrides  = list(human_population = 5000).\nRun the site using malariasimulation::run_simulation()\nPlot the PfPr2-10 estimated by the model\nOverlay the Malaria Atlas Project estimates of PfPr2-10 onto your plot.\n\n⚠️ The model run may take a little while to complete (~5 mins). While you wait, why not have a look at the foresite website, or starting thinking through the coffee break activity ⚠️\n\n\nlibrary(foresite)\nlibrary(site)\nlibrary(malariasimulation)\ntogo_site_file <- TGO\n\n\n\n\n\nlibrary(foresite)\nlibrary(site)\nlibrary(malariasimulation)\ntogo_site_file <- TGO\n# Isolate the site\nsite_index <- which(togo_site_file$sites$name_1 == \"Plateaux\" &\n                      togo_site_file$sites$urban_rural == \"rural\")\nplateaux_rural <- single_site(togo_site_file, site_index)\n# Create parameter inputs\nsite_pars <- site_parameters(\n  interventions = plateaux_rural$interventions,\n  demography = plateaux_rural$demography,\n  vectors = plateaux_rural$vectors,\n  seasonality = plateaux_rural$seasonality,\n  eir = plateaux_rural$eir$eir[1],\n  overrides = list(human_population = 5000)\n)\n# Run!\nmodel_run <- run_simulation(timesteps = site_pars$timesteps,\n                            parameters = site_pars)\n# Calculate prevalence\nmodel_run$prevalence <- model_run$n_detect_730_3649 / model_run$n_730_3649\n# Set the time\nmodel_run$t <- (model_run$timestep / 365) + 2000\n# Plot\nplot(model_run$prevalence ~ model_run$t, t = \"l\", ylim = c(0, 0.8), xlab = \"Year\", ylab = \"Prevalence\")\n# Add MAP prevalence\npoints(plateaux_rural$prevalence$year + 0.5, plateaux_rural$prevalence$pfpr, pch = 19, col = \"darkred\")\n\n\n❓ How well do they match?\n❓ Why might there be differences between modelled PfPr2-10 and the estimates from the Malaria Atlas Project?\nExtra credits ✨:\n\nTry changing the EIR argument in site_parameters()\nModify plateaux_rural$interventions$irs_cov and re-run, can you see the impact?\nTry running multiple different sites and estimating aggregated PfPr2-10 across all of them."
+    "text": "Running a single site\nNow lets try running a site.\n\nUse the site::single_site() function to isolate the site for: Run iso3c = TGO, name_1 = Plateaux, urban_rural = rural.\nCreate a 📦 malariasimulation parameter list using the site::site_parameters() function. For today, in the overrides argument you might want to set a reasonably small population so that the model runs quickly, for example overrides  = list(human_population = 5000).\nRun the site using malariasimulation::run_simulation()\nPlot the PfPr2-10 estimated by the model\nOverlay the Malaria Atlas Project estimates of PfPr2-10 onto your plot.\n\n⚠️ The model run may take a little while to complete (~5 mins). While you wait, why not have a look at the foresite website, or starting thinking through the coffee break activity ⚠️\n\n\nlibrary(foresite)\nlibrary(site)\nlibrary(malariasimulation)\ntogo_site_file <- TGO\n\n\n\n\n\nlibrary(foresite)\nlibrary(site)\nlibrary(malariasimulation)\ntogo_site_file <- TGO\n# Isolate the site\nsite_index <- which(togo_site_file$sites$name_1 == \"Plateaux\" &\n                      togo_site_file$sites$urban_rural == \"rural\")\nplateaux_rural <- single_site(togo_site_file, site_index)\n# Create parameter inputs\nsite_pars <- site_parameters(\n  interventions = plateaux_rural$interventions,\n  demography = plateaux_rural$demography,\n  vectors = plateaux_rural$vectors,\n  seasonality = plateaux_rural$seasonality,\n  eir = plateaux_rural$eir$eir[1],\n  overrides = list(human_population = 5000)\n)\n# Run!\nmodel_run <- run_simulation(timesteps = site_pars$timesteps,\n                            parameters = site_pars)\n# Calculate prevalence\nmodel_run$prevalence <- model_run$n_detect_730_3649 / model_run$n_730_3649\n# Set the time\nmodel_run$t <- (model_run$timestep / 365) + 2000\n# Plot\nplot(model_run$prevalence ~ model_run$t, t = \"l\", ylim = c(0, 0.8), xlab = \"Year\", ylab = \"Prevalence\")\n# Add MAP prevalence\npoints(plateaux_rural$prevalence$year + 0.5, plateaux_rural$prevalence$pfpr, pch = 19, col = \"darkred\")\n\n\n❓ How well do they match?\n❓ Why might there be differences between modelled PfPr2-10 and the estimates from the Malaria Atlas Project?\nExtra credits ✨:\n\nTry changing the EIR argument in site_parameters()\nModify plateaux_rural$interventions$irs_cov and re-run, can you see the impact?\nTry running multiple different sites and estimating aggregated PfPr2-10 across all of them."
   },
   {
     "objectID": "LICENSE.html",
@@ -144,7 +151,14 @@
     "href": "presentations/1_Introduction.html#important-features",
     "title": "Malariaverse Workshop Introduction",
     "section": "Important features",
-    "text": "Important features\n\nIntrinsic transmission potential (“Baseline”, “Carrying capacity”, “R0”)\nThe mosquito vector\n\nspecies\nbionomics (how the vector relates to its environment) & behaviour\ndistribution & relative abundance\ninsecticide resistance\n\nRainfall seasonality\nHistorical interventions\nEpidemiological data\nHuman population & demography"
+    "text": "Important features\n\nIntrinsic transmission potential (“Baseline”, “Carrying capacity”, “R0”)\nThe mosquito vector\n\nspecies\nbionomics (how the 🦟 relates to its environment) & behaviour\ndistribution & relative abundance\ninsecticide resistance\n\nRainfall seasonality\nHistorical interventions\nEpidemiological data (e.g. PfPr2-10, malaria cases)\nHuman population & demography"
+  },
+  {
+    "objectID": "presentations/1_Introduction.html#important-features-1",
+    "href": "presentations/1_Introduction.html#important-features-1",
+    "title": "Malariaverse Workshop Introduction",
+    "section": "Important features",
+    "text": "Important features\n\nFor many of these elements there are data available, for example:\n\nWorld Malaria Report\nMalaria Atlas project (burden and intervention coverage estimates)\nVector Atlas (spatial vector data, under development and building on work by Sinka et al)"
   },
   {
     "objectID": "presentations/1_Introduction.html#site-files",
@@ -200,7 +214,7 @@
     "href": "presentations/1_Introduction.html#lets-give-it-a-try",
     "title": "Malariaverse Workshop Introduction",
     "section": "Let’s give it a try!",
-    "text": "Let’s give it a try!\n\nRun mvw::run_tutorial(\"Introduction\")"
+    "text": "Let’s give it a try!\n\n📦 [mvw] has interactive tutorials. You can run code within the tutorial window (or in R/Rstudio if desired).\nRun mvw::run_tutorial(\"Introduction\")"
   },
   {
     "objectID": "presentations/2_Calibration.html#welcome-back",
@@ -238,11 +252,25 @@
     "text": "Calibration process"
   },
   {
+    "objectID": "presentations/2_Calibration.html#calibration-note",
+    "href": "presentations/2_Calibration.html#calibration-note",
+    "title": "Malariaverse Workshop Calibration",
+    "section": "Calibration note",
+    "text": "Calibration note\n\nWarmup\n\n📦 malariasimulation runs do not automatically run a warmup period which is necessary for the model to fully equilibrate. In general it is always advisable to add a warmup period to your simulation runs. Some outputs are more sensitive than others and exploration of a suitable warmup period to use should be performed prior to calibration.\nSubsequent model runs after calibration should use the same warmup period as the calibration.\n\nData\n\nIt will be your decision on what data (and how much of it) to calibrate to\nIt is important to understand how and when data were collected, for example data collected at peak malaria season may look very different to that collected in the low season."
+  },
+  {
     "objectID": "presentations/2_Calibration.html#when-to-calibrate",
     "href": "presentations/2_Calibration.html#when-to-calibrate",
     "title": "Malariaverse Workshop Calibration",
     "section": "When to calibrate",
     "text": "When to calibrate\n\nCalibration or re-calibration is not always required. In general, you will need to calibrate if:\n\n\nYou have created a new site file\nYou have modified any site inputs that occur before or at the same time as the data you are trying to calibrate to\nThe data you are calibrating to has changed\nThere has been a change to an underlying assumption that would impact the disease dynamics in a model run"
+  },
+  {
+    "objectID": "presentations/2_Calibration.html#foresite-calibrations",
+    "href": "presentations/2_Calibration.html#foresite-calibrations",
+    "title": "Malariaverse Workshop Calibration",
+    "section": "Foresite calibrations",
+    "text": "Foresite calibrations\n\nSite files in 📦 [foresite] have been calibrated $eir"
   },
   {
     "objectID": "presentations/2_Calibration.html#cali",
@@ -291,7 +319,7 @@
     "href": "presentations/2_Calibration.html#challenges-4",
     "title": "Malariaverse Workshop Calibration",
     "section": "Challenges",
-    "text": "Challenges\n\nCalibration can be difficult when results are dominated by stochasticity\nlow transmission\nsmall populations\ncalibrating to a sub-group in the population\netc."
+    "text": "Challenges\n\nCalibration can be difficult when results are dominated by stochasticity:\nlow transmission\nsmall populations\ncalibrating to a sub-group in the population\netc."
   },
   {
     "objectID": "presentations/2_Calibration.html#lets-give-it-a-try",
@@ -327,6 +355,90 @@
     "title": "Malariaverse Workshop Bed nets",
     "section": "Why can bed nets be tricky?",
     "text": "Why can bed nets be tricky?\n\n… and lots of other bed net variables to consider:\n\nNet type\nNet retention (or rate of loss)\nDistribution method/schedule (mass, routine etc.)\nInteraction with insecticide resistance\n\nAnd finally, how we implement bed nets in 📦 [malariasimulation]"
+  },
+  {
+    "objectID": "presentations/3_Bed_nets.html#an-empirical-model-of-bed-nets",
+    "href": "presentations/3_Bed_nets.html#an-empirical-model-of-bed-nets",
+    "title": "Malariaverse Workshop Bed nets",
+    "section": "An empirical model of bed nets",
+    "text": "An empirical model of bed nets\n\nAmelia Bertozzi-Villa et al have published a model linking bed net metrics for countries in SSA1.\nWe can use this model to translate between the different bed net metrics\nThe model includes country-level fits\n\n\n\n\nBertozzi-Villa et al., ‘Maps and Metrics of Insecticide-Treated Net Access, Use, and Nets-per-Capita in Africa from 2000-2020’. Nat Comms (2021)."
+  },
+  {
+    "objectID": "presentations/3_Bed_nets.html#an-empirical-model-of-bed-nets-1",
+    "href": "presentations/3_Bed_nets.html#an-empirical-model-of-bed-nets-1",
+    "title": "Malariaverse Workshop Bed nets",
+    "section": "An empirical model of bed nets",
+    "text": "An empirical model of bed nets\n\n\n\nThe model triangulates net deliveries to a country with information on distributions and survey data on access and usage.\n\n\n\n\n\n\n\n\n\n\n\n\nBertozzi-Villa et al., ‘Maps and Metrics of Insecticide-Treated Net Access, Use, and Nets-per-Capita in Africa from 2000-2020’. Nat Comms (2021)."
+  },
+  {
+    "objectID": "presentations/3_Bed_nets.html#an-empirical-model-of-bed-nets-2",
+    "href": "presentations/3_Bed_nets.html#an-empirical-model-of-bed-nets-2",
+    "title": "Malariaverse Workshop Bed nets",
+    "section": "An empirical model of bed nets",
+    "text": "An empirical model of bed nets\n\n\n\nThe model also estimates country-specific net retention times\n\n\n\n\n\n\n\n\n\n\n\n\nBertozzi-Villa et al., ‘Maps and Metrics of Insecticide-Treated Net Access, Use, and Nets-per-Capita in Africa from 2000-2020’. Nat Comms (2021)."
+  },
+  {
+    "objectID": "presentations/3_Bed_nets.html#an-empirical-model-of-bed-nets-3",
+    "href": "presentations/3_Bed_nets.html#an-empirical-model-of-bed-nets-3",
+    "title": "Malariaverse Workshop Bed nets",
+    "section": "An empirical model of bed nets",
+    "text": "An empirical model of bed nets\n\n\n\nBertozzi-Villa et al show that access and crop are not linearly related (at the country level).\nThis can have big implication when costing a bet net campaign.\n\n\n\n\n\n\n\n\n\n\n\n\nBertozzi-Villa et al., ‘Maps and Metrics of Insecticide-Treated Net Access, Use, and Nets-per-Capita in Africa from 2000-2020’. Nat Comms (2021)."
+  },
+  {
+    "objectID": "presentations/3_Bed_nets.html#netz",
+    "href": "presentations/3_Bed_nets.html#netz",
+    "title": "Malariaverse Workshop Bed nets",
+    "section": "📦 [netz]",
+    "text": "📦 [netz]\n\nThe 📦 [netz] has translated some of the work by Bertozzi-Villa et al.\nIt can facilitate translation between different bed net metrics.\nIt can be used to access country-specific data.\nIt also has functionality for specifying bed nets in 📦 [malariasimulation]\n\n🙏 Big thank you to Nora for lots of hard work on 📦 [netz]!"
+  },
+  {
+    "objectID": "presentations/3_Bed_nets.html#schematic-overview",
+    "href": "presentations/3_Bed_nets.html#schematic-overview",
+    "title": "Malariaverse Workshop Bed nets",
+    "section": "Schematic overview",
+    "text": "Schematic overview"
+  },
+  {
+    "objectID": "presentations/3_Bed_nets.html#usage-and-access",
+    "href": "presentations/3_Bed_nets.html#usage-and-access",
+    "title": "Malariaverse Workshop Bed nets",
+    "section": "Usage and Access",
+    "text": "Usage and Access\n\nUsage: the proportion of people who have slept under a bed net the previous night. This is effective coverage.\nAccess: the proportion of the population that could sleep under a net.\n📦 [netz] has functions to convert between usage and access:\nnetz::usage_to_access(usage = 0.5, use_rate = 0.8)\nnetz::access_to_usage(access = 0.5, use_rate = 0.8)\nYou can view empirical estimates of country use rates with:\nnetz::get_usage_rate_data()"
+  },
+  {
+    "objectID": "presentations/3_Bed_nets.html#access-and-crop",
+    "href": "presentations/3_Bed_nets.html#access-and-crop",
+    "title": "Malariaverse Workshop Bed nets",
+    "section": "Access and crop",
+    "text": "Access and crop\n\nAccess: the proportion of the population that could sleep under a net.\nCrop: the total number of nets in the population. Crop increases with net distributions and decreases as nets are worn out and thrown away over time.\n📦 [netz] has functions to convert between access and crop:\nnetz::access_to_crop(access = 0.5)\nnetz::crop_to_access(crop = 0.5)"
+  },
+  {
+    "objectID": "presentations/3_Bed_nets.html#crop-and-distributions",
+    "href": "presentations/3_Bed_nets.html#crop-and-distributions",
+    "title": "Malariaverse Workshop Bed nets",
+    "section": "Crop and distributions",
+    "text": "Crop and distributions\n\nCrop: the total number of nets in the population. Crop increases with net distributions and decreases as nets are worn out and thrown away over time.\nDistribution: Nets distributed. These may be via mass-distributions or continuous distribution routes.\n📦 [netz] has functions to convert between crop and distribution:\nnetz::crop_to_distribution(crop =  0.5, distribution_frequency = 3 * 365, half_life = 2 * 365)\nnetz::distribution_to_crop(crop =  0.5, distribution_frequency = 3 * 365, half_life = 2 * 365)\nNet retention half-lives are estimated in the model by Bertozzi-Villa et al and can be accessed with:\nnetz::get_halflife_data()"
+  },
+  {
+    "objectID": "presentations/3_Bed_nets.html#crop-and-distributions-1",
+    "href": "presentations/3_Bed_nets.html#crop-and-distributions-1",
+    "title": "Malariaverse Workshop Bed nets",
+    "section": "Crop and distributions",
+    "text": "Crop and distributions\n\nAs crop is the cumulative impact of past distributions, different combinations of past distributions may lead to similar crop estimates. We can dynamically translate between no-equilibrium crop and distributions with:\nnetz::crop_to_distribution_dynamic(crop = c(0.1, 0.2, 0.5, 0.1), netz::net_loss_map)\nnetz::distribution_to_crop_dynamic(distribution = c(0.1, 0.2, 0.5, 0.1), netz::net_loss_map)"
+  },
+  {
+    "objectID": "presentations/3_Bed_nets.html#net-loss-functions",
+    "href": "presentations/3_Bed_nets.html#net-loss-functions",
+    "title": "Malariaverse Workshop Bed nets",
+    "section": "Net loss functions",
+    "text": "Net loss functions\n\nNet retention can be modelled with different function forms.\nIn the model by Bertozzi-Villa et al, they use an s-shaped function form.\nIn 📦 [malariasimulation] net retention is exponentially distributed.\nThese are modelled by:\nnetz::net_loss_map() and netz::net_loss_exp()\nThese functions can be passed when the argument net_loss_function is required.\nWe may to try and harmonise the bed net models at some point."
+  },
+  {
+    "objectID": "presentations/3_Bed_nets.html#schematic-overview-1",
+    "href": "presentations/3_Bed_nets.html#schematic-overview-1",
+    "title": "Malariaverse Workshop Bed nets",
+    "section": "Schematic overview",
+    "text": "Schematic overview"
   },
   {
     "objectID": "presentations/3_Bed_nets.html#implementing-bed-nets",
@@ -378,6 +490,13 @@
     "text": "Fitting bed nets"
   },
   {
+    "objectID": "presentations/3_Bed_nets.html#conversion-overload",
+    "href": "presentations/3_Bed_nets.html#conversion-overload",
+    "title": "Malariaverse Workshop Bed nets",
+    "section": "😵 Conversion overload! 😵",
+    "text": "😵 Conversion overload! 😵"
+  },
+  {
     "objectID": "presentations/3_Bed_nets.html#bed-nets-in-site-files",
     "href": "presentations/3_Bed_nets.html#bed-nets-in-site-files",
     "title": "Malariaverse Workshop Bed nets",
@@ -390,62 +509,6 @@
     "title": "Malariaverse Workshop Bed nets",
     "section": "Bed nets in site files",
     "text": "Bed nets in site files\n\nAll of these bed net elements get translated into 📦 [malariasimulation] parameters when using the 📦 [site] site_parameters() function.\nWe also include future resistance extrapolations in the $resistance part of the site file.\n\n🙏 No time today to explore all of the amazing work on insecticide resistance and net efficacy, but huge thanks to Tom, Ellie and others for all the hard work!"
-  },
-  {
-    "objectID": "presentations/3_Bed_nets.html#a-model-of-bed-nets",
-    "href": "presentations/3_Bed_nets.html#a-model-of-bed-nets",
-    "title": "Malariaverse Workshop Bed nets",
-    "section": "A model of bed nets",
-    "text": "A model of bed nets\n\nAmelia Bertozzi-Villa et al have published a model linking net deliveries, with access and usages for countries in SSA.\nWe can use this model to translate between different bed net metrics\nThis is often required when dealing with available bed net metrics or for costing a bed net programme\n\n🙏 Big thank you to Nora for lots of hard work on 📦 [netz]!"
-  },
-  {
-    "objectID": "presentations/3_Bed_nets.html#net-loss-functions",
-    "href": "presentations/3_Bed_nets.html#net-loss-functions",
-    "title": "Malariaverse Workshop Bed nets",
-    "section": "Net loss functions",
-    "text": "Net loss functions\n\nNet retention can be modelled with different function forms.\nIn the model by Bertozzi-Villa et al, they use an s-shaped function form.\nIn 📦 [malariasimulation] net retention is exponentially distributed.\nThese are modelled by:\nnetz::net_loss_map() and netz::net_loss_exp()\nThese functions can be passed when the argument net_loss_function is required.\nWe may to try and harmonise the bed net models at some point."
-  },
-  {
-    "objectID": "presentations/3_Bed_nets.html#usage-and-access",
-    "href": "presentations/3_Bed_nets.html#usage-and-access",
-    "title": "Malariaverse Workshop Bed nets",
-    "section": "Usage and Access",
-    "text": "Usage and Access\n\nUsage: the proportion of people who have slept under a bed net the previous night. This is effective coverage.\nAccess: the proportion of the population that could sleep under a net.\n📦 [netz] has functions to convert between usage and access:\nnetz::usage_to_access(usage = 0.5, use_rate = 0.8)\nnetz::access_to_usage(access = 0.5, use_rate = 0.8)\nYou can view empirical use rates with:\nnetz::get_usage_rate_data()"
-  },
-  {
-    "objectID": "presentations/3_Bed_nets.html#access-and-crop",
-    "href": "presentations/3_Bed_nets.html#access-and-crop",
-    "title": "Malariaverse Workshop Bed nets",
-    "section": "Access and crop",
-    "text": "Access and crop\n\nAccess: the proportion of the population that could sleep under a net.\nCrop: the total number of nets in the population. Crop increases with net distributions and decreases as nets are worn out and thrown away over time.\n📦 [netz] has functions to convert between access and crop:\nnetz::access_to_crop(access = 0.5)\nnetz::crop_to_access(crop = 0.5)"
-  },
-  {
-    "objectID": "presentations/3_Bed_nets.html#access-and-crop-1",
-    "href": "presentations/3_Bed_nets.html#access-and-crop-1",
-    "title": "Malariaverse Workshop Bed nets",
-    "section": "Access and crop",
-    "text": "Access and crop\n\nBertozzi-Villa et al show that access and crop are not linearly related (at the country level).\nThis can have big implication when costing a bet net campaign."
-  },
-  {
-    "objectID": "presentations/3_Bed_nets.html#crop-and-distributions",
-    "href": "presentations/3_Bed_nets.html#crop-and-distributions",
-    "title": "Malariaverse Workshop Bed nets",
-    "section": "Crop and distributions",
-    "text": "Crop and distributions\n\nCrop: the total number of nets in the population. Crop increases with net distributions and decreases as nets are worn out and thrown away over time.\nDistribution: Nets distributed. These may be via mass-distributions or continuous distribution routes.\n📦 [netz] has functions to convert between crop and distribution:\nnetz::crop_to_distribution(crop =  0.5, distribution_frequency = 3 * 365, half_life = 2 * 365)\nnetz::distribution_to_crop(crop =  0.5, distribution_frequency = 3 * 365, half_life = 2 * 365)\nNet retention half-lives are estimated in the model by Bertozzi-Villa et al and can be accessed with:\nnetz::get_halflife_data()"
-  },
-  {
-    "objectID": "presentations/3_Bed_nets.html#crop-and-distributions-1",
-    "href": "presentations/3_Bed_nets.html#crop-and-distributions-1",
-    "title": "Malariaverse Workshop Bed nets",
-    "section": "Crop and distributions",
-    "text": "Crop and distributions\n\nAs crop is the cumulative impact of past distributions, different combinations of past distributions may lead to similar crop estimates. We can dynamically translate between no-equilibrium crop and distributions with:\nnetz::crop_to_distribution_dynamic(crop = c(0.1, 0.2, 0.5, 0.1), netz::net_loss_map)\nnetz::distribution_to_crop_dynamic(distribution = c(0.1, 0.2, 0.5, 0.1), netz::net_loss_map)"
-  },
-  {
-    "objectID": "presentations/3_Bed_nets.html#conversion-overload",
-    "href": "presentations/3_Bed_nets.html#conversion-overload",
-    "title": "Malariaverse Workshop Bed nets",
-    "section": "😵 Conversion overload! 😵",
-    "text": "😵 Conversion overload! 😵"
   },
   {
     "objectID": "presentations/3_Bed_nets.html#lets-give-it-a-try",
@@ -558,54 +621,5 @@
     "title": "Malariaverse Workshop Discussion",
     "section": "…and now!",
     "text": "…and now!"
-  },
-  {
-    "objectID": "presentations/3_Bed_nets.html#an-empirical-model-of-bed-nets",
-    "href": "presentations/3_Bed_nets.html#an-empirical-model-of-bed-nets",
-    "title": "Malariaverse Workshop Bed nets",
-    "section": "An empirical model of bed nets",
-    "text": "An empirical model of bed nets\n\nAmelia Bertozzi-Villa et al have published a model linking bed net metrics for countries in SSA1.\nWe can use this model to translate between the different bed net metrics\nThe model includes country-level fits\n\n\n\n\nBertozzi-Villa et al., ‘Maps and Metrics of Insecticide-Treated Net Access, Use, and Nets-per-Capita in Africa from 2000-2020’. Nat Comms (2021)."
-  },
-  {
-    "objectID": "presentations/3_Bed_nets.html#netz",
-    "href": "presentations/3_Bed_nets.html#netz",
-    "title": "Malariaverse Workshop Bed nets",
-    "section": "📦 [netz]",
-    "text": "📦 [netz]\n\nThe 📦 [netz] has translated some of the work by Bertozzi-Villa et al.\nIt can facilitate translation between different bed net metrics.\nIt can be used to access country-specific data.\nIt also has functionality for specifying bed nets in 📦 [malariasimulation]\n\n🙏 Big thank you to Nora for lots of hard work on 📦 [netz]!"
-  },
-  {
-    "objectID": "presentations/3_Bed_nets.html#netz-1",
-    "href": "presentations/3_Bed_nets.html#netz-1",
-    "title": "Malariaverse Workshop Bed nets",
-    "section": "📦 [netz]",
-    "text": "📦 [netz]"
-  },
-  {
-    "objectID": "presentations/3_Bed_nets.html#test-indent",
-    "href": "presentations/3_Bed_nets.html#test-indent",
-    "title": "Malariaverse Workshop Bed nets",
-    "section": "Test indent",
-    "text": "Test indent\n\nunordered list\n\nsub-item 1\nsub-item 2\n\nsub-sub-item 1"
-  },
-  {
-    "objectID": "presentations/3_Bed_nets.html#an-empirical-model-of-bed-nets-1",
-    "href": "presentations/3_Bed_nets.html#an-empirical-model-of-bed-nets-1",
-    "title": "Malariaverse Workshop Bed nets",
-    "section": "An empirical model of bed nets",
-    "text": "An empirical model of bed nets\n\nThe model triangulates net deliveries to a country with information on distributions and survey data on access and usage.\n\n\n\n\n\n\n\n\n\nBertozzi-Villa et al., ‘Maps and Metrics of Insecticide-Treated Net Access, Use, and Nets-per-Capita in Africa from 2000-2020’. Nat Comms (2021)."
-  },
-  {
-    "objectID": "presentations/3_Bed_nets.html#an-empirical-model-of-bed-nets-2",
-    "href": "presentations/3_Bed_nets.html#an-empirical-model-of-bed-nets-2",
-    "title": "Malariaverse Workshop Bed nets",
-    "section": "An empirical model of bed nets",
-    "text": "An empirical model of bed nets\n\nThe model also estimates country-specific net retention times\n\n\n\n\n\n\n\n\n\nBertozzi-Villa et al., ‘Maps and Metrics of Insecticide-Treated Net Access, Use, and Nets-per-Capita in Africa from 2000-2020’. Nat Comms (2021)."
-  },
-  {
-    "objectID": "presentations/3_Bed_nets.html#an-empirical-model-of-bed-nets-3",
-    "href": "presentations/3_Bed_nets.html#an-empirical-model-of-bed-nets-3",
-    "title": "Malariaverse Workshop Bed nets",
-    "section": "An empirical model of bed nets",
-    "text": "An empirical model of bed nets\n\nBertozzi-Villa et al show that access and crop are not linearly related (at the country level).\nThis can have big implication when costing a bet net campaign.\n\n\n\n\n\n\n\n\n\nBertozzi-Villa et al., ‘Maps and Metrics of Insecticide-Treated Net Access, Use, and Nets-per-Capita in Africa from 2000-2020’. Nat Comms (2021)."
   }
 ]

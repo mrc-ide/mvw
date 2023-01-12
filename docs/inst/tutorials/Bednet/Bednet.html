@@ -298,7 +298,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(netz)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Our estimates of the distributions</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>fitted_intput <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.13</span>, <span class="fl">0.15</span>, <span class="fl">0.53</span>, <span class="fl">0.33</span>, <span class="fl">0.16</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>fitted_input <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.13</span>, <span class="fl">0.15</span>, <span class="fl">0.53</span>, <span class="fl">0.33</span>, <span class="fl">0.16</span>)</span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>year <span class="ot">&lt;-</span> <span class="dv">365</span></span>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>timesteps <span class="ot">&lt;-</span> <span class="dv">10</span> <span class="sc">*</span> year</span>
@@ -312,7 +312,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Estimate population usage over time</span></span>
 <span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>pu <span class="ot">&lt;-</span> <span class="fu">population_usage</span>(</span>
 <span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">timesteps =</span> timesteps,</span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">distribution =</span> fitted_intput,</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">distribution =</span> fitted_input,</span>
 <span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">distribution_timesteps =</span> distribution_tt,</span>
 <span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">half_life =</span> net_hl)</span>
 <span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the results against the target</span></span>
@@ -496,10 +496,10 @@ session$onSessionEnded(function() {
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "malarisimulation-dist-1", 
     question = structure("More frequent distributions", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_274fe6e", 
+    "character")), answers = list(structure(list(id = "lnr_ans_86b0346", 
         option = "Increase", value = "Increase", label = structure("Increase", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_b894177", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_139d741", 
         option = "Decrease", value = "Decrease", label = structure("Decrease", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
     "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
@@ -510,17 +510,17 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "malarisimulation-dist-1-answer", question = "malarisimulation-dist-1"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = FALSE, 
-    seed = 1114430536.48105, options = list()), class = c("learnr_radio", 
+    seed = 398376123.314492, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "malarisimulation-dist-2", 
     question = structure("Larger distributions", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_37c6f2b", 
+    "character")), answers = list(structure(list(id = "lnr_ans_981e0c3", 
         option = "Increase", value = "Increase", label = structure("Increase", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_ac86de3", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_730ba56", 
         option = "Decrease", value = "Decrease", label = structure("Decrease", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
     "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
@@ -531,17 +531,17 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "malarisimulation-dist-2-answer", question = "malarisimulation-dist-2"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = FALSE, 
-    seed = 364515299.830259, options = list()), class = c("learnr_radio", 
+    seed = 483346016.774924, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "malarisimulation-dist-3", 
     question = structure("Shorter retention halflife", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_a6ce744", 
+    "character")), answers = list(structure(list(id = "lnr_ans_78c6d88", 
         option = "Increase", value = "Increase", label = structure("Increase", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_2078397", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_541eb76", 
         option = "Decrease", value = "Decrease", label = structure("Decrease", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
     "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
@@ -552,20 +552,20 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "malarisimulation-dist-3-answer", question = "malarisimulation-dist-3"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = FALSE, 
-    seed = 1939999590.59662, options = list()), class = c("learnr_radio", 
+    seed = 1509894662.7969, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "malarisimulation-dist-4", 
-    question = structure("3-yearly mass distribuiotns versus annual continuous distribution", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_6c1e489", 
+    question = structure("3-yearly mass distributions versus annual continuous distribution", html = TRUE, class = c("html", 
+    "character")), answers = list(structure(list(id = "lnr_ans_52d84f2", 
         option = "Increase", value = "Increase", label = structure("Increase", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_700a323", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_73c61da", 
         option = "Decrease", value = "Decrease", label = structure("Decrease", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_b87f480", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_7b158ca", 
         option = "It depends!", value = "It depends!", label = structure("It depends!", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
     "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
@@ -576,7 +576,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "malarisimulation-dist-4-answer", question = "malarisimulation-dist-4"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = FALSE, 
-    seed = 811422672.622152, options = list()), class = c("learnr_radio", 
+    seed = 9144889.99574158, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
  
@@ -640,12 +640,12 @@ learnr:::store_exercise_cache(structure(list(label = "plot-dist", global_setup =
     code = "library(netz)\n", opts = list(label = "\"plot-dist\"", 
         exercise = "TRUE"), engine = "r")), code_check = NULL, 
     error_check = NULL, check = NULL, solution = structure(c("library(netz)", 
-    "", "# Our estimates of the distributions", "fitted_intput <- c(0.13, 0.15, 0.53, 0.33, 0.16)", 
+    "", "# Our estimates of the distributions", "fitted_input <- c(0.13, 0.15, 0.53, 0.33, 0.16)", 
     "", "year <- 365", "timesteps <- 10 * year", "net_hl <- 5 * year", 
     "", "# Target usage associated time points", "target <- c(0.12, 0.18, 0.45, 0.50, 0.40)", 
     "target_tt <- floor((c(1, 3, 5, 7, 9) - 0.5) * year)", "# Time points at which distribution will occur", 
     "distribution_tt <- 1 + c(0, 1, 3, 6, 7) * year", "# Estimate population usage over time", 
-    "pu <- population_usage(", "  timesteps = timesteps,", "  distribution = fitted_intput,", 
+    "pu <- population_usage(", "  timesteps = timesteps,", "  distribution = fitted_input,", 
     "  distribution_timesteps = distribution_tt,", "  half_life = net_hl)", 
     "# Plot the results against the target", "plot(1:timesteps, pu, t = \"l\", ylim = c(0, 0.8), ylab = \"Population usage\", xlab = \"Time\")", 
     "points(target ~ target_tt, col = \"dodgerblue\", pch = 19)"
@@ -678,16 +678,16 @@ learnr:::store_exercise_cache(structure(list(label = "plot-dist", global_setup =
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "metric-def-1", 
     question = structure("The total number of nets in the population", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_fae0c0d", 
+    "character")), answers = list(structure(list(id = "lnr_ans_e83a02e", 
         option = "Distribution", value = "Distribution", label = structure("Distribution", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_ca464f2", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_3bd1a88", 
         option = "Crop", value = "Crop", label = structure("Crop", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_d3ccb6b", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_e0d03df", 
         option = "Access", value = "Access", label = structure("Access", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_5c63237", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_7b76921", 
         option = "Usage", value = "Usage", label = structure("Usage", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
     "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
@@ -698,23 +698,23 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "metric-def-1-answer", question = "metric-def-1"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = FALSE, 
-    seed = 1376965555.3588, options = list()), class = c("learnr_radio", 
+    seed = 1671280665.72175, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "metric-def-2", 
     question = structure("The proportion of people who have slept under a bed net the previous night", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_fb8f904", 
+    "character")), answers = list(structure(list(id = "lnr_ans_5702b85", 
         option = "Distribution", value = "Distribution", label = structure("Distribution", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_e7ea29b", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_d0b11c3", 
         option = "Crop", value = "Crop", label = structure("Crop", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_7c1ce5d", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_ae59c66", 
         option = "Access", value = "Access", label = structure("Access", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_e15dce6", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_258494c", 
         option = "Usage", value = "Usage", label = structure("Usage", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
     "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
@@ -725,23 +725,23 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "metric-def-2-answer", question = "metric-def-2"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = FALSE, 
-    seed = 1532784994.28624, options = list()), class = c("learnr_radio", 
+    seed = 385580038.82045, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "metric-def-3", 
     question = structure("The number of nets distributed", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_49a2141", 
+    "character")), answers = list(structure(list(id = "lnr_ans_e1f35cb", 
         option = "Distribution", value = "Distribution", label = structure("Distribution", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_2daa908", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_256a9a3", 
         option = "Crop", value = "Crop", label = structure("Crop", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_f5fd766", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_be1f00d", 
         option = "Access", value = "Access", label = structure("Access", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_e0ce75d", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_6de5221", 
         option = "Usage", value = "Usage", label = structure("Usage", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
     "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
@@ -752,23 +752,23 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "metric-def-3-answer", question = "metric-def-3"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = FALSE, 
-    seed = 1936193600.09839, options = list()), class = c("learnr_radio", 
+    seed = 207094034.403564, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "metric-def-4", 
     question = structure("The proportion of the population that could sleep under a net", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_ce42f28", 
+    "character")), answers = list(structure(list(id = "lnr_ans_3d874fd", 
         option = "Distribution", value = "Distribution", label = structure("Distribution", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_9744ae9", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_e04fc5b", 
         option = "Crop", value = "Crop", label = structure("Crop", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_12aa39d", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_9406f", 
         option = "Access", value = "Access", label = structure("Access", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_53589fc", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_3eae08d", 
         option = "Usage", value = "Usage", label = structure("Usage", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
     "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
@@ -779,7 +779,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "metric-def-4-answer", question = "metric-def-4"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = FALSE, 
-    seed = 569223195.734935, options = list()), class = c("learnr_radio", 
+    seed = 1897814652.61626, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
  
@@ -825,16 +825,16 @@ learnr:::store_exercise_cache(structure(list(label = "access-usage", global_setu
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "access-usage-quiz-1", 
     question = structure("What is the usage rate in Nigeria?", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_323fb31", 
+    "character")), answers = list(structure(list(id = "lnr_ans_652eaeb", 
         option = "0.9376562", value = "0.9376562", label = structure("0.9376562", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_12771c0", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_d5c9214", 
         option = "0.8901211", value = "0.8901211", label = structure("0.8901211", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_2580de8", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_6d2f2a8", 
         option = "0.8795992", value = "0.8795992", label = structure("0.8795992", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_ebf4698", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_3a67030", 
         option = "0.6942281", value = "0.6942281", label = structure("0.6942281", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
     "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
@@ -845,23 +845,23 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "access-usage-quiz-1-answer", question = "access-usage-quiz-1"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = FALSE, 
-    seed = 1731166794.19386, options = list()), class = c("learnr_radio", 
+    seed = 388529501.319077, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "access-usage-quiz-2", 
     question = structure("What is the usage in Burkina Faso if access is 62%", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_b5405ef", 
+    "character")), answers = list(structure(list(id = "lnr_ans_7698665", 
         option = "0.5537472", value = "0.5537472", label = structure("0.5537472", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_468f81c", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_2f84794", 
         option = "0.6494372", value = "0.6494372", label = structure("0.6494372", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_b739a54", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_df8fe02", 
         option = "0.4328341", value = "0.4328341", label = structure("0.4328341", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_afcbbf3", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_4166681", 
         option = "0.5100225", value = "0.5100225", label = structure("0.5100225", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
     "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
@@ -872,24 +872,24 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "access-usage-quiz-2-answer", question = "access-usage-quiz-2"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = FALSE, 
-    seed = 2113437570.51585, options = list()), class = c("learnr_radio", 
+    seed = 394406970.81634, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "access-usage-quiz-3", 
     question = structure("Which country uses accessible nets most efficiently?", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_7734eac", 
+    "character")), answers = list(structure(list(id = "lnr_ans_1c2a22", 
         option = "Zambia", value = "Zambia", label = structure("Zambia", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_4bed820", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_b05a26", 
         option = "Tanzania", value = "Tanzania", label = structure("Tanzania", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_2641905", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_4150f0d", 
         option = "Scotland", value = "Scotland", label = structure("Scotland", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = structure("Time for coffee I think!", html = TRUE, class = c("html", 
         "character")), type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_e6082cc", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_fe6a6ac", 
         option = "Benin", value = "Benin", label = structure("Benin", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
     "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
@@ -900,7 +900,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "access-usage-quiz-3-answer", question = "access-usage-quiz-3"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = FALSE, 
-    seed = 682979824.181963, options = list()), class = c("learnr_radio", 
+    seed = 129333496.939774, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
  
