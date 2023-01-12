@@ -13,7 +13,7 @@ from: markdown+emoji
 
 -   [Bed nets](https://mrc-ide.github.io/mvw/presentations/3_Bed_nets.html)
 
--   [Umbrella, treasure and om](https://mrc-ide.github.io/mvw/presentations/4_Lightning_round.html)
+-   [Lighting round: Umbrella, treasure & om](https://mrc-ide.github.io/mvw/presentations/4_Lightning_round.html)
 
 -   [Discussion/Feedback](https://mrc-ide.github.io/mvw/presentations/5_Discussion.html)
 

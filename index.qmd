@@ -5,8 +5,7 @@ from: markdown+emoji
 
 ![](presentations/images/malariaverse.gif){fig-align="center" width="40%" height="40%"}
 
-An interactive workshop to provide an overview of how to use :package: [malariasimulation] 
-and the malariaverse to run context-specific simulations for a country or region.
+An interactive workshop to provide an overview of how to use :package: \[malariasimulation\] and the malariaverse to run context-specific simulations for a country or region.
 
 ## Workshop details
 
@@ -22,8 +21,8 @@ and the malariaverse to run context-specific simulations for a country or region
 
 Please make sure you have the following installed:
 
-1.  An up-to-date (Version >=4.2.0) [installation of R](https://www.r-project.org/). Please note, for those updating to R version 4.2 and above who have not updated recently you may also require an updated version of [Rtools](https://cran.r-project.org/bin/windows/Rtools/rtools42/rtools.html).
-2.  An up-to-date (Version >= 2022.12.0) [installation of RStudio](https://posit.co/download/rstudio-desktop/). See help->check for updates.
+1.  An up-to-date (Version \>=4.2.0) [installation of R](https://www.r-project.org/). Please note, for those updating to R version 4.2 and above who have not updated recently you may also require an updated version of [Rtools](https://cran.r-project.org/bin/windows/Rtools/rtools42/rtools.html).
+2.  An up-to-date (Version \>= 2022.12.0) [installation of RStudio](https://posit.co/download/rstudio-desktop/). See help-\>check for updates.
 3.  The workshop :package: \[mvw\]
 4.  The malariaverse :package: \[malariasimulation, foresite, site, netz, cali\]
 
@@ -76,5 +75,5 @@ If you can't, please contact Pete *before* the workshop, by 30/01/2023 latest.
 | 12:50 - 13:30 | *Lunch break* (Lunch provided)             |
 | 13:30 - 15:00 | Bed nets                                   |
 | 15:00 - 15:30 | *Coffee break*                             |
-| 15:30 - 16:15 | Lighting round: om, umbrella, treasure     |
+| 15:30 - 16:15 | Lighting round: umbrella, treasure & om    |
 | 16:15 - 17:00 | Feedback/Discussion                        |

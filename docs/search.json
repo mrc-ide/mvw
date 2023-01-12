@@ -32,7 +32,7 @@
     "href": "index.html#schedule",
     "title": "Malariaverse Workshop",
     "section": "Schedule",
-    "text": "Schedule\n\n\n\nTime\nActivity\n\n\n\n\n09:30 - 11:00\nIntroduction to context-specific modelling\n\n\n11:00 - 11:20\nCoffee break\n\n\n11:20 - 12:50\nCalibrating a site\n\n\n12:50 - 13:30\nLunch break (Lunch provided)\n\n\n13:30 - 15:00\nBed nets\n\n\n15:00 - 15:30\nCoffee break\n\n\n15:30 - 16:15\nLighting round: om, umbrella, treasure\n\n\n16:15 - 17:00\nFeedback/Discussion"
+    "text": "Schedule\n\n\n\nTime\nActivity\n\n\n\n\n09:30 - 11:00\nIntroduction to context-specific modelling\n\n\n11:00 - 11:20\nCoffee break\n\n\n11:20 - 12:50\nCalibrating a site\n\n\n12:50 - 13:30\nLunch break (Lunch provided)\n\n\n13:30 - 15:00\nBed nets\n\n\n15:00 - 15:30\nCoffee break\n\n\n15:30 - 16:15\nLighting round: umbrella, treasure & om\n\n\n16:15 - 17:00\nFeedback/Discussion"
   },
   {
     "objectID": "inst/tutorials/Bednet/Bednet.html",
@@ -109,7 +109,7 @@
     "href": "materials.html",
     "title": "Malariaverse Workshop",
     "section": "",
-    "text": "Introduction\nCalibration\nBed nets\nUmbrella, treasure and om\nDiscussion/Feedback\n\n\n\n\nWorkshop practicals are included as part of the 📦 [mvw]. They can be accessed using the run_tutorial() function.\n\nmvw::run_tutorial(\"Introduction\")\nmvw::run_tutorial(\"Calibration\")\nmvw::run_tutorial(\"Bednet\")"
+    "text": "Introduction\nCalibration\nBed nets\nLighting round: Umbrella, treasure & om\nDiscussion/Feedback\n\n\n\n\nWorkshop practicals are included as part of the 📦 [mvw]. They can be accessed using the run_tutorial() function.\n\nmvw::run_tutorial(\"Introduction\")\nmvw::run_tutorial(\"Calibration\")\nmvw::run_tutorial(\"Bednet\")"
   },
   {
     "objectID": "presentations/1_Introduction.html#welcome-all",
@@ -520,70 +520,77 @@
   {
     "objectID": "presentations/4_Lightning_round.html#session-aims",
     "href": "presentations/4_Lightning_round.html#session-aims",
-    "title": "Malariaverse Workshop Lightning round",
+    "title": "Malariaverse Workshop Lightning round: Umbrella, treasure & om",
     "section": "Session aims:",
     "text": "Session aims:\n\nA whistle-stop tour of some other malariaverse packages\numbrella: for fitting seasonal profiles\ntreasure: unit costing\nom: for (budget-constrained) stratification optimisation"
   },
   {
     "objectID": "presentations/4_Lightning_round.html#umbrella",
     "href": "presentations/4_Lightning_round.html#umbrella",
-    "title": "Malariaverse Workshop Lightning round",
+    "title": "Malariaverse Workshop Lightning round: Umbrella, treasure & om",
     "section": "Umbrella",
-    "text": "Umbrella\n\n📦 [malariasimulation] captures the seasonality in transmission using fourier series parameters fitted to rainfall data.\n📦 [umbrella] includes some simple functionality to fit these parameters.\n📦 [umbrella] also has some helper functions to download CHIRPS rainfall “data”.\nsite_file$seasonality has fitted seasonal parameters for the default sites."
+    "text": "Umbrella\n\n📦 [malariasimulation] captures the seasonality in transmission using fourier series parameters fitted to rainfall data.\n📦 [umbrella] includes some simple functionality to fit these parameters.\n📦 [umbrella] also has some helper functions to download CHIRPS rainfall “data” ^1”.\nsite_file$seasonality has fitted seasonal parameters for the default sites.\n\n\n\n\nhttps://www.chc.ucsb.edu/data/chirps"
   },
   {
     "objectID": "presentations/4_Lightning_round.html#umbrella-workflow",
     "href": "presentations/4_Lightning_round.html#umbrella-workflow",
-    "title": "Malariaverse Workshop Lightning round",
+    "title": "Malariaverse Workshop Lightning round: Umbrella, treasure & om",
     "section": "Umbrella workflow",
-    "text": "Umbrella workflow\n\nDefine your spatial data. This will be spatial polygon(s). I like to use the 📦 [sf] for spatial data. (I have downloaded and processed sf files associated with all sites.)\nAccess satellite rainfall “data” rasters for the region/period/resolution you require\nExtract rainfall data associated with your spatial units\nUse umbrella::fit_fourier() to fit parameters that can be used in a site file, or directly in 📦 [malariasimulation]."
+    "text": "Umbrella workflow\n\nDefine your spatial data. This will be spatial polygon(s). I like to use the 📦 [sf] for spatial data. (I have downloaded and processed sf files associated with all sites: contact me for a link.)\nAccess satellite rainfall “data” rasters for the region/period/resolution you require\nExtract rainfall data associated with your spatial units\nUse umbrella::fit_fourier() to fit parameters that can be used in a site file, or directly in 📦 [malariasimulation]."
   },
   {
     "objectID": "presentations/4_Lightning_round.html#umbrella-caveats",
     "href": "presentations/4_Lightning_round.html#umbrella-caveats",
-    "title": "Malariaverse Workshop Lightning round",
+    "title": "Malariaverse Workshop Lightning round: Umbrella, treasure & om",
     "section": "Umbrella caveats",
-    "text": "Umbrella caveats\n\nUsually use a single, representative seasonal profile for sites.\n\n\nNeeded for forwards projections\nMay miss inter- and intra-annual variation of interest\n\n\nThe assumption that ⬆️ rain = ⬆️ mosquitoes = ⬆️ malaria does not always hold!"
+    "text": "Umbrella caveats\n\nUsually use a single, representative seasonal profile for sites.\n\nNeeded for forwards projections\nMay miss inter- and intra-annual variation of interest\n\nThe assumption that ⬆️ rain = ⬆️ mosquitoes = ⬆️ malaria does not always hold!"
   },
   {
     "objectID": "presentations/4_Lightning_round.html#umbrella-info",
     "href": "presentations/4_Lightning_round.html#umbrella-info",
-    "title": "Malariaverse Workshop Lightning round",
+    "title": "Malariaverse Workshop Lightning round: Umbrella, treasure & om",
     "section": "Umbrella info",
     "text": "Umbrella info\n\nCheck out the umbrella website for more information and a simple introduction vignette."
   },
   {
     "objectID": "presentations/4_Lightning_round.html#treasure",
     "href": "presentations/4_Lightning_round.html#treasure",
-    "title": "Malariaverse Workshop Lightning round",
+    "title": "Malariaverse Workshop Lightning round: Umbrella, treasure & om",
     "section": "treasure",
     "text": "treasure\n\n📦 treasure, is a simple repository for unit costing information that has been used to cost out large global/country scenarios\nMostly serves as a single, version controlled reference for unit costs collected from the literature, WHO and Global Fund.\nNo time- or country-specific costing information.\nIf anyone is interested in improving the database, please let me know!"
   },
   {
+    "objectID": "presentations/4_Lightning_round.html#treasure-info",
+    "href": "presentations/4_Lightning_round.html#treasure-info",
+    "title": "Malariaverse Workshop Lightning round: Umbrella, treasure & om",
+    "section": "Treasure info",
+    "text": "Treasure info\n\nCheck out the treasure website for more information."
+  },
+  {
     "objectID": "presentations/4_Lightning_round.html#om",
     "href": "presentations/4_Lightning_round.html#om",
-    "title": "Malariaverse Workshop Lightning round",
+    "title": "Malariaverse Workshop Lightning round: Umbrella, treasure & om",
     "section": "om",
     "text": "om\n\nA common challenge is finding the optimum package of interventions across a country, where interventions can be targeted sub-nationally.\nOften this question is asked with the additional constraint of a finite budget.\n📦 om is here to help!"
   },
   {
     "objectID": "presentations/4_Lightning_round.html#om-inputs",
     "href": "presentations/4_Lightning_round.html#om-inputs",
-    "title": "Malariaverse Workshop Lightning round",
+    "title": "Malariaverse Workshop Lightning round: Umbrella, treasure & om",
     "section": "om inputs",
     "text": "om inputs\n\n📦 om requires specific inputs to work:\nAn impact matrix giving details of the outcome measure we are optimising, for example cases averted. Each row of the matrix is a sub-unit (e.g. district) and each column a unique intervention package.\nA cost matrix giving details of the associated cost of each option in the impact matrix\nA budget"
   },
   {
     "objectID": "presentations/4_Lightning_round.html#om-and-complex-budgets",
     "href": "presentations/4_Lightning_round.html#om-and-complex-budgets",
-    "title": "Malariaverse Workshop Lightning round",
+    "title": "Malariaverse Workshop Lightning round: Umbrella, treasure & om",
     "section": "om and complex budgets",
     "text": "om and complex budgets\n\nThe budget specification in 📦 om can be simple: e.g. $100\nIt can also be more complex. For example we might want to optimise the intervention packages across 5 countries, where each country has a domestic budget (to be spent internally) as well as a shared regional budget."
   },
   {
     "objectID": "presentations/4_Lightning_round.html#om-info",
     "href": "presentations/4_Lightning_round.html#om-info",
-    "title": "Malariaverse Workshop Lightning round",
+    "title": "Malariaverse Workshop Lightning round: Umbrella, treasure & om",
     "section": "om info",
     "text": "om info\n\nCheck out the om website for more information, a simple introduction vignette and a guide for implementing complex budgets."
   },

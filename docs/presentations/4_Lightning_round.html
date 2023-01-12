@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.2.269">
 
   <meta name="author" content="Pete Winskill">
-  <title>Malariaverse Workshop - Malariaverse Workshop Lightning round</title>
+  <title>Malariaverse Workshop - Malariaverse Workshop Lightning round: Umbrella, treasure &amp; om</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -325,7 +325,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Malariaverse Workshop Lightning round</h1>
+  <h1 class="title">Malariaverse Workshop Lightning round: Umbrella, treasure &amp; om</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -348,21 +348,30 @@ Pete Winskill
 <img data-src="images/Guinea-Pig-bald.jpg" class="r-stretch quarto-figure-center"></section>
 <section id="section" class="slide level2">
 <h2></h2>
-
-<img data-src="images/umbrella.png" class="r-stretch quarto-figure-center"></section>
-<section id="umbrella" class="slide level2">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/umbrella.png" style="width:50.0%;height:50.0%"></p>
+</figure>
+</div>
+</section>
+<section id="umbrella" class="slide level2 smaller">
 <h2>Umbrella</h2>
 <ul>
 <li><span class="emoji" data-emoji="package">📦</span> [malariasimulation] captures the seasonality in transmission using fourier series parameters fitted to rainfall data.</li>
 <li><span class="emoji" data-emoji="package">📦</span> [umbrella] includes some simple functionality to fit these parameters.</li>
-<li><span class="emoji" data-emoji="package">📦</span> [umbrella] also has some helper functions to download CHIRPS rainfall “data”.</li>
+<li><span class="emoji" data-emoji="package">📦</span> [umbrella] also has some helper functions to download CHIRPS rainfall “data” ^1”.</li>
 <li><code>site_file$seasonality</code> has fitted seasonal parameters for the default sites.</li>
 </ul>
-</section>
+
+<aside><div>
+<ol type="1">
+<li>https://www.chc.ucsb.edu/data/chirps</li>
+</ol>
+</div></aside></section>
 <section id="umbrella-workflow" class="slide level2">
 <h2>Umbrella workflow</h2>
 <ol type="1">
-<li>Define your spatial data. This will be spatial polygon(s). I like to use the <span class="emoji" data-emoji="package">📦</span> [sf] for spatial data. (I have downloaded and processed <code>sf</code> files associated with all sites.)</li>
+<li>Define your spatial data. This will be spatial polygon(s). I like to use the <span class="emoji" data-emoji="package">📦</span> [sf] for spatial data. (I have downloaded and processed <code>sf</code> files associated with all sites: contact me for a link.)</li>
 <li>Access satellite rainfall “data” rasters for the region/period/resolution you require</li>
 <li>Extract rainfall data associated with your spatial units</li>
 <li>Use <code>umbrella::fit_fourier()</code> to fit parameters that can be used in a site file, or directly in <span class="emoji" data-emoji="package">📦</span> [malariasimulation].</li>
@@ -371,14 +380,12 @@ Pete Winskill
 <section id="umbrella-caveats" class="slide level2">
 <h2>Umbrella caveats</h2>
 <ol type="1">
-<li>Usually use a single, representative seasonal profile for sites.</li>
-</ol>
+<li><p>Usually use a single, representative seasonal profile for sites.</p>
 <ul>
 <li>Needed for forwards projections</li>
 <li>May miss inter- and intra-annual variation of interest</li>
-</ul>
-<ol start="2" type="1">
-<li>The assumption that <span class="emoji" data-emoji="arrow_up">⬆️</span> rain = <span class="emoji" data-emoji="arrow_up">⬆️</span> mosquitoes = <span class="emoji" data-emoji="arrow_up">⬆️</span> malaria does not always hold!</li>
+</ul></li>
+<li><p>The assumption that <span class="emoji" data-emoji="arrow_up">⬆️</span> rain = <span class="emoji" data-emoji="arrow_up">⬆️</span> mosquitoes = <span class="emoji" data-emoji="arrow_up">⬆️</span> malaria does not always hold!</p></li>
 </ol>
 </section>
 <section id="umbrella-info" class="slide level2">
@@ -386,11 +393,20 @@ Pete Winskill
 <ul>
 <li>Check out the <a href="https://mrc-ide.github.io/umbrella/">umbrella website</a> for more information and a simple introduction vignette.</li>
 </ul>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/umbrella_site.png" style="width:50.0%;height:50.0%"></p>
+</figure>
+</div>
 </section>
 <section id="section-1" class="slide level2">
 <h2></h2>
-
-<img data-src="images/treasure.png" class="r-stretch quarto-figure-center"></section>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/treasure.png" style="width:50.0%;height:50.0%"></p>
+</figure>
+</div>
+</section>
 <section id="treasure" class="slide level2">
 <h2>treasure</h2>
 <ul>
@@ -400,10 +416,25 @@ Pete Winskill
 <li>If anyone is interested in improving the database, please let me know!</li>
 </ul>
 </section>
+<section id="treasure-info" class="slide level2">
+<h2>Treasure info</h2>
+<ul>
+<li>Check out the <a href="https://mrc-ide.github.io/treasure/">treasure website</a> for more information.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/treasure_site.png" style="width:50.0%;height:50.0%"></p>
+</figure>
+</div>
+</section>
 <section id="section-2" class="slide level2">
 <h2></h2>
-
-<img data-src="images/om.png" class="r-stretch quarto-figure-center"></section>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/om.png" style="width:50.0%;height:50.0%"></p>
+</figure>
+</div>
+</section>
 <section id="om" class="slide level2">
 <h2>om</h2>
 <ul>
@@ -433,9 +464,14 @@ Pete Winskill
 <ul>
 <li>Check out the <a href="https://mrc-ide.github.io/om/index.html">om website</a> for more information, a simple introduction vignette and a guide for implementing complex budgets.</li>
 </ul>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/om_site.png" style="width:50.0%;height:50.0%"></p>
+</figure>
+</div>
 
-
-<img src="images/malariaverse.gif" class="slide-logo r-stretch"><div class="footer footer-default">
+<p><img src="images/malariaverse.gif" class="slide-logo"></p>
+<div class="footer footer-default">
 
 </div>
 </section>
