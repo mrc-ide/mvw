@@ -32,7 +32,7 @@
     "href": "index.html#schedule",
     "title": "Malariaverse Workshop",
     "section": "Schedule",
-    "text": "Schedule\n\n\n\nTime\nActivity\n\n\n\n\n09:30 - 11:00\nIntroduction to context-specific modelling\n\n\n11:00 - 11:20\nCoffee break\n\n\n11:20 - 12:50\nCalibrating a site\n\n\n12:50 - 13:30\nLunch break (Lunch provided)\n\n\n13:30 - 15:00\nBed nets\n\n\n15:00 - 15:30\nCoffee break\n\n\n15:30 - 16:15\nLighting round: umbrella, treasure & om\n\n\n16:15 - 17:00\nFeedback/Discussion"
+    "text": "Schedule\n\n\n\nTime\nActivity\n\n\n\n\n09:30 - 11:00\nIntroduction to context-specific modelling\n\n\n11:00 - 11:20\nCoffee break\n\n\n11:20 - 12:50\nCalibrating a site\n\n\n12:50 - 13:30\nLunch break (Lunch provided)\n\n\n13:30 - 15:00\nBed nets\n\n\n15:00 - 15:30\nCoffee break\n\n\n15:30 - 16:15\nLighting round: umbrella, treasure & om\n\n\n16:15 - 17:00\nFeedback & Discussion\n\n\n17:30 - 20:00\nOptional social at the Mitre"
   },
   {
     "objectID": "inst/tutorials/Bednet/Bednet.html",
@@ -109,7 +109,7 @@
     "href": "materials.html",
     "title": "Malariaverse Workshop",
     "section": "",
-    "text": "Introduction\nCalibration\nBed nets\nLighting round: Umbrella, treasure & om\nDiscussion/Feedback\n\n\n\n\nWorkshop practicals are included as part of the 📦 [mvw]. They can be accessed using the run_tutorial() function.\n\nmvw::run_tutorial(\"Introduction\")\nmvw::run_tutorial(\"Calibration\")\nmvw::run_tutorial(\"Bednet\")"
+    "text": "Introduction\nCalibration\nBed nets\nLighting round: Umbrella, treasure & om\nFeedback & Discussion\n\n\n\n\nWorkshop practicals are included as part of the 📦 [mvw]. They can be accessed using the run_tutorial() function.\n\nmvw::run_tutorial(\"Introduction\")\nmvw::run_tutorial(\"Calibration\")\nmvw::run_tutorial(\"Bednet\")"
   },
   {
     "objectID": "presentations/1_Introduction.html#welcome-all",
@@ -595,6 +595,13 @@
     "text": "om info\n\nCheck out the om website for more information, a simple introduction vignette and a guide for implementing complex budgets."
   },
   {
+    "objectID": "presentations/5_Discussion.html#preparing-for-a-world-post-malariaverse-workshop",
+    "href": "presentations/5_Discussion.html#preparing-for-a-world-post-malariaverse-workshop",
+    "title": "Malariaverse Workshop Feedback & Discussion",
+    "section": "Preparing for a world post malariaverse workshop 🤩",
+    "text": "Preparing for a world post malariaverse workshop 🤩\n\nEncourage people to try out malariaverse packages!\nPlease do check out the ? help and vignettes.\nIssues:\n\nAsk each other.\nPost in the malariaverse teams channel (in the DIDE malaria modelling group team).\nSubmit an issue on the relevant package github page.\nSuggest features or fix bugs with a PR request."
+  },
+  {
     "objectID": "presentations/5_Discussion.html#new-features",
     "href": "presentations/5_Discussion.html#new-features",
     "title": "Malariaverse Workshop Feedback & Discussion",
@@ -630,10 +637,10 @@
     "text": "…and now!"
   },
   {
-    "objectID": "presentations/5_Discussion.html#preparing-for-a-world-post-malariaverse-workshop",
-    "href": "presentations/5_Discussion.html#preparing-for-a-world-post-malariaverse-workshop",
+    "objectID": "presentations/5_Discussion.html#social",
+    "href": "presentations/5_Discussion.html#social",
     "title": "Malariaverse Workshop Feedback & Discussion",
-    "section": "Preparing for a world post malariaverse workshop 🤩",
-    "text": "Preparing for a world post malariaverse workshop 🤩\n\nEncourage people to try out malariaverse packages!\nPlease do check out the ? help and vignettes.\nIssues:\n\nAsk each other.\nPost in the malariaverse teams channel (in the DIDE malaria modelling group team).\nSubmit an issue on the relevant package github page.\nSuggest features or fix bugs with a PR request."
+    "section": "Social",
+    "text": "Social\nOptional social at the Mitre.\nAn area reserved 1730-2000.\n🥰 All welcome 🥰"
   }
 ]

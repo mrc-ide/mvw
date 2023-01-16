@@ -12,30 +12,30 @@ from: markdown+emoji
 
 ## Preparing for a world post malariaverse workshop :star_struck: {.smaller}
 
-*   Encourage people to try out malariaverse packages!
-*   Please do check out the `?` help and vignettes.
-*   Issues:
-    +   Ask each other.
-    +   Post in the malariaverse teams channel (in the DIDE malaria modelling group team).
-    +   Submit an issue on the relevant package github page.
-    +   Suggest features or fix bugs with a PR request.
+-   Encourage people to try out malariaverse packages!
+-   Please do check out the `?` help and vignettes.
+-   Issues:
+    -   Ask each other.
+    -   Post in the malariaverse teams channel (in the DIDE malaria modelling group team).
+    -   Submit an issue on the relevant package github page.
+    -   Suggest features or fix bugs with a PR request.
 
 ## New features
 
-*   Overview of Effort vs Impact exercise
+-   Overview of Effort vs Impact exercise
 
 ## Future development
 
-*   How do we find the balance between the model being fast or being easy to edit and user-friendly?
+-   How do we find the balance between the model being fast or being easy to edit and user-friendly?
 
 ![](images/scales.png){fig-align="center"}
 
 ## Feedback on the workshop
 
-*   Too little? Too Much?
-*   Missing information/topics
-*   Format (presentations and tutorials)
-*   ...Go steady with the guinea pig pictures Pete!
+-   Too little? Too Much?
+-   Missing information/topics
+-   Format (presentations and tutorials)
+-   ...Go steady with the guinea pig pictures Pete!
 
 ![](images/thumbs.png){fig-align="center"}
 
@@ -45,4 +45,16 @@ from: markdown+emoji
 
 ## ...and now!
 
+::: {layout="[[-1], [1], [-1]]"}
 ![](images/Guinea-Pig-beer.jpg){fig-align="center"}
+:::
+
+## Social
+
+Optional social at the Mitre.
+
+An area reserved 1730-2000.
+
+:smiling_face_with_three_hearts: All welcome :smiling_face_with_three_hearts:
+
+![](images/mitre_directions.png){fig-align="center" width="30%" height="30%"}
