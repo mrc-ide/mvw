@@ -502,7 +502,7 @@ Pete Winskill
 <div class="column" style="width:40%;">
 <ul>
 <li>Bertozzi-Villa <em>et al</em> show that access and crop are not linearly related (at the country level).</li>
-<li>This can have big implication when costing a bet net campaign.</li>
+<li>This can have big implications when costing a bet net campaign.</li>
 </ul>
 </div><div class="column" style="width:60%;">
 <div class="quarto-figure quarto-figure-center">
@@ -557,11 +557,15 @@ Pete Winskill
 <ul>
 <li><p>Usage: the proportion of people who have slept under a bed net the previous night. This is effective coverage.</p></li>
 <li><p>Access: the proportion of the population that could sleep under a net.</p></li>
-<li><p><span class="emoji" data-emoji="package">📦</span> [netz] has functions to convert between usage and access:</p></li>
+<li><p><span class="emoji" data-emoji="package">📦</span> [netz] has functions to convert between usage and access:</p>
+<ul>
 <li><p><code>netz::usage_to_access(usage = 0.5, use_rate = 0.8)</code></p></li>
 <li><p><code>netz::access_to_usage(access = 0.5, use_rate = 0.8)</code></p></li>
-<li><p>You can view empirical estimates of country use rates with:</p></li>
-<li><p><code>netz::get_usage_rate_data()</code></p></li>
+</ul></li>
+<li><p>You can view empirical estimates of country use rates with:</p>
+<ul>
+<li><code>netz::get_usage_rate_data()</code></li>
+</ul></li>
 </ul>
 </section>
 <section id="access-and-crop" class="slide level2 smaller">
@@ -569,9 +573,11 @@ Pete Winskill
 <ul>
 <li><p>Access: the proportion of the population that could sleep under a net.</p></li>
 <li><p>Crop: the total number of nets in the population. Crop increases with net distributions and decreases as nets are worn out and thrown away over time.</p></li>
-<li><p><span class="emoji" data-emoji="package">📦</span> [netz] has functions to convert between access and crop:</p></li>
+<li><p><span class="emoji" data-emoji="package">📦</span> [netz] has functions to convert between access and crop:</p>
+<ul>
 <li><p><code>netz::access_to_crop(access = 0.5)</code></p></li>
 <li><p><code>netz::crop_to_access(crop = 0.5)</code></p></li>
+</ul></li>
 </ul>
 </section>
 <section id="crop-and-distributions" class="slide level2 smaller">
@@ -579,19 +585,25 @@ Pete Winskill
 <ul>
 <li><p>Crop: the total number of nets in the population. Crop increases with net distributions and decreases as nets are worn out and thrown away over time.</p></li>
 <li><p>Distribution: Nets distributed. These may be via mass-distributions or continuous distribution routes.</p></li>
-<li><p><span class="emoji" data-emoji="package">📦</span> [netz] has functions to convert between crop and distribution:</p></li>
+<li><p><span class="emoji" data-emoji="package">📦</span> [netz] has functions to convert between crop and distribution:</p>
+<ul>
 <li><p><code>netz::crop_to_distribution(crop =  0.5, distribution_frequency = 3 * 365, half_life = 2 * 365)</code></p></li>
 <li><p><code>netz::distribution_to_crop(crop =  0.5, distribution_frequency = 3 * 365, half_life = 2 * 365)</code></p></li>
-<li><p>Net retention half-lives are estimated in the model by Bertozzi-Villa <em>et al</em> and can be accessed with:</p></li>
-<li><p><code>netz::get_halflife_data()</code></p></li>
+</ul></li>
+<li><p>Net retention half-lives are estimated in the model by Bertozzi-Villa <em>et al</em> and can be accessed with:</p>
+<ul>
+<li><code>netz::get_halflife_data()</code></li>
+</ul></li>
 </ul>
 </section>
 <section id="crop-and-distributions-1" class="slide level2 smaller">
 <h2>Crop and distributions</h2>
 <ul>
-<li><p>As crop is the cumulative impact of past distributions, different combinations of past distributions may lead to similar crop estimates. We can dynamically translate between no-equilibrium crop and distributions with:</p></li>
+<li><p>As crop is the cumulative impact of past distributions, different combinations of past distributions may lead to similar crop estimates. We can dynamically translate between no-equilibrium crop and distributions with:</p>
+<ul>
 <li><p><code>netz::crop_to_distribution_dynamic(crop = c(0.1, 0.2, 0.5, 0.1), netz::net_loss_map)</code></p></li>
 <li><p><code>netz::distribution_to_crop_dynamic(distribution = c(0.1, 0.2, 0.5, 0.1), netz::net_loss_map)</code></p></li>
+</ul></li>
 </ul>
 </section>
 <section id="net-loss-functions" class="slide level2 smaller">
@@ -600,8 +612,10 @@ Pete Winskill
 <li><p>Net retention can be modelled with different function forms.</p></li>
 <li><p>In the model by Bertozzi-Villa <em>et al</em>, they use an s-shaped function form.</p></li>
 <li><p>In <span class="emoji" data-emoji="package">📦</span> [malariasimulation] net retention is exponentially distributed.</p></li>
-<li><p>These are modelled by:</p></li>
-<li><p><code>netz::net_loss_map()</code> and <code>netz::net_loss_exp()</code></p></li>
+<li><p>These are modelled by:</p>
+<ul>
+<li><code>netz::net_loss_map()</code> and <code>netz::net_loss_exp()</code></li>
+</ul></li>
 <li><p>These functions can be passed when the argument <code>net_loss_function</code> is required.</p></li>
 <li><p>We may to try and harmonise the bed net models at some point.</p></li>
 </ul>

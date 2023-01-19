@@ -368,12 +368,12 @@ Pete Winskill
 <section id="calibration-note" class="slide level2 smaller">
 <h2>Calibration note</h2>
 <ul>
-<li>Warmup
+<li>Warmup <span class="emoji" data-emoji="muscle">💪</span>
 <ul>
 <li><span class="emoji" data-emoji="package">📦</span> malariasimulation runs do not automatically run a warmup period which is necessary for the model to fully equilibrate. In general it is always advisable to add a warmup period to your simulation runs. Some outputs are more sensitive than others and exploration of a suitable warmup period to use should be performed prior to calibration.</li>
 <li>Subsequent model runs after calibration should use the same warmup period as the calibration.</li>
 </ul></li>
-<li>Data
+<li>Data <span class="emoji" data-emoji="bookmark_tabs">📑</span>
 <ul>
 <li>It will be your decision on what data (and how much of it) to calibrate to</li>
 <li>It is important to understand how and when data were collected, for example data collected at peak malaria season may look very different to that collected in the low season.</li>
@@ -410,7 +410,7 @@ Pete Winskill
 <section id="cali-1" class="slide level2">
 <h2>Cali</h2>
 <ul>
-<li>It is always good practice to run a simulation and test your <code>summary_function</code> before using it in <code>calibrate()</code> - this will help with debugging.</li>
+<li>It is always good practice to run a simulation and test your <code>summary_function</code> before using it in <code>calibrate()</code> - this will help with debugging <span class="emoji" data-emoji="lady_beetle">🐞</span>.</li>
 <li>There a lots of other tuning and model options, so please see <code>?calibrate()</code> for more detailed information.</li>
 </ul>
 </section>
@@ -434,17 +434,19 @@ Pete Winskill
 <img data-src="images/Calibration_good.png" class="r-stretch quarto-figure-center"></section>
 <section id="challenges-3" class="slide level2">
 <h2>Challenges</h2>
-<p>…and sometimes not:</p>
+<p>…and sometimes not <span class="emoji" data-emoji="cry">😢</span> :</p>
 
 <img data-src="images/Calibration_bad.png" class="r-stretch quarto-figure-center"></section>
 <section id="challenges-4" class="slide level2">
 <h2>Challenges</h2>
 <ul>
-<li>Calibration can be difficult when results are dominated by stochasticity:</li>
+<li>Calibration can be difficult when results are dominated by stochasticity:
+<ul>
 <li>low transmission</li>
 <li>small populations</li>
 <li>calibrating to a sub-group in the population</li>
-<li>etc.</li>
+<li>etc…</li>
+</ul></li>
 </ul>
 </section>
 <section id="lets-give-it-a-try" class="slide level2">

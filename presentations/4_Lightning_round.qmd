@@ -12,10 +12,10 @@ from: markdown+emoji
 
 ## Session aims:
 
-*   A whistle-stop tour of some other malariaverse packages
-*   umbrella: for fitting seasonal profiles
-*   treasure: unit costing
-*   om: for (budget-constrained) stratification optimisation
+-   A whistle-stop tour of some other malariaverse packages
+-   umbrella: for fitting seasonal profiles
+-   treasure: unit costing
+-   om: for (budget-constrained) stratification optimisation
 
 ![](images/Guinea-Pig-bald.jpg){fig-align="center"}
 
@@ -25,13 +25,13 @@ from: markdown+emoji
 
 ## Umbrella {.smaller}
 
-*   :package: \[malariasimulation\] captures the seasonality in transmission using fourier series parameters fitted to rainfall data.
-*   :package: \[umbrella\] includes some simple functionality to fit these parameters.
-*   :package: \[umbrella\] also has some helper functions to download CHIRPS rainfall "data" ^1".
-*   `site_file$seasonality` has fitted seasonal parameters for the default sites.
+-   :package: \[malariasimulation\] captures the seasonality in transmission using fourier series parameters fitted to rainfall data.
+-   :package: \[umbrella\] includes some simple functionality to fit these parameters.
+-   :package: \[umbrella\] also has some helper functions to download CHIRPS rainfall "data" \^1".
+-   `site_file$seasonality` has fitted seasonal parameters for the default sites.
 
 ::: aside
-1. https://www.chc.ucsb.edu/data/chirps
+1.  https://www.chc.ucsb.edu/data/chirps
 :::
 
 ## Umbrella workflow
@@ -45,14 +45,14 @@ from: markdown+emoji
 
 1.  Usually use a single, representative seasonal profile for sites.
 
-    +   Needed for forwards projections
-    +   May miss inter- and intra-annual variation of interest
+    -   Needed for forwards projections
+    -   May miss inter- and intra-annual variation of interest
 
 2.  The assumption that :arrow_up: rain = :arrow_up: mosquitoes = :arrow_up: malaria does not always hold!
 
 ## Umbrella info
 
-*   Check out the [umbrella website](https://mrc-ide.github.io/umbrella/) for more information and a simple introduction vignette.
+-   Check out the [umbrella website](https://mrc-ide.github.io/umbrella/) for more information and a simple introduction vignette.
 
 ![](images/umbrella_site.png){fig-align="center" height="50%" width="50%"}
 
@@ -62,14 +62,14 @@ from: markdown+emoji
 
 ## treasure
 
-*   :package: [treasure], is a simple repository for unit costing information that has been used to cost out large global/country scenarios
-*   Mostly serves as a single, version controlled reference for unit costs collected from the literature, WHO and Global Fund.
-*   No time- or country-specific costing information.
-*   If anyone is interested in improving the database, please let me know!
+-   :package: [treasure], is a simple repository for unit costing information that has been used to cost out large global/country scenarios
+-   Mostly serves as a single, version controlled reference for unit costs collected from the literature, WHO and Global Fund.
+-   No time- or country-specific costing information.
+-   If anyone is interested in improving the database, please let me know!
 
 ## Treasure info
 
-*   Check out the [treasure website](https://mrc-ide.github.io/treasure/) for more information.
+-   Check out the [treasure website](https://mrc-ide.github.io/treasure/) for more information.
 
 ![](images/treasure_site.png){fig-align="center" height="50%" width="50%"}
 
@@ -79,24 +79,24 @@ from: markdown+emoji
 
 ## om
 
-*   A common challenge is finding the optimum package of interventions across a country, where interventions can be targeted sub-nationally.
-*   Often this question is asked with the additional constraint of a finite budget.
-*   :package: [om] is here to help!
+-   A common challenge is finding the optimum package of interventions across a country, where interventions can be targeted sub-nationally.
+-   Often this question is asked with the additional constraint of a finite budget.
+-   :package: [om] is here to help!
 
 ## om inputs
 
-*   :package: [om] requires specific inputs to work:
-*   An impact matrix giving details of the outcome measure we are optimising, for example cases averted. Each row of the matrix is a sub-unit (e.g. district) and each column a unique intervention package.
-*   A cost matrix giving details of the associated cost of each option in the impact matrix
-*   A budget
+-   :package: [om] requires specific inputs to work:
+-   An impact matrix giving details of the outcome measure we are optimising, for example cases averted. Each row of the matrix is a sub-unit (e.g. district) and each column a unique intervention package.
+-   A cost matrix giving details of the associated cost of each option in the impact matrix
+-   A budget
 
 ## om and complex budgets
 
-*   The budget specification in :package: [om] can be simple: e.g. \$100
-*   It can also be more complex. For example we might want to optimise the intervention packages across 5 countries, where each country has a domestic budget (to be spent internally) as well as a shared regional budget.
+-   The budget specification in :package: [om] can be simple: e.g. \$100
+-   It can also be more complex. For example we might want to optimise the intervention packages across 5 countries, where each country has a domestic budget (to be spent internally) as well as a shared regional budget.
 
 ## om info
 
-*   Check out the [om website](https://mrc-ide.github.io/om/index.html) for more information, a simple introduction vignette and a guide for implementing complex budgets.
+-   Check out the [om website](https://mrc-ide.github.io/om/index.html) for more information, a simple introduction vignette and a guide for implementing complex budgets.
 
 ![](images/om_site.png){fig-align="center" height="50%" width="50%"}

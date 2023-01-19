@@ -172,7 +172,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#exploring-a-site-file" id="toc-exploring-a-site-file" class="nav-link active" data-scroll-target="#exploring-a-site-file">Exploring a site file</a></li>
+  <li><a href="#exploring-a-site-file" id="toc-exploring-a-site-file" class="nav-link active" data-scroll-target="#exploring-a-site-file">Exploring a site file🔭</a></li>
   <li><a href="#extracting-a-single-site" id="toc-extracting-a-single-site" class="nav-link" data-scroll-target="#extracting-a-single-site">Extracting a single site</a></li>
   <li><a href="#running-a-single-site" id="toc-running-a-single-site" class="nav-link" data-scroll-target="#running-a-single-site">Running a single site</a></li>
   </ul>
@@ -199,7 +199,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </header>
 
 <section id="exploring-a-site-file" class="level2">
-<h2 class="anchored" data-anchor-id="exploring-a-site-file">Exploring a site file</h2>
+<h2 class="anchored" data-anchor-id="exploring-a-site-file">Exploring a site file🔭</h2>
 <p>Let’s start by getting better acquainted with a country site file. In the code box below we have pre-loaded the site for Togo (iso3c = TGO).</p>
 <p>Use the interactive code box below to explore the elements that make up the site file.</p>
 <ol type="1">
@@ -300,8 +300,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Use the <code>site::single_site()</code> function to isolate the site for: Run iso3c = TGO, name_1 = Plateaux, urban_rural = rural.</p></li>
 <li><p>Create a 📦 malariasimulation parameter list using the <code>site::site_parameters()</code> function. For today, in the <code>overrides</code> argument you might want to set a reasonably small population so that the model runs quickly, for example <code>overrides  = list(human_population = 5000)</code>.</p></li>
 <li><p>Run the site using <code>malariasimulation::run_simulation()</code></p></li>
-<li><p>Plot the <em>Pf</em>Pr<sub>2-10</sub> estimated by the model</p></li>
-<li><p>Overlay the Malaria Atlas Project estimates of <em>Pf</em>Pr<sub>2-10</sub> onto your plot.</p></li>
+<li><p>Plot the <em>Pf</em>Pr<sub>2-10</sub> estimated by the model (hint: the output <code>n_detect_</code> is the number positive and <code>n_</code> the number of individuals in a given age group).</p></li>
+<li><p>Overlay the Malaria Atlas Project estimates of <em>Pf</em>Pr<sub>2-10</sub> onto your plot (see <code>$prevalence</code>).</p></li>
 </ol>
 <p>⚠️ The model run may take a little while to complete (~5 mins). While you wait, why not have a look at the <a href="https://mrc-ide.github.io/foresite/">foresite website</a>, or starting thinking through the <a href="https://mrc-ide.github.io/mvw/coffee.html">coffee break activity</a> ⚠️</p>
 <div class="cell" data-exercise="true" data-exercise.timelimit="1200">
@@ -349,7 +349,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>❓ Why might there be differences between modelled <em>Pf</em>Pr<sub>2-10</sub> and the estimates from the Malaria Atlas Project?</p>
 <p>Extra credits ✨:</p>
 <ul>
-<li>Try changing the EIR argument in <code>site_parameters()</code></li>
+<li>Try changing the EIR argument in <code>site_parameters()</code> and re-running.</li>
 <li>Modify <code>plateaux_rural$interventions$irs_cov</code> and re-run, can you see the impact?</li>
 <li>Try running multiple different sites and estimating aggregated <em>Pf</em>Pr<sub>2-10</sub> across all of them.</li>
 </ul>
@@ -418,16 +418,16 @@ learnr:::store_exercise_cache(structure(list(label = "explore-a-site", global_se
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-1", question = structure("What is the PfPr prevalence in the iso3c = TGO, name_1 = Centre, urban_rural = rural in 2005?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_7c6f176", 
+"character")), answers = list(structure(list(id = "lnr_ans_c337a03", 
     option = "0", value = "0", label = structure("0", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_f217d85", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_2288c41", 
     option = "0.2459082", value = "0.2459082", label = structure("0.2459082", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_4d66a54", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_cef152d", 
     option = "0.5470634", value = "0.5470634", label = structure("0.5470634", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_defcc43", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_e08d5b2", 
     option = "0.8", value = "0.8", label = structure("0.8", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
 "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
@@ -437,20 +437,20 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "quiz-1-answer", question = "quiz-1"), loading = NULL, 
-    random_answer_order = FALSE, allow_retry = FALSE, seed = 234682844.390717, 
+    random_answer_order = FALSE, allow_retry = FALSE, seed = 1319463656.88558, 
     options = list()), class = c("learnr_radio", "tutorial_question"
 )), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-2", question = structure("What is the dominant vector species in iso3c = TGO, name_1 = Kara", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_1ad98de", 
+"character")), answers = list(structure(list(id = "lnr_ans_c661b18", 
     option = "arabiensis", value = "arabiensis", label = structure("arabiensis", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_e15d199", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_f91af13", 
     option = "funestus", value = "funestus", label = structure("funestus", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_b12d058", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_b3c1f4", 
     option = "gambiae", value = "gambiae", label = structure("gambiae", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
 "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
@@ -460,17 +460,17 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "quiz-2-answer", question = "quiz-2"), loading = NULL, 
-    random_answer_order = FALSE, allow_retry = FALSE, seed = 74767073.9651839, 
+    random_answer_order = FALSE, allow_retry = FALSE, seed = 1551937047.77732, 
     options = list()), class = c("learnr_radio", "tutorial_question"
 )), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-3", question = structure("Did the World Malaria Report estimate a rise or fall in malaria cases in Togo\nbetween 2019 and 2020", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_842656a", 
+"character")), answers = list(structure(list(id = "lnr_ans_4e92795", 
     option = "Rise", value = "Rise", label = structure("Rise", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_b89ee33", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_7dc001f", 
     option = "Fall", value = "Fall", label = structure("Fall", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
 "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
@@ -480,7 +480,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "quiz-3-answer", question = "quiz-3"), loading = NULL, 
-    random_answer_order = FALSE, allow_retry = FALSE, seed = 730671982.159754, 
+    random_answer_order = FALSE, allow_retry = FALSE, seed = 515820870.759802, 
     options = list()), class = c("learnr_radio", "tutorial_question"
 )), session = session)
 </script>
@@ -531,16 +531,16 @@ learnr:::store_exercise_cache(structure(list(label = "single-site", global_setup
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz2-1", question = structure("In what year did itn use in iso3c = TGO, name_1 = Savanes, urban_rural = rural first exceed 50%?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_d4e26d5", 
+"character")), answers = list(structure(list(id = "lnr_ans_c281097", 
     option = "2000", value = "2000", label = structure("2000", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_8c6472b", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_6e48b20", 
     option = "2011", value = "2011", label = structure("2011", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_7fef3a9", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_55424dd", 
     option = "2012", value = "2012", label = structure("2012", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_3ca56bd", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_4c8e637", 
     option = "2015", value = "2015", label = structure("2015", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
 "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
@@ -550,7 +550,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "quiz2-1-answer", question = "quiz2-1"), loading = NULL, 
-    random_answer_order = FALSE, allow_retry = FALSE, seed = 1884746168.12235, 
+    random_answer_order = FALSE, allow_retry = FALSE, seed = 260335863.378772, 
     options = list()), class = c("learnr_radio", "tutorial_question"
 )), session = session)
 </script>

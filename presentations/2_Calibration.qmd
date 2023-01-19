@@ -19,7 +19,7 @@ Session aims:
 -   Introduction to :package:\[cali\] for model calibration
 -   Common challenges/issues when calibrating
 
-## Why calibrate
+## Why calibrate 
 
 -   Given all the information about a site (vectors, season *Pf*Pr~2-10~ etc...). We still need to make our best estimation of the "baseline" level of transmission.
 -   One relatively simple way of doing this is by modifying the modelled baseline until our model output best matches some observations (e.g. *Pf*Pr~2-10~).
@@ -38,12 +38,12 @@ Session aims:
 
 ## Calibration note {.smaller}
 
-- Warmup
-  -   :package: malariasimulation runs do not automatically run a warmup period which is necessary for the model to fully equilibrate. In general it is always advisable to add a warmup period to your simulation runs. Some outputs are more sensitive than others and exploration of a suitable warmup period to use should be performed prior to calibration.
-  -   Subsequent model runs after calibration should use the same warmup period as the calibration.
-- Data
-  - It will be your decision on what data (and how much of it) to calibrate to
-  - It is important to understand how and when data were collected, for example data collected at peak malaria season may look very different to that collected in the low season. 
+-   Warmup :muscle:
+    -   :package: malariasimulation runs do not automatically run a warmup period which is necessary for the model to fully equilibrate. In general it is always advisable to add a warmup period to your simulation runs. Some outputs are more sensitive than others and exploration of a suitable warmup period to use should be performed prior to calibration.
+    -   Subsequent model runs after calibration should use the same warmup period as the calibration.
+-   Data :bookmark_tabs:
+    -   It will be your decision on what data (and how much of it) to calibrate to
+    -   It is important to understand how and when data were collected, for example data collected at peak malaria season may look very different to that collected in the low season.
 
 ## When to calibrate
 
@@ -56,7 +56,7 @@ Session aims:
 
 ## Foresite calibrations
 
--   Site files in :package: [foresite] have been calibrated `$eir`
+-   Site files in :package: \[foresite\] have been calibrated `$eir`
 
 ## Cali {.smaller}
 
@@ -67,7 +67,7 @@ Session aims:
 
 ## Cali {#cali-1}
 
--   It is always good practice to run a simulation and test your `summary_function` before using it in `calibrate()` - this will help with debugging.
+-   It is always good practice to run a simulation and test your `summary_function` before using it in `calibrate()` - this will help with debugging :lady_beetle:.
 -   There a lots of other tuning and model options, so please see `?calibrate()` for more detailed information.
 
 ## Challenges
@@ -88,17 +88,17 @@ Sometimes calibration can look good:
 
 ## Challenges
 
-...and sometimes not:
+...and sometimes not :cry: :
 
 ![](images/Calibration_bad.png){fig-align="center"}
 
 ## Challenges
 
 -   Calibration can be difficult when results are dominated by stochasticity:
-  -   low transmission
-  -   small populations
-  -   calibrating to a sub-group in the population
-  -   etc.
+    +   low transmission
+    +   small populations
+    +   calibrating to a sub-group in the population
+    +   etc...
 
 ## Let's give it a try!
 

@@ -25,7 +25,7 @@
     "href": "index.html#before-the-workshop",
     "title": "Malariaverse Workshop",
     "section": "Before the workshop",
-    "text": "Before the workshop\nPlease make sure you have the following installed:\n\nAn up-to-date (Version >=4.2.0) installation of R. Please note, for those updating to R version 4.2 and above who have not updated recently you may also require an updated version of Rtools.\nAn up-to-date (Version >= 2022.12.0) installation of RStudio. See help->check for updates.\nThe workshop 📦 [mvw]\nThe malariaverse 📦 [malariasimulation, foresite, site, netz, cali]\n\n\n# For malariasimulation\noptions(repos = c(\n    mrcide = \"https://mrc-ide.r-universe.dev\",\n    CRAN = \"https://cloud.r-project.org\"))\ninstall.packages(\"malariasimulation\") # v1.4.3\n\n# Public packages can be installed directly from github:\nremotes::install_github(\"mrc-ide/site\") # v0.2.2\nremotes::install_github(\"mrc-ide/netz\") # v0.2.0\nremotes::install_github(\"mrc-ide/cali\") # v0.2.0\nremotes::install_github(\"mrc-ide/mvw\")  # v0.1.1\nremotes::install_github(\"hadley/emo\")   # v0.0.0.9 (yes, emojis are essential).\n# Optional additional malariaverse packages:\nremotes::install_github(\"mrc-ide/umbrella\") # v0.3.0\nremotes::install_github(\"mrc-ide/treasure\") # v0.1.1\nremotes::install_github(\"mrc-ide/om\")       # v0.1.0\n\n# Private packages require network access to the \"malaria drive\": \\\\fi--didef3.dide.ic.ac.uk/malaria. \n# Contact Pete if you don't have access.\ndrat::addRepo(\"malariaverse\", \"file:\\\\\\\\projects.dide.ic.ac.uk/malaria/malariaverse/drat\")\ninstall.packages(\"foresite\", type = \"source\") # v0.1.0\n\nFollowing installation you should be able to successfully run:\n\noutput <- malariasimulation::run_simulation(100)\noutput\n\nand\n\nmvw::run_tutorial(\"Test\")\n\nIf you can’t, please contact Pete before the workshop, by 30/01/2023 latest."
+    "text": "Before the workshop\nPlease make sure you have the following installed:\n\nAn up-to-date (Version >=4.2.0) installation of R. Please note, for those updating to R version 4.2 and above who have not updated recently you may also require an updated version of Rtools.\nAn up-to-date (Version >= 2022.12.0) installation of RStudio. See help->check for updates.\nThe workshop 📦 [mvw]\nThe malariaverse 📦 [malariasimulation, foresite, site, netz, cali]\n\n\n# For malariasimulation\noptions(repos = c(\n    mrcide = \"https://mrc-ide.r-universe.dev\",\n    CRAN = \"https://cloud.r-project.org\"))\ninstall.packages(\"malariasimulation\") # v1.4.3\n\n# Public packages can be installed directly from github:\nremotes::install_github(\"mrc-ide/site\") # v0.2.2\nremotes::install_github(\"mrc-ide/netz\") # v0.3.0\nremotes::install_github(\"mrc-ide/cali\") # v0.2.0\nremotes::install_github(\"mrc-ide/mvw\")  # v0.1.1\nremotes::install_github(\"hadley/emo\")   # v0.0.0.9 (yes, emojis are essential).\n# Optional additional malariaverse packages:\nremotes::install_github(\"mrc-ide/umbrella\") # v0.3.0\nremotes::install_github(\"mrc-ide/treasure\") # v0.1.1\nremotes::install_github(\"mrc-ide/om\")       # v0.1.0\n\n# Private packages require network access to the \"malaria drive\": \\\\fi--didef3.dide.ic.ac.uk/malaria. \n# Contact Pete if you don't have access.\ndrat::addRepo(\"malariaverse\", \"file:\\\\\\\\projects.dide.ic.ac.uk/malaria/malariaverse/drat\")\ninstall.packages(\"foresite\", type = \"source\") # v0.1.0\n\nFollowing installation you should be able to successfully run:\n\noutput <- malariasimulation::run_simulation(100)\noutput\n\nand\n\nmvw::run_tutorial(\"Test\")\n\nIf you can’t, please contact Pete before the workshop, by 30/01/2023 latest."
   },
   {
     "objectID": "index.html#schedule",
@@ -95,7 +95,7 @@
     "href": "inst/tutorials/Introduction/Introduction.html#running-a-single-site",
     "title": "Introduction",
     "section": "Running a single site",
-    "text": "Running a single site\nNow lets try running a site.\n\nUse the site::single_site() function to isolate the site for: Run iso3c = TGO, name_1 = Plateaux, urban_rural = rural.\nCreate a 📦 malariasimulation parameter list using the site::site_parameters() function. For today, in the overrides argument you might want to set a reasonably small population so that the model runs quickly, for example overrides  = list(human_population = 5000).\nRun the site using malariasimulation::run_simulation()\nPlot the PfPr2-10 estimated by the model\nOverlay the Malaria Atlas Project estimates of PfPr2-10 onto your plot.\n\n⚠️ The model run may take a little while to complete (~5 mins). While you wait, why not have a look at the foresite website, or starting thinking through the coffee break activity ⚠️\n\n\nlibrary(foresite)\nlibrary(site)\nlibrary(malariasimulation)\ntogo_site_file <- TGO\n\n\n\n\n\nlibrary(foresite)\nlibrary(site)\nlibrary(malariasimulation)\ntogo_site_file <- TGO\n# Isolate the site\nsite_index <- which(togo_site_file$sites$name_1 == \"Plateaux\" &\n                      togo_site_file$sites$urban_rural == \"rural\")\nplateaux_rural <- single_site(togo_site_file, site_index)\n# Create parameter inputs\nsite_pars <- site_parameters(\n  interventions = plateaux_rural$interventions,\n  demography = plateaux_rural$demography,\n  vectors = plateaux_rural$vectors,\n  seasonality = plateaux_rural$seasonality,\n  eir = plateaux_rural$eir$eir[1],\n  overrides = list(human_population = 5000)\n)\n# Run!\nmodel_run <- run_simulation(timesteps = site_pars$timesteps,\n                            parameters = site_pars)\n# Calculate prevalence\nmodel_run$prevalence <- model_run$n_detect_730_3649 / model_run$n_730_3649\n# Set the time\nmodel_run$t <- (model_run$timestep / 365) + 2000\n# Plot\nplot(model_run$prevalence ~ model_run$t, t = \"l\", ylim = c(0, 0.8), xlab = \"Year\", ylab = \"Prevalence\")\n# Add MAP prevalence\npoints(plateaux_rural$prevalence$year + 0.5, plateaux_rural$prevalence$pfpr, pch = 19, col = \"darkred\")\n\n\n❓ How well do they match?\n❓ Why might there be differences between modelled PfPr2-10 and the estimates from the Malaria Atlas Project?\nExtra credits ✨:\n\nTry changing the EIR argument in site_parameters()\nModify plateaux_rural$interventions$irs_cov and re-run, can you see the impact?\nTry running multiple different sites and estimating aggregated PfPr2-10 across all of them."
+    "text": "Running a single site\nNow lets try running a site.\n\nUse the site::single_site() function to isolate the site for: Run iso3c = TGO, name_1 = Plateaux, urban_rural = rural.\nCreate a 📦 malariasimulation parameter list using the site::site_parameters() function. For today, in the overrides argument you might want to set a reasonably small population so that the model runs quickly, for example overrides  = list(human_population = 5000).\nRun the site using malariasimulation::run_simulation()\nPlot the PfPr2-10 estimated by the model (hint: the output n_detect_ is the number positive and n_ the number of individuals in a given age group).\nOverlay the Malaria Atlas Project estimates of PfPr2-10 onto your plot (see $prevalence).\n\n⚠️ The model run may take a little while to complete (~5 mins). While you wait, why not have a look at the foresite website, or starting thinking through the coffee break activity ⚠️\n\n\nlibrary(foresite)\nlibrary(site)\nlibrary(malariasimulation)\ntogo_site_file <- TGO\n\n\n\n\n\nlibrary(foresite)\nlibrary(site)\nlibrary(malariasimulation)\ntogo_site_file <- TGO\n# Isolate the site\nsite_index <- which(togo_site_file$sites$name_1 == \"Plateaux\" &\n                      togo_site_file$sites$urban_rural == \"rural\")\nplateaux_rural <- single_site(togo_site_file, site_index)\n# Create parameter inputs\nsite_pars <- site_parameters(\n  interventions = plateaux_rural$interventions,\n  demography = plateaux_rural$demography,\n  vectors = plateaux_rural$vectors,\n  seasonality = plateaux_rural$seasonality,\n  eir = plateaux_rural$eir$eir[1],\n  overrides = list(human_population = 5000)\n)\n# Run!\nmodel_run <- run_simulation(timesteps = site_pars$timesteps,\n                            parameters = site_pars)\n# Calculate prevalence\nmodel_run$prevalence <- model_run$n_detect_730_3649 / model_run$n_730_3649\n# Set the time\nmodel_run$t <- (model_run$timestep / 365) + 2000\n# Plot\nplot(model_run$prevalence ~ model_run$t, t = \"l\", ylim = c(0, 0.8), xlab = \"Year\", ylab = \"Prevalence\")\n# Add MAP prevalence\npoints(plateaux_rural$prevalence$year + 0.5, plateaux_rural$prevalence$pfpr, pch = 19, col = \"darkred\")\n\n\n❓ How well do they match?\n❓ Why might there be differences between modelled PfPr2-10 and the estimates from the Malaria Atlas Project?\nExtra credits ✨:\n\nTry changing the EIR argument in site_parameters() and re-running.\nModify plateaux_rural$interventions$irs_cov and re-run, can you see the impact?\nTry running multiple different sites and estimating aggregated PfPr2-10 across all of them."
   },
   {
     "objectID": "LICENSE.html",
@@ -119,6 +119,13 @@
     "text": "Welcome all!\nToday’s aims:\n\nProvide a broad overview of context-specific modelling\nSite files: how to characterise a setting\nIntroduce the malariaverse packages to support 📦[malariasimulation] modelling\nExercises:\n\nRunning a site\nCalibrating a site\nDealing with bed nets"
   },
   {
+    "objectID": "presentations/1_Introduction.html#not-todays-aims",
+    "href": "presentations/1_Introduction.html#not-todays-aims",
+    "title": "Malariaverse Workshop Introduction",
+    "section": "Not today’s aims 😄",
+    "text": "Not today’s aims 😄\n\nAn introduction to the Imperial college malaria model\n\nPlease see key publications\n\nAn introduction to the software packages implementing the model\n\n📦[malariasimulation]\n📦[]\nPlease see websites and supporting documentation for help\n\nA comprehensive overview of all malariaverse packages/features\n\n\nhttps://mrc-ide.github.io/malariasimulation https://mrc-ide.github.io/deterministic model.."
+  },
+  {
     "objectID": "presentations/1_Introduction.html#thanks",
     "href": "presentations/1_Introduction.html#thanks",
     "title": "Malariaverse Workshop Introduction",
@@ -137,7 +144,7 @@
     "href": "presentations/1_Introduction.html#modelling-philosophy-1",
     "title": "Malariaverse Workshop Introduction",
     "section": "Modelling philosophy",
-    "text": "Modelling philosophy\nOne common dichotomisation is between:\n\nContext-specific modelling\n\nRun the model for a specific setting/location\nCan be used to inform policy and impact assessment for specific areas\nRequires “the context” to be adequately captured\ne.g. Estimated impact of RTS,S/AS01 malaria vaccine allocation strategies in sub-Saharan Africa: A modelling study Hogan et al PLoS Medicine, 2020."
+    "text": "Modelling philosophy\nOne common dichotomisation is between:\n\nContext-specific modelling\n\nRun the model for a specific setting/location\nCan be used to inform policy and impact assessment for specific areas\nRequires “the context” to be adequately captured 🤔\ne.g. Estimated impact of RTS,S/AS01 malaria vaccine allocation strategies in sub-Saharan Africa: A modelling study Hogan et al PLoS Medicine, 2020."
   },
   {
     "objectID": "presentations/1_Introduction.html#section",
@@ -151,14 +158,14 @@
     "href": "presentations/1_Introduction.html#important-features",
     "title": "Malariaverse Workshop Introduction",
     "section": "Important features",
-    "text": "Important features\n\nIntrinsic transmission potential (“Baseline”, “Carrying capacity”, “R0”)\nThe mosquito vector\n\nspecies\nbionomics (how the 🦟 relates to its environment) & behaviour\ndistribution & relative abundance\ninsecticide resistance\n\nRainfall seasonality\nHistorical interventions\nEpidemiological data (e.g. PfPr2-10, malaria cases)\nHuman population & demography"
+    "text": "Important features\n\nIntrinsic transmission potential (“Baseline”, “Carrying capacity”, “R0”)\nThe mosquito vector\n\nspecies\nbionomics (how the 🦟 relates to its environment) & behaviour\ndistribution & relative abundance\ninsecticide resistance\n\nRainfall seasonality ☔\nHistorical interventions\nEpidemiological data (e.g. PfPr2-10, malaria cases)\nHuman population & demography 🧑‍🤝‍🧑"
   },
   {
-    "objectID": "presentations/1_Introduction.html#important-features-1",
-    "href": "presentations/1_Introduction.html#important-features-1",
+    "objectID": "presentations/1_Introduction.html#key-data-sources",
+    "href": "presentations/1_Introduction.html#key-data-sources",
     "title": "Malariaverse Workshop Introduction",
-    "section": "Important features",
-    "text": "Important features\n\nFor many of these elements there are data available, for example:\n\nWorld Malaria Report\nMalaria Atlas project (burden and intervention coverage estimates)\nVector Atlas (spatial vector data, under development and building on work by Sinka et al)"
+    "section": "Key data sources",
+    "text": "Key data sources\n\nFor many of these elements there are data available, for example:\n\nWorld Malaria Report\nMalaria Atlas project (burden and intervention coverage estimates)\nVector Atlas (spatial vector data, under development and building on work by Sinka et al)"
   },
   {
     "objectID": "presentations/1_Introduction.html#site-files",
@@ -200,7 +207,7 @@
     "href": "presentations/1_Introduction.html#using-site-files",
     "title": "Malariaverse Workshop Introduction",
     "section": "Using site files",
-    "text": "Using site files\n\nThe site files in 📦[foresite] are a general attempt to collate information for all malaria-endemic settings\nThey are, at best, a coarse representation of the true picture\nPlease always consider your use-case carefully, it is likely you may\n\nHave direct or be working with people with direct knowledge of a setting\nHave more location specific data\nHave more up to date data\nWant to model at a different spatial scale\n\nThe Malariaverse aims to provide you with the tools to be able to make necessary improvements to site files"
+    "text": "Using site files\n\nThe site files in 📦[foresite] are a general attempt to collate information for all malaria-endemic settings\nThey are, at best, a coarse representation of the true picture\nPlease always consider your use-case carefully 🤔, it is likely you may\n\nHave direct or be working with people with direct knowledge of a setting\nHave more location specific data\nHave more up to date data\nWant to model at a different spatial scale\n\nThe Malariaverse aims to provide you with the tools to be able to make necessary improvements to site files and construct new ones from scratch 🛠️"
   },
   {
     "objectID": "presentations/1_Introduction.html#running-a-site",
@@ -256,7 +263,7 @@
     "href": "presentations/2_Calibration.html#calibration-note",
     "title": "Malariaverse Workshop Calibration",
     "section": "Calibration note",
-    "text": "Calibration note\n\nWarmup\n\n📦 malariasimulation runs do not automatically run a warmup period which is necessary for the model to fully equilibrate. In general it is always advisable to add a warmup period to your simulation runs. Some outputs are more sensitive than others and exploration of a suitable warmup period to use should be performed prior to calibration.\nSubsequent model runs after calibration should use the same warmup period as the calibration.\n\nData\n\nIt will be your decision on what data (and how much of it) to calibrate to\nIt is important to understand how and when data were collected, for example data collected at peak malaria season may look very different to that collected in the low season."
+    "text": "Calibration note\n\nWarmup 💪\n\n📦 malariasimulation runs do not automatically run a warmup period which is necessary for the model to fully equilibrate. In general it is always advisable to add a warmup period to your simulation runs. Some outputs are more sensitive than others and exploration of a suitable warmup period to use should be performed prior to calibration.\nSubsequent model runs after calibration should use the same warmup period as the calibration.\n\nData 📑\n\nIt will be your decision on what data (and how much of it) to calibrate to\nIt is important to understand how and when data were collected, for example data collected at peak malaria season may look very different to that collected in the low season."
   },
   {
     "objectID": "presentations/2_Calibration.html#when-to-calibrate",
@@ -284,7 +291,7 @@
     "href": "presentations/2_Calibration.html#cali-1",
     "title": "Malariaverse Workshop Calibration",
     "section": "Cali",
-    "text": "Cali\n\nIt is always good practice to run a simulation and test your summary_function before using it in calibrate() - this will help with debugging.\nThere a lots of other tuning and model options, so please see ?calibrate() for more detailed information."
+    "text": "Cali\n\nIt is always good practice to run a simulation and test your summary_function before using it in calibrate() - this will help with debugging 🐞.\nThere a lots of other tuning and model options, so please see ?calibrate() for more detailed information."
   },
   {
     "objectID": "presentations/2_Calibration.html#challenges",
@@ -312,14 +319,14 @@
     "href": "presentations/2_Calibration.html#challenges-3",
     "title": "Malariaverse Workshop Calibration",
     "section": "Challenges",
-    "text": "Challenges\n…and sometimes not:"
+    "text": "Challenges\n…and sometimes not 😢 :"
   },
   {
     "objectID": "presentations/2_Calibration.html#challenges-4",
     "href": "presentations/2_Calibration.html#challenges-4",
     "title": "Malariaverse Workshop Calibration",
     "section": "Challenges",
-    "text": "Challenges\n\nCalibration can be difficult when results are dominated by stochasticity:\nlow transmission\nsmall populations\ncalibrating to a sub-group in the population\netc."
+    "text": "Challenges\n\nCalibration can be difficult when results are dominated by stochasticity:\n\nlow transmission\nsmall populations\ncalibrating to a sub-group in the population\netc…"
   },
   {
     "objectID": "presentations/2_Calibration.html#lets-give-it-a-try",
@@ -382,7 +389,7 @@
     "href": "presentations/3_Bed_nets.html#an-empirical-model-of-bed-nets-3",
     "title": "Malariaverse Workshop Bed nets",
     "section": "An empirical model of bed nets",
-    "text": "An empirical model of bed nets\n\n\n\nBertozzi-Villa et al show that access and crop are not linearly related (at the country level).\nThis can have big implication when costing a bet net campaign.\n\n\n\n\n\n\n\n\n\n\n\n\nBertozzi-Villa et al., ‘Maps and Metrics of Insecticide-Treated Net Access, Use, and Nets-per-Capita in Africa from 2000-2020’. Nat Comms (2021)."
+    "text": "An empirical model of bed nets\n\n\n\nBertozzi-Villa et al show that access and crop are not linearly related (at the country level).\nThis can have big implications when costing a bet net campaign.\n\n\n\n\n\n\n\n\n\n\n\n\nBertozzi-Villa et al., ‘Maps and Metrics of Insecticide-Treated Net Access, Use, and Nets-per-Capita in Africa from 2000-2020’. Nat Comms (2021)."
   },
   {
     "objectID": "presentations/3_Bed_nets.html#netz",
@@ -403,35 +410,35 @@
     "href": "presentations/3_Bed_nets.html#usage-and-access",
     "title": "Malariaverse Workshop Bed nets",
     "section": "Usage and Access",
-    "text": "Usage and Access\n\nUsage: the proportion of people who have slept under a bed net the previous night. This is effective coverage.\nAccess: the proportion of the population that could sleep under a net.\n📦 [netz] has functions to convert between usage and access:\nnetz::usage_to_access(usage = 0.5, use_rate = 0.8)\nnetz::access_to_usage(access = 0.5, use_rate = 0.8)\nYou can view empirical estimates of country use rates with:\nnetz::get_usage_rate_data()"
+    "text": "Usage and Access\n\nUsage: the proportion of people who have slept under a bed net the previous night. This is effective coverage.\nAccess: the proportion of the population that could sleep under a net.\n📦 [netz] has functions to convert between usage and access:\n\nnetz::usage_to_access(usage = 0.5, use_rate = 0.8)\nnetz::access_to_usage(access = 0.5, use_rate = 0.8)\n\nYou can view empirical estimates of country use rates with:\n\nnetz::get_usage_rate_data()"
   },
   {
     "objectID": "presentations/3_Bed_nets.html#access-and-crop",
     "href": "presentations/3_Bed_nets.html#access-and-crop",
     "title": "Malariaverse Workshop Bed nets",
     "section": "Access and crop",
-    "text": "Access and crop\n\nAccess: the proportion of the population that could sleep under a net.\nCrop: the total number of nets in the population. Crop increases with net distributions and decreases as nets are worn out and thrown away over time.\n📦 [netz] has functions to convert between access and crop:\nnetz::access_to_crop(access = 0.5)\nnetz::crop_to_access(crop = 0.5)"
+    "text": "Access and crop\n\nAccess: the proportion of the population that could sleep under a net.\nCrop: the total number of nets in the population. Crop increases with net distributions and decreases as nets are worn out and thrown away over time.\n📦 [netz] has functions to convert between access and crop:\n\nnetz::access_to_crop(access = 0.5)\nnetz::crop_to_access(crop = 0.5)"
   },
   {
     "objectID": "presentations/3_Bed_nets.html#crop-and-distributions",
     "href": "presentations/3_Bed_nets.html#crop-and-distributions",
     "title": "Malariaverse Workshop Bed nets",
     "section": "Crop and distributions",
-    "text": "Crop and distributions\n\nCrop: the total number of nets in the population. Crop increases with net distributions and decreases as nets are worn out and thrown away over time.\nDistribution: Nets distributed. These may be via mass-distributions or continuous distribution routes.\n📦 [netz] has functions to convert between crop and distribution:\nnetz::crop_to_distribution(crop =  0.5, distribution_frequency = 3 * 365, half_life = 2 * 365)\nnetz::distribution_to_crop(crop =  0.5, distribution_frequency = 3 * 365, half_life = 2 * 365)\nNet retention half-lives are estimated in the model by Bertozzi-Villa et al and can be accessed with:\nnetz::get_halflife_data()"
+    "text": "Crop and distributions\n\nCrop: the total number of nets in the population. Crop increases with net distributions and decreases as nets are worn out and thrown away over time.\nDistribution: Nets distributed. These may be via mass-distributions or continuous distribution routes.\n📦 [netz] has functions to convert between crop and distribution:\n\nnetz::crop_to_distribution(crop =  0.5, distribution_frequency = 3 * 365, half_life = 2 * 365)\nnetz::distribution_to_crop(crop =  0.5, distribution_frequency = 3 * 365, half_life = 2 * 365)\n\nNet retention half-lives are estimated in the model by Bertozzi-Villa et al and can be accessed with:\n\nnetz::get_halflife_data()"
   },
   {
     "objectID": "presentations/3_Bed_nets.html#crop-and-distributions-1",
     "href": "presentations/3_Bed_nets.html#crop-and-distributions-1",
     "title": "Malariaverse Workshop Bed nets",
     "section": "Crop and distributions",
-    "text": "Crop and distributions\n\nAs crop is the cumulative impact of past distributions, different combinations of past distributions may lead to similar crop estimates. We can dynamically translate between no-equilibrium crop and distributions with:\nnetz::crop_to_distribution_dynamic(crop = c(0.1, 0.2, 0.5, 0.1), netz::net_loss_map)\nnetz::distribution_to_crop_dynamic(distribution = c(0.1, 0.2, 0.5, 0.1), netz::net_loss_map)"
+    "text": "Crop and distributions\n\nAs crop is the cumulative impact of past distributions, different combinations of past distributions may lead to similar crop estimates. We can dynamically translate between no-equilibrium crop and distributions with:\n\nnetz::crop_to_distribution_dynamic(crop = c(0.1, 0.2, 0.5, 0.1), netz::net_loss_map)\nnetz::distribution_to_crop_dynamic(distribution = c(0.1, 0.2, 0.5, 0.1), netz::net_loss_map)"
   },
   {
     "objectID": "presentations/3_Bed_nets.html#net-loss-functions",
     "href": "presentations/3_Bed_nets.html#net-loss-functions",
     "title": "Malariaverse Workshop Bed nets",
     "section": "Net loss functions",
-    "text": "Net loss functions\n\nNet retention can be modelled with different function forms.\nIn the model by Bertozzi-Villa et al, they use an s-shaped function form.\nIn 📦 [malariasimulation] net retention is exponentially distributed.\nThese are modelled by:\nnetz::net_loss_map() and netz::net_loss_exp()\nThese functions can be passed when the argument net_loss_function is required.\nWe may to try and harmonise the bed net models at some point."
+    "text": "Net loss functions\n\nNet retention can be modelled with different function forms.\nIn the model by Bertozzi-Villa et al, they use an s-shaped function form.\nIn 📦 [malariasimulation] net retention is exponentially distributed.\nThese are modelled by:\n\nnetz::net_loss_map() and netz::net_loss_exp()\n\nThese functions can be passed when the argument net_loss_function is required.\nWe may to try and harmonise the bed net models at some point."
   },
   {
     "objectID": "presentations/3_Bed_nets.html#schematic-overview-1",

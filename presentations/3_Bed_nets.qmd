@@ -87,7 +87,7 @@ Session aims:
 ::: columns
 ::: {.column width="40%"}
 -   Bertozzi-Villa *et al* show that access and crop are not linearly related (at the country level).
--   This can have big implication when costing a bet net campaign.
+-   This can have big implications when costing a bet net campaign.
 :::
 
 ::: {.column width="60%"}
@@ -124,13 +124,13 @@ Session aims:
 
 -   :package: \[netz\] has functions to convert between usage and access:
 
--   `netz::usage_to_access(usage = 0.5, use_rate = 0.8)`
+    -   `netz::usage_to_access(usage = 0.5, use_rate = 0.8)`
 
--   `netz::access_to_usage(access = 0.5, use_rate = 0.8)`
+    -   `netz::access_to_usage(access = 0.5, use_rate = 0.8)`
 
 -   You can view empirical estimates of country use rates with:
 
--   `netz::get_usage_rate_data()`
+    -   `netz::get_usage_rate_data()`
 
 ## Access and crop {.smaller}
 
@@ -140,9 +140,9 @@ Session aims:
 
 -   :package: \[netz\] has functions to convert between access and crop:
 
--   `netz::access_to_crop(access = 0.5)`
+    -   `netz::access_to_crop(access = 0.5)`
 
--   `netz::crop_to_access(crop = 0.5)`
+    -   `netz::crop_to_access(crop = 0.5)`
 
 ## Crop and distributions {.smaller}
 
@@ -152,21 +152,21 @@ Session aims:
 
 -   :package: \[netz\] has functions to convert between crop and distribution:
 
--   `netz::crop_to_distribution(crop =  0.5, distribution_frequency = 3 * 365, half_life = 2 * 365)`
+    -   `netz::crop_to_distribution(crop =  0.5, distribution_frequency = 3 * 365, half_life = 2 * 365)`
 
--   `netz::distribution_to_crop(crop =  0.5, distribution_frequency = 3 * 365, half_life = 2 * 365)`
+    -   `netz::distribution_to_crop(crop =  0.5, distribution_frequency = 3 * 365, half_life = 2 * 365)`
 
 -   Net retention half-lives are estimated in the model by Bertozzi-Villa *et al* and can be accessed with:
 
--   `netz::get_halflife_data()`
+    -   `netz::get_halflife_data()`
 
 ## Crop and distributions {.smaller}
 
 -   As crop is the cumulative impact of past distributions, different combinations of past distributions may lead to similar crop estimates. We can dynamically translate between no-equilibrium crop and distributions with:
 
--   `netz::crop_to_distribution_dynamic(crop = c(0.1, 0.2, 0.5, 0.1), netz::net_loss_map)`
+    -   `netz::crop_to_distribution_dynamic(crop = c(0.1, 0.2, 0.5, 0.1), netz::net_loss_map)`
 
--   `netz::distribution_to_crop_dynamic(distribution = c(0.1, 0.2, 0.5, 0.1), netz::net_loss_map)`
+    -   `netz::distribution_to_crop_dynamic(distribution = c(0.1, 0.2, 0.5, 0.1), netz::net_loss_map)`
 
 ## Net loss functions {.smaller}
 
@@ -178,7 +178,7 @@ Session aims:
 
 -   These are modelled by:
 
--   `netz::net_loss_map()` and `netz::net_loss_exp()`
+    -   `netz::net_loss_map()` and `netz::net_loss_exp()`
 
 -   These functions can be passed when the argument `net_loss_function` is required.
 
