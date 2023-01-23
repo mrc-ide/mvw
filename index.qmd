@@ -33,16 +33,8 @@ options(repos = c(
     CRAN = "https://cloud.r-project.org"))
 install.packages("malariasimulation") # v1.4.3
 
-# Public packages can be installed directly from github:
-remotes::install_github("mrc-ide/site") # v0.2.2
-remotes::install_github("mrc-ide/netz") # v0.3.0
-remotes::install_github("mrc-ide/cali") # v0.2.0
+# The workshop package (and its dependencies) can be installed directly from github:
 remotes::install_github("mrc-ide/mvw")  # v0.1.1
-remotes::install_github("hadley/emo")   # v0.0.0.9 (yes, emojis are essential).
-# Optional additional malariaverse packages:
-remotes::install_github("mrc-ide/umbrella") # v0.3.0
-remotes::install_github("mrc-ide/treasure") # v0.1.1
-remotes::install_github("mrc-ide/om")       # v0.1.0
 
 # Private packages require network access to the "malaria drive": \\fi--didef3.dide.ic.ac.uk/malaria. 
 # Contact Pete if you don't have access.

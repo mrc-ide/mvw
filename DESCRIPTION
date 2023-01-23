@@ -1,7 +1,7 @@
 Package: mvw
 Type: Package
 Title: Malariaverse Workshop
-Version: 0.1.1
+Version: 0.1.2
 Authors@R: c(
   person(
     given = "Peter",
@@ -17,8 +17,14 @@ LazyData: true
 RoxygenNote: 7.2.1
 Remotes:
   mrc-ide/malariasimulation,
-  mrc-ide/cali
+  mrc-ide/cali,
+  mrc-ide/netz,
+  mrc-ide/site,
+  hadley/emo
 Imports: 
     learnr,
     malariasimulation (>= 1.4.3),
-    cali (>= 0.2.0)
+    cali (>= 0.2.0),
+    netz (>= 0.3.0),
+    site (>= 0.2.2),
+    emo (>= 0.0.0.9000)
