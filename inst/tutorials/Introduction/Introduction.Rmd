@@ -147,6 +147,6 @@ points(plateaux_rural$prevalence$year + 0.5, plateaux_rural$prevalence$pfpr, pch
 
 Extra credits `r emo::ji("sparkles")`:
 
--   Try changing the EIR argument in `site_parameters()` and re-running.
+-   Try changing the EIR argument in `site_parameters()` and re-running. What has changed?
 -   Modify `plateaux_rural$interventions$irs_cov` and re-run, can you see the impact?
 -   Try running multiple different sites and estimating aggregated *Pf*Pr~2-10~ across all of them.
