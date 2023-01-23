@@ -202,9 +202,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ol type="1">
 <li>An up-to-date (Version &gt;=4.2.0) <a href="https://www.r-project.org/">installation of R</a>. Please note, for those updating to R version 4.2 and above who have not updated recently you may also require an updated version of <a href="https://cran.r-project.org/bin/windows/Rtools/rtools42/rtools.html">Rtools</a>.</li>
 <li>An up-to-date (Version &gt;= 2022.12.0) <a href="https://posit.co/download/rstudio-desktop/">installation of RStudio</a>. See help-&gt;check for updates.</li>
+<li><span class="emoji" data-emoji="package">📦</span> [malariasimulation]</li>
 <li>The workshop <span class="emoji" data-emoji="package">📦</span> [mvw]</li>
-<li>The malariaverse <span class="emoji" data-emoji="package">📦</span> [malariasimulation, foresite, site, netz, cali]</li>
+<li>The malariaverse <span class="emoji" data-emoji="package">📦</span> [foresite]</li>
 </ol>
+<p>When installing packages please say “yes” to any prompts asking you to update or install dependencies.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># For malariasimulation</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repos =</span> <span class="fu">c</span>(</span>
@@ -213,7 +215,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"malariasimulation"</span>) <span class="co"># v1.4.3</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># The workshop package (and its dependencies) can be installed directly from github:</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"mrc-ide/mvw"</span>)  <span class="co"># v0.1.1</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"mrc-ide/mvw"</span>)  <span class="co"># v0.1.2</span></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Private packages require network access to the "malaria drive": \\fi--didef3.dide.ic.ac.uk/malaria. </span></span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Contact Pete if you don't have access.</span></span>
