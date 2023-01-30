@@ -13,7 +13,7 @@ An interactive workshop to provide an overview of how to use :package: \[malaria
 
 :alarm_clock: 0930-1700
 
-:hotel: Meeting room 1&2, 20 Eastbourne Terrace, Paddington
+:hotel: Meeting room 1&2, 20 Eastbourne Terrace, Paddington. Please bring ID.
 
 :computer: Please bring your laptop!
 
