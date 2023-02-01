@@ -28,12 +28,13 @@ Today's aims:
     -   Please see key publications
 -   An introduction to the software packages implementing the model
     -   :package:\[malariasimulation\]
-    -   :package:\[\]
+    -   :package:\[ICDMM\]
     -   Please see websites and supporting documentation for help
 -   A comprehensive overview of all malariaverse packages/features
 
 ::: footer
-https://mrc-ide.github.io/malariasimulation https://mrc-ide.github.io/deterministic model..
+https://mrc-ide.github.io/malariasimulation 
+https://mrc-ide.github.io/deterministic-malaria-model
 :::
 
 ## Thanks :sparkling_heart:

@@ -347,7 +347,7 @@ Pete Winskill
 </ul>
 </section>
 <section id="why-calibrate" class="slide level2">
-<h2>Why calibrate</h2>
+<h2>Why calibrate?</h2>
 <ul>
 <li>Given all the information about a site (vectors, season <em>Pf</em>Pr<sub>2-10</sub> etc…). We still need to make our best estimation of the “baseline” level of transmission.</li>
 <li>One relatively simple way of doing this is by modifying the modelled baseline until our model output best matches some observations (e.g.&nbsp;<em>Pf</em>Pr<sub>2-10</sub>).</li>
@@ -365,18 +365,26 @@ Pete Winskill
 <h2>Calibration process</h2>
 
 <img data-src="images/Calibration_figure3.png" class="r-stretch quarto-figure-center"></section>
-<section id="calibration-note" class="slide level2 smaller">
-<h2>Calibration note</h2>
+<section id="foresite-calibrations" class="slide level2">
+<h2>Foresite calibrations</h2>
 <ul>
-<li>Warmup <span class="emoji" data-emoji="muscle">💪</span>
+<li>Site files in <span class="emoji" data-emoji="package">📦</span> [foresite] have been calibrated <code>$eir</code></li>
+<li>The EIR (Entomological Inoculation Rate) is our “dial” we can turn to change baseline transmission.</li>
+<li>Turning the EIR dial is essentially leading to changes in the carrying capacity of the environment we are modelling - how many mosquitoes it can support.</li>
+</ul>
+</section>
+<section id="calibration-notes" class="slide level2 smaller">
+<h2>Calibration notes</h2>
 <ul>
-<li><span class="emoji" data-emoji="package">📦</span> malariasimulation runs do not automatically run a warmup period which is necessary for the model to fully equilibrate. In general it is always advisable to add a warmup period to your simulation runs. Some outputs are more sensitive than others and exploration of a suitable warmup period to use should be performed prior to calibration.</li>
-<li>Subsequent model runs after calibration should use the same warmup period as the calibration.</li>
-</ul></li>
 <li>Data <span class="emoji" data-emoji="bookmark_tabs">📑</span>
 <ul>
 <li>It will be your decision on what data (and how much of it) to calibrate to</li>
 <li>It is important to understand how and when data were collected, for example data collected at peak malaria season may look very different to that collected in the low season.</li>
+</ul></li>
+<li>Warmup <span class="emoji" data-emoji="muscle">💪</span>
+<ul>
+<li><span class="emoji" data-emoji="package">📦</span> malariasimulation runs do not automatically run a warmup period which is necessary for the model to fully equilibrate. In general it is always advisable to add a warmup period to your simulation runs. Some outputs are more sensitive than others and exploration of a suitable warmup period to use should be performed prior to calibration.</li>
+<li>Subsequent model runs after calibration should use the same warmup period as the calibration.</li>
 </ul></li>
 </ul>
 </section>
@@ -392,19 +400,13 @@ Pete Winskill
 <li>There has been a change to an underlying assumption that would impact the disease dynamics in a model run</li>
 </ol>
 </section>
-<section id="foresite-calibrations" class="slide level2">
-<h2>Foresite calibrations</h2>
-<ul>
-<li>Site files in <span class="emoji" data-emoji="package">📦</span> [foresite] have been calibrated <code>$eir</code></li>
-</ul>
-</section>
 <section id="cali" class="slide level2 smaller">
 <h2>Cali</h2>
 <ul>
 <li>We can use <span class="emoji" data-emoji="package">📦</span><a href="#/cali-1">cali</a> for model calibration.</li>
 <li>The <code>calibrate()</code> function takes a <code>target</code>, for example annual <em>Pf</em>Pr<sub>2-10</sub> for the years 2015-2020.</li>
 <li>The user defines a <code>summary_function</code>, a function that takes the raw model output and produces the model estimate corresponding to the <code>target</code>. In this case our summary function will summarise the model-estimated <em>Pf</em>Pr<sub>2-10</sub> for the years 2015-2020</li>
-<li><code>calibrate()</code> will then search a range of EIRs until the outputs of <code>summary_function</code> and within a user-defined tolerance of the <code>target</code></li>
+<li><code>calibrate()</code> will then search a range of EIRs until the outputs of <code>summary_function</code> are within a user-defined tolerance of the <code>target</code></li>
 </ul>
 </section>
 <section id="cali-1" class="slide level2">

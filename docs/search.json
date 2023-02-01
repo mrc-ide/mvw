@@ -123,7 +123,7 @@
     "href": "presentations/1_Introduction.html#not-todays-aims",
     "title": "Malariaverse Workshop Introduction",
     "section": "Not today’s aims 😄",
-    "text": "Not today’s aims 😄\n\nAn introduction to the Imperial college malaria model\n\nPlease see key publications\n\nAn introduction to the software packages implementing the model\n\n📦[malariasimulation]\n📦[]\nPlease see websites and supporting documentation for help\n\nA comprehensive overview of all malariaverse packages/features\n\n\nhttps://mrc-ide.github.io/malariasimulation https://mrc-ide.github.io/deterministic model.."
+    "text": "Not today’s aims 😄\n\nAn introduction to the Imperial college malaria model\n\nPlease see key publications\n\nAn introduction to the software packages implementing the model\n\n📦[malariasimulation]\n📦[ICDMM]\nPlease see websites and supporting documentation for help\n\nA comprehensive overview of all malariaverse packages/features\n\n\nhttps://mrc-ide.github.io/malariasimulation https://mrc-ide.github.io/deterministic-malaria-model"
   },
   {
     "objectID": "presentations/1_Introduction.html#thanks",
@@ -234,8 +234,8 @@
     "objectID": "presentations/2_Calibration.html#why-calibrate",
     "href": "presentations/2_Calibration.html#why-calibrate",
     "title": "Malariaverse Workshop Calibration",
-    "section": "Why calibrate",
-    "text": "Why calibrate\n\nGiven all the information about a site (vectors, season PfPr2-10 etc…). We still need to make our best estimation of the “baseline” level of transmission.\nOne relatively simple way of doing this is by modifying the modelled baseline until our model output best matches some observations (e.g. PfPr2-10)."
+    "section": "Why calibrate?",
+    "text": "Why calibrate?\n\nGiven all the information about a site (vectors, season PfPr2-10 etc…). We still need to make our best estimation of the “baseline” level of transmission.\nOne relatively simple way of doing this is by modifying the modelled baseline until our model output best matches some observations (e.g. PfPr2-10)."
   },
   {
     "objectID": "presentations/2_Calibration.html#calibration-process",
@@ -259,11 +259,18 @@
     "text": "Calibration process"
   },
   {
-    "objectID": "presentations/2_Calibration.html#calibration-note",
-    "href": "presentations/2_Calibration.html#calibration-note",
+    "objectID": "presentations/2_Calibration.html#foresite-calibrations",
+    "href": "presentations/2_Calibration.html#foresite-calibrations",
     "title": "Malariaverse Workshop Calibration",
-    "section": "Calibration note",
-    "text": "Calibration note\n\nWarmup 💪\n\n📦 malariasimulation runs do not automatically run a warmup period which is necessary for the model to fully equilibrate. In general it is always advisable to add a warmup period to your simulation runs. Some outputs are more sensitive than others and exploration of a suitable warmup period to use should be performed prior to calibration.\nSubsequent model runs after calibration should use the same warmup period as the calibration.\n\nData 📑\n\nIt will be your decision on what data (and how much of it) to calibrate to\nIt is important to understand how and when data were collected, for example data collected at peak malaria season may look very different to that collected in the low season."
+    "section": "Foresite calibrations",
+    "text": "Foresite calibrations\n\nSite files in 📦 [foresite] have been calibrated $eir\nThe EIR (Entomological Inoculation Rate) is our “dial” we can turn to change baseline transmission.\nTurning the EIR dial is essentially leading to changes in the carrying capacity of the environment we are modelling - how many mosquitoes it can support."
+  },
+  {
+    "objectID": "presentations/2_Calibration.html#calibration-notes",
+    "href": "presentations/2_Calibration.html#calibration-notes",
+    "title": "Malariaverse Workshop Calibration",
+    "section": "Calibration notes",
+    "text": "Calibration notes\n\nData 📑\n\nIt will be your decision on what data (and how much of it) to calibrate to\nIt is important to understand how and when data were collected, for example data collected at peak malaria season may look very different to that collected in the low season.\n\nWarmup 💪\n\n📦 malariasimulation runs do not automatically run a warmup period which is necessary for the model to fully equilibrate. In general it is always advisable to add a warmup period to your simulation runs. Some outputs are more sensitive than others and exploration of a suitable warmup period to use should be performed prior to calibration.\nSubsequent model runs after calibration should use the same warmup period as the calibration."
   },
   {
     "objectID": "presentations/2_Calibration.html#when-to-calibrate",
@@ -273,18 +280,11 @@
     "text": "When to calibrate\n\nCalibration or re-calibration is not always required. In general, you will need to calibrate if:\n\n\nYou have created a new site file\nYou have modified any site inputs that occur before or at the same time as the data you are trying to calibrate to\nThe data you are calibrating to has changed\nThere has been a change to an underlying assumption that would impact the disease dynamics in a model run"
   },
   {
-    "objectID": "presentations/2_Calibration.html#foresite-calibrations",
-    "href": "presentations/2_Calibration.html#foresite-calibrations",
-    "title": "Malariaverse Workshop Calibration",
-    "section": "Foresite calibrations",
-    "text": "Foresite calibrations\n\nSite files in 📦 [foresite] have been calibrated $eir"
-  },
-  {
     "objectID": "presentations/2_Calibration.html#cali",
     "href": "presentations/2_Calibration.html#cali",
     "title": "Malariaverse Workshop Calibration",
     "section": "Cali",
-    "text": "Cali\n\nWe can use 📦cali for model calibration.\nThe calibrate() function takes a target, for example annual PfPr2-10 for the years 2015-2020.\nThe user defines a summary_function, a function that takes the raw model output and produces the model estimate corresponding to the target. In this case our summary function will summarise the model-estimated PfPr2-10 for the years 2015-2020\ncalibrate() will then search a range of EIRs until the outputs of summary_function and within a user-defined tolerance of the target"
+    "text": "Cali\n\nWe can use 📦cali for model calibration.\nThe calibrate() function takes a target, for example annual PfPr2-10 for the years 2015-2020.\nThe user defines a summary_function, a function that takes the raw model output and produces the model estimate corresponding to the target. In this case our summary function will summarise the model-estimated PfPr2-10 for the years 2015-2020\ncalibrate() will then search a range of EIRs until the outputs of summary_function are within a user-defined tolerance of the target"
   },
   {
     "objectID": "presentations/2_Calibration.html#cali-1",
@@ -536,7 +536,7 @@
     "href": "presentations/4_Lightning_round.html#umbrella",
     "title": "Malariaverse Workshop Lightning round: Umbrella, treasure & om",
     "section": "Umbrella",
-    "text": "Umbrella\n\n📦 [malariasimulation] captures the seasonality in transmission using fourier series parameters fitted to rainfall data.\n📦 [umbrella] includes some simple functionality to fit these parameters.\n📦 [umbrella] also has some helper functions to download CHIRPS rainfall “data” ^1”.\nsite_file$seasonality has fitted seasonal parameters for the default sites.\n\n\n\n\nhttps://www.chc.ucsb.edu/data/chirps"
+    "text": "Umbrella\n\n📦 [malariasimulation] captures the seasonality in transmission using fourier series parameters fitted to rainfall data.\n📦 [umbrella] includes some simple functionality to fit these parameters.\n📦 [umbrella] also has some helper functions to download CHIRPS rainfall data^1.\nsite_file$seasonality has fitted seasonal parameters for the default sites.\n\n\n\n\nhttps://www.chc.ucsb.edu/data/chirps"
   },
   {
     "objectID": "presentations/4_Lightning_round.html#umbrella-workflow",

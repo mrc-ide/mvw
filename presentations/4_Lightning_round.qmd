@@ -27,7 +27,7 @@ from: markdown+emoji
 
 -   :package: \[malariasimulation\] captures the seasonality in transmission using fourier series parameters fitted to rainfall data.
 -   :package: \[umbrella\] includes some simple functionality to fit these parameters.
--   :package: \[umbrella\] also has some helper functions to download CHIRPS rainfall "data" \^1".
+-   :package: \[umbrella\] also has some helper functions to download CHIRPS rainfall data\^1.
 -   `site_file$seasonality` has fitted seasonal parameters for the default sites.
 
 ::: aside

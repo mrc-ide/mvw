@@ -19,7 +19,7 @@ Session aims:
 -   Introduction to :package:\[cali\] for model calibration
 -   Common challenges/issues when calibrating
 
-## Why calibrate 
+## Why calibrate?
 
 -   Given all the information about a site (vectors, season *Pf*Pr~2-10~ etc...). We still need to make our best estimation of the "baseline" level of transmission.
 -   One relatively simple way of doing this is by modifying the modelled baseline until our model output best matches some observations (e.g. *Pf*Pr~2-10~).
@@ -36,14 +36,21 @@ Session aims:
 
 ![](images/Calibration_figure3.png){fig-align="center"}
 
-## Calibration note {.smaller}
+## Foresite calibrations
 
--   Warmup :muscle:
-    -   :package: malariasimulation runs do not automatically run a warmup period which is necessary for the model to fully equilibrate. In general it is always advisable to add a warmup period to your simulation runs. Some outputs are more sensitive than others and exploration of a suitable warmup period to use should be performed prior to calibration.
-    -   Subsequent model runs after calibration should use the same warmup period as the calibration.
+-   Site files in :package: \[foresite\] have been calibrated `$eir`
+-   The EIR (Entomological Inoculation Rate) is our "dial" we can turn to change baseline transmission.
+-   Turning the EIR dial is essentially leading to changes in the carrying capacity of the environment we are modelling - how many mosquitoes it can support.
+
+## Calibration notes {.smaller}
+
 -   Data :bookmark_tabs:
     -   It will be your decision on what data (and how much of it) to calibrate to
     -   It is important to understand how and when data were collected, for example data collected at peak malaria season may look very different to that collected in the low season.
+-   Warmup :muscle:
+    -   :package: malariasimulation runs do not automatically run a warmup period which is necessary for the model to fully equilibrate. In general it is always advisable to add a warmup period to your simulation runs. Some outputs are more sensitive than others and exploration of a suitable warmup period to use should be performed prior to calibration.
+    -   Subsequent model runs after calibration should use the same warmup period as the calibration.
+
 
 ## When to calibrate
 
@@ -54,16 +61,12 @@ Session aims:
 3.  The data you are calibrating to has changed
 4.  There has been a change to an underlying assumption that would impact the disease dynamics in a model run
 
-## Foresite calibrations
-
--   Site files in :package: \[foresite\] have been calibrated `$eir`
-
 ## Cali {.smaller}
 
 -   We can use :package:[cali](#cali-1) for model calibration.
 -   The `calibrate()` function takes a `target`, for example annual *Pf*Pr~2-10~ for the years 2015-2020.
 -   The user defines a `summary_function`, a function that takes the raw model output and produces the model estimate corresponding to the `target`. In this case our summary function will summarise the model-estimated *Pf*Pr~2-10~ for the years 2015-2020
--   `calibrate()` will then search a range of EIRs until the outputs of `summary_function` and within a user-defined tolerance of the `target`
+-   `calibrate()` will then search a range of EIRs until the outputs of `summary_function` are within a user-defined tolerance of the `target`
 
 ## Cali {#cali-1}
 
@@ -95,10 +98,10 @@ Sometimes calibration can look good:
 ## Challenges
 
 -   Calibration can be difficult when results are dominated by stochasticity:
-    +   low transmission
-    +   small populations
-    +   calibrating to a sub-group in the population
-    +   etc...
+    -   low transmission
+    -   small populations
+    -   calibrating to a sub-group in the population
+    -   etc...
 
 ## Let's give it a try!
 
