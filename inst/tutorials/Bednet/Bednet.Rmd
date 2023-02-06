@@ -148,7 +148,7 @@ quiz(
 )
 ```
 
-Using the `netz::usage_rate()`, `netz::access_to_usage()` and `netz::usage_to_access()` functions, use the code box below to generate answers to the following questions
+Using the `netz::get_usage_rate_data()`, `netz::access_to_usage()` and `netz::usage_to_access()` functions, use the code box below to generate answers to the following questions
 
 ```{r access-usage, exercise=TRUE}
 library(netz)
